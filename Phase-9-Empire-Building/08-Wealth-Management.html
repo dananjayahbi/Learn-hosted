@@ -1,0 +1,3319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Wealth Management - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Empire Building</li>
+                    <li aria-current="page">Wealth Management</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Wealth Management</h1>
+                        <h2>Introduction</h2>
+                        <p>Building a successful business empire creates wealth—potentially life-changing, generational wealth. But creating wealth and keeping wealth are two different skills. This chapter covers how to protect, grow, and wisely use the wealth you build through CoodLoom.</p>
+                        <h2>Key Concepts</h2>
+                        <h3>1. Entrepreneurial Wealth is Different</h3>
+                        <p><strong>Why Founder Wealth is Unique:</strong> <strong>Concentration Risk:</strong></p>
+                        <ul>
+                        <li>Most wealth tied up in one asset (your company)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Illiquid until exit event</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High risk / high reward</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Need different strategy than W-2 employee</li>
+                        </li>
+                        </ul>
+                        <p><strong>Volatility:</strong></p>
+                        <ul>
+                        <li>Company value fluctuates wildly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can be worth $50M one day, $10M the next</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Private valuations subjective</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Emotional roller coaster</li>
+                        </li>
+                        </ul>
+                        <p><strong>Tax Complexity:</strong></p>
+                        <ul>
+                        <li>Equity compensation (options, RSUs)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Capital gains vs ordinary income</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State and federal implications</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>International considerations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Need expert tax planning</li>
+                        </li>
+                        </ul>
+                        <p><strong>Liquidity Events:</strong></p>
+                        <ul>
+                        <li>Sudden large cash influx (acquisition, IPO)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Life-changing money arrives at once</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Easy to make mistakes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Need plan BEFORE liquidity event</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your Journey:</strong></p>
+                        <ul>
+                        <li>Year 1-5: Mostly illiquid (paper wealth)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Year 5-10: Some liquidity (secondary sales, dividends)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Year 10+: Major liquidity (exit or mature distributions)</li>
+                        </li>
+                        </ul>
+                        <h3>2. Wealth Management Stages</h3>
+                        <p><strong>Stage 1: Building (Year 1-5)</strong></p>
+                        <ul>
+                        <li>Net Worth: $0-500K (mostly company equity)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus: Build the business</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wealth Strategy: Minimize personal spending, maximize business value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax Strategy: Optimize founder stock structure</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: Scaling (Year 5-7)</strong></p>
+                        <ul>
+                        <li>Net Worth: $500K-5M (growing equity value)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus: Scale business, create first liquid wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wealth Strategy: Start diversification, protect downside</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax Strategy: Harvest losses, optimize structure</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Mature (Year 7-10)</strong></p>
+                        <ul>
+                        <li>Net Worth: $5M-50M+ (substantial equity)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus: Prepare for liquidity event</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wealth Strategy: Comprehensive plan for exit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax Strategy: Minimize exit taxes</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4: Post-Exit (Year 10+)</strong></p>
+                        <ul>
+                        <li>Net Worth: $10M-500M+ (liquid wealth)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus: Preserve and grow wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wealth Strategy: Diversification and generational planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax Strategy: Estate planning, tax-efficient investing</li>
+                        </li>
+                        </ul>
+                        <h3>3. The Wealth Management Team</h3>
+                        <p><strong>You Can&#x27;t Do This Alone</strong> <strong>Your Wealth Team (Build Over Time):</strong> <strong>Year 1-3:</strong></p>
+                        <ul>
+                        <li>[ ] Good accountant/CPA (business + personal)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Business attorney</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Basic insurance (health, life, disability)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Year 3-5:</strong></p>
+                        <ul>
+                        <li>[ ] Tax attorney (as wealth grows)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Financial advisor (fee-only fiduciary)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Estate attorney (will, basic planning)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Year 5-10:</strong></p>
+                        <ul>
+                        <li>[ ] Wealth advisor (comprehensive planning)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Tax strategist (advanced planning)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Family office (if $50M+ net worth)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost Expectations:</strong></p>
+                        <ul>
+                        <li>Basic team (Year 1-3): $10-25K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced team (Year 5-7): $50-100K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Comprehensive team (Year 10+): $200-500K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Worth every penny!</li>
+                        </li>
+                        </ul>
+                        <h2>Pre-Exit Wealth Strategies</h2>
+                        <h3>Strategy 1: Optimize Founder Stock Structure</h3>
+                        <p><strong>Critical Early Decisions (Year 1)</strong> <strong>Founder Stock Options:</strong> <strong>Option A: C-Corp Stock</strong></p>
+                        <ul>
+                        <li>Standard corporate stock</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Capital gains tax on appreciation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Simple and straightforward</li>
+                        </li>
+                        </ul>
+                        <p><strong>Option B: 83(b) Election</strong></p>
+                        <ul>
+                        <li>File within 30 days of stock grant</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pay tax now on $0 value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>All future appreciation = capital gains (not ordinary income)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Potential savings</strong>: $millions in taxes!</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Must do early!</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <ul>
+                        <li>Receive 1M shares at $0.01/share = $10K value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File 83(b), pay tax on $10K now (~$3K tax)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company later worth $50/share = $50M value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sell: Pay capital gains on $50M - $10K = ~$10M tax (20%)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Without 83(b): Would pay ordinary income tax (~$17M!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Savings: $7M!</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>Action Item</strong>: Talk to tax attorney in first 30 days! <strong>Qualified Small Business Stock (QSBS)</strong> <strong>Section 1202 Tax Break:</strong></p>
+                        <ul>
+                        <li>Must be C-Corp</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must be qualified business (most tech companies qualify)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must hold stock &gt;5 years</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must be issued at founding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Benefit</strong>: Exclude up to $10M or 10x basis (whichever is greater) from capital gains tax</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <ul>
+                        <li>Invest $100K in founding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company acquired for $20M (your stake)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Normal capital gains tax: $4M (20% of $20M)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>With QSBS: Tax only on $10M = $2M tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Savings: $2M!</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>Action Item</strong>: Set up properly from day one with tax attorney!</p>
+                        <h3>Strategy 2: Diversification Through Secondary Sales</h3>
+                        <p><strong>Once Company Valuable (Year 5+)</strong> <strong>Secondary Sale Options:</strong> <strong>1. Secondary Market Sale</strong></p>
+                        <ul>
+                        <li>Sell some shares to investors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Before IPO or acquisition</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get liquidity while staying involved</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Typical: Sell 10-30% of holdings</li>
+                        </li>
+                        </ul>
+                        <p><strong>When Available:</strong></p>
+                        <ul>
+                        <li>Late-stage funding rounds</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tender offers by buyers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secondary marketplaces (Forge, EquityZen)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <ul>
+                        <li>Own 40% of company worth $50M = $20M paper wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sell 10% stake ($2M) to investor</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get liquid money now</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Still own 36% ($18M) for upside</li>
+                        </li>
+                        </ul>
+                        <p><strong>Benefits:</strong></p>
+                        <ul>
+                        <li>Reduce concentration risk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take some chips off table</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buy house, diversify investments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sleep better at night</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Early Exercise Programs</strong></p>
+                        <ul>
+                        <li>Exercise stock options early</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start capital gains clock</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pay exercise cost now</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax benefit later</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Dividend Recaps (Advanced)</strong></p>
+                        <ul>
+                        <li>Company takes on debt</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pays special dividend to shareholders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You get cash, keep equity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Common in private equity deals</li>
+                        </li>
+                        </ul>
+                        <h3>Strategy 3: Personal Financial Foundation</h3>
+                        <p><strong>Boring But Critical</strong> <strong>Emergency Fund:</strong></p>
+                        <ul>
+                        <li>6-12 months personal expenses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Liquid and accessible</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High-yield savings account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t touch it!</li>
+                        </li>
+                        </ul>
+                        <p><strong>Appropriate Insurance:</strong> <strong>Life Insurance:</strong></p>
+                        <ul>
+                        <li>Term life (20-30 year term)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Amount: 10-20x annual expenses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Protect family if something happens</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $1-3K/year</li>
+                        </li>
+                        </ul>
+                        <p><strong>Disability Insurance:</strong></p>
+                        <ul>
+                        <li>Replace income if you can&#x27;t work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Critical for entrepreneurs (no employer coverage)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get before any health issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $2-5K/year</li>
+                        </li>
+                        </ul>
+                        <p><strong>Umbrella Liability:</strong></p>
+                        <ul>
+                        <li>$2-5M coverage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Protects personal assets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Defense against lawsuits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $500-1K/year</li>
+                        </li>
+                        </ul>
+                        <p><strong>Property &amp; Casualty:</strong></p>
+                        <ul>
+                        <li>Home, auto, valuables</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Adequate coverage limits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review annually</li>
+                        </li>
+                        </ul>
+                        <p><strong>Personal Accounting:</strong></p>
+                        <ul>
+                        <li>Track personal net worth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Separate business and personal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Budget and spending plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Financial dashboard</li>
+                        </li>
+                        </ul>
+                        <h3>Strategy 4: Tax Optimization</h3>
+                        <p><strong>Tax is Your Biggest Expense</strong> <strong>Key Strategies:</strong> <strong>1. Defer Income When Possible</strong></p>
+                        <ul>
+                        <li>Defer salary/bonuses to lower-income years</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Time liquidity events strategically</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use retirement accounts (max out!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock options timing</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Maximize Deductions</strong></p>
+                        <ul>
+                        <li>Home office (if legitimate)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business expenses (careful here!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charitable giving</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Retirement contributions</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Optimize Entity Structure</strong></p>
+                        <ul>
+                        <li>C-Corp vs LLC vs S-Corp</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Holding company structure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State tax considerations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>International planning (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Capital Gains vs Ordinary Income</strong></p>
+                        <ul>
+                        <li>Long-term capital gains = 20% (vs 37% ordinary)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hold assets &gt;1 year when possible</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock options vs RSUs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Qualified dividends</li>
+                        </li>
+                        </ul>
+                        <p><strong>5. State Tax Planning</strong></p>
+                        <ul>
+                        <li>Consider residency (some states have no income tax)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timing of liquidity events</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-state businesses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be careful (can&#x27;t fake residency!)</li>
+                        </li>
+                        </ul>
+                        <p><strong>6. Charitable Giving (Tax-Efficient)</strong></p>
+                        <ul>
+                        <li>Donate appreciated stock (not cash)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid capital gains, get deduction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Donor-advised funds</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Private foundation (if &gt;$10M)</li>
+                        </li>
+                        </ul>
+                        <h2>Post-Exit Wealth Strategies</h2>
+                        <h3>Managing Sudden Wealth</h3>
+                        <p><strong>You Just Got $20M-100M+ Liquidity Event</strong> <strong>First 90 Days: DO NOT MAKE BIG DECISIONS</strong> <strong>The Windfall Mistake:</strong></p>
+                        <ul>
+                        <li>Buy mansion, yacht, supercar</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Invest in friend&#x27;s startup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make emotional decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lose substantial wealth fast</li>
+                        </li>
+                        </ul>
+                        <p><strong>Do This Instead:</strong> <strong>Week 1-4: Secure and Protect</strong></p>
+                        <ul>
+                        <li>Wire funds to FDIC-insured accounts ($250K per bank)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use multiple banks if needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set up simple investment (money market fund)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tell almost no one about windfall</li>
+                        </li>
+                        </ul>
+                        <p><strong>Week 4-8: Assemble Team</strong></p>
+                        <ul>
+                        <li>Interview 3-5 wealth advisors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Interview 2-3 tax attorneys</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Interview 2-3 estate planners</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check references and credentials</li>
+                        </li>
+                        </ul>
+                        <p><strong>Week 8-12: Create Plan</strong></p>
+                        <ul>
+                        <li>Comprehensive financial plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax optimization strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Estate plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charitable giving plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spending policy</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 4-6: Begin Implementation</strong></p>
+                        <ul>
+                        <li>Investment allocation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax strategies executed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Estate documents signed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charitable foundation (if desired)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 6-12: Settle into New Normal</strong></p>
+                        <ul>
+                        <li>Monitor and adjust</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Establish routines</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Enjoy responsibly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Plan for future</li>
+                        </li>
+                        </ul>
+                        <h3>Investment Strategy</h3>
+                        <p><strong>Asset Allocation for Entrepreneurs</strong> <strong>The Problem:</strong></p>
+                        <ul>
+                        <li>Most wealth was in one asset (your company)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Now liquid, need to diversify</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Different from typical investor</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommended Allocation (Post-Exit):</strong> <strong>Conservative (For $10-30M Net Worth):</strong></p>
+                        <ul>
+                        <li>40% stocks (diversified index funds)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>40% bonds (high-quality, short-term)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10% real estate (REITs or direct)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5% alternatives (private equity, hedge funds)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5% cash (emergency fund)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Moderate (For $30-100M Net Worth):</strong></p>
+                        <ul>
+                        <li>50% stocks (more diversification)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>30% bonds</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10% real estate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5% alternatives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5% cash</li>
+                        </li>
+                        </ul>
+                        <p><strong>Aggressive (For $100M+ Net Worth):</strong></p>
+                        <ul>
+                        <li>60% stocks (including international)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>20% bonds</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10% real estate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>8% alternatives (venture, private equity)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2% cash</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Principles:</strong> <strong>1. Diversification</strong></p>
+                        <ul>
+                        <li>Never concentrate again (learned that lesson!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Across asset classes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Across geographies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Across strategies</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Low Fees</strong></p>
+                        <ul>
+                        <li>Index funds (0.05% fees)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid active managers charging 1-2%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fees compound against you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Every 1% in fees = 25% less wealth over 30 years</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Tax Efficiency</strong></p>
+                        <ul>
+                        <li>Municipal bonds (tax-free)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Index funds (low turnover)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax-loss harvesting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asset location (right accounts)</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Long-Term Focus</strong></p>
+                        <ul>
+                        <li>Buy and hold</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ignore market noise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Rebalance annually</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t try to time market</li>
+                        </li>
+                        </ul>
+                        <p><strong>5. Appropriate Risk</strong></p>
+                        <ul>
+                        <li>You already took huge risk (company)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Preserve wealth, don&#x27;t need to swing for fences</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>6-8% real returns sufficient</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sleep at night</li>
+                        </li>
+                        </ul>
+                        <h3>Estate Planning</h3>
+                        <p><strong>Protecting Wealth for Future Generations</strong> <strong>Basic Estate Documents (Everyone Needs):</strong> <strong>1. Will</strong></p>
+                        <ul>
+                        <li>How assets distributed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Guardian for minor children</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Executor named</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update every 3-5 years</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Revocable Living Trust</strong></p>
+                        <ul>
+                        <li>Avoid probate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Privacy (will is public record)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Easier for heirs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can update anytime</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Power of Attorney</strong></p>
+                        <ul>
+                        <li>Financial decisions if incapacitated</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Healthcare decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trusted person named</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Critical!</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Healthcare Directive</strong></p>
+                        <ul>
+                        <li>End-of-life wishes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Organ donation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>DNR decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Relieve family burden</li>
+                        </li>
+                        </ul>
+                        <p><strong>Advanced Estate Planning ($10M+ Net Worth):</strong> <strong>5. Irrevocable Life Insurance Trust (ILIT)</strong></p>
+                        <ul>
+                        <li>Life insurance outside estate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid estate taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide liquidity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional trustee</li>
+                        </li>
+                        </ul>
+                        <p><strong>6. Family Limited Partnership</strong></p>
+                        <ul>
+                        <li>Transfer wealth with discounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Maintain control</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asset protection</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gifting strategy</li>
+                        </li>
+                        </ul>
+                        <p><strong>7. Grantor Retained Annuity Trust (GRAT)</strong></p>
+                        <ul>
+                        <li>Transfer appreciation tax-free</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keep income stream</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sophisticated strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work with expert</li>
+                        </li>
+                        </ul>
+                        <p><strong>8. Charitable Remainder Trust</strong></p>
+                        <ul>
+                        <li>Donate assets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get income for life</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charity gets remainder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax benefits</li>
+                        </li>
+                        </ul>
+                        <p><strong>9. Dynasty Trust</strong></p>
+                        <ul>
+                        <li>Multi-generational wealth transfer</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid estate taxes for 100+ years</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complex but powerful</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>For significant wealth</li>
+                        </li>
+                        </ul>
+                        <p><strong>Estate Tax Considerations:</strong> <strong>Federal Estate Tax:</strong></p>
+                        <ul>
+                        <li>Exemption: $13.6M per person (2024)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Portable between spouses ($27.2M per couple)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Above exemption: 40% tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can change with politics</li>
+                        </li>
+                        </ul>
+                        <p><strong>State Estate Tax:</strong></p>
+                        <ul>
+                        <li>Some states have estate tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lower exemptions than federal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider residency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Plan accordingly</li>
+                        </li>
+                        </ul>
+                        <p><strong>Generation-Skipping Transfer Tax:</strong></p>
+                        <ul>
+                        <li>Tax on transfers to grandchildren</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Same exemption as estate tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid with proper planning</li>
+                        </li>
+                        </ul>
+                        <h3>Philanthropic Strategy</h3>
+                        <p><strong>Giving Back Strategically</strong> <strong>Why Wealthy Entrepreneurs Give:</strong></p>
+                        <ul>
+                        <li>Make a difference</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax benefits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family values and education</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legacy and recognition</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Community impact</li>
+                        </li>
+                        </ul>
+                        <p><strong>Giving Vehicles:</strong> <strong>1. Direct Giving</strong></p>
+                        <ul>
+                        <li>Simple: Write check to charity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax deduction (up to 60% AGI)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No ongoing management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Limited control</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Donor-Advised Fund (DAF)</strong></p>
+                        <ul>
+                        <li>Contribute assets, get tax deduction immediately</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Invest and grow tax-free</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Grant to charities over time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Low cost, easy to set up</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Best for $100K-10M giving</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Private Foundation</strong></p>
+                        <ul>
+                        <li>Full control over giving</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family involvement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Investment management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Staff and operations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Annual 5% distribution required</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Best for $10M+ giving</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Charitable Remainder Trust</strong></p>
+                        <ul>
+                        <li>Donate assets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get income for life</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charity gets remainder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax deduction now</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Best for large appreciated assets</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>Tax-Smart Giving:</strong> <strong>Donate Appreciated Stock (Not Cash):</strong></p>
+                        <ul>
+                        <li>Stock worth $100K (you paid $20K)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Donate stock: Deduct $100K, avoid $16K capital gains tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Total benefit: $100K deduction + $16K tax savings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>vs donating cash: Only $100K deduction</li>
+                        </li>
+                        </ul>
+                        <p><strong>Bunching Donations:</strong></p>
+                        <ul>
+                        <li>Bunch 2-3 years of giving into one year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exceed standard deduction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Itemize that year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use DAF to grant over time</li>
+                        </li>
+                        </ul>
+                        <p><strong>Qualified Charitable Distributions (QCD):</strong></p>
+                        <ul>
+                        <li>Age 70.5+</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Donate from IRA directly to charity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Counts toward RMD</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Excluded from income</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Up to $105K/year</li>
+                        </li>
+                        </ul>
+                        <h3>Family Wealth Education</h3>
+                        <p><strong>Preparing Next Generation</strong> <strong>The Challenge:</strong></p>
+                        <ul>
+                        <li>Kids growing up with wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Risk of entitlement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How much to tell them?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>When to tell them?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Best Practices:</strong> <strong>Ages 0-10: Foundation</strong></p>
+                        <ul>
+                        <li>Basic money skills (saving, spending)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Allowance and budgeting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delayed gratification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work ethic and values</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t flaunt wealth</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ages 11-17: Building</strong></p>
+                        <ul>
+                        <li>Part-time jobs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Banking and investing basics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Philanthropy involvement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business concepts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lifestyle moderation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ages 18-25: Disclosure</strong></p>
+                        <ul>
+                        <li>Start discussing family wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Financial education</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Career expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trust structures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Responsibility and stewardship</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ages 25+: Involvement</strong></p>
+                        <ul>
+                        <li>Involvement in foundations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Introduction to advisors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understanding trusts and inheritance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Leadership development</li>
+                        </li>
+                        </ul>
+                        <p><strong>Family Governance:</strong></p>
+                        <ul>
+                        <li>Regular family meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mission and values document</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Roles and responsibilities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision-making processes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conflict resolution</li>
+                        </li>
+                        </ul>
+                        <h2>Protecting Your Wealth</h2>
+                        <h3>Asset Protection Strategies</h3>
+                        <p><strong>Lawsuit and Creditor Protection</strong> <strong>Risk Factors for Entrepreneurs:</strong></p>
+                        <ul>
+                        <li>Directors &amp; officers liability</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Product liability</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employee lawsuits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer disputes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Personal guarantees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High visibility</li>
+                        </li>
+                        </ul>
+                        <p><strong>Protection Layers:</strong> <strong>Layer 1: Insurance</strong></p>
+                        <ul>
+                        <li>Umbrella liability ($5-10M)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>D&amp;O insurance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>E&amp;O insurance (if applicable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cyber insurance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>First line of defense</li>
+                        </li>
+                        </ul>
+                        <p><strong>Layer 2: Entity Structure</strong></p>
+                        <ul>
+                        <li>LLCs and corporations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Separate entities for different risks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Holding companies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asset segregation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Layer 3: Trust Structures</strong></p>
+                        <ul>
+                        <li>Revocable trust (estate planning)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Irrevocable trust (asset protection)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Domestic asset protection trust (DAPT)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offshore trusts (extreme cases)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Layer 4: State Selection</strong></p>
+                        <ul>
+                        <li>Some states have better protection laws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Homestead exemptions vary</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider residency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Nevada, Wyoming, Delaware options</li>
+                        </li>
+                        </ul>
+                        <p><strong>Layer 5: Retirement Accounts</strong></p>
+                        <ul>
+                        <li>401(k) and IRA protected in bankruptcy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Max out contributions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Additional protection layer</li>
+                        </li>
+                        </ul>
+                        <p><strong>Don&#x27;t Overdo It:</strong></p>
+                        <ul>
+                        <li>Balance protection and complexity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fraudulent conveyance risk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Maintain access and control</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work with expert attorney</li>
+                        </li>
+                        </ul>
+                        <h3>Prenuptial Agreements</h3>
+                        <p><strong>Protecting Wealth in Marriage</strong> <strong>The Reality:</strong></p>
+                        <ul>
+                        <li>40-50% of marriages end in divorce</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Entrepreneurs face higher divorce rates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Divorce can destroy wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prenup is wise, not pessimistic</li>
+                        </li>
+                        </ul>
+                        <p><strong>What a Prenup Does:</strong></p>
+                        <ul>
+                        <li>Defines separate vs marital property</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Protects business interests</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clarifies financial expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Speeds divorce if it happens</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reduces conflict and cost</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Get Prenup:</strong></p>
+                        <ul>
+                        <li>Before marriage (obviously!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Significant wealth disparity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business ownership</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prior marriages/children</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family wealth concerns</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Approach:</strong></p>
+                        <ul>
+                        <li>Start conversation early</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Both have separate attorneys</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Full financial disclosure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fair and reasonable terms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not romantic, but necessary</li>
+                        </li>
+                        </ul>
+                        <p><strong>Postnuptial Agreement:</strong></p>
+                        <ul>
+                        <li>After marriage, similar to prenup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Harder to enforce</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Better than nothing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State law varies</li>
+                        </li>
+                        </ul>
+                        <h2>Common Wealth Mistakes</h2>
+                        <h3>Mistake 1: Lifestyle Inflation</h3>
+                        <p><strong>The Trap:</strong></p>
+                        <ul>
+                        <li>Get wealthy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Upgrade everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spend aggressively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Burn through money</li>
+                        </li>
+                        </ul>
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                        <li>$20M house (when $2M would do)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>$500K cars (depreciating assets)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Private jets (cost $2-5M/year to operate)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Staff and overhead</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Friends&quot; who need money</li>
+                        </li>
+                        </ul>
+                        <p><strong>Result</strong>: $50M net worth → Broke in 10 years (sad but common!) <strong>Solution:</strong></p>
+                        <ul>
+                        <li>&quot;One level down&quot; rule</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If you can afford $20M house, buy $5M</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If you can afford $500K car, buy $100K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Save the difference</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Future self will thank you</li>
+                        </li>
+                        </ul>
+                        <h3>Mistake 2: Trying to Get Richer</h3>
+                        <p><strong>The Trap:</strong></p>
+                        <ul>
+                        <li>Already wealthy ($20M+)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t stop chasing more</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make risky investments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Friend&#x27;s startups, get-rich schemes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lose substantial wealth</li>
+                        </li>
+                        </ul>
+                        <p><strong>Psychology:</strong></p>
+                        <ul>
+                        <li>What got you here won&#x27;t keep you here</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business building ≠ Investing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ego and reputation at stake</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>FOMO on deals</li>
+                        </li>
+                        </ul>
+                        <p><strong>Solution:</strong></p>
+                        <ul>
+                        <li>Recognize when &quot;enough is enough&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Preserve wealth, don&#x27;t chase returns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Angel invest for fun (budget &lt;5% of net worth)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Boring and safe is smart now</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spend time on family, health, hobbies</li>
+                        </li>
+                        </ul>
+                        <h3>Mistake 3: Trusting the Wrong People</h3>
+                        <p><strong>The Trap:</strong></p>
+                        <ul>
+                        <li>Sudden wealth attracts leeches</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Friends&quot; with investment opportunities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advisors with conflicts of interest</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family members asking for money</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lose wealth to scams and bad advice</li>
+                        </li>
+                        </ul>
+                        <p><strong>Warning Signs:</strong></p>
+                        <ul>
+                        <li>Guaranteed returns (they don&#x27;t exist)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complex structures you don&#x27;t understand</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pressure to decide quickly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advisors who earn commissions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Exclusive&quot; or &quot;secret&quot; opportunities</li>
+                        </li>
+                        </ul>
+                        <p><strong>Solution:</strong></p>
+                        <ul>
+                        <li>Fee-only fiduciary advisors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand every investment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Never invest in what you don&#x27;t understand</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Independent verification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;No&quot; is a complete sentence</li>
+                        </li>
+                        </ul>
+                        <h3>Mistake 4: Neglecting Taxes</h3>
+                        <p><strong>The Trap:</strong></p>
+                        <ul>
+                        <li>Make millions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t plan for taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Owe $10M+ in unexpected taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Forced to sell assets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Financial crisis</li>
+                        </li>
+                        </ul>
+                        <p><strong>Common Issues:</strong></p>
+                        <ul>
+                        <li>AMT (Alternative Minimum Tax)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State tax on liquidity events</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Estimated tax penalties</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not having cash for tax bill</li>
+                        </li>
+                        </ul>
+                        <p><strong>Solution:</strong></p>
+                        <ul>
+                        <li>Work with tax strategist</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Model tax scenarios before events</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set aside cash for taxes (40% safe)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File extensions if needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Plan years in advance</li>
+                        </li>
+                        </ul>
+                        <h3>Mistake 5: No Plan or Goals</h3>
+                        <p><strong>The Trap:</strong></p>
+                        <ul>
+                        <li>Get wealthy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No plan for money</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Drift and waste</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No fulfillment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Die with money unspent or wasted</li>
+                        </li>
+                        </ul>
+                        <p><strong>Questions to Answer:</strong></p>
+                        <ul>
+                        <li>What is wealth FOR?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s your enough number?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What impact do you want?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What legacy do you want?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What makes life meaningful?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Solution:</strong></p>
+                        <ul>
+                        <li>Personal mission statement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Written financial plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legacy and impact goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Annual review and adjustment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Money is tool, not goal</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Net Worth Tracking</h3>
+                        <p><strong>Calculate your current net worth:</strong> <strong>Assets:</strong></p>
+                        <ul>
+                        <li>CoodLoom equity (estimated): $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cash and savings: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Retirement accounts: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Real estate: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Other investments: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total Assets</strong>: $__________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Liabilities:</strong></p>
+                        <ul>
+                        <li>Mortgage: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Student loans: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business debt: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Other debt: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total Liabilities</strong>: $__________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Net Worth = Assets - Liabilities: $__________</strong> <strong>Track quarterly and watch it grow!</strong></p>
+                        <h3>Exercise 2: Your &quot;Enough&quot; Number</h3>
+                        <p><strong>How much money do you need?</strong> <strong>Annual lifestyle expenses: $__________</strong> <strong>Multiply by 25 (4% rule): $__________</strong> <strong>This is your FI number (Financial Independence)</strong> <strong>Example:</strong></p>
+                        <ul>
+                        <li>Lifestyle: $200K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>FI number: $5M ($200K = 4% of $5M)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You&#x27;re financially independent at $5M</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your goals:</strong></p>
+                        <ul>
+                        <li>Comfortable: $__________ net worth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Independent: $__________ net worth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wealthy: $__________ net worth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Generational: $__________ net worth</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 3: Wealth Team Roster</h3>
+                        <p><strong>Who&#x27;s on your team?</strong> <strong>Current Team:</strong></p>
+                        <ul>
+                        <li>Accountant: __________ (Cost: $____/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Attorney: __________ (Cost: $____/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Financial Advisor: __________ (Cost: $____/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Insurance Agent: __________ (Cost: $____/year)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Needed Additions:</strong></p>
+                        <ul>
+                        <li>[ ] Estate attorney (by year ___)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Tax strategist (by year ___)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Wealth advisor (by year ___)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Other: __________</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 4: Wealth Protection Audit</h3>
+                        <p><strong>Rate your protection (1-10):</strong></p>
+                        <ul>
+                        <li>[ ] Asset protection structures: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Adequate insurance coverage: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Estate plan in place: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Tax optimization strategy: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Diversification plan: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Advisor team quality: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Family wealth education: ___</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Prenup/postnup (if married): ___</li>
+                        </li>
+                        </ul>
+                        <p><strong>Scores &lt;7 = Priority to improve</strong></p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Entrepreneurial wealth is concentrated and illiquid</strong> until exit event</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>83(b) election and QSBS</strong> can save millions in taxes (act early!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Build wealth team</strong> as you grow (CPA, attorney, advisor)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Diversify after exit</strong> - never concentrate wealth again</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Lifestyle inflation</strong> is the biggest threat to wealth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Estate planning</strong> protects family and minimizes taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Asset protection</strong> shields wealth from lawsuits and creditors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Charitable giving</strong> can be both impactful and tax-efficient</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Family wealth education</strong> prepares next generation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Define &quot;enough&quot;</strong> - know what wealth is for</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>Move to Chapter 9: <strong>Legacy Building</strong> to learn how to create lasting impact beyond wealth accumulation.</p>
+                        <hr />
+                        <p><em>&quot;Wealth is not about having a lot of money; it&#x27;s about having a lot of options.&quot;</em> - Chris Rock</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Exit Strategy</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Legacy Building</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Compliance & Regulations: Staying Legal - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Legal And Structure</li>
+                    <li aria-current="page">Compliance & Regulations: Staying Legal</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Compliance &amp; Regulations: Staying Legal</h1>
+                        <h2>Introduction</h2>
+                        <p>Running CoodLoom means complying with federal, state, and local laws. Non-compliance can result in fines, lawsuits, and even criminal penalties. <strong>This chapter covers the key compliance areas you need to understand and implement from day one.</strong></p>
+                        <h2>Overview of Compliance Areas</h2>
+                        <p><strong>For CoodLoom, you must comply with</strong>: 1. <strong>Tax Compliance</strong> - Federal, state, local taxes 2. <strong>Employment Law</strong> - Hiring, wages, benefits 3. <strong>Data Privacy</strong> - GDPR, CCPA, data protection 4. <strong>Industry Regulations</strong> - PCI-DSS for payment processing 5. <strong>Securities Law</strong> - If raising capital or issuing equity 6. <strong>Consumer Protection</strong> - FTC regulations, advertising 7. <strong>Accessibility</strong> - ADA, WCAG for software 8. <strong>Export Control</strong> - If selling internationally Let&#x27;s cover each area in detail.</p>
+                        <h2>1. Tax Compliance</h2>
+                        <h3>Federal Taxes</h3>
+                        <p><strong>Corporate Income Tax</strong>:</p>
+                        <ul>
+                        <li><strong>C-Corp</strong>: Pays 21% federal tax on profits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>S-Corp/LLC</strong>: Pass-through, no corporate tax (owners pay on personal returns)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>File</strong>: Form 1120 (C-Corp), 1120S (S-Corp), 1065 (Partnership LLC)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Due</strong>: April 15 or March 15 (S-Corp/Partnership)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Extensions</strong>: Available, but doesn&#x27;t extend payment deadline</li>
+                        </li>
+                        </ul>
+                        <p><strong>Employment Taxes</strong> (if you have employees):</p>
+                        <ul>
+                        <li><strong>Social Security</strong>: 6.2% (employer) + 6.2% (employee) = 12.4%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Medicare</strong>: 1.45% (employer) + 1.45% (employee) = 2.9%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Federal Unemployment (FUTA)</strong>: 6.0% on first $7,000 per employee (reduced by state credits)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Income Tax Withholding</strong>: Based on employee&#x27;s W-4</li>
+                        </li>
+                        </ul>
+                        <p><strong>Quarterly Estimated Taxes</strong>:</p>
+                        <ul>
+                        <li><strong>Who</strong>: S-Corp/LLC owners, anyone with income not subject to withholding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>When</strong>: April 15, June 15, Sept 15, Jan 15</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>How Much</strong>: 25% of expected annual tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Penalty</strong>: Underpayment penalty if too low</li>
+                        </li>
+                        </ul>
+                        <p><strong>Self-Employment Tax</strong>:</p>
+                        <ul>
+                        <li><strong>Who</strong>: LLC members, partners</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Rate</strong>: 15.3% (12.4% Social Security + 2.9% Medicare)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Applies to</strong>: Net earnings from self-employment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>File</strong>: Schedule SE with Form 1040</li>
+                        </li>
+                        </ul>
+                        <h3>State Taxes</h3>
+                        <p><strong>State Income Tax</strong>:</p>
+                        <ul>
+                        <li>Most states: 0-13.3% (California highest at 13.3%)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No state income tax: Alaska, Florida, Nevada, South Dakota, Tennessee, Texas, Washington, Wyoming</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>File</strong>: State corporate or personal return depending on entity</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Tax</strong>:</p>
+                        <ul>
+                        <li><strong>Who pays</strong>: Depends on your state and what you sell</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>SaaS</strong>: Laws vary by state</li>
+                        <ul>
+                        <li>Some states tax SaaS (Texas, Pennsylvania, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Some don&#x27;t (many states)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check your state AND customer&#x27;s state</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Registration</strong>: Must register in states where you have nexus</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Nexus</strong>: Physical presence, employees, or economic presence (varies by state)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Nexus Rules</strong>:</p>
+                        <ul>
+                        <li><strong>Physical nexus</strong>: Office, warehouse, employees in state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Economic nexus</strong>: Sales exceeding threshold (typically $100K revenue or 200 transactions per year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Post-Wayfair</strong>: Must collect sales tax if exceed threshold, even without physical presence</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Tax for SaaS</strong> (Common Scenarios):</p>
+                        <pre><code>CoodLoom sells $1,000/month SaaS subscription
+                        <p>Texas customer:</p>
+                        <ul>
+                        <li>Texas taxes SaaS → Charge $1,065 ($1,000 + 6.5% tax)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You remit $65 to Texas</li>
+                        </li>
+                        </ul>
+                        <p>California customer:</p>
+                        <ul>
+                        <li>California generally doesn&#x27;t tax SaaS → Charge $1,000</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No tax collected</li>
+                        </li>
+                        </ul>
+                        <p>Enterprise customer in multiple states:</p>
+                        <ul>
+                        <li>Determine customer&#x27;s location (billing address)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Apply that state&#x27;s rules</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>May need to collect in multiple states if customer has locations in different states</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Tax Compliance</strong>: 1. <strong>Determine nexus</strong>: Where do you have obligation to collect? 2. <strong>Register</strong>: Get sales tax permit in those states (free to $100) 3. <strong>Collect</strong>: Add tax to invoices for customers in those states 4. <strong>File returns</strong>: Monthly, quarterly, or annually depending on state 5. <strong>Remit tax</strong>: Pay collected tax to state <strong>Tools</strong>:</p>
+                        <ul>
+                        <li><strong>TaxJar</strong>: Automated sales tax ($19-99/month)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Avalara</strong>: Enterprise solution ($100+/month)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Stripe Tax</strong>: Built into Stripe (if using Stripe)</li>
+                        </li>
+                        </ul>
+                        <h3>Local Taxes</h3>
+                        <p><strong>City/County Taxes</strong>:</p>
+                        <ul>
+                        <li>Business license fee: $50-500/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gross receipts tax: Some cities (San Francisco, Philadelphia, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Property tax: On office equipment, furniture</li>
+                        </li>
+                        </ul>
+                        <p><strong>Business Personal Property Tax</strong>:</p>
+                        <ul>
+                        <li>Some states tax business equipment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File annual return listing assets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pay tax on value</li>
+                        </li>
+                        </ul>
+                        <h3>Tax Strategy Tips</h3>
+                        <p><strong>Deductible Expenses</strong> (Lower taxable income):</p>
+                        <ul>
+                        <li>Salaries and contractor payments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Office rent or home office deduction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Software and subscriptions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Marketing and advertising</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional fees (legal, accounting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business travel</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equipment and computers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Health insurance (for S-Corp owners)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Retirement contributions (401k, SEP-IRA)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>R&amp;D expenses (may qualify for R&amp;D tax credit)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Tax Credits</strong>:</p>
+                        <ul>
+                        <li><strong>R&amp;D Tax Credit</strong>: 6-10% of qualified research expenses (coding often qualifies!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Work Opportunity Tax Credit</strong>: Hiring certain categories of workers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>State-specific credits</strong>: Check your state</li>
+                        </li>
+                        </ul>
+                        <p><strong>Tax Planning</strong>:</p>
+                        <ul>
+                        <li>Hire CPA specializing in startups ($2,000-5,000/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File quarterly estimated taxes (avoid penalties)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track ALL expenses (use QuickBooks or similar)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Separate personal and business finances</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider S-Corp election when profitable (tax savings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Depreciate major purchases or Section 179 expense</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Time income/expenses for tax benefits</li>
+                        </li>
+                        </ul>
+                        <h3>Tax Deadlines Checklist</h3>
+                        <p><strong>Annual</strong>:</p>
+                        <ul>
+                        <li>[ ] Jan 15: Q4 estimated taxes (prior year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Jan 31: W-2s and 1099s to employees/contractors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Feb 28: W-2s and 1099s to IRS (paper) or March 31 (electronic)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] March 15: S-Corp/Partnership returns (Form 1120S, 1065)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] April 15: C-Corp returns (Form 1120), Personal returns (Form 1040)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] April 15: Q1 estimated taxes (current year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] June 15: Q2 estimated taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sept 15: Q3 estimated taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Oct 15: Extended returns due</li>
+                        </li>
+                        </ul>
+                        <p><strong>Quarterly/Monthly</strong>:</p>
+                        <ul>
+                        <li>[ ] Payroll tax deposits (depends on size, monthly or semi-weekly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Payroll tax returns (Form 941 - quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sales tax returns (monthly, quarterly, or annually depending on state)</li>
+                        </li>
+                        </ul>
+                        <h2>2. Employment Law Compliance</h2>
+                        <h3>Federal Employment Laws</h3>
+                        <p><strong>Fair Labor Standards Act (FLSA)</strong>:</p>
+                        <ul>
+                        <li><strong>Minimum Wage</strong>: $7.25/hour federal (higher in many states)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Overtime</strong>: 1.5x pay for hours over 40/week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Exempt vs Non-Exempt</strong>:</li>
+                        <ul>
+                        <li>Exempt (salaried, no overtime): Execs, professionals, admins earning $684+/week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Non-exempt (hourly, overtime): Most other employees</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Classification Critical</strong>: Misclassifying employees as exempt = back wages + penalties</li>
+                        </li>
+                        </ul>
+                        <p><strong>Employee vs Contractor</strong>:</p>
+                        <ul>
+                        <li><strong>IRS Test</strong>: Behavioral control, financial control, relationship type</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Employee</strong>: You control how, when, where work done; withhold taxes; provide benefits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Contractor</strong>: They control methods; no taxes withheld; no benefits; independent business</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Penalties for misclassification</strong>: Back taxes, penalties, fines ($50-100K+)</li>
+                        </li>
+                        </ul>
+                        <p><strong>When in doubt</strong>: Classify as employee (safer) <strong>Title VII (Civil Rights)</strong>:</p>
+                        <ul>
+                        <li>No discrimination based on race, color, religion, sex, national origin</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Applies to: Hiring, firing, promotion, compensation, training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Threshold</strong>: 15+ employees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Americans with Disabilities Act (ADA)</strong>:</p>
+                        <ul>
+                        <li>Reasonable accommodations for disabled employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t discriminate in hiring or employment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Threshold</strong>: 15+ employees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Age Discrimination in Employment Act (ADEA)</strong>:</p>
+                        <ul>
+                        <li>Can&#x27;t discriminate against workers 40+</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Threshold</strong>: 20+ employees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Family and Medical Leave Act (FMLA)</strong>:</p>
+                        <ul>
+                        <li>12 weeks unpaid leave for family/medical reasons</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Job protection during leave</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Threshold</strong>: 50+ employees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Equal Pay Act</strong>:</p>
+                        <ul>
+                        <li>Equal pay for equal work regardless of sex</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Job must be substantially equal (skill, effort, responsibility, conditions)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Immigration</strong>:</p>
+                        <ul>
+                        <li><strong>I-9 Form</strong>: All employees must complete within 3 days of hire</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Verify eligibility to work in US</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keep I-9s for 3 years after hire or 1 year after termination</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Penalties</strong>: $250-2,500 per violation (can add up fast!)</li>
+                        </li>
+                        </ul>
+                        <h3>State Employment Laws</h3>
+                        <p><strong>State-Specific Requirements</strong> (varies widely): <strong>Minimum Wage</strong>:</p>
+                        <ul>
+                        <li>Federal: $7.25/hour</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>California: $16/hour (2024)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>New York: $15-16/hour</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Many states higher than federal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow whichever is higher (federal or state)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Paid Sick Leave</strong>:</p>
+                        <ul>
+                        <li>Required in: CA, NY, WA, MA, OR, AZ, NJ, MD, CT, VT, MI, NM, and others</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accrual: Typically 1 hour per 30-40 hours worked</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Usage: Employee&#x27;s illness, family illness, preventive care</li>
+                        </li>
+                        </ul>
+                        <p><strong>Meal and Rest Breaks</strong>:</p>
+                        <ul>
+                        <li>California: 30-min meal break (unpaid) for 5+ hours work; 10-min rest break per 4 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>New York: 30-min meal break for 6+ hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Many states have requirements; federal law doesn&#x27;t</li>
+                        </li>
+                        </ul>
+                        <p><strong>Final Paycheck</strong>:</p>
+                        <ul>
+                        <li>Timing varies by state (immediately, within 24 hours, next payday, within 7 days, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>California: Immediately if terminated, within 72 hours if quit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must pay all earned wages + accrued vacation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pay Frequency</strong>:</p>
+                        <ul>
+                        <li>Most states require at least monthly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Many require semi-monthly or bi-weekly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check your state requirements</li>
+                        </li>
+                        </ul>
+                        <p><strong>Paystub Requirements</strong>:</p>
+                        <ul>
+                        <li>Most states require detailed paystubs showing:</li>
+                        <ul>
+                        <li>Hours worked</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Rate of pay</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deductions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gross and net pay</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pay period dates</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>State Unemployment Insurance (SUI)</strong>:</p>
+                        <ul>
+                        <li>Employer pays (rate varies by state and experience rating)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File quarterly reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Rates: 1-10% depending on state and claims history</li>
+                        </li>
+                        </ul>
+                        <p><strong>Workers&#x27; Compensation Insurance</strong>:</p>
+                        <ul>
+                        <li>Required in most states once you have employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Covers employee injuries on the job</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: 1-5% of payroll depending on industry and state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Penalty for not having</strong>: Major fines + personal liability for injuries</li>
+                        </li>
+                        </ul>
+                        <p><strong>State Disability Insurance</strong>:</p>
+                        <ul>
+                        <li>Required in: CA, HI, NJ, NY, RI, WA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provides partial wage replacement for non-work injuries/illness</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Funded by employer and/or employee contributions</li>
+                        </li>
+                        </ul>
+                        <h3>Employment Best Practices</h3>
+                        <p><strong>Hiring Process</strong>: 1. Job description with essential functions 2. Post publicly (avoid discrimination) 3. Application form (consistent for all) 4. Interviews (same questions for all candidates) 5. Background check (with consent) 6. Offer letter (contingent on background check, I-9) 7. I-9 within 3 days 8. Onboarding (company policies, benefits, training) <strong>Employee Handbook</strong>:</p>
+                        <ul>
+                        <li><strong>Critical</strong>: Protects you from lawsuits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Contents</strong>:</li>
+                        <ul>
+                        <li>At-will employment statement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Anti-discrimination/harassment policies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work hours and breaks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>PTO/sick leave policy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Code of conduct</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Disciplinary procedures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complaint/grievance process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Social media policy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Remote work policy (if applicable)</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Acknowledgment</strong>: Employee signs they received and read</li>
+                        </li>
+                        </ul>
+                        <p><strong>Required Posters</strong>:</p>
+                        <ul>
+                        <li>Must display federal and state labor law posters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Available free from Department of Labor</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Post where employees can see (break room, office)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Federal: FLSA, OSHA, EEO, FMLA, etc.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State: Varies by state</li>
+                        </li>
+                        </ul>
+                        <p><strong>Termination</strong>:</p>
+                        <ul>
+                        <li>Document performance issues (written warnings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consistent application of policies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Final paycheck per state law</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>COBRA notice (health insurance continuation) if 20+ employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unemployment claim (expect it, don&#x27;t fight unless for cause)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Common Employment Law Mistakes</strong>: ❌ Misclassifying employees as contractors ❌ Not paying overtime to non-exempt employees ❌ Not providing meal/rest breaks (in states requiring them) ❌ Discriminatory hiring/firing ❌ Failing to accommodate disabilities ❌ Not filing I-9s ❌ Paying below minimum wage ❌ No workers&#x27; comp insurance ❌ No employee handbook ❌ Inconsistent policy enforcement</p>
+                        <h2>3. Data Privacy &amp; Security</h2>
+                        <h3>GDPR (EU General Data Protection Regulation)</h3>
+                        <p><strong>Applies If</strong>:</p>
+                        <ul>
+                        <li>You have EU customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You process EU residents&#x27; personal data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You target EU market (even if no EU entity)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Requirements</strong>: <strong>Lawful Basis for Processing</strong>:</p>
+                        <ul>
+                        <li>Consent: Explicit permission</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Contract: Necessary to provide service</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal obligation: Required by law</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legitimate interest: Necessary for business purposes</li>
+                        </li>
+                        </ul>
+                        <p><strong>User Rights</strong>:</p>
+                        <ul>
+                        <li><strong>Right to access</strong>: Provide copy of their data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Right to rectification</strong>: Correct inaccurate data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Right to erasure</strong>: &quot;Right to be forgotten&quot; (delete data)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Right to data portability</strong>: Export data in machine-readable format</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Right to object</strong>: Stop processing for marketing, etc.</li>
+                        </li>
+                        </ul>
+                        <p><strong>Must Have</strong>:</p>
+                        <ul>
+                        <li>Privacy policy explaining data practices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cookie consent banner (for EU visitors)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data Processing Agreement (DPA) with customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data breach notification procedure (72 hours to report)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data Protection Officer (if processing large amounts of sensitive data)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Penalties</strong>: Up to €20M or 4% of global revenue (whichever is higher) <strong>Compliance Steps</strong>: 1. Audit what personal data you collect 2. Document lawful basis for each type 3. Implement user rights (access, delete, export) 4. Privacy policy with GDPR-compliant language 5. Cookie consent (GDPR-compliant, not pre-checked) 6. DPA for enterprise customers 7. Vendor agreements ensure GDPR compliance 8. Data breach response plan</p>
+                        <h3>CCPA (California Consumer Privacy Act)</h3>
+                        <p><strong>Applies If</strong>:</p>
+                        <ul>
+                        <li>You do business in California AND</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gross revenue &gt; $25M, OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handle data of 50K+ CA consumers, OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>50%+ revenue from selling personal info</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Requirements</strong>: <strong>Consumer Rights</strong>:</p>
+                        <ul>
+                        <li>Right to know what data collected</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Right to delete data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Right to opt-out of sale of data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Right to non-discrimination (can&#x27;t charge more for opting out)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Business Obligations</strong>:</p>
+                        <ul>
+                        <li>Privacy policy disclosing data practices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Do Not Sell My Personal Information&quot; link (if selling data)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Respond to requests within 45 days</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Verify identity of requestor</li>
+                        </li>
+                        </ul>
+                        <p><strong>Penalties</strong>: Up to $7,500 per intentional violation; $2,500 per unintentional <strong>Compliance Steps</strong>: 1. Determine if CCPA applies (based on thresholds) 2. Update privacy policy with CCPA language 3. Implement user request process 4. &quot;Do Not Sell&quot; link if selling data (most SaaS don&#x27;t sell) 5. Train employees on data handling 6. Review vendor contracts</p>
+                        <h3>Other State Privacy Laws</h3>
+                        <p><strong>Similar laws in</strong>:</p>
+                        <ul>
+                        <li>Virginia: VCDPA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Colorado: CPA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Connecticut: CTDPA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Utah: UCPA</li>
+                        </li>
+                        </ul>
+                        <p><strong>General requirements</strong>: Privacy policies, user rights, data security</p>
+                        <h3>Data Security Requirements</h3>
+                        <p><strong>Reasonable Security Measures</strong>:</p>
+                        <ul>
+                        <li>Encryption (in transit with SSL/TLS, at rest)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Access controls (role-based)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Authentication (strong passwords, 2FA)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular security updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employee training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Incident response plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular audits</li>
+                        </li>
+                        </ul>
+                        <p><strong>Data Breach Notification</strong>:</p>
+                        <ul>
+                        <li>Most states require notification if breach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timeline: 30-90 days depending on state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must notify affected individuals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>May need to notify regulators</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>May need to provide credit monitoring</li>
+                        </li>
+                        </ul>
+                        <p><strong>SOC 2 Compliance</strong> (optional but valuable):</p>
+                        <ul>
+                        <li>Security audit by third-party</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Demonstrates security controls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Type I: Point-in-time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Type II: Over period (more valuable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $20K-100K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Benefit</strong>: Enterprise customers require it</li>
+                        </li>
+                        </ul>
+                        <h2>4. Payment Processing Compliance (PCI-DSS)</h2>
+                        <h3>What is PCI-DSS?</h3>
+                        <p><strong>PCI-DSS</strong>: Payment Card Industry Data Security Standard <strong>Applies If</strong>: You accept, process, or store credit card data <strong>For CoodLoom POS</strong>: <strong>Critical compliance</strong></p>
+                        <h3>PCI Compliance Levels</h3>
+                        <p>Based on annual transaction volume: <strong>Level 1</strong>: 6M+ transactions/year</p>
+                        <ul>
+                        <li>Annual onsite audit by QSA (Qualified Security Assessor)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $50K-200K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Network scans</li>
+                        </li>
+                        </ul>
+                        <p><strong>Level 2</strong>: 1-6M transactions/year</p>
+                        <ul>
+                        <li>Annual self-assessment questionnaire (SAQ)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quarterly network scans</li>
+                        </li>
+                        </ul>
+                        <p><strong>Level 3</strong>: 20K-1M transactions/year (for e-commerce)</p>
+                        <ul>
+                        <li>Annual SAQ</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quarterly network scans</li>
+                        </li>
+                        </ul>
+                        <p><strong>Level 4</strong>: &lt;20K transactions/year (e-commerce) or &lt;1M (other)</p>
+                        <ul>
+                        <li>Annual SAQ</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quarterly network scans (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Most CoodLoom customers</strong>: Level 4 (simplest)</p>
+                        <h3>PCI Requirements (Summary)</h3>
+                        <p><strong>12 Requirements</strong>: 1. Firewall configuration 2. No default passwords 3. Protect stored cardholder data 4. Encrypt transmission of data 5. Use anti-virus software 6. Secure systems and applications 7. Restrict access to cardholder data 8. Assign unique ID to each person with access 9. Restrict physical access 10. Track and monitor all access 11. Regularly test security 12. Maintain security policy</p>
+                        <h3>Easiest Path: Don&#x27;t Store Card Data</h3>
+                        <p><strong>Solution</strong>: Use payment processor that handles card data <strong>How It Works</strong>: 1. Customer enters card info in processor&#x27;s secure form (Stripe, Square) 2. Processor stores card, gives you token 3. You only store token (not actual card number) 4. To charge: Send token to processor 5. <strong>You never see or store actual card data</strong> <strong>Benefit</strong>: Reduces PCI scope dramatically <strong>Processors Offering This</strong>:</p>
+                        <ul>
+                        <li>Stripe: Stripe.js, Elements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Square: Square Payment Form</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Braintree: Hosted Fields</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Authorize.Net: Accept.js</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your PCI Requirement</strong>: SAQ-A (shortest questionnaire, 13 questions)</p>
+                        <h3>If You Must Store Card Data</h3>
+                        <p><strong>Don&#x27;t do this unless absolutely necessary</strong> <strong>Requirements</strong>:</p>
+                        <ul>
+                        <li>Encrypt stored data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secure storage (not in database with other data)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Access logging</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular audits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Network segmentation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>PCI Requirement</strong>: Full SAQ-D (300+ questions) or onsite audit</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $50K-500K/year for full compliance <strong>Recommendation</strong>: <strong>Use tokenization</strong>, don&#x27;t store cards</p>
+                        <h3>PCI Compliance Steps</h3>
+                        <p><strong>For CoodLoom</strong>: <strong>Recommended Approach</strong> (SAQ-A): 1. Use Stripe/Square with Elements/Payment Form 2. Never see or touch card data 3. Complete SAQ-A questionnaire (annually) 4. Attest compliance 5. Provide Attestation of Compliance (AOC) to customers if requested <strong>Cost</strong>: $0-300/year depending on processor <strong>Tools</strong>:</p>
+                        <ul>
+                        <li><strong>Stripe Radar</strong>: Fraud detection (included)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>PCI compliance scanning</strong>: Varies ($100-500/year)</li>
+                        </li>
+                        </ul>
+                        <h2>5. Securities Law (If Raising Capital)</h2>
+                        <h3>What Triggers Securities Law</h3>
+                        <p><strong>Issuing &quot;Securities&quot;</strong>:</p>
+                        <ul>
+                        <li>Stock (common or preferred)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock options</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Convertible notes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SAFEs (Simple Agreement for Future Equity)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Any investment contract</li>
+                        </li>
+                        </ul>
+                        <p><strong>SEC Regulations Apply</strong></p>
+                        <h3>Key Rules</h3>
+                        <p><strong>Rule 506(b)</strong> - Private Placement:</p>
+                        <ul>
+                        <li>Raise unlimited amount</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unlimited accredited investors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Up to 35 non-accredited (sophisticated) investors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No general solicitation (can&#x27;t advertise)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must provide disclosure documents</li>
+                        </li>
+                        </ul>
+                        <p><strong>Rule 506(c)</strong> - Private Placement with General Solicitation:</p>
+                        <ul>
+                        <li>Raise unlimited amount</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Only accredited investors (must verify)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CAN advertise and publicly solicit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must verify accredited status (income/net worth docs)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Accredited Investor</strong>:</p>
+                        <ul>
+                        <li>Income: $200K+ individual ($300K+ joint) for past 2 years</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Net worth: $1M+ (excluding primary residence)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Certain professionals (Series 7, 65, 82 licenses)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Regulation CF</strong> - Crowdfunding:</p>
+                        <ul>
+                        <li>Raise up to $5M/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>From anyone (accredited or not)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must use registered crowdfunding platform</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Disclosure requirements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Annual reports</li>
+                        </li>
+                        </ul>
+                        <p><strong>Regulation A+</strong> - Mini-IPO:</p>
+                        <ul>
+                        <li>Tier 1: Up to $20M/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tier 2: Up to $75M/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can advertise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must file offering statement with SEC</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expensive ($100K-500K)</li>
+                        </li>
+                        </ul>
+                        <h3>State Securities (Blue Sky Laws)</h3>
+                        <p><strong>Must Also Comply With</strong>:</p>
+                        <ul>
+                        <li>State where company is located</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State where investors are located</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can add cost and complexity</li>
+                        </li>
+                        </ul>
+                        <p><strong>Exemptions</strong>: Many states recognize federal exemptions (506(b), 506(c))</p>
+                        <h3>Stock Options for Employees</h3>
+                        <p><strong>Not a Securities Offering</strong> (Usually):</p>
+                        <ul>
+                        <li>If granted to employees (not consultants)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>As compensation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Under equity incentive plan</li>
+                        </li>
+                        </ul>
+                        <p><strong>Requirements</strong>:</p>
+                        <ul>
+                        <li>Board-approved stock option plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fair market value exercise price (409A valuation)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vesting terms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Early exercise allowed (optional)</li>
+                        </li>
+                        </ul>
+                        <p><strong>409A Valuation</strong>:</p>
+                        <ul>
+                        <li>Required to set fair market value of common stock</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Independent valuation by firm</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $2K-10K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Refresh annually or after funding round</li>
+                        </li>
+                        </ul>
+                        <h3>Compliance Checklist (Fundraising)</h3>
+                        <p><strong>Before Raising</strong>:</p>
+                        <ul>
+                        <li>[ ] Consult securities lawyer ($5K-15K)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Choose exemption (506(b), 506(c), etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Prepare offering documents (PPM, term sheet)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create data room with company docs</li>
+                        </li>
+                        </ul>
+                        <p><strong>During Raise</strong>:</p>
+                        <ul>
+                        <li>[ ] Verify accredited investor status (if 506(c))</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Provide disclosure documents</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Execute subscription agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] File Form D with SEC (within 15 days)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] File blue sky filings (if required by state)</li>
+                        </li>
+                        </ul>
+                        <p><strong>After Raise</strong>:</p>
+                        <ul>
+                        <li>[ ] Update cap table</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Issue stock certificates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Update board/shareholder consents</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Annual reports (if Reg CF or Reg A+)</li>
+                        </li>
+                        </ul>
+                        <h2>6. Accessibility Compliance (ADA, WCAG)</h2>
+                        <h3>Americans with Disabilities Act (ADA)</h3>
+                        <p><strong>Applies To</strong>: Public accommodations (including websites) <strong>Requirement</strong>: Websites and software must be accessible to people with disabilities <strong>Who Enforces</strong>: DOJ (Department of Justice), private lawsuits <strong>Standards</strong>: No specific technical standard, but WCAG 2.1 AA considered best practice</p>
+                        <h3>WCAG (Web Content Accessibility Guidelines)</h3>
+                        <p><strong>Levels</strong>:</p>
+                        <ul>
+                        <li><strong>A</strong>: Minimum (easiest)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>AA</strong>: Mid-range (recommended for compliance)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>AAA</strong>: Highest (often not fully achievable)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Four Principles (POUR)</strong>: 1. <strong>Perceivable</strong>: Information and UI must be presented so users can perceive it 2. <strong>Operable</strong>: UI and navigation must be operable 3. <strong>Understandable</strong>: Information and UI must be understandable 4. <strong>Robust</strong>: Content must be robust enough to work with assistive technologies <strong>Key Requirements (AA)</strong>:</p>
+                        <ul>
+                        <li><strong>Keyboard navigation</strong>: All functions accessible via keyboard</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Alt text</strong>: Images have descriptive alt text</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Color contrast</strong>: 4.5:1 for normal text, 3:1 for large text</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Captions</strong>: Videos have captions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Focus indicators</strong>: Visible focus on interactive elements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Form labels</strong>: All form fields have clear labels</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Heading structure</strong>: Proper heading hierarchy (H1, H2, H3)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Link text</strong>: Descriptive link text (not &quot;click here&quot;)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>No time limits</strong>: Or ability to extend</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Screen reader friendly</strong>: Semantic HTML, ARIA labels</li>
+                        </li>
+                        </ul>
+                        <h3>Compliance Steps</h3>
+                        <p><strong>For CoodLoom Website &amp; Software</strong>: 1. <strong>Audit current site</strong>:</p>
+                        <ul>
+                        <li>Tools: WAVE, axe DevTools, Lighthouse</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manual testing with screen reader (NVDA, JAWS, VoiceOver)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $0 (DIY) or $2K-10K (professional audit)</li>
+                        </li>
+                        </ul>
+                        <p>2. <strong>Fix issues</strong>:</p>
+                        <ul>
+                        <li>Alt text for images</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Improve color contrast</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keyboard navigation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fix heading structure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>ARIA labels where needed</li>
+                        </li>
+                        </ul>
+                        <p>3. <strong>Ongoing compliance</strong>:</p>
+                        <ul>
+                        <li>Test new features for accessibility</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Train developers on accessibility</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular audits (annually)</li>
+                        </li>
+                        </ul>
+                        <p>4. <strong>Accessibility statement</strong>:</p>
+                        <ul>
+                        <li>Page explaining your commitment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How to report issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Contact info for questions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $5K-50K depending on current state and complexity <strong>ROI</strong>:</p>
+                        <ul>
+                        <li>Avoid lawsuits (increasing trend)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reach more customers (15-20% of population has disability)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Better SEO (Google rewards accessibility)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Government contracts may require</li>
+                        </li>
+                        </ul>
+                        <h2>7. Export Control &amp; International</h2>
+                        <h3>Export Control Laws</h3>
+                        <p><strong>ITAR</strong> (International Traffic in Arms Regulations):</p>
+                        <ul>
+                        <li>Governs defense-related items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Not applicable to CoodLoom</strong> (not defense/weapons)</li>
+                        </li>
+                        </ul>
+                        <p><strong>EAR</strong> (Export Administration Regulations):</p>
+                        <ul>
+                        <li>Governs commercial and dual-use items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>May apply to CoodLoom</strong> if encryption &gt; 64-bit</li>
+                        </li>
+                        </ul>
+                        <p><strong>Encryption Export</strong>:</p>
+                        <ul>
+                        <li>Software with strong encryption may require notification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>TSU Exception</strong>: Can qualify for unrestricted export if submit one-time notification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File: <a href="https://www.bis.doc.gov/">bis.doc.gov</a></li>
+                        </li>
+                        </ul>
+                        <h3>Sanctions and Embargoes</h3>
+                        <p><strong>OFAC</strong> (Office of Foreign Assets Control):</p>
+                        <ul>
+                        <li>Cannot do business with certain countries:</li>
+                        <ul>
+                        <li>Cuba, Iran, North Korea, Syria, Russia (partially)</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cannot do business with individuals/entities on SDN List</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compliance</strong>:</p>
+                        <ul>
+                        <li>Screen customers against SDN list</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Block access from sanctioned countries</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tools: Stripe Radar, ComplyAdvantage ($100+/month)</li>
+                        </li>
+                        </ul>
+                        <h3>GDPR (Covered Above)</h3>
+                        <p><strong>Also applies</strong> if targeting EU market</p>
+                        <h3>Tax Treaties</h3>
+                        <p><strong>Avoid Double Taxation</strong>:</p>
+                        <ul>
+                        <li>US has tax treaties with many countries</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Withholding rates vary</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consult international tax accountant if significant international revenue</li>
+                        </li>
+                        </ul>
+                        <h2>Compliance Tools &amp; Services</h2>
+                        <h3>Compliance Software</h3>
+                        <p><strong>For Data Privacy</strong>:</p>
+                        <ul>
+                        <li><strong>OneTrust</strong> ($5K-50K/year): Enterprise privacy management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>TrustArc</strong> ($3K-30K/year): Privacy compliance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Cookiebot</strong> ($10-50/month): Cookie consent</li>
+                        </li>
+                        </ul>
+                        <p><strong>For Accessibility</strong>:</p>
+                        <ul>
+                        <li><strong>AudioEye</strong> ($500-2K/month): Automated accessibility</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>UsableNet</strong> ($1K-5K/month): Accessibility compliance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>accessiBe</strong> ($49-100/month): AI-powered accessibility (controversial, use with caution)</li>
+                        </li>
+                        </ul>
+                        <p><strong>For SOC 2</strong>:</p>
+                        <ul>
+                        <li><strong>Vanta</strong> ($3K-6K/year): Automates SOC 2 compliance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Drata</strong> ($3K-6K/year): Similar to Vanta</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Secureframe</strong> ($2K-5K/year): Compliance automation</li>
+                        </li>
+                        </ul>
+                        <p><strong>For Security</strong>:</p>
+                        <ul>
+                        <li><strong>Qualys</strong> ($2K+/year): Vulnerability scanning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Tenable</strong> ($2K+/year): Security monitoring</li>
+                        </li>
+                        </ul>
+                        <h3>Professional Services</h3>
+                        <p><strong>Lawyers</strong>:</p>
+                        <ul>
+                        <li>Securities lawyer: $5K-25K for fundraise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employment lawyer: $2K-5K for handbook/policies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Privacy lawyer: $5K-15K for GDPR/CCPA compliance</li>
+                        </li>
+                        </ul>
+                        <p><strong>Accountants/CPAs</strong>:</p>
+                        <ul>
+                        <li>Startup CPA: $2K-10K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales tax specialist: $1K-5K setup + ongoing</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compliance Consultants</strong>:</p>
+                        <ul>
+                        <li>SOC 2 consultant: $10K-50K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>GDPR consultant: $5K-20K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>PCI consultant: $5K-20K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Background Check Services</strong>:</p>
+                        <ul>
+                        <li>Checkr: $35-50/check</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>GoodHire: $30-100/check</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>HireRight: $25-100/check</li>
+                        </li>
+                        </ul>
+                        <h3>Insurance (Risk Management)</h3>
+                        <p><strong>Types</strong>:</p>
+                        <ul>
+                        <li><strong>General Liability</strong>: $500-2K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Professional Liability (E&amp;O)</strong>: $1K-5K/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Cyber Liability</strong>: $1K-5K/year (covers data breaches)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>D&amp;O Insurance</strong>: $1K-10K/year (directors &amp; officers)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Workers&#x27; Comp</strong>: 1-5% of payroll (required in most states)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Where to Buy</strong>:</p>
+                        <ul>
+                        <li>Embroker: Startup-focused</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hiscox: Small business</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CoverWallet: Compare quotes</li>
+                        </li>
+                        </ul>
+                        <h2>Compliance Budget</h2>
+                        <h3>Year 1 (Bootstrap)</h3>
+                        <p><strong>Must Have</strong> ($5K-15K):</p>
+                        <ul>
+                        <li>CPA: $2K-5K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payroll service: $1K-2K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business insurance: $2K-5K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal (basic contracts): $2K-5K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Nice to Have</strong> ($5K-10K):</p>
+                        <ul>
+                        <li>Employment lawyer (handbook): $2K-3K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales tax automation: $500-1K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accessibility audit: $2K-5K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total</strong>: $10K-25K</p>
+                        <h3>Year 2+ (Growth)</h3>
+                        <p><strong>Add</strong>:</p>
+                        <ul>
+                        <li>SOC 2 audit: $20K-50K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Additional legal: $10K-25K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Compliance tools: $5K-15K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Additional insurance: $5K-10K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total</strong>: $40K-100K/year</p>
+                        <h3>Enterprise Sales</h3>
+                        <p><strong>Requirements from Enterprise Customers</strong>:</p>
+                        <ul>
+                        <li>SOC 2 Type II: $20K-50K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>GDPR compliance: $5K-20K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>DPA and BAA: $2K-5K (legal)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Penetration testing: $10K-25K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Insurance (higher limits): $5K-15K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total</strong>: $40K-115K <strong>Worth it if</strong>: Deal size &gt; $50K-100K/year</p>
+                        <h2>Compliance Checklist</h2>
+                        <h3>Immediate (Before Launch)</h3>
+                        <ul>
+                        <li>[ ] Choose business structure and incorporate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Get EIN from IRS</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Open business bank account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up accounting system (QuickBooks)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create privacy policy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create terms of service</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Get business insurance (GL, E&amp;O)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Register for state taxes (sales tax if applicable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] File beneficial ownership report (FinCEN)</li>
+                        </li>
+                        </ul>
+                        <h3>Before First Customer</h3>
+                        <ul>
+                        <li>[ ] Customer contract template</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Privacy policy live on website</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Terms of service live on website</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] PCI-compliant payment processing (Stripe with Elements)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Accessibility audit and fixes (basic)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] GDPR compliance basics (if EU customers)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Cookie consent banner (if EU traffic)</li>
+                        </li>
+                        </ul>
+                        <h3>Before First Employee</h3>
+                        <ul>
+                        <li>[ ] Workers&#x27; comp insurance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Payroll service (Gusto, Rippling)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Employee handbook</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Employment agreement template</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I-9 forms ready</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Required labor law posters</li>
+                        </li>
+                        </ul>
+                        <h3>Ongoing (Quarterly/Annual)</h3>
+                        <ul>
+                        <li>[ ] Estimated tax payments (quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sales tax returns (monthly/quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Payroll tax returns (quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Income tax returns (annual)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Delaware franchise tax (annual)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Business licenses renewal (annual)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Insurance renewals (annual)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Beneficial ownership updates (as needed)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] SOC 2 audit (annual if applicable)</li>
+                        </li>
+                        </ul>
+                        <h2>Penalties for Non-Compliance</h2>
+                        <p><strong>Just to scare you straight</strong>: <strong>Tax Penalties</strong>:</p>
+                        <ul>
+                        <li>Late filing: 5% per month (max 25%)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Late payment: 0.5% per month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Underpayment: Varies, can be significant</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payroll tax failure: 100% penalty (personal liability)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Employment Penalties</strong>:</p>
+                        <ul>
+                        <li>I-9 violations: $250-2,500 per form</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Misclassification: Back taxes + penalties ($50K-100K+)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>FLSA violations: Back wages + equal damages + attorney fees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Discrimination: $50K-300K+ settlements</li>
+                        </li>
+                        </ul>
+                        <p><strong>Privacy Violations</strong>:</p>
+                        <ul>
+                        <li>GDPR: €20M or 4% of global revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CCPA: $2,500-7,500 per violation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data breach costs: Average $4.45M (IBM 2023 study)</li>
+                        </li>
+                        </ul>
+                        <p><strong>PCI Non-Compliance</strong>:</p>
+                        <ul>
+                        <li>Fines: $5K-100K/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Card brand may drop you (can&#x27;t accept cards)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Liability for breaches: Potentially millions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Securities Violations</strong>:</p>
+                        <ul>
+                        <li>Civil penalties: $50K-150K per violation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Criminal: Up to $5M and 20 years prison (willful violations)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Rescission: Must give investors money back</li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <p>✓ <strong>Compliance is not optional</strong> - Penalties can destroy your business ✓ <strong>Start with basics</strong> - CPA, insurance, contracts, privacy policy ✓ <strong>Hire professionals</strong> - CPA and lawyer are worth every penny ✓ <strong>Don&#x27;t store card data</strong> - Use Stripe/Square, stay PCI SAQ-A ✓ <strong>Employee vs contractor matters</strong> - Misclassification is expensive ✓ <strong>GDPR applies to you</strong> - If you have EU customers ✓ <strong>Accessibility is important</strong> - Avoid lawsuits, reach more customers ✓ <strong>Budget for compliance</strong> - $10K-25K year 1, more as you grow ✓ <strong>Track ALL expenses</strong> - Tax deductions save money ✓ <strong>Keep good records</strong> - IRS can audit up to 7 years back</p>
+                        <h2>Next Steps</h2>
+                        <p><strong>This Week</strong>: 1. [ ] Hire CPA specializing in startups 2. [ ] Get quotes for business insurance 3. [ ] Set up accounting system 4. [ ] Create privacy policy <strong>This Month</strong>: 5. [ ] Set up payroll system (if hiring) 6. [ ] Register for sales tax (if applicable) 7. [ ] Review PCI compliance requirements 8. [ ] Basic accessibility audit <strong>This Quarter</strong>: 9. [ ] Employment handbook (if hiring) 10. [ ] Quarterly estimated taxes 11. [ ] Review all compliance areas 12. [ ] Move to Chapter 7: Domain &amp; Trademark</p>
+                        <hr />
+                        <p><strong>Compliance is boring but essential. Budget for it, hire professionals, and sleep well at night knowing you won&#x27;t be surprised by fines or lawsuits.</strong></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Contracts And Agreements</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Domain And Trademark</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,2342 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Chapter 3: Feature Prioritization - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Product Market Fit</li>
+                    <li aria-current="page">Chapter 3: Feature Prioritization</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Chapter 3: Feature Prioritization</h1>
+                        <h2>The Feature Prioritization Challenge</h2>
+                        <p>You have:</p>
+                        <ul>
+                        <li>Limited engineering resources</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unlimited feature ideas</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Impatient customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive pressure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Founder opinions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technical debt</li>
+                        </li>
+                        </ul>
+                        <p><strong>The Question:</strong> What should you build next? <strong>The Wrong Answer:</strong> Everything everyone asks for <strong>The Right Answer:</strong> The features that maximize value for your target customers and move you toward product-market fit</p>
+                        <h2>Why Feature Prioritization Matters</h2>
+                        <h3>The Cost of Building Wrong Features</h3>
+                        <p><strong>Direct Costs:</strong></p>
+                        <ul>
+                        <li>Engineering time (salary × weeks)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Opportunity cost (what you didn&#x27;t build)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Maintenance burden forever</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technical debt accumulation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example:</strong></p>
+                        <pre><code>1 feature × 2 weeks × $10K/week = $20K direct cost
+                        <p>Opportunity cost of not building right feature = $50K in lost revenue Maintenance over 2 years = $10K Total cost: $80K for the wrong feature</code></pre> <strong>Indirect Costs:</strong></p>
+                        <ul>
+                        <li>Product complexity (confuses users)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delayed time to market (competitor advantage)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lost focus (team pulled in too many directions)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Poor product positioning (unfocused value prop)</li>
+                        </li>
+                        </ul>
+                        <h3>The Benefit of Ruthless Prioritization</h3>
+                        <p><strong>Companies that prioritize well:</strong></p>
+                        <ul>
+                        <li>Ship faster (do less, better)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Have clearer positioning (focused value prop)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delight core customers (solve their problems deeply)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid technical debt (thoughtful architecture)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Iterate faster (smaller surface area)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Win their niche (depth over breadth)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Examples:</strong></p>
+                        <ul>
+                        <li><strong>Early Instagram:</strong> Only photo filters and sharing. No video, stories, messaging, shopping. Nailed one use case.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Early Slack:</strong> Just team chat. No video, no email, no project management. Perfected messaging first.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Basecamp:</strong> Deliberately simple project management. Says no to features constantly.</li>
+                        </li>
+                        </ul>
+                        <h2>Prioritization Frameworks</h2>
+                        <h3>1. The RICE Framework</h3>
+                        <p><strong>RICE = Reach × Impact × Confidence / Effort</strong></p>
+                        <h4>Reach</h4>
+                        <p>How many customers will this affect in a given period? <strong>Scale:</strong> Users per quarter</p>
+                        <pre><code>Example for POS Features:
+                        <ul>
+                        <li>Mobile checkout: 500 users/quarter (if you have 500 users)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync: 50 users/quarter (10% have >1 location)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced analytics: 200 users/quarter (40% care about analytics)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h4>Impact</h4>
+                        <p>How much will this improve things for each customer? <strong>Scale:</strong> 0.25 = Minimal, 0.5 = Low, 1 = Medium, 2 = High, 3 = Massive</p>
+                        <pre><code>Example:
+                        <ul>
+                        <li>Mobile checkout: 3 (massive - core value prop)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync: 2 (high - critical for that segment)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced analytics: 1 (medium - nice to have)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h4>Confidence</h4>
+                        <p>How confident are you in your reach and impact estimates? <strong>Scale:</strong> 100% = High confidence, 80% = Medium, 50% = Low</p>
+                        <pre><code>Example:
+                        <ul>
+                        <li>Mobile checkout: 100% (customer interviews confirm)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync: 80% (only talked to a few)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced analytics: 50% (assumption, not validated)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h4>Effort</h4>
+                        <p>How many &quot;person-months&quot; will this take? <strong>Scale:</strong> Person-months of work</p>
+                        <pre><code>Example:
+                        <ul>
+                        <li>Mobile checkout: 3 person-months</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync: 6 person-months</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced analytics: 4 person-months</code></pre></li>
+                        </li>
+                        </ul>
+                        <h4>RICE Score Calculation</h4>
+                        <pre><code>RICE Score = (Reach × Impact × Confidence) / Effort
+                        <p>Mobile checkout: (500 × 3 × 1.0) / 3 = 500 Multi-location sync: (50 × 2 × 0.8) / 6 = 13.3 Advanced analytics: (200 × 1 × 0.5) / 4 = 25 Priority: Mobile checkout (500) > Analytics (25) > Multi-location (13.3)</code></pre></p>
+                        <h3>2. The ICE Framework</h3>
+                        <p><strong>ICE = Impact × Confidence × Ease</strong> Simpler than RICE, good for early-stage startups.</p>
+                        <h4>Impact</h4>
+                        <p>How much will this move the needle? <strong>Scale:</strong> 1-10</p>
+                        <pre><code>10 = Game-changing for core value prop
+                        <p>7-9 = Significant improvement 4-6 = Nice to have 1-3 = Minimal impact</code></pre></p>
+                        <h4>Confidence</h4>
+                        <p>How certain are you? <strong>Scale:</strong> 1-10</p>
+                        <pre><code>10 = Validated with customers, data-driven
+                        <p>7-9 = Strong hunches, some validation 4-6 = Educated guess 1-3 = Total assumption</code></pre></p>
+                        <h4>Ease</h4>
+                        <p>How easy is this to build? <strong>Scale:</strong> 1-10</p>
+                        <pre><code>10 = Can ship in days
+                        <p>7-9 = Can ship in 1-2 weeks 4-6 = 3-4 weeks of work 1-3 = Multiple months</code></pre></p>
+                        <h4>ICE Score Calculation</h4>
+                        <pre><code>ICE Score = (Impact + Confidence + Ease) / 3
+                        <p>Or multiply: Impact × Confidence × Ease Example features: Feature A: (9 + 8 + 7) / 3 = 8.0 Feature B: (10 + 5 + 3) / 3 = 6.0 Feature C: (6 + 9 + 9) / 3 = 8.0 Build A first, then C, then B</code></pre></p>
+                        <h3>3. The Kano Model</h3>
+                        <p>Categorizes features by customer satisfaction impact.</p>
+                        <h4>Basic Expectations (Must-Haves)</h4>
+                        <p>Features customers expect. Absence causes dissatisfaction, but presence doesn&#x27;t increase satisfaction. <strong>For POS:</strong></p>
+                        <ul>
+                        <li>System doesn&#x27;t crash</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Checkout process works</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data doesn&#x27;t get lost</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reasonable performance</li>
+                        </li>
+                        </ul>
+                        <p><strong>Strategy:</strong> Get these to &quot;good enough&quot; and move on</p>
+                        <h4>Performance Features (Linear Satisfaction)</h4>
+                        <p>More is better. The better you do, the happier customers are. <strong>For POS:</strong></p>
+                        <ul>
+                        <li>Checkout speed (faster = happier)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Report load time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Setup simplicity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support response time</li>
+                        </li>
+                        </ul>
+                        <p><strong>Strategy:</strong> Optimize to competitive parity, then to leadership</p>
+                        <h4>Excitement Features (Delighters)</h4>
+                        <p>Unexpected features that create disproportionate satisfaction. <strong>For POS:</strong></p>
+                        <ul>
+                        <li>Automatic inventory forecasting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>AI-powered sales insights</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Seamless refund process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>One-tap end-of-day reports</li>
+                        </li>
+                        </ul>
+                        <p><strong>Strategy:</strong> Find delighters that align with your positioning</p>
+                        <h4>Indifferent Features</h4>
+                        <p>Customers don&#x27;t care either way. <strong>For POS:</strong></p>
+                        <ul>
+                        <li>Color customization of receipt</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>50 different report formats</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Animated transitions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Strategy:</strong> Don&#x27;t build these</p>
+                        <h3>4. The Value vs Complexity Matrix</h3>
+                        <p>Simple 2×2 matrix for quick prioritization.</p>
+                        <pre><code>High Value, Low Complexity: DO NOW (Quick Wins)
+                        <p>High Value, High Complexity: PLAN CAREFULLY (Big Bets) Low Value, Low Complexity: DO LATER (Fill-ins) Low Value, High Complexity: DON&#x27;T DO (Money Pit)</code></pre> <strong>Example Mapping for POS:</strong></p>
+                        <pre><code>HIGH VALUE:
+                        <ul>
+                        <li>Mobile checkout (High Complexity) → Big Bet</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Receipt email (Low Complexity) → Quick Win</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Real-time inventory (High Complexity) → Big Bet</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Barcode scanning (Low Complexity) → Quick Win</li>
+                        </li>
+                        </ul>
+                        <p>LOW VALUE:</p>
+                        <ul>
+                        <li>Custom receipt colors (Low Complexity) → Don&#x27;t Do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-currency support (High Complexity) → Don&#x27;t Do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>100 integrations (High Complexity) → Don&#x27;t Do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Dark mode (Low Complexity) → Maybe Later</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>5. The Opportunity Scoring Framework</h3>
+                        <p>Used by Intercom and others. Score features on importance and satisfaction.</p>
+                        <h4>Opportunity Score = Importance - Satisfaction</h4>
+                        <p><strong>Questions for customers:</strong> 1. How important is [feature/outcome] to you? (1-10) 2. How satisfied are you with [current solution]? (1-10) <strong>Example:</strong></p>
+                        <pre><code>Feature: Fast checkout
+                        <p>Importance: 9/10 Current satisfaction: 4/10 Opportunity Score: 9 - 4 = 5 (HIGH opportunity) Feature: Custom reports Importance: 6/10 Current satisfaction: 5/10 Opportunity Score: 6 - 5 = 1 (LOW opportunity)</code></pre> <strong>Prioritize features with highest opportunity scores</strong> (high importance, low satisfaction)</p>
+                        <h3>6. The MoSCoW Method</h3>
+                        <p>Categorization framework from agile development. <strong>Must Have:</strong> Critical for this release <strong>Should Have:</strong> Important but not critical <strong>Could Have:</strong> Nice to have if time permits <strong>Won&#x27;t Have:</strong> Explicitly out of scope <strong>Example for MVP POS:</strong></p>
+                        <pre><code>MUST HAVE (Core MVP):
+                        <ul>
+                        <li>Process transactions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track inventory</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Generate receipts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Basic reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>User authentication</li>
+                        </li>
+                        </ul>
+                        <p>SHOULD HAVE (Important for V1):</p>
+                        <ul>
+                        <li>Mobile app</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email receipts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Barcode scanning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-user support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Refund processing</li>
+                        </li>
+                        </ul>
+                        <p>COULD HAVE (Nice to have):</p>
+                        <ul>
+                        <li>Advanced analytics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Integration with accounting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer database</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Loyalty program features</li>
+                        </li>
+                        </ul>
+                        <p>WON&#x27;T HAVE (Future):</p>
+                        <ul>
+                        <li>Multi-location sync</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Franchise management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>API for third parties</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>White-label capability</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Practical Prioritization Process</h2>
+                        <h3>Step 1: Collect Feature Ideas</h3>
+                        <p><strong>Sources:</strong></p>
+                        <ul>
+                        <li>Customer interviews and feedback</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support tickets (recurring issues)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales team (deals lost to missing features)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Usage data (where users struggle)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive analysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team brainstorms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Your vision</li>
+                        </li>
+                        </ul>
+                        <p><strong>Capture everything in a central place:</strong></p>
+                        <ul>
+                        <li>Product backlog (Jira, Linear, Notion)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Feature request tool (Canny, ProductBoard)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spreadsheet (simple and effective)</li>
+                        </li>
+                        </ul>
+                        <h3>Step 2: Categorize and Tag</h3>
+                        <p><strong>Helpful tags:</strong></p>
+                        <ul>
+                        <li>Customer segment (small retail, medium, enterprise)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use case (checkout, inventory, reporting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Type (feature, bug, improvement, technical debt)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Source (customer, internal, competitive)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Status (idea, researching, planned, building)</li>
+                        </li>
+                        </ul>
+                        <h3>Step 3: Score Each Feature</h3>
+                        <p>Use 1-2 frameworks that fit your stage: <strong>Early Stage (pre-PMF):</strong> ICE or Value/Complexity <strong>Growth Stage (post-PMF):</strong> RICE or Opportunity Scoring <strong>All stages:</strong> Customer validation <strong>Example Spreadsheet:</strong></p>
+                        <pre><code>| Feature | Reach | Impact | Confidence | Effort | RICE | Status |
+                        <p>|---------|-------|--------|------------|--------|------|--------| | Mobile checkout | 500 | 3 | 100% | 3 | 500 | Planned | | Email receipts | 500 | 1 | 100% | 0.5 | 1000 | Do Next | | Analytics | 200 | 1 | 50% | 4 | 25 | Backlog | | Multi-location | 50 | 2 | 80% | 6 | 13 | Backlog |</code></pre></p>
+                        <h3>Step 4: Apply Additional Filters</h3>
+                        <p><strong>Strategic Alignment:</strong></p>
+                        <ul>
+                        <li>Does this align with our vision?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Does this strengthen our positioning?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Does this serve our ideal customer?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Dependencies:</strong></p>
+                        <ul>
+                        <li>What must exist before we can build this?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What does this unblock for the future?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Timing:</strong></p>
+                        <ul>
+                        <li>Is there a time-sensitive reason to do this now?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is the market ready for this?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Learning Value:</strong></p>
+                        <ul>
+                        <li>Will this teach us something critical?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is this a cheap experiment?</li>
+                        </li>
+                        </ul>
+                        <h3>Step 5: Create Your Roadmap</h3>
+                        <p><strong>Now (This Sprint/Month):</strong></p>
+                        <ul>
+                        <li>2-3 highest priority items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Balance quick wins with big bets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Include critical bugs/technical debt</li>
+                        </li>
+                        </ul>
+                        <p><strong>Next (Next Quarter):</strong></p>
+                        <ul>
+                        <li>5-10 items in rough priority order</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>More flexibility, less commitment</li>
+                        </li>
+                        </ul>
+                        <p><strong>Later (Next 6-12 Months):</strong></p>
+                        <ul>
+                        <li>Themes and big bets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic direction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stay flexible</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example POS Roadmap:</strong></p>
+                        <pre><code>NOW (This Month):
+                        <p>1. Fix critical bug in refund flow 2. Add barcode scanning (quick win) 3. Improve checkout speed by 50% NEXT (Next Quarter): 1. Mobile app (iOS first) 2. Email receipt automation 3. Enhanced inventory tracking 4. Multi-user permissions 5. Customer database LATER (Vision):</p>
+                        <ul>
+                        <li>AI-powered insights</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>API for integrations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Franchise management features</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Step 6: Validate with Customers</h3>
+                        <p><strong>Before committing significant resources, validate:</strong> <strong>Methods:</strong></p>
+                        <ul>
+                        <li>Show mockups/prototypes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Beta test with subset of customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offer as paid add-on (ultimate validation)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Survey: &quot;Would you use this?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>A/B test (if possible)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Questions to ask:</strong></p>
+                        <ul>
+                        <li>&quot;Which of these 3 features matters most to you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Would you pay extra for this?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Would you switch to a competitor if they had this?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How often would you use this?&quot;</li>
+                        </li>
+                        </ul>
+                        <h3>Step 7: Say No (A Lot)</h3>
+                        <p><strong>Most feature requests should be declined.</strong> <strong>How to say no gracefully:</strong> <strong>Option 1: Explain the why</strong></p>
+                        <pre><code>&quot;Thanks for the suggestion! We&#x27;ve evaluated this against our roadmap 
+                        <p>and current priorities. Right now we&#x27;re focused on [core value prop], and this doesn&#x27;t directly serve that goal. We&#x27;ll keep it on our list for future consideration.&quot;</code></pre> <strong>Option 2: Suggest a workaround</strong></p>
+                        <pre><code>&quot;That&#x27;s interesting! While we don&#x27;t have plans to build that feature, 
+                        <p>you can accomplish something similar by [workaround]. Would that work for your use case?&quot;</code></pre> <strong>Option 3: Learn more</strong></p>
+                        <pre><code>&quot;Tell me more about why you need this. What problem are you trying to 
+                        <p>solve? Maybe we can find a different solution together.&quot;</code></pre> <strong>Option 4: Offer an alternative</strong></p>
+                        <pre><code>&quot;We&#x27;re not planning to build that, but have you considered [similar 
+                        <p>feature we do have]? It might accomplish what you need.&quot;</code></pre></p>
+                        <h2>Common Prioritization Anti-Patterns</h2>
+                        <h3>1. The HiPPO Problem</h3>
+                        <p><strong>Highest Paid Person&#x27;s Opinion</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>Founder/CEO says &quot;build this&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team drops everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No data or validation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>May not even serve customers</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Require data for all decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Founder gets one &quot;override&quot; per quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Even founders must validate assumptions</li>
+                        </li>
+                        </ul>
+                        <h3>2. The Squeaky Wheel</h3>
+                        <p><strong>Loudest customer gets priority</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>One big customer demands feature</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You build it to keep them happy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Other customers don&#x27;t care</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Now you have technical debt serving one customer</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Weight by how many customers request it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offer custom development for price premium</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Say no if it doesn&#x27;t fit vision</li>
+                        </li>
+                        </ul>
+                        <h3>3. The Competitor Copycat</h3>
+                        <p><strong>&quot;Competitor X has this, so we need it&quot;</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>Assuming competitor knows better than you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Building their roadmap, not yours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Losing differentiation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Never catching up</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Understand why competitors built it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask customers if they actually need it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Differentiate instead of copying</li>
+                        </li>
+                        </ul>
+                        <h3>4. The Shiny Object</h3>
+                        <p><strong>&quot;This would be SO cool!&quot;</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>Engineering excitement overrides customer need</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Building what&#x27;s interesting to build</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Impressive technically, useless practically</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Founders&#x27; pet features</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Cool is not a strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Validate every &quot;cool&quot; idea with customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask: &quot;Does this get us closer to PMF?&quot;</li>
+                        </li>
+                        </ul>
+                        <h3>5. The Everything Everywhere</h3>
+                        <p><strong>&quot;Let&#x27;s build all the things!&quot;</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>Saying yes to everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trying to serve every customer segment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bloated product with weak core</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confused positioning</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Radical focus on ICP (Ideal Customer Profile)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Not now&quot; is better than &quot;yes&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Depth in niche &gt; breadth across market</li>
+                        </li>
+                        </ul>
+                        <h3>6. The Perfection Paralysis</h3>
+                        <p><strong>&quot;We need to build this perfectly before shipping&quot;</strong> <strong>The trap:</strong></p>
+                        <ul>
+                        <li>Over-engineering initial version</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>80% done, 6 months shipping time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>By the time you ship, market has moved</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Missed learning opportunities</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fix:</strong></p>
+                        <ul>
+                        <li>Ship 70% solution fast</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Iterate based on real usage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Perfect is the enemy of done</li>
+                        </li>
+                        </ul>
+                        <h2>Feature Prioritization for Your POS</h2>
+                        <h3>Your Starting Feature List</h3>
+                        <p><strong>From customer development, you&#x27;ve likely heard requests for:</strong></p>
+                        <pre><code>Checkout & Payments:
+                        <ul>
+                        <li>Mobile checkout</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Split payments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Custom tipping</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multiple payment methods</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offline mode</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Receipt customization</li>
+                        </li>
+                        </ul>
+                        <p>Inventory:</p>
+                        <ul>
+                        <li>Barcode scanning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Low stock alerts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Automatic reordering</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Inventory forecasting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vendor management</li>
+                        </li>
+                        </ul>
+                        <p>Reporting & Analytics:</p>
+                        <ul>
+                        <li>Sales reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Inventory reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employee performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer insights</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Export to accounting software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Real-time dashboards</li>
+                        </li>
+                        </ul>
+                        <p>Customer Management:</p>
+                        <ul>
+                        <li>Customer database</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Loyalty programs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email marketing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer purchase history</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CRM integration</li>
+                        </li>
+                        </ul>
+                        <p>Employee Management:</p>
+                        <ul>
+                        <li>Multi-user access</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Permission levels</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Time tracking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commission tracking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employee performance</li>
+                        </li>
+                        </ul>
+                        <p>Integrations:</p>
+                        <ul>
+                        <li>QuickBooks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shopify</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payment processors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email marketing tools</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accounting software</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Prioritization Exercise</h3>
+                        <p><strong>Step 1: Apply RICE Framework</strong> | Feature | Reach | Impact | Confidence | Effort | RICE Score | Priority | |---------|-------|--------|------------|--------|------------|----------| | Mobile checkout | 500 | 3 | 100% | 3 | 500.0 | 1 | | Barcode scanning | 400 | 2 | 90% | 1 | 720.0 | 1 | | Low stock alerts | 400 | 2 | 90% | 0.5 | 1440.0 | 1 | | Sales reports | 500 | 2 | 100% | 2 | 500.0 | 1 | | Email receipts | 500 | 1 | 100% | 0.5 | 1000.0 | 1 | | Multi-user access | 300 | 2 | 80% | 2 | 240.0 | 2 | | Customer database | 250 | 1 | 70% | 3 | 58.3 | 3 | | QuickBooks integration | 200 | 2 | 60% | 4 | 60.0 | 3 | | Loyalty program | 100 | 1 | 50% | 4 | 12.5 | 4 | | Multi-location sync | 50 | 2 | 80% | 6 | 13.3 | 4 | | AI forecasting | 100 | 1 | 30% | 6 | 5.0 | 5 | <strong>Step 2: Group into Themes</strong> <strong>MUST BUILD (MVP):</strong></p>
+                        <ul>
+                        <li>Core checkout flow ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Inventory tracking ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Basic reporting ✓</li>
+                        </li>
+                        </ul>
+                        <p><strong>HIGH PRIORITY (Next 3 months):</strong></p>
+                        <ul>
+                        <li>Mobile checkout</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Barcode scanning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Low stock alerts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email receipts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-user access</li>
+                        </li>
+                        </ul>
+                        <p><strong>MEDIUM PRIORITY (3-6 months):</strong></p>
+                        <ul>
+                        <li>Customer database</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>QuickBooks integration</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced reporting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Employee management</li>
+                        </li>
+                        </ul>
+                        <p><strong>LOW PRIORITY (6-12 months):</strong></p>
+                        <ul>
+                        <li>Loyalty program</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multi-location sync</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CRM integrations</li>
+                        </li>
+                        </ul>
+                        <p><strong>DON&#x27;T BUILD YET:</strong></p>
+                        <ul>
+                        <li>AI features (too early)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Enterprise features (wrong market)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Extensive customization (too complex)</li>
+                        </li>
+                        </ul>
+                        <h3>Your Quarterly Roadmap</h3>
+                        <p><strong>Q1: Core Functionality</strong></p>
+                        <ul>
+                        <li>Goal: Launch MVP to first 10 customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Features: Checkout, inventory basics, simple reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success metric: 80% daily active usage</li>
+                        </li>
+                        </ul>
+                        <p><strong>Q2: Efficiency &amp; Scale</strong></p>
+                        <ul>
+                        <li>Goal: 50 paying customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Features: Mobile app, barcode scanning, multi-user</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success metric: &lt;10% churn, 30% faster checkout</li>
+                        </li>
+                        </ul>
+                        <p><strong>Q3: Delight &amp; Retention</strong></p>
+                        <ul>
+                        <li>Goal: 100 paying customers, strong retention</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Features: Customer database, email receipts, alerts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success metric: 50%+ NPS, 5% churn</li>
+                        </li>
+                        </ul>
+                        <p><strong>Q4: Growth &amp; Expansion</strong></p>
+                        <ul>
+                        <li>Goal: 200 customers, expand capabilities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Features: Integrations, advanced analytics, loyalty</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success metric: 20% revenue from upsells</li>
+                        </li>
+                        </ul>
+                        <h2>Decision-Making Framework</h2>
+                        <p>When in doubt, use this decision tree:</p>
+                        <pre><code>Is this feature requested by multiple customers?
+                        <p>├─ No → Backlog └─ Yes ├─ Does it serve our ICP (Ideal Customer Profile)? ├─ No → Decline └─ Yes ├─ Does it strengthen our core value prop? ├─ No → Backlog └─ Yes ├─ Can we build it in <4 weeks? ├─ Yes → Build now └─ No ├─ Can we ship an MVP version quickly? ├─ Yes → Build MVP now └─ No → Plan for next quarter</code></pre></p>
+                        <h2>Action Items</h2>
+                        <h3>This Week</h3>
+                        <ul>
+                        <li>[ ] List all feature ideas in one place</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Apply RICE or ICE scoring to top 20 ideas</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Validate top 3 features with 5 customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create &quot;Now / Next / Later&quot; roadmap</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Share roadmap with team</li>
+                        </li>
+                        </ul>
+                        <h3>This Month</h3>
+                        <ul>
+                        <li>[ ] Interview 10 customers about feature priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Calculate opportunity scores for key features</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Make tough decisions: what are you NOT building?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Communicate roadmap to customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up process for ongoing prioritization</li>
+                        </li>
+                        </ul>
+                        <h3>This Quarter</h3>
+                        <ul>
+                        <li>[ ] Ship top 3 prioritized features</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Measure impact on key metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Iterate based on usage data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Re-prioritize for next quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Say no to 50+ feature requests</li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <p>1. <strong>Less is more</strong> - Shipping 3 features well beats 10 features poorly 2. <strong>Customer-driven</strong> - Prioritize based on customer needs, not opinions 3. <strong>Data-informed</strong> - Use frameworks, but apply judgment 4. <strong>Strategic alignment</strong> - Every feature should advance your vision 5. <strong>Learn fast</strong> - Ship MVPs, iterate based on reality 6. <strong>Say no often</strong> - Most features should be declined 7. <strong>Focus wins</strong> - Deep &gt; Broad, especially pre-PMF 8. <strong>Measure impact</strong> - Did the feature move the metrics that matter? <strong>The goal isn&#x27;t to build the most features. It&#x27;s to build the right features that get you to product-market fit faster.</strong></p>
+                        <hr />
+                        <p><strong>Next Chapter:</strong> <a href="./04-Pricing-Validation.md">Pricing Validation</a> - Learn how to test and validate your pricing strategy.</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Customer Development</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Pricing Validation</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

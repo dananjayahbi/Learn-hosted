@@ -1,0 +1,2264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Decision Making - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Leadership Management</li>
+                    <li aria-current="page">Decision Making</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Decision Making</h1>
+                        <h2>Introduction</h2>
+                        <p>As CEO of CoodLoom, you&#x27;ll make hundreds of decisions weekly—from minor (&quot;Which color for the button?&quot;) to critical (&quot;Should we pivot the product?&quot;). The quality and speed of your decisions directly impact company success. This chapter provides frameworks to make better decisions faster, with confidence.</p>
+                        <h2>The Nature of Startup Decisions</h2>
+                        <h3>Speed vs Accuracy Trade-off</h3>
+                        <pre><code>Startup Reality:
+                        <ul>
+                        <li>Perfect information never exists</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Windows of opportunity close fast</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Iteration is cheaper than analysis paralysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wrong decision better than no decision (usually)</li>
+                        </li>
+                        </ul>
+                        <p>The 70% Rule: Make decisions when you have 70% of the information you wish you had.</p>
+                        <ul>
+                        <li>At 70%: Make the call</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Below 50%: Too risky, gather more data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Above 90%: Too slow, someone else wins</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Types of Decisions</h3>
+                        <p><strong>Type 1: One-Way Doors (Irreversible)</strong></p>
+                        <pre><code>Examples:
+                        <ul>
+                        <li>Choosing co-founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company name/brand</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Major pivots</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Firing key employee</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Taking on debt/investors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal commitments</li>
+                        </li>
+                        </ul>
+                        <p>Approach:</p>
+                        <ul>
+                        <li>Take your time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gather extensive input</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sleep on it (multiple nights)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider long-term implications</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get expert advice</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document reasoning</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Type 2: Two-Way Doors (Reversible)</strong></p>
+                        <pre><code>Examples:
+                        <ul>
+                        <li>Most feature decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Marketing experiments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pricing tests</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tool choices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process changes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hiring (with good onboarding)</li>
+                        </li>
+                        </ul>
+                        <p>Approach:</p>
+                        <ul>
+                        <li>Decide quickly (minutes to hours)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set success metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Run experiment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Evaluate results</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Adjust or reverse</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Jeff Bezos&#x27;s Insight</strong>: &quot;Many decisions are reversible, two-way doors. Those decisions can use a light-weight process. Don&#x27;t use a heavyweight process on a two-way door decision.&quot;</p>
+                        <h3>The Decision-Making Framework</h3>
+                        <p><strong>RAPID Framework</strong> (Bain &amp; Company)</p>
+                        <pre><code>Recommend: Who proposes the decision?
+                        <p>Agree: Who must agree before it proceeds? Perform: Who will execute the decision? Input: Who provides input? Decide: Who makes the final call? (Only 1 person) Example for CoodLoom Feature Decision: R - Product Manager recommends A - Engineering Lead & Design Lead agree P - Engineering team performs I - Sales, CS, CEO provide input D - CEO decides (you)</code></pre></p>
+                        <h2>Strategic Decision-Making</h2>
+                        <h3>The Strategic Decision Process</h3>
+                        <p><strong>Step 1: Frame the Decision</strong></p>
+                        <pre><code>Questions to Ask:
+                        <ul>
+                        <li>What decision am I really making?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What problem am I solving?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Who is impacted?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s the timeline?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What are the constraints?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s at stake?</li>
+                        </li>
+                        </ul>
+                        <p>Example: ❌ Vague: &quot;Should we add more features?&quot; ✓ Clear: &quot;Should we build AI translation (6 weeks, $50k cost) to enter EU market by Q3, or focus on US enterprise features?&quot;</code></pre> <strong>Step 2: Identify Criteria</strong></p>
+                        <pre><code>Define what matters:
+                        <p>Must-Haves (Non-negotiable):</p>
+                        <ul>
+                        <li>Aligns with company vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technically feasible</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Financially viable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal and ethical</li>
+                        </li>
+                        </ul>
+                        <p>Nice-to-Haves (Important):</p>
+                        <ul>
+                        <li>Customer demand signal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive advantage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revenue potential</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team enthusiasm</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Speed to market</li>
+                        </li>
+                        </ul>
+                        <p>Example for CoodLoom Feature: Must-Have: Fits vision, affordable, legal Nice-to-Have: > 20 customers requested, builds moat, >$100k revenue potential</code></pre> <strong>Step 3: Generate Options</strong></p>
+                        <pre><code>Brainstorm Approaches:
+                        <ul>
+                        <li>The obvious choice</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>The opposite of obvious</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>The hybrid approach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>The &quot;do nothing&quot; option</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>The bold/risky option</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>The safe/conservative option</li>
+                        </li>
+                        </ul>
+                        <p>Don&#x27;t judge yet, just generate. CoodLoom Example - Entering EU Market: 1. Build translation now 2. Partner with EU translation service 3. Hire EU-based team to build localized product 4. Wait until we have PMF in US 5. Acquire small EU competitor</code></pre> <strong>Step 4: Evaluate Options</strong></p>
+                        <pre><code>Score each option (1-10) on your criteria:
+                        <p>Option A - Build Translation:</p>
+                        <ul>
+                        <li>Vision alignment: 9</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Feasibility: 7</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: 6</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer demand: 8</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revenue potential: 7</li>
+                        </li>
+                        </ul>
+                        <p>Total: 37/50 Option B - Partner:</p>
+                        <ul>
+                        <li>Vision alignment: 7</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Feasibility: 9</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: 9</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer demand: 8</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revenue potential: 6</li>
+                        </li>
+                        </ul>
+                        <p>Total: 39/50 [Continue for all options]</code></pre> <strong>Step 5: Consider Second-Order Effects</strong></p>
+                        <pre><code>Ask &quot;And then what?&quot;:
+                        <p>Decision: Build translation feature → Need to support 10+ languages → Customer support needs to handle them → Hire multilingual support team → Higher hiring costs → Need more revenue to cover → Pressure to monetize internationally faster Is the full chain worth it?</code></pre> <strong>Step 6: Gut Check</strong></p>
+                        <pre><code>After analysis, ask:
+                        <ul>
+                        <li>Does this feel right?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s my hesitation?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Am I rationalizing or reasoning?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What would I advise a friend?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What would [respected mentor] do?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Will I regret this in 1 year? 5 years?</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 7: Decide and Commit</strong></p>
+                        <pre><code>Make the call:
+                        <ul>
+                        <li>State the decision clearly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Explain the reasoning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Acknowledge trade-offs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set success metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Establish review point</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commit to the path (disagree and commit)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Mental Models for Better Decisions</h3>
+                        <p><strong>1. First Principles Thinking</strong></p>
+                        <pre><code>Break down to fundamental truths:
+                        <p>Question: &quot;Should CoodLoom raise VC money?&quot; Surface level: &quot;Everyone does it&quot; First principles:</p>
+                        <ul>
+                        <li>Why does a company need funding?</li>
+                        </li>
+                        </ul>
+                        <p>→ To grow faster than revenue allows</p>
+                        <ul>
+                        <li>What would we use the money for?</li>
+                        </li>
+                        </ul>
+                        <p>→ Hire sales team, marketing, engineers</p>
+                        <ul>
+                        <li>Can we grow without it?</li>
+                        </li>
+                        </ul>
+                        <p>→ Yes, but slower (2 years vs 5 years)</p>
+                        <ul>
+                        <li>What do we give up?</li>
+                        </li>
+                        </ul>
+                        <p>→ Equity, control, timeline pressure</p>
+                        <ul>
+                        <li>What do we gain?</li>
+                        </li>
+                        </ul>
+                        <p>→ Speed, resources, validation, network Decision: Based on our goals [X], the trade-offs [Y], we should [Z].</code></pre> <strong>2. Inversion</strong></p>
+                        <pre><code>Instead of &quot;How do I succeed?&quot; ask &quot;How could I fail?&quot;
+                        <p>CoodLoom Feature Launch: Normal thinking: &quot;How do we make this launch successful?&quot; Inversion: &quot;How could this launch fail?&quot; Failure modes:</p>
+                        <ul>
+                        <li>No one uses it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>It breaks existing features</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customers hate it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Press coverage is negative</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team burnout after push</li>
+                        </li>
+                        </ul>
+                        <p>Now prevent each: Pre-launch testing, phased rollout, beta program, rest time built in.</code></pre> <strong>3. Expected Value</strong></p>
+                        <pre><code>Calculate: (Probability of Success) × (Value if Success) - (Probability of Failure) × (Cost if Failure)
+                        <p>Example: Should CoodLoom sponsor TechCrunch Disrupt? ($50k booth) Success scenario:</p>
+                        <ul>
+                        <li>30% chance of success</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If successful: 100 qualified leads → 10 customers → $120k ARR value</li>
+                        </li>
+                        </ul>
+                        <p>Failure scenario:</p>
+                        <ul>
+                        <li>70% chance of failure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If failure: $50k lost + $10k in team time</li>
+                        </li>
+                        </ul>
+                        <p>Expected Value: (0.30 × $120k) - (0.70 × $60k) = $36k - $42k = -$6k Decision: Don&#x27;t do it (negative EV) unless other factors (brand, learning, network).</code></pre> <strong>4. The Regret Minimization Framework</strong> (Bezos)</p>
+                        <pre><code>Project yourself to age 80 and look back:
+                        <p>&quot;Will I regret not starting CoodLoom when I had the chance?&quot; → Probably yes &quot;Will I regret not spending more time perfecting the logo?&quot; → Probably no Use for big life/career decisions.</code></pre> <strong>5. Pre-mortem Analysis</strong></p>
+                        <pre><code>Imagine the decision failed spectacularly. Why?
+                        <p>Decision: Pivot CoodLoom to enterprise-only Pre-mortem (6 months from now, it failed): &quot;We pivoted to enterprise and it failed because...&quot;</p>
+                        <ul>
+                        <li>Sales cycles were 9+ months (too long)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Needed bigger team than we had</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lost our loyal SMB customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitors ate the SMB market</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ran out of cash before closing deals</li>
+                        </li>
+                        </ul>
+                        <p>Now: Address these risks before deciding.</code></pre> <strong>6. Opportunity Cost</strong></p>
+                        <pre><code>Every &quot;yes&quot; is a &quot;no&quot; to something else.
+                        <p>Decision: Build feature X (6 weeks) Opportunity cost:</p>
+                        <ul>
+                        <li>Can&#x27;t build feature Y or Z</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t hire sales person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t improve infrastructure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t fix tech debt</li>
+                        </li>
+                        </ul>
+                        <p>Is X worth more than Y+Z+hiring+infrastructure?</code></pre></p>
+                        <h2>Prioritization Frameworks</h2>
+                        <h3>The Eisenhower Matrix</h3>
+                        <pre><code>URGENT          NOT URGENT
+                        <p>┌─────────────────┬─────────────────┐ │                 │                 │ IMPORTANT    │   DO NOW        │   SCHEDULE      │ │   (Crisis)      │   (Strategy)    │ │                 │                 │ ├─────────────────┼─────────────────┤ │                 │                 │ NOT IMPORTANT   │   DELEGATE      │   ELIMINATE     │ │   (Busywork)    │   (Waste)       │ │                 │                 │ └─────────────────┴─────────────────┘ DO NOW: Customer emergency, server down, legal deadline SCHEDULE: Product roadmap, hiring, strategic planning DELEGATE: Routine reports, data entry, basic support ELIMINATE: Unnecessary meetings, low-value tasks</code></pre> <strong>CoodLoom Application</strong>:</p>
+                        <pre><code>DO NOW:
+                        <ul>
+                        <li>Critical bug affecting all users</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Investor call in 1 hour</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Contract signature needed today</li>
+                        </li>
+                        </ul>
+                        <p>SCHEDULE (This is where you should spend 60% of time):</p>
+                        <ul>
+                        <li>Product vision for next quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key hire interviews</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic partnership discussions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team development</li>
+                        </li>
+                        </ul>
+                        <p>DELEGATE:</p>
+                        <ul>
+                        <li>Social media posts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Basic customer onboarding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meeting notes compilation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expense reports</li>
+                        </li>
+                        </ul>
+                        <p>ELIMINATE:</p>
+                        <ul>
+                        <li>Optional industry events</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Networking&quot; coffees that go nowhere</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meetings without agenda</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Status updates that could be email</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>ICE Prioritization (for features/initiatives)</h3>
+                        <pre><code>ICE Score = (Impact × Confidence × Ease) / 3
+                        <p>Impact: How much will this move the needle? (1-10) Confidence: How sure are we this will work? (1-10) Ease: How easy is this to implement? (1-10) Example Features for CoodLoom: Feature A: AI Translation</p>
+                        <ul>
+                        <li>Impact: 8 (opens EU market)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confidence: 6 (not sure about demand)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ease: 4 (hard to build)</li>
+                        </li>
+                        </ul>
+                        <p>ICE Score: (8×6×4)/3 = 6.4 Feature B: API Access</p>
+                        <ul>
+                        <li>Impact: 9 (enables integrations)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confidence: 8 (customers asking)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ease: 6 (moderate complexity)</li>
+                        </li>
+                        </ul>
+                        <p>ICE Score: (9×8×6)/3 = 14.4 Feature C: Dark Mode</p>
+                        <ul>
+                        <li>Impact: 3 (nice to have)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confidence: 9 (easy to assess)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ease: 8 (quick to build)</li>
+                        </li>
+                        </ul>
+                        <p>ICE Score: (3×9×8)/3 = 7.2 Priority Order: B, C, A</code></pre></p>
+                        <h3>RICE Prioritization (Intercom&#x27;s framework)</h3>
+                        <pre><code>RICE Score = (Reach × Impact × Confidence) / Effort
+                        <p>Reach: How many users per quarter? (number) Impact: How much per user? (3=massive, 2=high, 1=medium, 0.5=low, 0.25=minimal) Confidence: How sure? (100%=high, 80%=medium, 50%=low) Effort: Person-months of work (number) Example: Feature: AI Content Suggestions</p>
+                        <ul>
+                        <li>Reach: 5,000 users/quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Impact: 2 (high impact per user)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confidence: 80%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Effort: 2 person-months</li>
+                        </li>
+                        </ul>
+                        <p>RICE = (5,000 × 2 × 0.80) / 2 = 4,000 Higher RICE = Higher Priority</code></pre></p>
+                        <h3>The 2×2 Matrix (Value vs Effort)</h3>
+                        <pre><code>HIGH VALUE
+                        <p>┌─────────────────┬─────────────────┐ │                 │                 │ LOW EFFORT   │   DO NOW        │   DO SOON       │ │   (Quick Wins)  │   (Big Bets)    │ │                 │                 │ ├─────────────────┼─────────────────┤ │                 │                 │ HIGH EFFORT  │   DO LATER      │   DON&#x27;T DO      │ │   (Fill-ins)    │   (Money Pits)  │ │                 │                 │ └─────────────────┴─────────────────┘ LOW VALUE        HIGH VALUE Quick Wins: Email templates, basic analytics, UI polish Big Bets: Core AI engine, platform architecture, API Fill-ins: Advanced reporting, customization options Money Pits: Features only 1 customer wants, over-engineering</code></pre></p>
+                        <h2>Decision-Making Under Uncertainty</h2>
+                        <h3>The Confidence Spectrum</h3>
+                        <pre><code>100% Certain ────────────── 0% Certain
+                        <p>│                            │ ↓                            ↓ Known Facts             Total Unknown Most Decisions Live Here: 40-70% Confidence ↓ This is normal!</code></pre> <strong>How to Decide with Uncertainty</strong>: <strong>1. Reduce Uncertainty (When Possible)</strong></p>
+                        <pre><code>Methods:
+                        <ul>
+                        <li>Customer interviews (talk to 10-20 people)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Market research (competitive analysis)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Small experiments (MVP, landing page test)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expert consultation (advisors, mentors)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data analysis (if data exists)</li>
+                        </li>
+                        </ul>
+                        <p>When to stop gathering: Diminishing returns point</code></pre> <strong>2. Use Decision Trees</strong></p>
+                        <pre><code>Decision: Should we build enterprise features?
+                        <p>Build Enterprise ├─ Success (30%) │  └─ Revenue: +$500k, Cost: $100k = $400k gain └─ Failure (70%) └─ Revenue: $0, Cost: $100k = -$100k loss Expected Value: (0.30 × $400k) + (0.70 × -$100k) = $120k - $70k = $50k Positive EV = Generally good decision</code></pre> <strong>3. Set Decision Checkpoints</strong></p>
+                        <pre><code>Don&#x27;t commit fully; commit incrementally:
+                        <p>Decision: Enter EU market Checkpoint 1 (Week 4):</p>
+                        <ul>
+                        <li>If > 50 EU signups → Continue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If < 20 EU signups → Pause and reassess</li>
+                        </li>
+                        </ul>
+                        <p>Checkpoint 2 (Month 3):</p>
+                        <ul>
+                        <li>If > 5 paying EU customers → Full commitment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If < 2 paying EU customers → Exit</li>
+                        </li>
+                        </ul>
+                        <p>This limits downside, preserves optionality.</code></pre> <strong>4. Embrace Reversibility</strong></p>
+                        <pre><code>Make decisions reversible when possible:
+                        <p>Instead of: &quot;We&#x27;re pivoting to enterprise&quot; Try: &quot;We&#x27;re running a 60-day enterprise experiment&quot; Instead of: &quot;Hiring 5 salespeople now&quot; Try: &quot;Hiring 1 salesperson, then 2 more if successful&quot;</code></pre></p>
+                        <h3>Dealing with Decision Paralysis</h3>
+                        <p><strong>Symptoms</strong>:</p>
+                        <ul>
+                        <li>Endlessly gathering information</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asking for &quot;one more opinion&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Waiting for perfect clarity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fear of making wrong choice</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Overthinking small decisions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cures</strong>: <strong>1. Set Decision Deadlines</strong></p>
+                        <pre><code>&quot;I will decide by Friday at 5pm, regardless.&quot;
+                        <p>Parkinson&#x27;s Law: Work expands to fill time available. Apply to decisions: &quot;Decisions expand to fill time allowed.&quot;</code></pre> <strong>2. Use the 10-10-10 Rule</strong> (Suzy Welch)</p>
+                        <pre><code>How will I feel about this decision:
+                        <ul>
+                        <li>10 minutes from now?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10 months from now?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10 years from now?</li>
+                        </li>
+                        </ul>
+                        <p>If 10 minutes and 10 years don&#x27;t matter much, decide quickly.</code></pre> <strong>3. Satisficing (Not Optimizing)</strong></p>
+                        <pre><code>Satisficing: Choose the first option that meets criteria
+                        <p>Optimizing: Find the absolute best option For most decisions: Satisficing is faster and good enough Example: ❌ Optimize: Research 50 project management tools for 20 hours ✓ Satisfice: Try top 3 tools for 1 hour each, pick one that works</code></pre> <strong>4. The Jeff Bezos &quot;So What?&quot; Test</strong></p>
+                        <pre><code>Imagine the decision went wrong. Ask: &quot;So what?&quot;
+                        <p>&quot;We chose the wrong color for the logo. So what?&quot; → We can change it. Not that important. &quot;We chose the wrong co-founder. So what?&quot; → Company could fail. Very important. Calibrates your decision weight appropriately.</code></pre></p>
+                        <h2>Group Decision-Making</h2>
+                        <h3>When to Involve Others</h3>
+                        <p><strong>Involve Others When</strong>:</p>
+                        <ul>
+                        <li>Decision affects them directly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>They have expertise you lack</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commitment/buy-in is critical</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multiple perspectives add value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You have time for discussion</li>
+                        </li>
+                        </ul>
+                        <p><strong>Decide Alone When</strong>:</p>
+                        <ul>
+                        <li>You have the best information</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Speed is critical</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Others don&#x27;t have context</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Too many opinions would confuse</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You&#x27;re accountable for the outcome</li>
+                        </li>
+                        </ul>
+                        <h3>Meeting Decision-Making</h3>
+                        <p><strong>The Decision-Making Meeting</strong>:</p>
+                        <pre><code>Before Meeting:
+                        <ul>
+                        <li>Share context document 48 hours prior</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State clearly: &quot;We&#x27;re deciding X&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Include relevant data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>List options being considered</li>
+                        </li>
+                        </ul>
+                        <p>During Meeting (60 minutes):</p>
+                        <ul>
+                        <li>Restate decision to be made (5 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Present options and data (15 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Discussion and questions (25 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make the call (10 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document decision and next steps (5 min)</li>
+                        </li>
+                        </ul>
+                        <p>After Meeting:</p>
+                        <ul>
+                        <li>Send decision summary within 24 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Include rationale and action items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assign owners and deadlines</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Avoiding Groupthink</strong>:</p>
+                        <pre><code>Risks:
+                        <ul>
+                        <li>Pressure to conform</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Louder voices dominate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Status quo bias</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confirmatory thinking</li>
+                        </li>
+                        </ul>
+                        <p>Solutions:</p>
+                        <ul>
+                        <li>Devil&#x27;s advocate role (rotate weekly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Anonymous input (survey before meeting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Silent brainstorming (write ideas first)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Strong opinions, weakly held&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CEO speaks last (or not at all initially)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Disagree and Commit</h3>
+                        <p><strong>Amazon&#x27;s Principle</strong>:</p>
+                        <pre><code>&quot;Have Backbone; Disagree and Commit&quot;
+                        <p>What it means:</p>
+                        <ul>
+                        <li>Voice your disagreement clearly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make your case with data and reasoning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>But once decision is made, commit fully</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t undermine or sabotage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Execute as if it was your idea</li>
+                        </li>
+                        </ul>
+                        <p>This is critical for startups: Can&#x27;t have everyone agree on everything.</code></pre> <strong>How to Practice</strong>:</p>
+                        <pre><code>When You Disagree:
+                        <p>1. &quot;I disagree because [data/reasoning]&quot; 2. &quot;My concerns are [specific risks]&quot; 3. &quot;But I trust your judgment and will commit fully&quot; 4. [Then execute with full effort] When Someone Disagrees with Your Decision: 1. &quot;I hear your concern about [X]&quot; 2. &quot;I&#x27;m deciding [Y] because [reasoning]&quot; 3. &quot;I need you to commit. Can you do that?&quot; 4. [Get verbal commitment]</code></pre></p>
+                        <h2>Decision-Making Tools and Templates</h2>
+                        <h3>Decision Log</h3>
+                        <p><strong>Why Keep One</strong>:</p>
+                        <ul>
+                        <li>Learn from patterns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid repeating mistakes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Improve decision quality over time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Teach others your thinking</li>
+                        </li>
+                        </ul>
+                        <p><strong>Template</strong>:</p>
+                        <pre><code>Decision Date: [Date]
+                        <p>Decision: [Clear statement] Context: [Why this matters now] Options Considered: [List] Criteria Used: [What mattered] Analysis: [Data and reasoning] Decision Made: [Final call] Rationale: [Why this option] Expected Outcome: [What success looks like] Review Date: [When to reassess] Follow-up (90 days later): Actual Outcome: [What happened] Lessons Learned: [What you&#x27;d do differently]</code></pre></p>
+                        <h3>Decision Matrix Template</h3>
+                        <pre><code>Decision: [What you&#x27;re deciding]
+                        <p>Options: A: [Option 1] B: [Option 2] C: [Option 3] Criteria (Weight): 1. [Criterion 1] (5) 2. [Criterion 2] (4) 3. [Criterion 3] (3) 4. [Criterion 4] (2) Scoring (1-10): Option A  Option B  Option C Criterion 1 (5):   8×5=40   6×5=30    7×5=35 Criterion 2 (4):   7×4=28   9×4=36    6×4=24 Criterion 3 (3):   6×3=18   5×3=15    8×3=24 Criterion 4 (2):   9×2=18   7×2=14    8×2=16 -------  -------   ------- Total:              104      95        99 Winner: Option A (but check if it feels right)</code></pre></p>
+                        <h3>The One-Page Decision Brief</h3>
+                        <pre><code>Decision Required: [Clear question]
+                        <p>Context (3 sentences): [Why this decision is needed now] Options: 1. [Option 1] - Pros: [X], Cons: [Y] 2. [Option 2] - Pros: [X], Cons: [Y] 3. [Option 3] - Pros: [X], Cons: [Y] Recommendation: [Your pick] Reasoning: [Key factors] Impact if Right: [Upside] Impact if Wrong: [Downside] Reversibility: [Easy/Hard to undo] Resources Required: [Time, money, people] Timeline: [When this needs to happen] Success Metrics: [How we&#x27;ll measure] Approval Needed From: [Stakeholders]</code></pre></p>
+                        <h2>Common Decision-Making Traps</h2>
+                        <h3>1. Sunk Cost Fallacy</h3>
+                        <pre><code>Trap: &quot;We&#x27;ve already invested 6 months, we can&#x27;t quit now&quot;
+                        <p>Reality: Past investments are gone. Only future matters. Fix: Ask &quot;If I were starting today, would I choose this path?&quot; CoodLoom Example: ❌ &quot;We built this feature for 3 months, we must launch it&quot; ✓ &quot;No one wants this feature. Cut our losses and move on&quot;</code></pre></p>
+                        <h3>2. Confirmation Bias</h3>
+                        <pre><code>Trap: Only seeing data that supports what you already believe
+                        <p>Reality: We naturally filter information to confirm our views Fix: Actively seek disconfirming evidence CoodLoom Example: ❌ Only talking to customers who love your product ✓ Specifically seeking out churned customers for feedback</code></pre></p>
+                        <h3>3. Recency Bias</h3>
+                        <pre><code>Trap: Over-weighting recent events vs long-term patterns
+                        <p>Reality: Last week&#x27;s data point isn&#x27;t the whole picture Fix: Look at trends over months/years, not days CoodLoom Example: ❌ &quot;We lost 2 customers this week, we&#x27;re dying&quot; ✓ &quot;Churn rate is 5% monthly, within normal range&quot;</code></pre></p>
+                        <h3>4. Anchoring Bias</h3>
+                        <pre><code>Trap: Over-relying on first piece of information
+                        <p>Reality: Initial numbers stick in our minds too strongly Fix: Generate your own estimate before seeing others&#x27; CoodLoom Example: ❌ &quot;Competitor charges $99, so we should too&quot; ✓ &quot;Our value is X, our costs are Y, our price should be Z&quot;</code></pre></p>
+                        <h3>5. Analysis Paralysis</h3>
+                        <pre><code>Trap: Endless research, never deciding
+                        <p>Reality: Perfection is impossible, action beats planning Fix: Set decision deadline, use 70% rule CoodLoom Example: ❌ Researching 50 CRM tools for 6 weeks ✓ Test top 3 for a week, pick one, move on</code></pre></p>
+                        <h3>6. Committee Decision-Making</h3>
+                        <pre><code>Trap: &quot;Let&#x27;s get everyone&#x27;s input&quot; → Watered-down compromise
+                        <p>Reality: Too many cooks, no clear owner, slow decisions Fix: Clear decision owner, others provide input only CoodLoom Example: ❌ 10-person meeting to decide button color ✓ Designer decides, others can give feedback</code></pre></p>
+                        <h2>Improving Your Decision-Making</h2>
+                        <h3>Daily Practices</h3>
+                        <p><strong>Morning</strong>:</p>
+                        <pre><code>- Review today&#x27;s decisions needed
+                        <ul>
+                        <li>Prioritize by importance and urgency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Block time for decision-making (don&#x27;t rush)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set deadlines for each decision</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Evening</strong>:</p>
+                        <pre><code>- Review decisions made today
+                        <ul>
+                        <li>What went well?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What would you do differently?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update decision log for important choices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lessons learned</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Weekly Review</h3>
+                        <pre><code>Friday Afternoon (30 minutes):
+                        <p>Review this week&#x27;s decisions: 1. What were my 3 biggest decisions? 2. Did I decide quickly enough? 3. Did I involve the right people? 4. Did I use data effectively? 5. Any decisions to revisit? 6. What patterns do I notice?</code></pre></p>
+                        <h3>Monthly Calibration</h3>
+                        <pre><code>Last Friday of Month (60 minutes):
+                        <p>Decision Quality Audit:</p>
+                        <ul>
+                        <li>Review decisions from 90 days ago</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How did they turn out?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What did I get right?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What did I get wrong?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Why was I wrong?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How can I improve?</li>
+                        </li>
+                        </ul>
+                        <p>Update Decision-Making Process based on learnings</code></pre></p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Decide at 70% information</strong>: Perfect data never comes; bias toward action</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Type 1 vs Type 2</strong>: Irreversible decisions need more time; reversible decisions need speed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Use frameworks</strong>: RAPID, ICE, RICE, 2×2 matrices remove guesswork</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>First principles</strong>: Break problems down to fundamental truths</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Expected value</strong>: Calculate probabilities and outcomes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Pre-mortem</strong>: Imagine failure, then prevent it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Decide and commit</strong>: Make the call, then execute fully</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Avoid common traps</strong>: Sunk costs, confirmation bias, analysis paralysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Track decisions</strong>: Learn from outcomes, improve over time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Speed matters</strong>: In startups, fast good decisions beat slow perfect ones</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Decision Audit</h3>
+                        <p>Review your last 10 decisions. How many were:</p>
+                        <ul>
+                        <li>Type 1 vs Type 2?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Made quickly vs slowly?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Turned out well vs poorly?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What patterns emerge?</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Create Your Decision Framework</h3>
+                        <p>Document your personal decision-making process for CoodLoom:</p>
+                        <ul>
+                        <li>Type 1 decisions (your checklist)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Type 2 decisions (your rapid process)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Who you involve when</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Your go-to frameworks</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 3: Practice Pre-mortems</h3>
+                        <p>Pick your next major decision. Run a pre-mortem:</p>
+                        <ul>
+                        <li>Imagine it failed. Why?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>List 10 reasons</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address each risk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Improve your decision</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 4: Start a Decision Log</h3>
+                        <p>Document your next 5 important decisions using the template provided. Review in 90 days.</p>
+                        <h3>Exercise 5: Speed Challenge</h3>
+                        <p>This week, for every Type 2 decision, set a 1-hour deadline. Practice deciding quickly.</p>
+                        <h2>Next Steps</h2>
+                        <p>1. <strong>Create decision templates</strong>: RAPID chart, decision log, 1-pager 2. <strong>Set decision cadence</strong>: Daily review, weekly audit, monthly calibration 3. <strong>Practice frameworks</strong>: Use ICE/RICE on your next 3 feature decisions 4. <strong>Run pre-mortems</strong>: On your next big decision 5. <strong>Read &quot;Thinking, Fast and Slow&quot;</strong>: By Daniel Kahneman Move to <strong>Chapter 4: Communication Skills</strong> to learn how to articulate your decisions and vision effectively.</p>
+                        <hr />
+                        <p><em>Remember: Great leaders make great decisions consistently. Perfect leaders don&#x27;t exist. Aim for 70% accuracy with 100% speed on Type 2 decisions, and 95% accuracy with appropriate deliberation on Type 1 decisions.</em></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Team Management</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Communication Skills</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

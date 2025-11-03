@@ -1,0 +1,2922 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Team Management - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Leadership Management</li>
+                    <li aria-current="page">Team Management</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Team Management</h1>
+                        <h2>Introduction</h2>
+                        <p>Your team is your most valuable asset. Great products are built by great teams, and great teams are built by great leaders. This chapter teaches you how to hire, develop, motivate, and retain exceptional people who will help you build CoodLoom into a thriving business.</p>
+                        <h2>Building Your First Team</h2>
+                        <h3>The First 10 Hires Are Critical</h3>
+                        <p><strong>Why they matter</strong>:</p>
+                        <ul>
+                        <li>Set the culture and standards</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Attract (or repel) future talent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Determine company DNA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Impact success disproportionately</li>
+                        </li>
+                        </ul>
+                        <p><strong>For CoodLoom&#x27;s First 10</strong>:</p>
+                        <pre><code>Hire #1-2: Co-founder (already done) + Technical lead
+                        <p>Hire #3-4: Sales/Marketing leader + Customer success Hire #5-6: Senior developers Hire #7-8: Product/Design + Operations Hire #9-10: Account executives or additional engineers Each hire should be someone who:</p>
+                        <ul>
+                        <li>Can work independently</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Raises the average talent level</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fits the culture you want to build</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Brings skills you lack</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Hiring Philosophy</h3>
+                        <p><strong>Hire for Slope, Not Y-Intercept</strong>:</p>
+                        <ul>
+                        <li><strong>Y-Intercept</strong>: What they know today</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Slope</strong>: How fast they learn and grow</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>For startups</strong>: Slope &gt; Y-Intercept</li>
+                        </li>
+                        </ul>
+                        <p><strong>The &quot;Hell Yes&quot; or &quot;No&quot; Rule</strong>:</p>
+                        <ul>
+                        <li>If you&#x27;re not absolutely sure, it&#x27;s a no</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hiring mistakes are expensive (time, money, morale)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Empty seat better than wrong person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be patient for the right people</li>
+                        </li>
+                        </ul>
+                        <p><strong>Diversity Drives Innovation</strong>:</p>
+                        <ul>
+                        <li>Different backgrounds = different perspectives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cognitive diversity &gt; demographic diversity (but both matter)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoid hiring people just like you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build complementary skill sets</li>
+                        </li>
+                        </ul>
+                        <h3>The Interview Process</h3>
+                        <p><strong>CoodLoom Interview Framework</strong>: <strong>Stage 1: Initial Screen (30 min - Phone/Video)</strong></p>
+                        <pre><code>Goals:
+                        <ul>
+                        <li>Basic qualification check</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture fit preliminary assessment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mutual interest confirmation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Logistics discussion</li>
+                        </li>
+                        </ul>
+                        <p>Red Flags:</p>
+                        <ul>
+                        <li>Badmouthing previous employers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lack of preparation/research</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unclear career motivations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communication issues</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: Technical/Skills Assessment (1-2 hours)</strong></p>
+                        <pre><code>For Engineers:
+                        <ul>
+                        <li>Coding challenge (take-home or live)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>System design discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Code review exercise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technical depth questions</li>
+                        </li>
+                        </ul>
+                        <p>For Sales:</p>
+                        <ul>
+                        <li>Role-play sales scenario</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pipeline management discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Case study: Close this deal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer empathy questions</li>
+                        </li>
+                        </ul>
+                        <p>For Designers:</p>
+                        <ul>
+                        <li>Portfolio review and critique</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Design challenge</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Collaboration discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>User research approach</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Team Interviews (2-3 hours)</strong></p>
+                        <pre><code>Meet with:
+                        <ul>
+                        <li>Future manager (you or team lead)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2-3 potential colleagues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Co-founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cross-functional partner</li>
+                        </li>
+                        </ul>
+                        <p>What to assess:</p>
+                        <ul>
+                        <li>Culture fit and values alignment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Collaboration style</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Problem-solving approach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communication skills</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Energy and enthusiasm</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4: Executive Interview (1 hour - CEO)</strong></p>
+                        <pre><code>Your goals:
+                        <ul>
+                        <li>Sell the vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assess leadership potential</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand motivations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ensure strategic fit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make final call</li>
+                        </li>
+                        </ul>
+                        <p>Key questions:</p>
+                        <ul>
+                        <li>&quot;Why CoodLoom? Why now?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s your 5-year career goal?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Tell me about a time you failed&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How do you handle ambiguity?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What questions do you have for me?&quot;</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 5: Reference Checks (Critical!)</strong></p>
+                        <pre><code>Call at least 3 references (not just the ones provided):
+                        <ul>
+                        <li>Previous manager</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Peer/colleague</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Someone they managed (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p>Questions to ask:</p>
+                        <ul>
+                        <li>&quot;On a scale of 1-10, how would you rate them?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What are their top 3 strengths?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What did they struggle with?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How did they handle disagreement/conflict?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Would you hire them again? Why or why not?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What environment do they thrive in?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Listen for:</p>
+                        <ul>
+                        <li>Enthusiasm (or lack thereof)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specific examples vs platitudes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consistency with candidate story</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unexpected insights</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Interview Questions That Actually Work</h3>
+                        <p><strong>Behavioral Questions</strong> (Use STAR method: Situation, Task, Action, Result)</p>
+                        <pre><code>Leadership & Initiative:
+                        <ul>
+                        <li>&quot;Tell me about a time you led a project without formal authority&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Describe a situation where you had to convince others to change course&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Give me an example of when you took on something outside your role&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Problem Solving:</p>
+                        <ul>
+                        <li>&quot;Walk me through your approach to solving [relevant problem]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Tell me about the most complex technical challenge you&#x27;ve solved&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Describe a time you had to make a decision with incomplete information&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Collaboration:</p>
+                        <ul>
+                        <li>&quot;Tell me about a time you disagreed with a teammate. How did you handle it?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Describe working with a difficult colleague&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Give an example of when you had to compromise your vision&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Growth Mindset:</p>
+                        <ul>
+                        <li>&quot;What&#x27;s something you were really bad at that you got good at?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Tell me about a failure and what you learned&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s the hardest feedback you&#x27;ve received? How did you respond?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Culture Fit:</p>
+                        <ul>
+                        <li>&quot;What motivates you to do your best work?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Describe your ideal work environment&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What frustrates you most at work?&quot;</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Red Flag Responses</strong>:</p>
+                        <ul>
+                        <li>Blaming others without self-reflection</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vague answers without specifics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Inconsistencies in their story</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lack of passion or curiosity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t admit mistakes or weaknesses</li>
+                        </li>
+                        </ul>
+                        <h3>Making the Offer</h3>
+                        <p><strong>Components of a Great Offer</strong>:</p>
+                        <pre><code>Compensation:
+                        <ul>
+                        <li>Base Salary: Market rate for role/level/location</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equity: 0.1% - 1% for early employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Benefits: Health, dental, vision, 401k</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bonus: Performance-based (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p>Equity Structure:</p>
+                        <ul>
+                        <li>4-year vesting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1-year cliff</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Acceleration clause (on acquisition)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exercise window (10 years)</li>
+                        </li>
+                        </ul>
+                        <p>Beyond Money:</p>
+                        <ul>
+                        <li>Flexible work arrangements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learning & development budget</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conference attendance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equipment allowance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unlimited PTO (if appropriate)</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>The Offer Call</strong>:</p>
+                        <pre><code>1. Express genuine excitement
+                        <p>2. Highlight why they&#x27;re the right fit 3. Walk through the offer details 4. Explain the equity (use examples) 5. Share the vision and their role in it 6. Answer all questions honestly 7. Give 3-5 days to decide 8. Stay in touch during decision period</code></pre> <strong>If They Decline</strong>:</p>
+                        <ul>
+                        <li>Ask for honest feedback</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keep the relationship warm</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>They might join later or refer others</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn what you could improve</li>
+                        </li>
+                        </ul>
+                        <h2>Onboarding Excellence</h2>
+                        <h3>The First Day Matters</h3>
+                        <p><strong>Before Day 1</strong>:</p>
+                        <pre><code>Week Before:
+                        <ul>
+                        <li>Send welcome package</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equipment shipped and setup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accounts created (email, Slack, tools)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>First week agenda shared</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buddy assigned</li>
+                        </li>
+                        </ul>
+                        <p>Day 1 Preparation:</p>
+                        <ul>
+                        <li>Workspace ready</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Welcome swag/note</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team intro scheduled</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lunch plans made</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Day 1 Agenda</strong>:</p>
+                        <pre><code>9:00 - Welcome & orientation with CEO
+                        <p>9:30 - Team introductions 10:30 - Tools & systems setup 12:00 - Lunch with buddy 1:00 - First project overview 2:00 - Culture & values discussion 3:00 - Q&A with HR/ops 4:00 - First small win task 5:00 - Day 1 reflection</code></pre></p>
+                        <h3>The 30-60-90 Day Plan</h3>
+                        <p><strong>First 30 Days - Learn</strong>:</p>
+                        <pre><code>Goals:
+                        <ul>
+                        <li>Understand the product deeply</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meet everyone on the team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn processes and tools</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Absorb company culture</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complete first small projects</li>
+                        </li>
+                        </ul>
+                        <p>Milestones:</p>
+                        <ul>
+                        <li>Week 1: Setup and orientation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 2: First meaningful contribution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 3: Working independently on tasks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 4: 30-day check-in meeting</li>
+                        </li>
+                        </ul>
+                        <p>Success Metrics:</p>
+                        <ul>
+                        <li>Feels comfortable with tools and processes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understands company vision and strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Has clear understanding of role expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Building relationships with team</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 31-60 - Contribute</strong>:</p>
+                        <pre><code>Goals:
+                        <ul>
+                        <li>Take on increasing responsibility</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Demonstrate core competencies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start showing impact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide early feedback/ideas</li>
+                        </li>
+                        </ul>
+                        <p>Milestones:</p>
+                        <ul>
+                        <li>Week 5-6: Leading small initiatives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 7-8: Full productivity expected</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 8: 60-day check-in meeting</li>
+                        </li>
+                        </ul>
+                        <p>Success Metrics:</p>
+                        <ul>
+                        <li>Meeting or exceeding expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proactively solving problems</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Collaborating effectively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Adding value to team discussions</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 61-90 - Thrive</strong>:</p>
+                        <pre><code>Goals:
+                        <ul>
+                        <li>Full productivity and independence</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Taking ownership of key areas</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mentoring newer team members</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Driving meaningful outcomes</li>
+                        </li>
+                        </ul>
+                        <p>Milestones:</p>
+                        <ul>
+                        <li>Week 9-11: Autonomous contribution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 12: 90-day review</li>
+                        </li>
+                        </ul>
+                        <p>Success Metrics:</p>
+                        <ul>
+                        <li>Clear positive impact on metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team relies on their expertise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exhibits company values</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Showing leadership potential</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Motivating Your Team</h2>
+                        <h3>Understanding Motivation</h3>
+                        <p><strong>Intrinsic vs Extrinsic Motivation</strong>: <strong>Extrinsic (External)</strong>:</p>
+                        <ul>
+                        <li>Money and bonuses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Promotions and titles</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Recognition and awards</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Perks and benefits</li>
+                        </li>
+                        </ul>
+                        <p><strong>Intrinsic (Internal)</strong>:</p>
+                        <ul>
+                        <li>Autonomy (control over work)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mastery (getting better)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Purpose (meaningful work)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Belonging (part of something)</li>
+                        </li>
+                        </ul>
+                        <p><strong>The Modern Approach</strong>: Extrinsic factors must be fair, but intrinsic factors drive sustained high performance.</p>
+                        <h3>The AMP Framework</h3>
+                        <p><strong>Autonomy</strong>:</p>
+                        <pre><code>Give Freedom Over:
+                        <ul>
+                        <li>How work gets done (not just what)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>When work happens (flexible hours)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Where work happens (remote options)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What projects to tackle (20% time)</li>
+                        </li>
+                        </ul>
+                        <p>CoodLoom Example: ❌ &quot;I need you to implement this feature exactly this way&quot; ✓ &quot;We need to solve [problem] by [date]. Here&#x27;s the context. How would you approach it?&quot;</code></pre> <strong>Mastery</strong>:</p>
+                        <pre><code>Provide Growth Through:
+                        <ul>
+                        <li>Challenging but achievable work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learning & development budget</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mentorship and coaching</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear path for advancement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Constructive feedback</li>
+                        </li>
+                        </ul>
+                        <p>CoodLoom Example:</p>
+                        <ul>
+                        <li>$1000/year learning budget per person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Friday afternoons for learning/side projects</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly &quot;Show & Tell&quot; for sharing learnings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pair programming sessions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conference attendance (1-2 per year)</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Purpose</strong>:</p>
+                        <pre><code>Connect Work to Impact:
+                        <ul>
+                        <li>Share customer success stories</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Explain the &quot;why&quot; behind every project</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Show how their work matters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Celebrate meaningful wins</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular vision reinforcement</li>
+                        </li>
+                        </ul>
+                        <p>CoodLoom Example: Weekly &quot;Customer Love&quot; email: &quot;Sarah from Acme Corp sent this: &#x27;CoodLoom saved us 20 hours this week! The AI summarization feature is incredible.&#x27; This exists because of the work you all did in Q3. Thank you!&quot;</code></pre></p>
+                        <h3>Recognition and Appreciation</h3>
+                        <p><strong>The 5:1 Rule</strong>: 5 positive interactions for every 1 critical feedback <strong>Effective Recognition</strong>:</p>
+                        <pre><code>Specific:
+                        <p>❌ &quot;Great job!&quot; ✓ &quot;The way you handled that upset customer - staying calm, asking questions, finding the root cause - that was excellent.&quot; Timely: ❌ Waiting for annual review ✓ Acknowledge within 24-48 hours Public and Private:</p>
+                        <ul>
+                        <li>Public: Major wins, team achievements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Private: Personal growth, overcoming struggles</li>
+                        </li>
+                        </ul>
+                        <p>Sincere:</p>
+                        <ul>
+                        <li>Mean it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make eye contact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No &quot;but&quot; afterwards</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Recognition Rituals for CoodLoom</strong>:</p>
+                        <pre><code>Daily:
+                        <ul>
+                        <li>Shout-outs in #wins Slack channel</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quick &quot;thank you&quot; messages</li>
+                        </li>
+                        </ul>
+                        <p>Weekly:</p>
+                        <ul>
+                        <li>&quot;Team Member Spotlight&quot; in all-hands</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CEO note to someone who stood out</li>
+                        </li>
+                        </ul>
+                        <p>Monthly:</p>
+                        <ul>
+                        <li>&quot;Values Champion&quot; award</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team celebration for hitting goals</li>
+                        </li>
+                        </ul>
+                        <p>Quarterly:</p>
+                        <ul>
+                        <li>Promotion announcements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equity grant refreshes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offsite celebration</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Performance Management</h2>
+                        <h3>Setting Clear Expectations</h3>
+                        <p><strong>The Role Definition Document</strong>:</p>
+                        <pre><code>For Each Role, Document:
+                        <p>1. Core Responsibilities (the must-dos)</p>
+                        <ul>
+                        <li>3-5 primary responsibilities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specific deliverables</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quality standards</li>
+                        </li>
+                        </ul>
+                        <p>2. Key Performance Indicators</p>
+                        <ul>
+                        <li>3-5 measurable outcomes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target numbers/metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review frequency</li>
+                        </li>
+                        </ul>
+                        <p>3. Growth Opportunities</p>
+                        <ul>
+                        <li>Skills to develop</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stretch assignments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Career path</li>
+                        </li>
+                        </ul>
+                        <p>4. Success Criteria (30-60-90 days)</p>
+                        <ul>
+                        <li>Specific milestones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Observable behaviors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Measurable outcomes</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Example: Senior Engineer at CoodLoom</strong>:</p>
+                        <pre><code>Core Responsibilities:
+                        <p>1. Ship high-quality features that delight customers 2. Mentor junior engineers through code review and pairing 3. Contribute to technical architecture decisions 4. Maintain and improve existing codebase quality KPIs: 1. Feature velocity: 3-4 significant features/quarter 2. Code quality: <5% bug rate on shipped code 3. Team impact: 2+ engineers mentored and improving 4. Technical leadership: Lead 1 major architectural initiative/quarter Growth Opportunities:</p>
+                        <ul>
+                        <li>Lead system design discussions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Speak at tech meetups/conferences</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Own critical product area</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Transition to Engineering Manager (if desired)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>One-on-One Meetings (1:1s)</h3>
+                        <p><strong>Why They Matter</strong>:</p>
+                        <ul>
+                        <li>Build trust and relationship</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Catch issues early</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide mentorship</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Align on priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gather feedback on you/company</li>
+                        </li>
+                        </ul>
+                        <p><strong>1:1 Structure</strong> (30-45 minutes weekly):</p>
+                        <pre><code>Their Agenda (20 minutes):
+                        <ul>
+                        <li>&quot;What&#x27;s on your mind?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Listen more than you talk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Let them lead the conversation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take notes</li>
+                        </li>
+                        </ul>
+                        <p>Your Agenda (10 minutes):</p>
+                        <ul>
+                        <li>Provide feedback (specific, actionable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Align on priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share context they need</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Discuss development</li>
+                        </li>
+                        </ul>
+                        <p>Future Focus (5 minutes):</p>
+                        <ul>
+                        <li>Career growth discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Skill development</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Action items and follow-up</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Powerful 1:1 Questions</strong>:</p>
+                        <pre><code>Understanding Their Experience:
+                        <ul>
+                        <li>&quot;How are you feeling about work right now?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s energizing you? What&#x27;s draining you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Is there anything blocking you that I can help remove?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s one thing I could do to better support you?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Development:</p>
+                        <ul>
+                        <li>&quot;What do you want to get better at?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What skills do you want to develop this quarter?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Where do you see yourself in 2 years?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What kind of projects excite you most?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Feedback Loop:</p>
+                        <ul>
+                        <li>&quot;How am I doing as your manager?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What should I start/stop/continue doing?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Is there anything about how we work together you&#x27;d like to change?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s something you wish I knew about you?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Company Insights:</p>
+                        <ul>
+                        <li>&quot;If you were CEO for a day, what would you change?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s working well? What isn&#x27;t?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Who on the team is doing great work?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What are we missing as a company?&quot;</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>1:1 Best Practices</strong>:</p>
+                        <ul>
+                        <li>Never cancel (unless true emergency)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No laptop open, no phone checking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take notes, follow up on action items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mix up locations (walk and talk sometimes)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share your own challenges too</li>
+                        </li>
+                        </ul>
+                        <h3>Performance Reviews</h3>
+                        <p><strong>Quarterly Check-ins</strong> (Less formal):</p>
+                        <pre><code>30-minute conversation covering:
+                        <p>1. Wins and accomplishments 2. Challenges and learnings 3. Progress on goals 4. Feedback exchange 5. Next quarter priorities</code></pre> <strong>Annual Performance Review</strong> (More formal):</p>
+                        <pre><code>Preparation (Manager):
+                        <ul>
+                        <li>Collect peer feedback (360 review)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review their work and impact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assess against role expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prepare specific examples</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Draft written review</li>
+                        </li>
+                        </ul>
+                        <p>Review Meeting (60-90 minutes): 1. Overall performance summary 2. Wins and strengths (specific examples) 3. Areas for improvement (specific examples) 4. Rating/assessment (if using ratings) 5. Compensation discussion 6. Career development planning 7. Goals for next year Follow-up:</p>
+                        <ul>
+                        <li>Written summary shared</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Development plan created</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check-in scheduled (30 days)</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Rating Scale</strong> (if you use one):</p>
+                        <pre><code>5 - Exceptional: Far exceeds expectations, top 5% performer
+                        <p>4 - Exceeds: Consistently goes beyond role requirements 3 - Meets: Solid performer, meeting all expectations 2 - Developing: Meeting some but not all expectations, needs improvement 1 - Not Meeting: Significant performance concerns Note: Most people should be 3s. Grade inflation helps no one.</code></pre></p>
+                        <h3>Handling Performance Issues</h3>
+                        <p><strong>The Performance Improvement Plan (PIP)</strong>: <strong>When to Use</strong>:</p>
+                        <ul>
+                        <li>Clear performance gaps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>After informal coaching hasn&#x27;t worked</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Before considering termination</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>To give formal documentation</li>
+                        </li>
+                        </ul>
+                        <p><strong>PIP Structure</strong> (30-60 days):</p>
+                        <pre><code>1. Specific Performance Issues
+                        <p>&quot;Current state: Shipping 1 feature/quarter&quot; &quot;Expected state: 3-4 features/quarter&quot; 2. Measurable Goals &quot;Must ship 2 high-quality features in next 60 days&quot; &quot;Code review turnaround < 24 hours&quot; &quot;Zero customer-reported bugs on shipped code&quot; 3. Support Provided</p>
+                        <ul>
+                        <li>Weekly 1:1s with manager</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pairing sessions with senior engineer</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear prioritization and requirements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Access to necessary resources</li>
+                        </li>
+                        </ul>
+                        <p>4. Timeline and Check-ins</p>
+                        <ul>
+                        <li>Week 2: First check-in</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 4: Mid-point review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 6: Final assessment</li>
+                        </li>
+                        </ul>
+                        <p>5. Consequences &quot;If goals are not met, we will need to part ways&quot;</code></pre> <strong>PIP Success Factors</strong>:</p>
+                        <ul>
+                        <li>Be clear and direct</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide real support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check in frequently</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be prepared to follow through</li>
+                        </li>
+                        </ul>
+                        <p><strong>After the PIP</strong>:</p>
+                        <ul>
+                        <li>If successful: Celebrate growth, continue monitoring</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If unsuccessful: Part ways professionally</li>
+                        </li>
+                        </ul>
+                        <h2>Difficult Conversations</h2>
+                        <h3>The Feedback Conversation</h3>
+                        <p><strong>SBI Model</strong> (Situation-Behavior-Impact):</p>
+                        <pre><code>Situation:
+                        <p>&quot;In yesterday&#x27;s product meeting...&quot; Behavior: &quot;...you interrupted the designer three times while they were presenting...&quot; Impact: &quot;...which made them shut down and we didn&#x27;t get their full input. The team needs to hear everyone&#x27;s ideas to make good decisions.&quot; Then: &quot;What happened from your perspective?&quot; [Listen] &quot;How could you handle this differently next time?&quot;</code></pre> <strong>Positive Feedback (Don&#x27;t Skip This)</strong>:</p>
+                        <pre><code>Situation:
+                        <p>&quot;When the customer called with the critical bug on Friday at 5pm...&quot; Behavior: &quot;...you stayed late, debugged it, pushed a fix, and personally called the customer to confirm it was resolved...&quot; Impact: &quot;...which saved the account and showed incredible ownership. That&#x27;s exactly the kind of customer obsession we need. Thank you.&quot;</code></pre></p>
+                        <h3>The Termination Conversation</h3>
+                        <p><strong>Reasons for Termination</strong>:</p>
+                        <ul>
+                        <li>Performance (after PIP and documented efforts)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture fit issues (toxic behavior)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Dishonesty or ethics violations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company downsizing/pivot</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Do It Right</strong>:</p>
+                        <pre><code>Preparation:
+                        <ul>
+                        <li>Consult with HR/lawyer if you have one</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Have documentation ready</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decide on severance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Plan the logistics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Choose right time (early in week, early in day)</li>
+                        </li>
+                        </ul>
+                        <p>The Meeting (10-15 minutes): 1. Be direct immediately: &quot;I&#x27;ve made the difficult decision that today will be your last day.&quot; 2. Brief explanation (no debate): &quot;We&#x27;ve discussed performance concerns over the past 60 days. Despite the support provided, we haven&#x27;t seen the improvement needed.&quot; 3. Logistics: &quot;Here&#x27;s your severance package [X weeks pay]. Your access will be deactivated after this meeting. HR will cover COBRA and final pay details.&quot; 4. End kindly: &quot;I know this is disappointing. I wish you the best in finding the right fit for your skills.&quot; What NOT to do:</p>
+                        <ul>
+                        <li>Don&#x27;t drag it out or soften the message</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t debate or argue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t trash talk them</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t do it over email/Zoom (unless remote)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t do it right before weekend/holiday</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>After the Termination</strong>:</p>
+                        <pre><code>To the Team:
+                        <ul>
+                        <li>Announce the same day</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be brief and respectful</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t trash talk the person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t share inappropriate details</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus on moving forward</li>
+                        </li>
+                        </ul>
+                        <p>Example: &quot;I want to let you know that [Name] is no longer with the company. We wish them well. [Name] will be taking over their responsibilities. If you have questions, my door is open.&quot;</code></pre></p>
+                        <h2>Building Team Culture</h2>
+                        <h3>Leading Team Rituals</h3>
+                        <p><strong>Daily Stand-up</strong> (15 minutes):</p>
+                        <pre><code>Each person shares (2 minutes):
+                        <ul>
+                        <li>What I did yesterday</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What I&#x27;m doing today</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Any blockers</li>
+                        </li>
+                        </ul>
+                        <p>Your role:</p>
+                        <ul>
+                        <li>Start on time, end on time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keep it brief and focused</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Note blockers to address after</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t solve problems in standup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Celebrate small wins</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Weekly All-Hands</strong> (30 minutes):</p>
+                        <pre><code>Agenda:
+                        <ul>
+                        <li>Wins of the week (5 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Metrics update (5 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key priorities (5 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team spotlight/demo (10 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Q&A (5 min)</li>
+                        </li>
+                        </ul>
+                        <p>Your role:</p>
+                        <ul>
+                        <li>Share context and strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Recognize great work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be transparent about challenges</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make it interactive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Send summary afterwards</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly Retrospective</strong> (60 minutes):</p>
+                        <pre><code>What went well?
+                        <p>What didn&#x27;t go well? What should we try next month? Your role:</p>
+                        <ul>
+                        <li>Create psychological safety</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Participate as peer</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take feedback seriously</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commit to action items</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow up next month</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Team Building</h3>
+                        <p><strong>What Works</strong>:</p>
+                        <pre><code>Regular:
+                        <ul>
+                        <li>Team lunches (weekly or bi-weekly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Coffee chats (random pairing)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Interest-based channels (#gaming, #books, #fitness)</li>
+                        </li>
+                        </ul>
+                        <p>Occasional:</p>
+                        <ul>
+                        <li>Offsites (quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team dinners (monthly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activity outings (escape room, bowling, etc.)</li>
+                        </li>
+                        </ul>
+                        <p>Virtual:</p>
+                        <ul>
+                        <li>Online games</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Virtual coffee roulette</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Show & tell sessions</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>What Doesn&#x27;t Work</strong>:</p>
+                        <ul>
+                        <li>Mandatory &quot;fun&quot; (forced happy hours)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Anything involving alcohol as main activity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activities that exclude some people</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team building that takes too much time</li>
+                        </li>
+                        </ul>
+                        <h2>Scaling Your Management</h2>
+                        <h3>From Manager to Manager of Managers</h3>
+                        <p><strong>When to Promote to Leadership</strong>:</p>
+                        <ul>
+                        <li>Team exceeds 7-8 direct reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear leadership potential identified</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Someone wants the growth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company can support the structure</li>
+                        </li>
+                        </ul>
+                        <p><strong>What Changes</strong>:</p>
+                        <pre><code>As Individual Contributor Manager:
+                        <ul>
+                        <li>Direct impact on work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear feedback loops</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close to the product</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hands-on problem solving</li>
+                        </li>
+                        </ul>
+                        <p>As Manager of Managers:</p>
+                        <ul>
+                        <li>Indirect impact through others</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delayed feedback loops</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Further from execution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Coaching over doing</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Supporting New Managers</strong>:</p>
+                        <ul>
+                        <li>Management training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular coaching sessions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share your learnings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give them autonomy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accept that they&#x27;ll do it differently</li>
+                        </li>
+                        </ul>
+                        <h3>Delegation at Scale</h3>
+                        <p><strong>What to Delegate</strong>:</p>
+                        <pre><code>Delegate:
+                        <ul>
+                        <li>Operational decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technical implementations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer support issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Routine processes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Anything others can do 80% as well</li>
+                        </li>
+                        </ul>
+                        <p>Keep:</p>
+                        <ul>
+                        <li>Strategic direction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key hires and fires</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Major financial decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Investor relations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company culture</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Delegate Effectively</strong>:</p>
+                        <pre><code>1. Choose the right person
+                        <ul>
+                        <li>Has (or can develop) the skills</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Has capacity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wants the challenge</li>
+                        </li>
+                        </ul>
+                        <p>2. Provide context</p>
+                        <ul>
+                        <li>Why it matters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success criteria</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Constraints and resources</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision authority level</li>
+                        </li>
+                        </ul>
+                        <p>3. Get out of the way</p>
+                        <ul>
+                        <li>Don&#x27;t micromanage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be available for questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Let them do it their way</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accept good enough</li>
+                        </li>
+                        </ul>
+                        <p>4. Follow up appropriately</p>
+                        <ul>
+                        <li>Check-ins at milestones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide support when needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give feedback on outcomes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Celebrate success</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Hire slow, fire fast</strong>: Getting the right people is your most important job</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>First 10 hires set culture</strong>: They define what &quot;good&quot; looks like</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Onboarding determines success</strong>: Great onboarding = faster productivity and better retention</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>AMP drives motivation</strong>: Autonomy, Mastery, Purpose &gt; money alone</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>1:1s are sacred</strong>: Never cancel, always prepare, truly listen</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Feedback is a gift</strong>: Specific, timely, constructive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>PIPs are tools, not paperwork</strong>: Use them to genuinely help or to document</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Difficult conversations don&#x27;t age well</strong>: Address issues quickly and directly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Culture is what you do</strong>: Not what you say or put on walls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Delegate or drown</strong>: You can&#x27;t scale if you&#x27;re doing everything</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Define Your Hiring Bar</h3>
+                        <p>Create your &quot;Hell Yes&quot; hiring checklist for CoodLoom:</p>
+                        <pre><code>Technical Excellence:
+                        <p>□ [Specific requirement] □ [Specific requirement] Culture Fit: □ [Specific behavior/value] □ [Specific behavior/value] Growth Mindset: □ [Observable characteristic] □ [Observable characteristic] Startup DNA: □ [Essential trait] □ [Essential trait]</code></pre></p>
+                        <h3>Exercise 2: Design Your Onboarding</h3>
+                        <p>Create a detailed 30-60-90 day plan for your next hire.</p>
+                        <h3>Exercise 3: 1:1 Practice</h3>
+                        <p>Schedule 1:1s with each team member. Prepare questions that go deeper than &quot;how&#x27;s it going?&quot;</p>
+                        <h3>Exercise 4: Recognition Audit</h3>
+                        <p>This week, track your positive vs critical feedback ratio. Aim for 5:1.</p>
+                        <h3>Exercise 5: Delegation Plan</h3>
+                        <p>List everything you&#x27;re doing. Identify 3 things to delegate this month.</p>
+                        <h2>Next Steps</h2>
+                        <p>1. <strong>Set up interview process</strong>: Create your question bank and evaluation rubric 2. <strong>Schedule 1:1s</strong>: Block recurring time with each team member 3. <strong>Create onboarding docs</strong>: Build your 30-60-90 day template 4. <strong>Start recognition habit</strong>: Daily shout-outs in your team channel 5. <strong>Read &quot;The Manager&#x27;s Path&quot;</strong>: By Camille Fournier Move to <strong>Chapter 3: Decision Making</strong> to learn frameworks for making better, faster decisions.</p>
+                        <hr />
+                        <p><em>Remember: Your team will make or break CoodLoom. Invest the time to hire right, onboard well, and develop continuously. The returns compound over time.</em></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Leadership Fundamentals</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Decision Making</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

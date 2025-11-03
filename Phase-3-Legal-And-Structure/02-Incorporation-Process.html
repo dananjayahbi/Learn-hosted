@@ -1,0 +1,3268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Incorporation Process: Step-by-Step Guide - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Legal And Structure</li>
+                    <li aria-current="page">Incorporation Process: Step-by-Step Guide</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Incorporation Process: Step-by-Step Guide</h1>
+                        <h2>Introduction</h2>
+                        <p>You&#x27;ve chosen your business structure (hopefully Delaware C-Corp if you&#x27;re serious about building CoodLoom into a real company). Now it&#x27;s time to actually incorporate. This chapter provides a detailed, step-by-step guide to legally forming your company. <strong>Timeline</strong>: 2-4 weeks from start to fully operational <strong>Cost</strong>: $500-3,000 depending on whether you DIY, use a service, or hire a lawyer</p>
+                        <h2>Before You Start: Prerequisites</h2>
+                        <h3>1. Make These Decisions First</h3>
+                        <ul>
+                        <li>[ ] <strong>Structure decided</strong>: LLC, S-Corp, or C-Corp (see Chapter 1)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>State chosen</strong>: Delaware, home state, or other</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Company name finalized</strong>: &quot;CoodLoom, Inc.&quot; or &quot;CoodLoom, LLC&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Co-founder agreement discussed</strong>: Equity split, roles (see Chapter 3)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Initial capital</strong>: Who&#x27;s investing how much?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Registered agent</strong>: Who will receive legal mail?</li>
+                        </li>
+                        </ul>
+                        <h3>2. Information You&#x27;ll Need</h3>
+                        <p><strong>Company Information</strong>:</p>
+                        <ul>
+                        <li>Legal name: &quot;CoodLoom, Inc.&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business purpose: &quot;To develop and sell point-of-sale software&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business address: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Formation date: ________________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Founder Information</strong> (for each founder):</p>
+                        <ul>
+                        <li>Full legal name: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Home address: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Phone: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Social Security Number or EIN (for tax forms)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Initial investment: $____________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ownership percentage: ______%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Corporation Structure</strong> (if C-Corp):</p>
+                        <ul>
+                        <li>Number of authorized shares: __________ (typically 10,000,000)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Par value: $0.00001 (standard)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Number of founders: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shares per founder: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board members: __________ (names)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Officers:</li>
+                        <ul>
+                        <li>CEO: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CFO: ________________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secretary: ________________________________</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <h3>3. Budget for These Costs</h3>
+                        <p><strong>State Filing Fees</strong>:</p>
+                        <ul>
+                        <li>Delaware C-Corp: $89</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delaware LLC: $90</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>California C-Corp: $100</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>California LLC: $70</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>New York C-Corp: $125</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Texas C-Corp: $300</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Check your state]</li>
+                        </li>
+                        </ul>
+                        <p><strong>Additional Costs</strong>:</p>
+                        <ul>
+                        <li>Registered agent: $50-300/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lawyer (if using): $1,500-3,000</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Formation service (if using): $300-500</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock certificates: $50-200</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Corporate kit (seal, bylaws): $50-150</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>EIN: Free</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bank account: $0-100 (some require minimum balance)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total Budget</strong>: $500-3,000</p>
+                        <h2>Three Paths to Incorporation</h2>
+                        <p>Choose based on complexity, budget, and risk tolerance:</p>
+                        <h3>Path A: Hire a Lawyer ($1,500-3,000)</h3>
+                        <p><strong>Best For</strong>:</p>
+                        <ul>
+                        <li>C-Corps with complex structures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multiple founders with IP to transfer</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High-value businesses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If you value expertise and customization</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pros</strong>:</p>
+                        <ul>
+                        <li>✅ Everything done correctly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Customized for your situation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Legal advice included</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Build relationship with startup lawyer</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cons</strong>:</p>
+                        <ul>
+                        <li>❌ Most expensive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Slower (lawyer&#x27;s timeline)</li>
+                        </li>
+                        </ul>
+                        <h3>Path B: Use Formation Service ($300-1,000)</h3>
+                        <p><strong>Services</strong>:</p>
+                        <ul>
+                        <li><strong>Stripe Atlas</strong>: $500 (best for tech startups)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Clerky</strong>: $800+ (YC-recommended)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Gust Launch</strong>: $500+</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>LegalZoom</strong>: $300+ (basic)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>IncFile</strong>: $0 + state fees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Best For</strong>:</p>
+                        <ul>
+                        <li>Standard Delaware C-Corp</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tech startups following standard patterns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Balance of cost and quality</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pros</strong>:</p>
+                        <ul>
+                        <li>✅ Reasonable cost</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Faster (1-2 weeks)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Templates designed by lawyers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Includes most necessary documents</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cons</strong>:</p>
+                        <ul>
+                        <li>❌ Template-based (less customization)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Limited legal advice</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ May need lawyer review anyway</li>
+                        </li>
+                        </ul>
+                        <h3>Path C: DIY ($50-300)</h3>
+                        <p><strong>Best For</strong>:</p>
+                        <ul>
+                        <li>Simple LLCs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Solo founders or very small operations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tight budgets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Comfortable with legal paperwork</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pros</strong>:</p>
+                        <ul>
+                        <li>✅ Cheapest</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ You control timeline</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Learn the process</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cons</strong>:</p>
+                        <ul>
+                        <li>❌ Easy to make mistakes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Time-consuming</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ No legal advice</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ May cost more to fix mistakes</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommended for CoodLoom</strong>: Path B (Stripe Atlas) or Path A (lawyer) for C-Corp</p>
+                        <h2>Detailed Process: Delaware C-Corporation</h2>
+                        <p>This is the most common path for tech startups. Adjust for your structure/state.</p>
+                        <h3>Phase 1: Pre-Incorporation (Week 1)</h3>
+                        <h4>Step 1: Choose and Check Company Name</h4>
+                        <p><strong>Name Requirements</strong>:</p>
+                        <ul>
+                        <li>Must include &quot;Corporation&quot;, &quot;Incorporated&quot;, &quot;Company&quot;, or abbreviation (Inc., Corp., Co., Ltd.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cannot be confusingly similar to existing company</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cannot include restricted words without approval (Bank, Insurance, etc.)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Check Name Availability</strong>: 1. <strong>Delaware</strong>: Search at <a href="https://icis.corp.delaware.gov/Ecorp/EntitySearch/NameSearch.aspx">corp.delaware.gov/directweb.shtml</a> 2. <strong>Other states</strong>: Search Secretary of State website 3. <strong>Federal trademark</strong>: Search at <a href="https://www.uspto.gov/trademarks/search">uspto.gov</a> 4. <strong>Domain availability</strong>: Check if coodloom.com is available (see Chapter 7) <strong>Pro Tip</strong>: Reserve name for 120 days ($75 in Delaware) while preparing <strong>CoodLoom Options</strong>:</p>
+                        <ul>
+                        <li>CoodLoom, Inc. ✓ (recommended)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CoodLoom Corporation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CoodLoom Technologies, Inc.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CoodLoom Software, Inc.</li>
+                        </li>
+                        </ul>
+                        <h4>Step 2: Choose Registered Agent</h4>
+                        <p><strong>What is it?</strong>: Entity that receives legal documents on behalf of your company. <strong>Requirements</strong>:</p>
+                        <ul>
+                        <li>Must have physical address in state of incorporation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must be available during business hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can be yourself, co-founder, or service</li>
+                        </li>
+                        </ul>
+                        <p><strong>Options</strong>: <strong>A. Yourself/Co-founder</strong> ($0):</p>
+                        <ul>
+                        <li>Pros: Free</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cons: Public address, must be available, get legal mail at home</li>
+                        </li>
+                        </ul>
+                        <p><strong>B. Registered Agent Service</strong> ($50-300/year):</p>
+                        <ul>
+                        <li>Services: Harvard Business Services ($50/year), Northwest ($125/year), CT Corporation ($300/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pros: Privacy, professional, mail scanning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cons: Annual cost</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation</strong>: Use service for privacy and professionalism ($50-125/year worth it)</p>
+                        <h4>Step 3: Prepare Certificate of Incorporation</h4>
+                        <p><strong>Required Information</strong>:</p>
+                        <pre><code>Certificate of Incorporation of CoodLoom, Inc.
+                        <p>FIRST: The name of the corporation is CoodLoom, Inc. SECOND: The registered office of the corporation in the State of Delaware is located at [Registered Agent Address], County of [County]. The registered agent at such address is [Registered Agent Name]. THIRD: The purpose of the corporation is to engage in any lawful act or activity for which corporations may be organized under the General Corporation Law of Delaware. FOURTH: The total number of shares of stock which the corporation shall have authority to issue is 10,000,000 shares of Common Stock, par value $0.00001 per share. FIFTH: The name and mailing address of the incorporator is: [Your Name] [Your Address] SIXTH: [Optional: Indemnification, Director Liability Limitation clauses]</code></pre> <strong>Key Decisions</strong>: <strong>Authorized Shares</strong>: How many shares can you issue?</p>
+                        <ul>
+                        <li><strong>Typical for startups</strong>: 10,000,000 shares</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why so many</strong>: Allows for future fundraising, employee options, flexibility</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Initially issue</strong>: 8,000,000 shares to founders (leave 2,000,000 for option pool)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Delaware franchise tax</strong>: Based on authorized shares, but low for startups (~$89/year)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Par Value</strong>: Minimum price per share</p>
+                        <ul>
+                        <li><strong>Standard</strong>: $0.00001 (one hundred-thousandth of a penny)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why so low</strong>: Reduces franchise tax, gives pricing flexibility</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stock Classes</strong>:</p>
+                        <ul>
+                        <li>Initially: Just Common Stock</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Later: Add Preferred Stock when raising VC (requires amendment)</li>
+                        </li>
+                        </ul>
+                        <h4>Step 4: Determine Initial Capitalization</h4>
+                        <p><strong>What founders are contributing</strong>: <strong>Founder 1</strong> (You):</p>
+                        <ul>
+                        <li>Cash: $__________ OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IP assignment: Software, trademarks, etc. OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Services: Valued at $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Shares</strong>: __________ (______%)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Founder 2</strong> (Co-founder):</p>
+                        <ul>
+                        <li>Cash: $__________ OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IP assignment: __________ OR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Services: Valued at $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Shares</strong>: __________ (______%)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total Initial Capital</strong>: $__________ <strong>83(b) Election Note</strong>: If vesting (Chapter 3), file within 30 days of stock issuance!</p>
+                        <h3>Phase 2: File Incorporation Documents (Week 1-2)</h3>
+                        <h4>Step 5: File Certificate of Incorporation</h4>
+                        <p><strong>Delaware Process</strong>: <strong>Option A: Online Filing</strong> (fastest): 1. Go to <a href="https://corp.delaware.gov">corp.delaware.gov</a> 2. Create account 3. File Certificate of Incorporation online 4. Pay $89 filing fee + $9 expedite fee (recommended) 5. <strong>Receive certificate</strong>: 1-3 business days <strong>Option B: Mail/Fax</strong>: 1. Mail completed Certificate to:</p>
+                           <pre><code>Delaware Division of Corporations
+                        <p>John G. Townsend Building 401 Federal Street, Suite 4 Dover, DE 19901</code></pre> 2. Include check for $89 + $50 (24-hour expedite) or $100 (same-day) 3. <strong>Receive certificate</strong>: 1-4 weeks (regular), 1 day (expedited) <strong>What You&#x27;ll Receive</strong>: Filed Certificate of Incorporation with state seal and file number <strong>File Number</strong>: Save this! Format: 1234567 <strong>Other States</strong>: Process varies, check Secretary of State website</p>
+                        <h4>Step 6: Obtain EIN (Employer Identification Number)</h4>
+                        <p><strong>What is it</strong>: Federal tax ID number (like SSN for your business) <strong>When</strong>: Immediately after incorporation <strong>How to Get EIN</strong>: 1. Go to <a href="https://www.irs.gov/businesses/small-businesses-self-employed/apply-for-an-employer-identification-number-ein-online">IRS.gov/EIN</a> 2. Click &quot;Apply Online Now&quot; 3. Select entity type: Corporation 4. Fill in:</p>
+                        <ul>
+                        <li>Legal name: CoodLoom, Inc.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trade name: CoodLoom (if different)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State of incorporation: Delaware</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Date of incorporation: [Date from certificate]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business address: [Your address]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Responsible party: You (CEO)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SSN: [Your SSN]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reason: Started new business</li>
+                        </li>
+                        </ul>
+                        <p>5. Submit 6. <strong>Receive EIN immediately</strong>: 12-3456789 (format) <strong>Cost</strong>: Free <strong>Time</strong>: 15 minutes <strong>Save This</strong>: You&#x27;ll need EIN for everything (bank account, taxes, contracts)</p>
+                        <h3>Phase 3: Create Corporate Documents (Week 2)</h3>
+                        <h4>Step 7: Draft Bylaws</h4>
+                        <p><strong>What are Bylaws</strong>: Internal rules governing how corporation operates. <strong>Key Provisions</strong>: <strong>Article I: Offices</strong></p>
+                        <ul>
+                        <li>Principal office location</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Registered office (Delaware)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article II: Shareholders Meetings</strong></p>
+                        <ul>
+                        <li>Annual meeting requirement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Special meetings: how called</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quorum: Majority of outstanding shares</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Voting: One share = one vote</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Notice: 10-60 days advance</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article III: Board of Directors</strong></p>
+                        <ul>
+                        <li>Number of directors: Initial = number of founders (2 for you)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Term: 1 year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meetings: How often, notice requirements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quorum: Majority</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Committees: Can establish Audit, Compensation, etc.</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article IV: Officers</strong></p>
+                        <ul>
+                        <li>CEO: Manages day-to-day, reports to Board</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CFO: Manages finances</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secretary: Keeps records, minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Same person can hold multiple offices</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article V: Stock</strong></p>
+                        <ul>
+                        <li>Stock certificates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Transfer restrictions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lost certificates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article VI: Indemnification</strong></p>
+                        <ul>
+                        <li>Protection for directors/officers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Standard in Delaware</li>
+                        </li>
+                        </ul>
+                        <p><strong>Article VII: Amendments</strong></p>
+                        <ul>
+                        <li>How to amend bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Typically: Board or shareholder vote</li>
+                        </li>
+                        </ul>
+                        <p><strong>Getting Bylaws</strong>: <strong>Option A</strong>: Lawyer drafts ($500-1,000) <strong>Option B</strong>: Formation service includes (Stripe Atlas, Clerky) <strong>Option C</strong>: Download template and customize</p>
+                        <ul>
+                        <li><a href="https://corp.delaware.gov/pacode/">Delaware.gov</a> - Official forms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><a href="https://www.cooleygo.com/">Cooley GO</a> - Free startup templates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Length</strong>: Typically 15-30 pages <strong>Adoption</strong>: Board of Directors adopts bylaws at first meeting</p>
+                        <h4>Step 8: Issue Stock Certificates</h4>
+                        <p><strong>What</strong>: Physical or electronic certificates representing ownership <strong>Information on Certificate</strong>:</p>
+                        <ul>
+                        <li>Certificate number: 001, 002, etc.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shareholder name</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Number of shares</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Date issued</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Signatures: CEO and Secretary</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Corporate seal (optional)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legend: Transfer restrictions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example</strong>:</p>
+                        <pre><code>CERTIFICATE NUMBER: 001
+                        <p>CoodLoom, Inc. Incorporated under the laws of Delaware This certifies that [YOUR NAME] is the owner of FOUR MILLION (4,000,000) shares of Common Stock of CoodLoom, Inc., transferable only on the books of the Corporation by the holder hereof in person or by attorney upon surrender of this Certificate properly endorsed. Dated: [Date] [CEO Signature]        [Secretary Signature] CEO                    Secretary [Corporate Seal] LEGEND: The shares represented by this certificate are subject to restrictions on transfer as set forth in the Bylaws and any stockholders agreement of the Corporation.</code></pre> <strong>Options</strong>: <strong>A. Buy Stock Certificate Kit</strong> ($50-150):</p>
+                        <ul>
+                        <li>Includes: Blank certificates, corporate seal, stock ledger</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional look</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Available on Amazon</li>
+                        </li>
+                        </ul>
+                        <p><strong>B. Print Your Own</strong> ($0):</p>
+                        <ul>
+                        <li>Use template (Cooley GO, Stripe Atlas)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Print on quality paper</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Looks less professional but legally valid</li>
+                        </li>
+                        </ul>
+                        <p><strong>C. Electronic</strong> ($0):</p>
+                        <ul>
+                        <li>Modern approach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Store in secure system (Carta, Pulley)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No physical certificates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation</strong>: Electronic certificates via Carta or similar (free for early-stage)</p>
+                        <h4>Step 9: Prepare Stock Purchase Agreements</h4>
+                        <p><strong>What</strong>: Contract between company and founders for stock purchase <strong>Key Terms</strong>:</p>
+                        <ul>
+                        <li>Purchaser: Founder name</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shares: Number purchased</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Purchase price: Total and per-share</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payment: Cash, IP assignment, services</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vesting: If applicable (see Chapter 3)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Representations: Founder owns IP, authorized to sign, etc.</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example Sections</strong>:</p>
+                        <pre><code>COMMON STOCK PURCHASE AGREEMENT
+                        <p>This Agreement is entered into as of [Date] by and between: CoodLoom, Inc., a Delaware corporation (&quot;Company&quot;) and [Your Name] (&quot;Purchaser&quot;) 1. PURCHASE AND SALE OF SHARES Company agrees to sell and Purchaser agrees to purchase 4,000,000 shares of Common Stock (&quot;Shares&quot;) at $0.00001 per share for a total purchase price of $40.00. 2. PAYMENT Purchaser shall pay the purchase price by:</p>
+                        <ul>
+                        <li>Cash: $40.00</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IP Assignment: Transfer of software valued at $40.00</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Services: Services valued at $40.00</li>
+                        </li>
+                        </ul>
+                        <p>3. VESTING (if applicable) Shares shall vest over 4 years with 1-year cliff... 4. REPRESENTATIONS Purchaser represents and warrants:</p>
+                        <ul>
+                        <li>Has authority to enter this agreement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Owns and can transfer any IP contributed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understands risks of investment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is an accredited investor (if required)</li>
+                        </li>
+                        </ul>
+                        <p>5. RESTRICTIONS ON TRANSFER Shares may not be transferred except as permitted by Bylaws... SIGNATURES: [Company and Purchaser sign]</code></pre> <strong>Getting Templates</strong>:</p>
+                        <ul>
+                        <li>Stripe Atlas: Included</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clerky: Included</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cooley GO: Free templates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lawyer: Custom drafted</li>
+                        </li>
+                        </ul>
+                        <h4>Step 10: Prepare Action by Incorporator &amp; Board</h4>
+                        <p><strong>Action by Incorporator</strong>: First document after incorporation <strong>Typical Actions</strong>:</p>
+                        <ul>
+                        <li>Adopt Bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Elect initial Board of Directors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Appoint officers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Authorize stock issuance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Approve stock purchase agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Authorize opening bank account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ratify pre-incorporation expenses</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example</strong>:</p>
+                        <pre><code>ACTION BY UNANIMOUS WRITTEN CONSENT OF INCORPORATOR
+                        <p>OF COODLOOM, INC. The undersigned, being the sole Incorporator of CoodLoom, Inc., a Delaware corporation, hereby takes the following actions: 1. ADOPTION OF BYLAWS The Bylaws presented to the Incorporator are approved and adopted. 2. ELECTION OF DIRECTORS The following persons are elected to serve as Directors:</p>
+                        <ul>
+                        <li>[Your Name]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Co-founder Name]</li>
+                        </li>
+                        </ul>
+                        <p>3. AUTHORIZATION The Board is authorized to issue up to 8,000,000 shares of Common Stock. Dated: [Date] [Your Signature] [Your Name], Incorporator</code></pre> <strong>First Board Meeting</strong>: Board then holds first meeting (or written consent) <strong>Board Actions</strong>:</p>
+                        <ul>
+                        <li>Appoint officers (CEO, CFO, Secretary)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Approve stock purchase agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Authorize founders to sign bank documents</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Approve stock option plan (if ready)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set fiscal year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Select bank</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Select accounting firm (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example Board Consent</strong>:</p>
+                        <pre><code>ACTION BY UNANIMOUS WRITTEN CONSENT OF BOARD OF DIRECTORS
+                        <p>OF COODLOOM, INC. The undersigned, being all the directors of CoodLoom, Inc., hereby consent to the following: 1. APPOINTMENT OF OFFICERS The following persons are appointed as officers:</p>
+                        <ul>
+                        <li>CEO: [Your Name]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CFO: [Co-founder Name]  </li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secretary: [Your Name]</li>
+                        </li>
+                        </ul>
+                        <p>2. ISSUANCE OF SHARES The Company shall issue shares pursuant to Stock Purchase Agreements:</p>
+                        <ul>
+                        <li>[Your Name]: 4,000,000 shares for $40</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Co-founder Name]: 4,000,000 shares for $40</li>
+                        </li>
+                        </ul>
+                        <p>3. BANKING The CEO and CFO are authorized to open bank account at [Bank Name]. 4. FISCAL YEAR The fiscal year shall end on December 31. 5. SECTION 1244 STOCK The shares issued qualify as Section 1244 stock (tax benefits if loss). Dated: [Date] [Your Signature]           [Co-founder Signature] [Your Name], Director      [Co-founder], Director</code></pre></p>
+                        <h4>Step 11: Prepare IP Assignment Agreements</h4>
+                        <p><strong>Critical</strong>: Transfer all IP to the company! <strong>What to Transfer</strong>:</p>
+                        <ul>
+                        <li>Existing POS software code</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Domain names</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trademarks/brand names</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Documentation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Any inventions or innovations</li>
+                        </li>
+                        </ul>
+                        <p><strong>IP Assignment Agreement</strong>:</p>
+                        <pre><code>PROPRIETARY INFORMATION AND INVENTIONS ASSIGNMENT AGREEMENT
+                        <p>This Agreement is entered into as of [Date] by and between: CoodLoom, Inc. (&quot;Company&quot;) and [Your Name] (&quot;Founder&quot;) 1. ASSIGNMENT OF INVENTIONS Founder hereby assigns to Company all right, title, and interest in: (a) All inventions, discoveries, improvements, software, designs related to Company&#x27;s business created by Founder prior to this Agreement, including:</p>
+                        <ul>
+                        <li>CoodLoom POS software (description)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[List specific items]</li>
+                        </li>
+                        </ul>
+                        <p>(b) All future inventions created during employment with Company 2. PROPRIETARY INFORMATION Founder agrees to maintain confidentiality of Company proprietary information. 3. NO CONFLICTS Founder represents there are no conflicting agreements or obligations. 4. COOPERATION Founder agrees to cooperate in obtaining patents, copyrights, trademarks. SIGNATURES: [Both parties sign]</code></pre> <strong>Critical Timing</strong>: Sign this BEFORE or AT incorporation, not after! <strong>Why Important</strong>:</p>
+                        <ul>
+                        <li>Ensures company owns all IP</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Necessary for VC funding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prevents future disputes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax benefits (contributes IP for stock)</li>
+                        </li>
+                        </ul>
+                        <h3>Phase 4: Post-Incorporation Setup (Week 3-4)</h3>
+                        <h4>Step 12: Open Business Bank Account</h4>
+                        <p><strong>Why Separate Account</strong>:</p>
+                        <ul>
+                        <li>Maintains corporate veil (limited liability)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cleaner accounting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional image</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal requirement</li>
+                        </li>
+                        </ul>
+                        <p><strong>What You&#x27;ll Need</strong>:</p>
+                        <ul>
+                        <li>Certificate of Incorporation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>EIN letter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board resolution authorizing account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Driver&#x27;s license</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Initial deposit ($100-1,000 depending on bank)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Bank Options</strong>: <strong>Traditional Banks</strong>:</p>
+                        <ul>
+                        <li>Chase Business Banking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bank of America</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wells Fargo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Local credit unions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Startup-Friendly Banks</strong>:</p>
+                        <ul>
+                        <li>Silicon Valley Bank (if VC-funded)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mercury (online, popular with startups)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Brex (includes credit card)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Novo (simple, free)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Features to Consider</strong>:</p>
+                        <ul>
+                        <li>Monthly fees ($0-25)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Minimum balance requirements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Online/mobile banking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Integration with accounting software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Credit card options</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Remote deposit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wire transfer fees</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation for CoodLoom</strong>: Mercury or Novo (free, designed for startups) <strong>Process</strong>: 1. Go to bank website or branch 2. Select &quot;Business Checking&quot; 3. Upload documents 4. Verify identity (video call or in-person) 5. Make initial deposit 6. <strong>Receive account</strong>: 1-3 days (online) or same-day (in-person)</p>
+                        <h4>Step 13: Set Up Accounting System</h4>
+                        <p><strong>Why Now</strong>: Track expenses from Day 1 for tax deductions <strong>Options</strong>: <strong>A. Accounting Software</strong> ($0-50/month):</p>
+                        <ul>
+                        <li><strong>QuickBooks Online</strong> ($30/month): Most popular, full-featured</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Xero</strong> ($20/month): Modern, good for startups</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Wave</strong> (Free): Basic, good to start</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>FreshBooks</strong> ($15/month): Simple, invoicing-focused</li>
+                        </li>
+                        </ul>
+                        <p><strong>B. Bookkeeping Service</strong> ($200-500/month):</p>
+                        <ul>
+                        <li><strong>Pilot</strong>: Full-service for startups</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Bench</strong>: Monthly bookkeeping + tax prep</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>inDinero</strong>: Bookkeeping + CFO services</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation</strong>: Start with QuickBooks ($30/month), hire bookkeeper when revenue &gt; $10K/month <strong>Setup Tasks</strong>:</p>
+                        <ul>
+                        <li>[ ] Connect bank account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up chart of accounts (revenue, expenses categories)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create invoice templates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up recurring expenses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Configure sales tax (if applicable)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Expense Categories for CoodLoom</strong>:</p>
+                        <ul>
+                        <li>Software/SaaS subscriptions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cloud hosting (AWS, Azure)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Marketing/advertising</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Salaries</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Contractor payments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Office supplies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal/professional fees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Travel</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meals &amp; entertainment</li>
+                        </li>
+                        </ul>
+                        <h4>Step 14: File Necessary Registrations</h4>
+                        <p><strong>Federal</strong>:</p>
+                        <ul>
+                        <li>[x] EIN (completed in Step 6)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] S-Corp Election (if S-Corp): File Form 2553 within 75 days</li>
+                        </li>
+                        </ul>
+                        <p><strong>State</strong>:</p>
+                        <ul>
+                        <li>[ ] <strong>Foreign Qualification</strong> (if Delaware corp operating in another state)</li>
+                        <ul>
+                        <li>File in state where you have office, employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $100-500 per state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ongoing: Annual reports in both states</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>Local</strong>:</p>
+                        <ul>
+                        <li>[ ] <strong>Business License</strong>: City/county where operating</li>
+                        <ul>
+                        <li>Check city/county website</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $50-400</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Renewal: Annual</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>DBA</strong> (Doing Business As) - if using different name</li>
+                        <ul>
+                        <li>&quot;CoodLoom&quot; if incorporated as &quot;CoodLoom, Inc.&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File with county clerk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: $10-100</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>Industry-Specific</strong>:</p>
+                        <ul>
+                        <li>[ ] <strong>Sales Tax Permit</strong>: If selling taxable products (varies by state)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Resale Certificate</strong>: If reselling hardware</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] <strong>Professional Licenses</strong>: If required for your industry</li>
+                        </li>
+                        </ul>
+                        <h4>Step 15: Set Up Payroll (if paying yourself)</h4>
+                        <p><strong>When to Set Up</strong>:</p>
+                        <ul>
+                        <li>C-Corp: Not urgent (can start without salary)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>S-Corp: Required (must pay &quot;reasonable salary&quot;)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>LLC: Not applicable (use owner draws)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Payroll Service Options</strong> ($40-150/month):</p>
+                        <ul>
+                        <li><strong>Gusto</strong>: Most popular for startups, $40/month + $6/person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Rippling</strong>: HR + payroll, includes benefits, $8/person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>ADP</strong>: Enterprise-grade, more expensive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Paychex</strong>: Traditional service</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>JustWorks</strong>: PEO service, includes benefits</li>
+                        </li>
+                        </ul>
+                        <p><strong>What It Handles</strong>:</p>
+                        <ul>
+                        <li>Calculate payroll taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Withhold and remit taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Generate W-2s</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handle state unemployment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Workers&#x27; comp (if included)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Founder Salary Considerations</strong>: <strong>C-Corp</strong>:</p>
+                        <ul>
+                        <li>Can pay zero salary initially (live on savings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start salary when company can afford it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Typical: $0-80K initially, increase as fundraise</li>
+                        </li>
+                        </ul>
+                        <p><strong>S-Corp</strong>:</p>
+                        <ul>
+                        <li>Must pay &quot;reasonable salary&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IRS guidance: Similar to what you&#x27;d earn at another company</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Too low = IRS audit risk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Typical: $60-120K depending on role and location</li>
+                        </li>
+                        </ul>
+                        <p><strong>LLC</strong>:</p>
+                        <ul>
+                        <li>No salary, take owner distributions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pay estimated taxes quarterly</li>
+                        </li>
+                        </ul>
+                        <h4>Step 16: Get Business Insurance</h4>
+                        <p><strong>Types of Insurance</strong>: <strong>General Liability</strong> ($400-1,000/year):</p>
+                        <ul>
+                        <li>Covers: Property damage, bodily injury, advertising injury</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Required: If have office, customers visit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Amount: $1M per occurrence, $2M aggregate</li>
+                        </li>
+                        </ul>
+                        <p><strong>Professional Liability (E&amp;O)</strong> ($500-2,000/year):</p>
+                        <ul>
+                        <li>Covers: Errors, omissions, software bugs causing customer loss</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Required: For software companies selling to businesses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Amount: $1M per occurrence</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>For CoodLoom</strong>: Important! POS system bugs could cost customers money</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cyber Liability</strong> ($1,000-3,000/year):</p>
+                        <ul>
+                        <li>Covers: Data breaches, hacking, loss of customer data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Required: If handling payment/customer data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Amount: $1M coverage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>For CoodLoom</strong>: Critical if processing payments</li>
+                        </li>
+                        </ul>
+                        <p><strong>Workers&#x27; Compensation</strong> (varies):</p>
+                        <ul>
+                        <li>Covers: Employee injuries</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Required: When you have employees (not founders initially)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost: % of payroll, varies by state and industry</li>
+                        </li>
+                        </ul>
+                        <p><strong>Directors &amp; Officers (D&amp;O)</strong> ($1,000-5,000/year):</p>
+                        <ul>
+                        <li>Covers: Directors/officers from lawsuits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Required: When raising VC (investors require)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Amount: $1-2M coverage</li>
+                        </li>
+                        </ul>
+                        <p><strong>Where to Buy</strong>:</p>
+                        <ul>
+                        <li><strong>Embroker</strong>: Startup-focused, online</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Hiscox</strong>: Small business policies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>CoverWallet</strong>: Compare quotes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Local insurance broker</strong>: Shop around</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation for CoodLoom (Year 1)</strong>:</p>
+                        <ul>
+                        <li>General Liability: $1M ($500/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional Liability: $1M ($1,000/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cyber Liability: $1M ($1,500/year)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total</strong>: ~$3,000/year</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Get</strong>: After incorporation, before signing first customer</p>
+                        <h4>Step 17: File Beneficial Ownership Report (New!)</h4>
+                        <p><strong>What</strong>: New requirement (2024) - report who owns/controls company <strong>Who Must File</strong>: All corporations and LLCs <strong>When</strong>: Within 30 days of formation (new companies) <strong>Where</strong>: FinCEN (Financial Crimes Enforcement Network) <strong>Information Required</strong>:</p>
+                        <ul>
+                        <li>Beneficial owners (25%+ ownership or control)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Full legal name</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Date of birth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>ID number (driver&#x27;s license or passport)</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to File</strong>: 1. Go to <a href="https://www.fincen.gov/boi">fincen.gov/boi</a> 2. Create account 3. File Beneficial Ownership Information Report 4. <strong>Cost</strong>: Free 5. <strong>Time</strong>: 20 minutes <strong>Penalty for Not Filing</strong>: $500/day! <strong>Update Required</strong>: If ownership changes 25%+</p>
+                        <h3>Phase 5: Organize Corporate Records (Week 4)</h3>
+                        <h4>Step 18: Create Corporate Minute Book</h4>
+                        <p><strong>What</strong>: Binder (physical or digital) with all corporate documents <strong>Contents</strong>:</p>
+                        <ul>
+                        <li>Certificate of Incorporation (filed copy with seal)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Action by Incorporator</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board consents/meeting minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock purchase agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock certificates and ledger</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IP assignment agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bylaws amendments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Annual reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tax documents (EIN letter, 2553 if S-Corp)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Physical Binder</strong> ($50-150):</p>
+                        <ul>
+                        <li>Buy corporate kit on Amazon</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Professional look</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Includes seal, stock certificates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Digital</strong> ($0):</p>
+                        <ul>
+                        <li>Create folder structure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use Dropbox, Google Drive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Backup regularly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider: Pulley, Carta (cap table software includes document storage)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation</strong>: Digital with cloud backup (cheaper, accessible, searchable)</p>
+                        <h4>Step 19: Set Up Cap Table</h4>
+                        <p><strong>What</strong>: Capitalization table - who owns what <strong>Simple Version (Spreadsheet)</strong>:</p>
+                        <pre><code>Stockholder   | Shares    | % Ownership | Type   | Issue Date | Vesting
+                        <p>--------------|-----------|-------------|--------|------------|-------- You           | 4,000,000 | 50%         | Common | [Date]     | 4yr/1yr Co-founder    | 4,000,000 | 50%         | Common | [Date]     | 4yr/1yr Option Pool   | 2,000,000 | 20%<em>        | -      | -          | - TOTAL         | 10,000,000| 100%        | -      | -          | - </em>Fully diluted basis</code></pre> <strong>Software Options</strong>: <strong>Free</strong> (when small):</p>
+                        <ul>
+                        <li><strong>Pulley</strong>: Free for &lt;25 stakeholders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Carta</strong>: Free for early-stage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Excel/Google Sheets</li>
+                        </li>
+                        </ul>
+                        <p><strong>Paid</strong> (when complex):</p>
+                        <ul>
+                        <li><strong>Carta</strong>: $2,000+/year (standard for VC-backed)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Pulley</strong>: $300+/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Shareworks</strong>: Enterprise</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why Use Software</strong>:</p>
+                        <ul>
+                        <li>Track vesting automatically</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Model future fundraising</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Generate reports for investors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>409A valuations (later)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cap table becomes complex quickly</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommendation</strong>: Start with free Pulley or Carta, upgrade when raising VC</p>
+                        <h4>Step 20: Schedule Ongoing Compliance</h4>
+                        <p><strong>Annual Requirements</strong>: <strong>Delaware C-Corp</strong>:</p>
+                        <ul>
+                        <li><strong>Franchise Tax</strong>: Due March 1, $89-450 (based on shares/assets)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Annual Report</strong>: Due March 1, included in franchise tax</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>File online</strong>: <a href="https://corp.delaware.gov">corp.delaware.gov</a></li>
+                        </li>
+                        </ul>
+                        <p><strong>Home State</strong> (if foreign qualified):</p>
+                        <ul>
+                        <li><strong>Annual Report</strong>: Varies by state, $50-800</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Franchise Tax</strong>: Some states (CA: $800 minimum)</li>
+                        </li>
+                        </ul>
+                        <p><strong>IRS</strong>:</p>
+                        <ul>
+                        <li><strong>Form 1120</strong> (C-Corp tax return): Due April 15 (or Oct 15 with extension)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Form 1120S</strong> (S-Corp tax return): Due March 15 (or Sept 15 with extension)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Form 1065</strong> (LLC tax return): Due March 15 (or Sept 15 with extension)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Quarterly estimated taxes</strong>: If applicable</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ongoing</strong>:</p>
+                        <ul>
+                        <li><strong>Board meetings</strong>: Quarterly minimum (more often early)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Board minutes</strong>: Document decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Stockholder meetings</strong>: Annual</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Option grants</strong>: As hire employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Cap table updates</strong>: After any stock transaction</li>
+                        </li>
+                        </ul>
+                        <p><strong>Set Up Reminders</strong>:</p>
+                        <ul>
+                        <li>[ ] Calendar reminders for all deadlines</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Share with co-founder and accountant</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Budget for annual costs</li>
+                        </li>
+                        </ul>
+                        <h3>Phase 6: Post-Incorporation Best Practices</h3>
+                        <h4>Maintain Corporate Formality</h4>
+                        <p><strong>Why</strong>: To preserve limited liability protection <strong>Do&#x27;s</strong>: ✅ Keep business and personal finances separate ✅ Hold required meetings (board, shareholders) ✅ Document all major decisions ✅ File annual reports on time ✅ Pay required taxes and fees ✅ Sign contracts as CEO of company, not personally ✅ Use proper company name on everything ✅ Issue stock properly with certificates ✅ Maintain adequate capitalization <strong>Don&#x27;ts</strong>: ❌ Commingle personal and business funds ❌ Use business account for personal expenses ❌ Make major decisions without board approval ❌ Ignore corporate formalities ❌ Let company become insolvent ❌ Sign contracts personally instead of as officer ❌ Treat company assets as personal property <strong>If You Don&#x27;t</strong>: &quot;Piercing the corporate veil&quot; - lose liability protection, personally liable</p>
+                        <h2>Incorporation Checklist</h2>
+                        <p>Use this as you go through the process:</p>
+                        <h3>Pre-Incorporation</h3>
+                        <ul>
+                        <li>[ ] Decided on business structure (LLC / S-Corp / C-Corp)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Decided on state (Delaware / Home state / Other)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Finalized company name: __________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Checked name availability (state + USPTO + domain)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Discussed equity split with co-founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Chose registered agent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Gathered all required information</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Budgeted for costs: $__________</li>
+                        </li>
+                        </ul>
+                        <h3>Incorporation Filing</h3>
+                        <ul>
+                        <li>[ ] Filed Certificate of Incorporation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Paid filing fees: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Received filed certificate with file number: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Obtained EIN: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Filed beneficial ownership report</li>
+                        </li>
+                        </ul>
+                        <h3>Corporate Documents</h3>
+                        <ul>
+                        <li>[ ] Drafted and adopted Bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Action by Incorporator completed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] First Board meeting/consent completed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Appointed officers:</li>
+                        <ul>
+                        <li>[ ] CEO: __________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] CFO: __________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Secretary: __________________</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Prepared Stock Purchase Agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Issued stock certificates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Updated cap table</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Signed IP Assignment Agreements</li>
+                        </li>
+                        </ul>
+                        <h3>Banking &amp; Accounting</h3>
+                        <ul>
+                        <li>[ ] Opened business bank account: __________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up accounting software: __________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Connected bank to accounting software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up payroll system (if paying yourself): __________________</li>
+                        </li>
+                        </ul>
+                        <h3>Registrations &amp; Licenses</h3>
+                        <ul>
+                        <li>[ ] Foreign qualification (if needed): State: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Business license (city/county): __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sales tax permit (if needed): __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Industry-specific licenses: __________</li>
+                        </li>
+                        </ul>
+                        <h3>Insurance &amp; Protection</h3>
+                        <ul>
+                        <li>[ ] General liability insurance: $__________ coverage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Professional liability insurance: $__________ coverage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Cyber liability insurance: $__________ coverage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] D&amp;O insurance (if raising VC): $__________ coverage</li>
+                        </li>
+                        </ul>
+                        <h3>Organization</h3>
+                        <ul>
+                        <li>[ ] Created corporate minute book (physical or digital)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Organized all documents</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up cap table software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Scheduled annual compliance reminders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Shared access with co-founder and professionals</li>
+                        </li>
+                        </ul>
+                        <h3>Next Steps</h3>
+                        <ul>
+                        <li>[ ] Move to Chapter 3: Founders Agreement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Schedule lawyer consultation (if not already done)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Schedule accountant consultation</li>
+                        </li>
+                        </ul>
+                        <h2>Common Mistakes to Avoid</h2>
+                        <p>❌ <strong>Waiting too long to incorporate</strong>: Incorporate before:</p>
+                        <ul>
+                        <li>Signing contracts with customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hiring employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Receiving significant revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Raising money</li>
+                        </li>
+                        </ul>
+                        <p>❌ <strong>Not vesting founder stock</strong>: See Chapter 3 ❌ <strong>Forgetting IP assignment</strong>: Must transfer BEFORE or AT incorporation ❌ <strong>Using generic templates without review</strong>: Every situation is different ❌ <strong>Not maintaining corporate formality</strong>: Ruins limited liability ❌ <strong>Commingling funds</strong>: Death of limited liability ❌ <strong>Missing filing deadlines</strong>: Penalties and possible dissolution ❌ <strong>Not documenting decisions</strong>: No board minutes = problems later ❌ <strong>Issuing stock without 83(b)</strong>: Massive tax bill when vesting ❌ <strong>Operating without insurance</strong>: One lawsuit = bankruptcy ❌ <strong>Not filing beneficial ownership report</strong>: $500/day fine!</p>
+                        <h2>Cost Summary</h2>
+                        <h3>Delaware C-Corp Example:</h3>
+                        <p><strong>Formation Costs</strong> (one-time):</p>
+                        <ul>
+                        <li>Delaware filing: $89</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Registered agent (first year): $125</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stripe Atlas or lawyer: $500-1,500</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock certificates: $50</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total</strong>: $764-1,764</li>
+                        </li>
+                        </ul>
+                        <p><strong>First Year Operating</strong>:</p>
+                        <ul>
+                        <li>Delaware franchise tax: $89</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Registered agent: $125</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accounting software: $360 (QuickBooks)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Insurance: $3,000 (GL + E&amp;O + Cyber)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Business license: $100</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accounting/bookkeeping: $1,000-3,000</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payroll service: $600 (if using)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal consult: $500</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total</strong>: $5,774-7,774</li>
+                        </li>
+                        </ul>
+                        <p><strong>Year 2+</strong>:</p>
+                        <ul>
+                        <li>Similar to above, minus one-time formation costs</li>
+                        </li>
+                        </ul>
+                        <h2>Resources</h2>
+                        <h3>Formation Services:</h3>
+                        <ul>
+                        <li><strong>Stripe Atlas</strong>: <a href="https://stripe.com/atlas">stripe.com/atlas</a> - $500</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Clerky</strong>: <a href="https://www.clerky.com">clerky.com</a> - $800+</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Gust Launch</strong>: <a href="https://gust.com/launch">gust.com/launch</a> - $500</li>
+                        </li>
+                        </ul>
+                        <h3>Legal Templates:</h3>
+                        <ul>
+                        <li><strong>Cooley GO</strong>: <a href="https://www.cooleygo.com/">cooleygo.com</a> - Free startup docs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Y Combinator</strong>: <a href="https://www.ycombinator.com/documents">ycombinator.com/documents</a> - SAFE, other forms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>NVCA</strong>: <a href="https://nvca.org/">nvca.org</a> - Standard VC docs</li>
+                        </li>
+                        </ul>
+                        <h3>Government Resources:</h3>
+                        <ul>
+                        <li><strong>Delaware Division of Corporations</strong>: <a href="https://corp.delaware.gov">corp.delaware.gov</a></li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>IRS</strong>: <a href="https://www.irs.gov/businesses">irs.gov/businesses</a></li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>FinCEN (Beneficial Ownership)</strong>: <a href="https://www.fincen.gov/boi">fincen.gov/boi</a></li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>SBA</strong>: <a href="https://www.sba.gov">sba.gov</a></li>
+                        </li>
+                        </ul>
+                        <h3>Tools:</h3>
+                        <ul>
+                        <li><strong>Carta</strong>: <a href="https://carta.com">carta.com</a> - Cap table management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Pulley</strong>: <a href="https://pulley.com">pulley.com</a> - Cap table management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Mercury</strong>: <a href="https://mercury.com">mercury.com</a> - Business banking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Gusto</strong>: <a href="https://gusto.com">gusto.com</a> - Payroll</li>
+                        </li>
+                        </ul>
+                        <h2>Timeline Summary</h2>
+                        <p><strong>Week 1: Planning &amp; Filing</strong></p>
+                        <ul>
+                        <li>Choose structure and state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Finalize name</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Choose registered agent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File Certificate of Incorporation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Obtain EIN</li>
+                        </li>
+                        </ul>
+                        <p><strong>Week 2: Documentation</strong></p>
+                        <ul>
+                        <li>Draft Bylaws</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Incorporator action</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board action/first meeting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stock purchase agreements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>IP assignments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Issue stock</li>
+                        </li>
+                        </ul>
+                        <p><strong>Week 3: Setup</strong></p>
+                        <ul>
+                        <li>Open bank account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set up accounting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File registrations (foreign qual, business license)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get insurance quotes</li>
+                        </li>
+                        </ul>
+                        <p><strong>Week 4: Organization</strong></p>
+                        <ul>
+                        <li>Purchase insurance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set up payroll (if applicable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Organize corporate records</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set up cap table</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>File beneficial ownership report</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Schedule compliance reminders</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total</strong>: 4 weeks to fully operational</p>
+                        <h2>Key Takeaways</h2>
+                        <p>✓ <strong>Choose the right structure first</strong> - Harder to change later ✓ <strong>Delaware C-Corp for serious startups</strong> - Standard for VC funding ✓ <strong>Don&#x27;t skip IP assignment</strong> - Must transfer BEFORE/AT incorporation ✓ <strong>Maintain formality</strong> - Protects your limited liability ✓ <strong>Document everything</strong> - Board minutes, decisions, stock issuance ✓ <strong>Get professional help</strong> - Lawyer consultation worth it ✓ <strong>Separate finances</strong> - Business and personal accounts ✓ <strong>Get insurance</strong> - Before signing first customer ✓ <strong>File beneficial ownership</strong> - New requirement, $500/day penalty ✓ <strong>Set up compliance calendar</strong> - Never miss deadlines</p>
+                        <h2>Next Steps</h2>
+                        <p>Congratulations! You&#x27;ve incorporated CoodLoom properly. <strong>Now move to</strong>:</p>
+                        <ul>
+                        <li><strong>Chapter 3: Founders Agreement</strong> - Legal documentation of equity and roles (CRITICAL!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Chapter 4: Intellectual Property</strong> - Protecting your POS system</li>
+                        </li>
+                        </ul>
+                        <p><strong>Don&#x27;t skip Chapter 3</strong> - Founders agreement prevents 90% of co-founder conflicts!</p>
+                        <hr />
+                        <p><strong>You&#x27;ve now legally formed CoodLoom. The company exists! Next, protect yourself and your relationship with your co-founder through proper agreements.</strong></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Choosing Business Structure</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Founders Agreement</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

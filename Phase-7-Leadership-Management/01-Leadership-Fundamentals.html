@@ -1,0 +1,2367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Leadership Fundamentals - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Leadership Management</li>
+                    <li aria-current="page">Leadership Fundamentals</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Leadership Fundamentals</h1>
+                        <h2>Introduction</h2>
+                        <p>Transitioning from founder to CEO requires mastering leadership fundamentals. This isn&#x27;t just about managing people—it&#x27;s about setting vision, making tough decisions, and inspiring others to achieve what seems impossible. As CoodLoom grows, your role evolves from doing everything yourself to leading others to do it better.</p>
+                        <h2>Understanding Leadership vs Management</h2>
+                        <h3>The Key Difference</h3>
+                        <ul>
+                        <li><strong>Leadership</strong>: Setting direction, inspiring vision, creating change</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Management</strong>: Planning, organizing, executing, maintaining systems</li>
+                        </li>
+                        </ul>
+                        <h3>Both Are Essential</h3>
+                        <p>As CEO, you need both:</p>
+                        <ul>
+                        <li><strong>70% Leadership</strong>: Vision, strategy, culture, inspiration</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>30% Management</strong>: Systems, processes, accountability</li>
+                        </li>
+                        </ul>
+                        <h3>Your Journey</h3>
+                        <ul>
+                        <li><strong>Early Stage (Now)</strong>: 80% doing, 20% leading</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Growth Stage (10-50 employees)</strong>: 50% leading, 50% managing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Scale Stage (50+ employees)</strong>: 70% leading, 30% strategic management</li>
+                        </li>
+                        </ul>
+                        <h2>Core Leadership Principles</h2>
+                        <h3>1. Lead by Example</h3>
+                        <p><strong>What it means</strong>: Your team watches everything you do. Your behaviors set the standard. <strong>Practical Applications</strong>:</p>
+                        <ul>
+                        <li><strong>Work Ethic</strong>: If you want a hardworking team, be there early and stay late when needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Integrity</strong>: Always do what you say you&#x27;ll do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Learning</strong>: Share what you&#x27;re learning; admit when you don&#x27;t know something</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Accountability</strong>: Own mistakes publicly, credit success to the team</li>
+                        </li>
+                        </ul>
+                        <p><strong>For CoodLoom</strong>:</p>
+                        <pre><code>❌ Bad: &quot;I need everyone to respond to customers within 24 hours&quot; 
+                        <p>(while you take 3 days to respond to investor emails) ✓ Good: &quot;I respond to every important message within 24 hours, and I expect the same from our team with customers&quot;</code></pre></p>
+                        <h3>2. Vision-Driven Leadership</h3>
+                        <p><strong>What it means</strong>: People follow leaders who know where they&#x27;re going and why. <strong>Creating Your Vision</strong>:</p>
+                        <ul>
+                        <li><strong>Aspirational</strong>: Big enough to inspire, achievable enough to believe</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Clear</strong>: Everyone should be able to explain it in one sentence</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Consistent</strong>: Repeated in every meeting, email, and conversation</li>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Vision Framework</strong>:</p>
+                        <pre><code>Mission (Why we exist): 
+                        <p>&quot;To empower creators and businesses with intelligent content tools&quot; Vision (Where we&#x27;re going): &quot;Become the #1 AI content platform trusted by 10,000 businesses by 2030&quot; Values (How we work):</p>
+                        <ul>
+                        <li>Customer obsession</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Innovation with purpose</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Radical transparency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quality over speed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team growth mindset</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>3. Emotional Intelligence (EQ)</h3>
+                        <p><strong>The 5 Components</strong>: <strong>Self-Awareness</strong>:</p>
+                        <ul>
+                        <li>Recognize your emotions and their impact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Know your triggers (what makes you angry, anxious, defensive)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand your leadership style and blind spots</li>
+                        </li>
+                        </ul>
+                        <p><strong>Self-Regulation</strong>:</p>
+                        <ul>
+                        <li>Don&#x27;t react emotionally in the moment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take a breath before responding to bad news</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Maintain composure in crisis</li>
+                        </li>
+                        </ul>
+                        <p><strong>Motivation</strong>:</p>
+                        <ul>
+                        <li>Intrinsic drive beyond money</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Passion for the mission</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Resilience in face of setbacks</li>
+                        </li>
+                        </ul>
+                        <p><strong>Empathy</strong>:</p>
+                        <ul>
+                        <li>Understand team members&#x27; perspectives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider the &quot;why&quot; behind behaviors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Active listening without judgment</li>
+                        </li>
+                        </ul>
+                        <p><strong>Social Skills</strong>:</p>
+                        <ul>
+                        <li>Build genuine relationships</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Navigate organizational dynamics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communicate effectively across different styles</li>
+                        </li>
+                        </ul>
+                        <p><strong>Practical Exercise</strong>:</p>
+                        <pre><code>Daily EQ Check-in:
+                        <ul>
+                        <li>Morning: &quot;What&#x27;s my emotional state? What might trigger me today?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Evening: &quot;How did I handle emotional situations? What could I improve?&quot;</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>4. Decision-Making Authority</h3>
+                        <p><strong>What it means</strong>: As CEO, the buck stops with you. Every major decision ultimately requires your input or approval. <strong>Decision Framework</strong>: <strong>Type 1 Decisions (Irreversible)</strong>:</p>
+                        <ul>
+                        <li>Hiring co-founders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Major pivots</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Large financial commitments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal agreements</li>
+                        </li>
+                        </ul>
+                        <p><strong>Action</strong>: Take time, gather input, sleep on it <strong>Type 2 Decisions (Reversible)</strong>:</p>
+                        <ul>
+                        <li>Feature priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Marketing experiments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tool choices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Most operational decisions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Action</strong>: Decide quickly, delegate when possible, iterate <strong>The 70% Rule</strong>:</p>
+                        <ul>
+                        <li>Make decisions when you have 70% of the information you wish you had</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Waiting for 100% means you&#x27;re too slow</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Less than 50% is reckless</li>
+                        </li>
+                        </ul>
+                        <h3>5. Communication Mastery</h3>
+                        <p><strong>CEO Communication Principles</strong>: <strong>Clarity</strong>:</p>
+                        <ul>
+                        <li>Simple language, no jargon</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>One main message per communication</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use stories and examples</li>
+                        </li>
+                        </ul>
+                        <p><strong>Consistency</strong>:</p>
+                        <ul>
+                        <li>Same message to all stakeholders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Repeat key points (people need to hear things 7 times)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Align actions with words</li>
+                        </li>
+                        </ul>
+                        <p><strong>Transparency</strong>:</p>
+                        <ul>
+                        <li>Share the good and the bad</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Explain the &quot;why&quot; behind decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Admit when you don&#x27;t have answers</li>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Communication Cadence</strong>:</p>
+                        <pre><code>Daily:
+                        <ul>
+                        <li>Quick team stand-up (15 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer feedback review</li>
+                        </li>
+                        </ul>
+                        <p>Weekly:</p>
+                        <ul>
+                        <li>Team all-hands (30 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>One-on-ones with direct reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Investor update email</li>
+                        </li>
+                        </ul>
+                        <p>Monthly:</p>
+                        <ul>
+                        <li>Board meeting or update</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company metrics review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic planning session</li>
+                        </li>
+                        </ul>
+                        <p>Quarterly:</p>
+                        <ul>
+                        <li>Vision and strategy review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team retrospective</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals and OKR setting</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Leadership Styles</h2>
+                        <h3>1. Transformational Leadership</h3>
+                        <p><strong>Best for</strong>: High-growth startups, innovation-focused teams <strong>Characteristics</strong>:</p>
+                        <ul>
+                        <li>Inspire through vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Challenge the status quo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Develop team members</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lead through change</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Use</strong>: Building CoodLoom from idea to product-market fit</p>
+                        <h3>2. Servant Leadership</h3>
+                        <p><strong>Best for</strong>: Building strong team culture, retention <strong>Characteristics</strong>:</p>
+                        <ul>
+                        <li>Put team needs first</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Remove blockers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Enable others to succeed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build trust through support</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Use</strong>: Growing your team from 5 to 50 people</p>
+                        <h3>3. Democratic Leadership</h3>
+                        <p><strong>Best for</strong>: Creative decisions, team buy-in <strong>Characteristics</strong>:</p>
+                        <ul>
+                        <li>Seek input from team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build consensus</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Encourage participation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share decision-making</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Use</strong>: Major strategic decisions, cultural issues</p>
+                        <h3>4. Autocratic Leadership</h3>
+                        <p><strong>Best for</strong>: Crisis situations, urgent decisions <strong>Characteristics</strong>:</p>
+                        <ul>
+                        <li>Quick decisive action</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear directives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Minimal consultation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High control</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Use</strong>: Emergency bug fixes, rapid competitive response</p>
+                        <h3>Your Adaptive Style</h3>
+                        <p><strong>The best CEOs adapt their style based on</strong>:</p>
+                        <ul>
+                        <li>Situation urgency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team maturity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision importance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company stage</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example Scenario</strong>:</p>
+                        <pre><code>Situation: Major security breach discovered
+                        <p>Hour 1-4: Autocratic (immediate action needed) Hour 4-24: Servant (support team working on fix) Day 2-7: Transformational (learn and improve systems) Week 2+: Democratic (plan long-term security strategy)</code></pre></p>
+                        <h2>Building Leadership Credibility</h2>
+                        <h3>1. Competence</h3>
+                        <p><strong>Technical Credibility</strong>:</p>
+                        <ul>
+                        <li>Stay hands-on enough to understand the product</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review code/designs periodically</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand technical tradeoffs</li>
+                        </li>
+                        </ul>
+                        <p><strong>Business Credibility</strong>:</p>
+                        <ul>
+                        <li>Know your numbers cold (MRR, CAC, LTV, churn)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand the market and competition</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make data-driven arguments</li>
+                        </li>
+                        </ul>
+                        <h3>2. Character</h3>
+                        <p><strong>Integrity</strong>:</p>
+                        <ul>
+                        <li>Keep commitments (even small ones)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be honest about mistakes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give credit where due</li>
+                        </li>
+                        </ul>
+                        <p><strong>Fairness</strong>:</p>
+                        <ul>
+                        <li>Consistent standards for everyone</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Merit-based decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address issues directly</li>
+                        </li>
+                        </ul>
+                        <h3>3. Care</h3>
+                        <p><strong>Show Genuine Interest</strong>:</p>
+                        <ul>
+                        <li>Remember personal details</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Celebrate wins and milestones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support during difficult times</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Invest in development</li>
+                        </li>
+                        </ul>
+                        <h2>Common Leadership Mistakes (and How to Avoid Them)</h2>
+                        <h3>Mistake #1: Micromanaging</h3>
+                        <p><strong>What it looks like</strong>:</p>
+                        <ul>
+                        <li>Approving every small decision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Redoing team members&#x27; work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Checking in constantly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not delegating</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why it happens</strong>:</p>
+                        <ul>
+                        <li>You were the only person doing this before</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fear of losing control</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Don&#x27;t trust the team yet</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Perfectionism</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to fix</strong>:</p>
+                        <ul>
+                        <li>Hire people better than you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set clear expectations and metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Let people fail (on small things)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus on outcomes, not process</li>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Example</strong>:</p>
+                        <pre><code>❌ Micromanaging: Reviewing every customer email before it&#x27;s sent
+                        <p>✓ Empowering: Create email templates, train on tone, review metrics weekly</code></pre></p>
+                        <h3>Mistake #2: Avoiding Difficult Conversations</h3>
+                        <p><strong>What it looks like</strong>:</p>
+                        <ul>
+                        <li>Letting poor performance slide</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not addressing toxic behavior</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoiding firing decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ignoring team conflicts</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why it happens</strong>:</p>
+                        <ul>
+                        <li>Want to be liked</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fear confrontation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hope problems fix themselves</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lack of confidence</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to fix</strong>:</p>
+                        <ul>
+                        <li>Address issues within 48 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use the &quot;SBI&quot; model (Situation-Behavior-Impact)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus on behavior, not personality</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make it about company success</li>
+                        </li>
+                        </ul>
+                        <p><strong>The SBI Model</strong>:</p>
+                        <pre><code>Situation: &quot;In yesterday&#x27;s client call...&quot;
+                        <p>Behavior: &quot;...you interrupted the client three times...&quot; Impact: &quot;...which made them feel unheard and we lost the deal.&quot;</code></pre></p>
+                        <h3>Mistake #3: Not Setting Clear Expectations</h3>
+                        <p><strong>What it looks like</strong>:</p>
+                        <ul>
+                        <li>&quot;Just figure it out&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assuming people know what you want</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vague goals and priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No clear success metrics</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why it happens</strong>:</p>
+                        <ul>
+                        <li>Everything is clear in your head</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Moving too fast to explain</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assume others see what you see</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to fix</strong>:</p>
+                        <ul>
+                        <li>Write down expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use the &quot;5 Ws&quot; (Who, What, When, Where, Why)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get confirmation of understanding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide examples</li>
+                        </li>
+                        </ul>
+                        <p><strong>Expectation Template</strong>:</p>
+                        <pre><code>Task: [What needs to be done]
+                        <p>Why: [Business context and importance] Owner: [Who&#x27;s responsible] Due: [Specific date/time] Success looks like: [Concrete outcomes] Resources: [What they have to work with] Questions: [Create space for clarification]</code></pre></p>
+                        <h3>Mistake #4: Failing to Delegate</h3>
+                        <p><strong>What it looks like</strong>:</p>
+                        <ul>
+                        <li>Doing everything yourself</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bottlenecking decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Working 80+ hour weeks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team waiting on you constantly</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why it happens</strong>:</p>
+                        <ul>
+                        <li>Faster to do it yourself (short-term)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quality concerns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Enjoy the work too much</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Haven&#x27;t built systems</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to fix</strong>:</p>
+                        <ul>
+                        <li>Identify tasks only you can do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create delegation framework</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Train and document</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accept 80% solutions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Delegation Matrix</strong>:</p>
+                        <pre><code>High Impact + Only You = Keep doing
+                        <p>High Impact + Others can do = Delegate and teach Low Impact + Only You = Eliminate or delegate Low Impact + Others can do = Stop doing immediately</code></pre></p>
+                        <h3>Mistake #5: No Work-Life Balance</h3>
+                        <p><strong>What it looks like</strong>:</p>
+                        <ul>
+                        <li>Never disconnecting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Canceling personal commitments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Health declining</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Relationships suffering</li>
+                        </li>
+                        </ul>
+                        <p><strong>Why it happens</strong>:</p>
+                        <ul>
+                        <li>Startup culture glorifies hustle</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Fear of missing something important</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Guilt when not working</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No boundaries set</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to fix</strong>:</p>
+                        <ul>
+                        <li>Schedule personal time like meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set clear availability hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Model healthy behavior</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Realize burnout helps no one</li>
+                        </li>
+                        </ul>
+                        <p><strong>CEO Balance Framework</strong>:</p>
+                        <pre><code>Work:
+                        <ul>
+                        <li>50-60 hours/week (not 80+)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>One day off per week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2-week vacation annually</li>
+                        </li>
+                        </ul>
+                        <p>Health:</p>
+                        <ul>
+                        <li>7-8 hours sleep</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exercise 3-4x/week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular meals</li>
+                        </li>
+                        </ul>
+                        <p>Relationships:</p>
+                        <ul>
+                        <li>Date night weekly (if partnered)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Friend time monthly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family time protected</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Developing Your Leadership Skills</h2>
+                        <h3>1. Self-Assessment</h3>
+                        <p><strong>Monthly Leadership Review</strong>:</p>
+                        <pre><code>Rate yourself 1-10 on:
+                        <p>□ Vision clarity and communication □ Team motivation and morale □ Decision-making speed and quality □ Conflict resolution effectiveness □ Personal development and learning □ Work-life balance □ Strategic thinking □ Execution and follow-through For scores below 7: Create improvement plan</code></pre></p>
+                        <h3>2. Seek Feedback</h3>
+                        <p><strong>360-Degree Feedback</strong>:</p>
+                        <ul>
+                        <li>Ask your co-founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Anonymous team survey (quarterly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mentor or coach input</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board member perspectives</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Questions</strong>:</p>
+                        <pre><code>1. What should I start doing?
+                        <p>2. What should I stop doing? 3. What should I continue doing? 4. What&#x27;s one thing that would make me a better leader?</code></pre></p>
+                        <h3>3. Continuous Learning</h3>
+                        <p><strong>CEO Learning Plan</strong>: <strong>Daily</strong> (30 minutes):</p>
+                        <ul>
+                        <li>Read leadership articles</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Listen to founder podcasts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review one leadership principle</li>
+                        </li>
+                        </ul>
+                        <p><strong>Weekly</strong> (2 hours):</p>
+                        <ul>
+                        <li>Read leadership book chapter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Watch CEO interview/talk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reflect on leadership wins/losses</li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly</strong> (4 hours):</p>
+                        <ul>
+                        <li>Attend founder meetup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Leadership course/workshop</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deep dive on one skill</li>
+                        </li>
+                        </ul>
+                        <p><strong>Recommended Resources</strong>:</p>
+                        <pre><code>Books:
+                        <ul>
+                        <li>&quot;High Output Management&quot; - Andy Grove</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;The CEO Within&quot; - Sandy Lerner</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Principles&quot; - Ray Dalio</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Trillion Dollar Coach&quot; - Schmidt, Rosenberg, Eagle</li>
+                        </li>
+                        </ul>
+                        <p>Podcasts:</p>
+                        <ul>
+                        <li>&quot;How I Built This&quot; - Guy Raz</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;The Knowledge Project&quot; - Shane Parrish</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Masters of Scale&quot; - Reid Hoffman</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Invest Like the Best&quot; - Patrick O&#x27;Shaughnessy</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>4. Find a Mentor or Coach</h3>
+                        <p><strong>Types of Support</strong>: <strong>Mentor</strong>:</p>
+                        <ul>
+                        <li>Experienced founder/CEO</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Industry knowledge</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Free relationship</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Periodic advice</li>
+                        </li>
+                        </ul>
+                        <p><strong>Executive Coach</strong>:</p>
+                        <ul>
+                        <li>Professional development</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Structured improvement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Paid relationship</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular sessions</li>
+                        </li>
+                        </ul>
+                        <p><strong>Peer Group</strong>:</p>
+                        <ul>
+                        <li>Other founders at similar stage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shared experiences</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mutual support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly meetings</li>
+                        </li>
+                        </ul>
+                        <p><strong>For CoodLoom</strong>:</p>
+                        <pre><code>Ideal mentor profile:
+                        <ul>
+                        <li>Built B2B SaaS to $5M+ ARR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Experienced hiring/scaling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technical background</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not a competitor</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Leadership Self-Assessment</h3>
+                        <p>Complete this assessment honestly: <strong>Vision &amp; Strategy</strong>:</p>
+                        <ul>
+                        <li>[ ] I can articulate CoodLoom&#x27;s vision clearly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Team members can repeat our mission</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I have a clear 1-year and 3-year plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I communicate strategy regularly</li>
+                        </li>
+                        </ul>
+                        <p><strong>People Management</strong>:</p>
+                        <ul>
+                        <li>[ ] I have regular 1-on-1s with direct reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I give both positive and constructive feedback</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I address performance issues quickly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I invest in team development</li>
+                        </li>
+                        </ul>
+                        <p><strong>Decision Making</strong>:</p>
+                        <ul>
+                        <li>[ ] I make decisions with appropriate speed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I explain the reasoning behind decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I&#x27;m comfortable with uncertainty</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I delegate decisions when appropriate</li>
+                        </li>
+                        </ul>
+                        <p><strong>Communication</strong>:</p>
+                        <ul>
+                        <li>[ ] I&#x27;m accessible to the team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I share both good and bad news</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I listen more than I talk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I adapt my style to the audience</li>
+                        </li>
+                        </ul>
+                        <p><strong>Personal Growth</strong>:</p>
+                        <ul>
+                        <li>[ ] I regularly seek feedback</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I have mentors or advisors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I dedicate time to learning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] I reflect on my leadership</li>
+                        </li>
+                        </ul>
+                        <p><strong>Scoring</strong>:</p>
+                        <ul>
+                        <li>18-20 checks: Strong foundation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>14-17 checks: Room for growth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Below 14: Prioritize leadership development</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Define Your Leadership Philosophy</h3>
+                        <p>Write your personal leadership philosophy (1 page): <strong>Template</strong>:</p>
+                        <pre><code>My Leadership Purpose:
+                        <p>[Why do you want to lead? What impact do you want to have?] My Core Leadership Values: 1. [Value] - [What it means in practice] 2. [Value] - [What it means in practice] 3. [Value] - [What it means in practice] My Leadership Commitments:</p>
+                        <ul>
+                        <li>To my team: [What you promise]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>To customers: [What you promise]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>To investors: [What you promise]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>To myself: [What you promise]</li>
+                        </li>
+                        </ul>
+                        <p>My Leadership Style: [How you naturally lead, when you&#x27;re at your best] My Growth Areas: [1-3 areas you&#x27;re actively working to improve]</code></pre></p>
+                        <h3>Exercise 3: Weekly Leadership Reflection</h3>
+                        <p>Set aside 30 minutes every Friday: <strong>This Week&#x27;s Leadership Wins</strong>:</p>
+                        <pre><code>1. [Specific situation where you led well]
+                        <p>2. [Decision you&#x27;re proud of] 3. [How you supported someone]</code></pre> <strong>This Week&#x27;s Leadership Lessons</strong>:</p>
+                        <pre><code>1. [What didn&#x27;t go well and why]
+                        <p>2. [What you&#x27;d do differently] 3. [What you learned about yourself]</code></pre> <strong>Next Week&#x27;s Leadership Focus</strong>:</p>
+                        <pre><code>1. [One leadership skill to practice]
+                        <p>2. [One difficult conversation to have] 3. [One way to develop someone on the team]</code></pre></p>
+                        <h3>Exercise 4: Create Your CEO Operating System</h3>
+                        <p>Document your personal operating system: <strong>My Work Rhythm</strong>:</p>
+                        <pre><code>Morning (9-12): [Your most important work]
+                        <p>Afternoon (1-4): [Meetings, collaboration] Evening (5-7): [Strategic thinking, learning] Peak Performance Times: [When you do your best work] Energy Drains: [What depletes you] Recovery Activities: [How you recharge]</code></pre> <strong>My Decision-Making Process</strong>:</p>
+                        <pre><code>For Type 1 Decisions (irreversible):
+                        <p>1. [Your step 1] 2. [Your step 2] 3. [Your step 3] For Type 2 Decisions (reversible): 1. [Your step 1] 2. [Your step 2]</code></pre> <strong>My Communication Preferences</strong>:</p>
+                        <pre><code>Best way to reach me for:
+                        <ul>
+                        <li>Urgent issues: [Slack, call, etc.]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ideas and suggestions: [Email, memo, etc.]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Feedback for me: [1-on-1, anonymous form]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>General updates: [Stand-up, Slack, etc.]</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Leadership is learned, not innate</strong>: You can develop these skills through practice and reflection</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Your leadership style will evolve</strong>: What works at 5 people differs from 50 people</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Lead by example</strong>: Your behavior sets the standard for the entire company</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Vision is your superpower</strong>: Clear, compelling vision attracts talent and focuses effort</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>EQ matters more than IQ</strong>: Technical skills got you here; people skills will get you further</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Make decisions with 70% info</strong>: Perfect information never comes; bias toward action</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Delegate or drown</strong>: You can&#x27;t scale if you&#x27;re the bottleneck</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Seek feedback relentlessly</strong>: Blind spots are only blind to you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Invest in yourself</strong>: The CEO is the company&#x27;s most important asset</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Balance is essential</strong>: You&#x27;re running a marathon, not a sprint</li>
+                        </li>
+                        </ul>
+                        <h2>Common Questions</h2>
+                        <p><strong>Q: How do I transition from peer to leader with my co-founder?</strong> A: Have explicit conversations about roles, decision rights, and how you&#x27;ll handle disagreements. Document this in your founders&#x27; agreement. Lead with transparency about the adjustment. <strong>Q: What if I make a wrong decision?</strong> A: You will. Often. Own it quickly, explain what you learned, and adjust. Teams respect leaders who admit mistakes more than those who pretend to be perfect. <strong>Q: How much time should I spend on leadership development?</strong> A: Minimum 5 hours/week - reading, learning, reflecting, getting feedback. Your leadership capacity directly impacts company growth. <strong>Q: What if my team doesn&#x27;t respect my leadership?</strong> A: Respect is earned through consistency, competence, and care. Ask for specific feedback on where you&#x27;re falling short. Show improvement. Sometimes you need to make tough decisions to earn respect. <strong>Q: How do I know if I&#x27;m a good leader?</strong> A: Ask your team. Look at outcomes: Are people motivated? Are they growing? Are you hitting goals? Is turnover low? Numbers don&#x27;t lie.</p>
+                        <h2>Next Steps</h2>
+                        <p>1. <strong>Complete Exercise 1</strong>: Honest self-assessment of where you are today 2. <strong>Complete Exercise 2</strong>: Write your leadership philosophy 3. <strong>Set up weekly reflection</strong>: Block 30 minutes every Friday 4. <strong>Find one mentor</strong>: Reach out to an experienced founder this week 5. <strong>Read one book</strong>: Start with &quot;High Output Management&quot; Move to <strong>Chapter 2: Team Management</strong> to learn how to lead and develop your team effectively.</p>
+                        <hr />
+                        <p><em>Remember: You don&#x27;t need to be a perfect leader from day one. You need to be a committed learner who gets better every week. Your team doesn&#x27;t expect perfection—they expect honesty, care, and continuous improvement.</em></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+<div></div>
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Team Management</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

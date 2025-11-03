@@ -1,0 +1,1877 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Accounting Basics for CoodLoom - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Financial Management</li>
+                    <li aria-current="page">Accounting Basics for CoodLoom</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Accounting Basics for CoodLoom</h1>
+                        <h2>Introduction</h2>
+                        <p>Financial management is the backbone of any successful business. As a tech founder, you might love coding but accounting is non-negotiable. This chapter demystifies accounting basics so you can make informed financial decisions for CoodLoom.</p>
+                        <h2>Why Accounting Matters for Startups</h2>
+                        <h3>Beyond Just Numbers</h3>
+                        <ul>
+                        <li><strong>Legal Compliance</strong>: Tax obligations, investor reporting, audit requirements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Strategic Decisions</strong>: Pricing, hiring, expansion - all require financial data</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Fundraising</strong>: Investors demand clean books and financial transparency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Cash Flow</strong>: Understanding money in/out prevents the #1 cause of startup failure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Valuation</strong>: Your company&#x27;s worth is based on financial performance</li>
+                        </li>
+                        </ul>
+                        <h3>Common Founder Mistakes</h3>
+                        <p>❌ Mixing personal and business finances ❌ Not tracking expenses properly ❌ Ignoring accounting until tax time ❌ Making decisions without financial data ❌ Not understanding basic financial statements</p>
+                        <h2>Fundamental Accounting Concepts</h2>
+                        <h3>1. The Accounting Equation</h3>
+                        <pre><code>Assets = Liabilities + Equity</code></pre>
+                        <p><strong>For CoodLoom Example</strong>:</p>
+                        <ul>
+                        <li><strong>Assets</strong>: $50K cash, $10K equipment, $5K accounts receivable = $65K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Liabilities</strong>: $0 debt (you&#x27;re bootstrapping!)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Equity</strong>: $65K (your and your co-founder&#x27;s investment)</li>
+                        </li>
+                        </ul>
+                        <h3>2. Double-Entry Bookkeeping</h3>
+                        <p>Every transaction affects at least two accounts. <strong>Example</strong>: You buy a $2,000 laptop for development</p>
+                        <ul>
+                        <li><strong>Debit</strong>: Equipment (Asset) +$2,000</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Credit</strong>: Cash (Asset) -$2,000</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Result: Total assets stay the same, just shifted between accounts</li>
+                        </li>
+                        </ul>
+                        <h3>3. Accrual vs Cash Accounting</h3>
+                        <p>| Cash Accounting | Accrual Accounting | |----------------|-------------------| | Record when money changes hands | Record when transaction occurs | | Simple for small businesses | Required for companies over $25M revenue | | Can&#x27;t see full financial picture | Shows true financial position | | Better for tax optimization | Better for understanding business health | <strong>Recommendation for CoodLoom</strong>: Start with <strong>cash accounting</strong> for simplicity, switch to accrual when you hit $1M ARR or raise VC funding.</p>
+                        <h3>4. Chart of Accounts</h3>
+                        <p>Your financial filing system. Key categories for CoodLoom: <strong>Assets</strong></p>
+                        <ul>
+                        <li>1000: Cash in Bank</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1100: Accounts Receivable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1200: Equipment &amp; Hardware</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1300: Software &amp; Licenses</li>
+                        </li>
+                        </ul>
+                        <p><strong>Liabilities</strong></p>
+                        <ul>
+                        <li>2000: Accounts Payable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2100: Credit Cards</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2200: Loans (if any)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2300: Deferred Revenue (prepaid annual subscriptions)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Equity</strong></p>
+                        <ul>
+                        <li>3000: Owner&#x27;s Investment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>3100: Retained Earnings</li>
+                        </li>
+                        </ul>
+                        <p><strong>Revenue</strong></p>
+                        <ul>
+                        <li>4000: Subscription Revenue (Monthly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>4100: Subscription Revenue (Annual)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>4200: Setup Fees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>4300: Hardware Sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>4400: Professional Services</li>
+                        </li>
+                        </ul>
+                        <p><strong>Expenses</strong></p>
+                        <ul>
+                        <li>5000: Software &amp; Tools (AWS, hosting, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5100: Marketing &amp; Advertising</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5200: Salaries &amp; Wages</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5300: Office &amp; Rent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5400: Professional Services (legal, accounting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5500: Travel &amp; Entertainment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5600: R&amp;D / Development Costs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5700: Support &amp; Customer Success</li>
+                        </li>
+                        </ul>
+                        <h2>The Three Essential Financial Statements</h2>
+                        <h3>1. Income Statement (Profit &amp; Loss)</h3>
+                        <p><strong>What it shows</strong>: Did you make money or lose money? <strong>CoodLoom Example - Monthly P&amp;L</strong>:</p>
+                        <pre><code>REVENUE
+                        <p>Subscription Revenue (10 customers × $200/mo)    $2,000 Setup Fees (2 new customers × $500)              $1,000 Hardware Sales                                     $800 Total Revenue                                    $3,800 COST OF GOODS SOLD (COGS) Hardware Costs                                     $480 Payment Processing Fees (2.9%)                     $110 Total COGS                                         $590 GROSS PROFIT                                     $3,210 Gross Margin: 84% OPERATING EXPENSES Salaries (You + Co-founder at minimal)           $4,000 Software & Hosting                                 $300 Marketing & Ads                                    $500 Office / Coworking                                 $200 Professional Services                              $250 Total Operating Expenses                         $5,250 OPERATING INCOME                                -$2,040 OTHER INCOME/EXPENSES Interest Income                                     $10 Total Other                                         $10 NET INCOME (LOSS)                               -$2,030</code></pre> <strong>Analysis</strong>: You&#x27;re losing $2K/month. Need to either:</p>
+                        <ul>
+                        <li>Cut costs (lower salaries initially)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Increase revenue (more customers)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Both!</li>
+                        </li>
+                        </ul>
+                        <h3>2. Balance Sheet</h3>
+                        <p><strong>What it shows</strong>: What do you own and owe at a specific point in time? <strong>CoodLoom Balance Sheet - End of Month</strong>:</p>
+                        <pre><code>ASSETS
+                        <p>Current Assets: Cash                                           $45,000 Accounts Receivable                            $1,200 Inventory (POS hardware)                       $3,000 Prepaid Expenses                                 $600 Total Current Assets                          $49,800 Fixed Assets: Equipment (laptops, monitors)                  $6,000 Less: Accumulated Depreciation                  ($500) Software Development (capitalized)            $15,000 Total Fixed Assets                            $20,500 TOTAL ASSETS                                    $70,300 LIABILITIES Current Liabilities: Accounts Payable                               $2,100 Credit Cards                                   $1,500 Deferred Revenue (prepaid annual)              $4,800 Total Current Liabilities                      $8,400 Long-term Liabilities:                               $0 TOTAL LIABILITIES                                $8,400 EQUITY Owner&#x27;s Investment                            $50,000 Retained Earnings                             $13,930 Current Period Net Loss                       -$2,030 TOTAL EQUITY                                    $61,900 TOTAL LIABILITIES + EQUITY                      $70,300</code></pre> <strong>Key Insight</strong>: Even though you lost $2K this month, you still have $45K cash and $62K equity. You&#x27;re financially healthy!</p>
+                        <h3>3. Cash Flow Statement</h3>
+                        <p><strong>What it shows</strong>: Where did cash come from and where did it go? <strong>CoodLoom Cash Flow Statement</strong>:</p>
+                        <pre><code>OPERATING ACTIVITIES
+                        <p>Net Income (Loss)                               -$2,030 Adjustments: Depreciation                                      $500 Changes in Working Capital: Increase in Accounts Receivable              -$1,200 Increase in Inventory                        -$3,000 Increase in Accounts Payable                  $2,100 Increase in Deferred Revenue                  $4,800 Net Cash from Operations                         $1,170 INVESTING ACTIVITIES Purchase of Equipment                          -$6,000 Software Development Costs                    -$15,000 Net Cash from Investing                        -$21,000 FINANCING ACTIVITIES Owner Investment                               $50,000 Loan Proceeds                                       $0 Net Cash from Financing                         $50,000 NET INCREASE IN CASH                            $30,170 Beginning Cash Balance                          $14,830 ENDING CASH BALANCE                             $45,000</code></pre> <strong>Critical Insight</strong>: You&#x27;re cash flow positive from operations (+$1,170) even though P&amp;L shows a loss! This is because customers prepaid annual subscriptions (deferred revenue).</p>
+                        <h2>Bookkeeping Essentials</h2>
+                        <h3>Daily Practices</h3>
+                        <p>1. <strong>Receipt Management</strong>: Photo every receipt immediately (Expensify, QuickBooks mobile) 2. <strong>Transaction Recording</strong>: Log expenses within 24 hours 3. <strong>Bank Reconciliation</strong>: Weekly at minimum, daily when cash is tight 4. <strong>Invoice Immediately</strong>: Send invoices the same day work is completed</p>
+                        <h3>Monthly Practices</h3>
+                        <p>1. <strong>Close the Books</strong>: Finalize all transactions for the month 2. <strong>Reconcile All Accounts</strong>: Bank, credit cards, PayPal, Stripe 3. <strong>Review Financial Statements</strong>: P&amp;L, Balance Sheet, Cash Flow 4. <strong>Analyze Variance</strong>: Budget vs. actual 5. <strong>Update Forecasts</strong>: Revise projections based on actual performance</p>
+                        <h3>Quarterly Practices</h3>
+                        <p>1. <strong>Tax Estimate Payments</strong>: Calculate and pay quarterly taxes (if required) 2. <strong>Investor Updates</strong>: Share financials with stakeholders 3. <strong>Strategic Review</strong>: Are you on track for annual goals? 4. <strong>Audit Preparation</strong>: Keep organized for potential audits</p>
+                        <h3>Annual Practices</h3>
+                        <p>1. <strong>Year-End Close</strong>: Finalize annual financial statements 2. <strong>Tax Filing</strong>: Corporate tax returns, personal returns 3. <strong>Financial Analysis</strong>: Year-over-year comparison 4. <strong>Budget Planning</strong>: Create next year&#x27;s budget 5. <strong>CPA Review</strong>: Have professional accountant review</p>
+                        <h2>Accounting Software for CoodLoom</h2>
+                        <h3>Recommended Tools</h3>
+                        <p><strong>Early Stage (Pre-Revenue to $500K ARR)</strong>:</p>
+                        <ul>
+                        <li><strong>QuickBooks Online</strong> ($30-90/mo)</li>
+                        <ul>
+                        <li>✅ Easy to use, industry standard</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Integrates with banks, Stripe, PayPal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Scales with you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Can get expensive with add-ons</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Wave</strong> (Free)</li>
+                        <ul>
+                        <li>✅ Free for basic accounting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Good for very early stage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Limited features, charges for payments/payroll</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Xero</strong> ($13-70/mo)</li>
+                        <ul>
+                        <li>✅ Beautiful interface</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Strong internationally</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>❌ Fewer integrations than QuickBooks</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Recommendation</strong>: Start with <strong>QuickBooks Online</strong> (Simple Start plan $30/mo). It&#x27;s the industry standard, investors know it, and your CPA will expect it.</p>
+                        <h3>Integration Stack</h3>
+                        <pre><code>QuickBooks Online (Core Accounting)
+                        <p>↓ Connected to: → Bank Accounts (auto-import transactions) → Stripe (auto-record payment revenue) → PayPal (if you use it) → Gusto (payroll integration) → Expensify (expense management) → Bill.com (accounts payable)</code></pre></p>
+                        <h3>Setting Up Your Books</h3>
+                        <p><strong>Step 1: Create Your Business Entity</strong></p>
+                        <ul>
+                        <li>File LLC or C-Corp (see Phase 3)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get EIN from IRS (5 minutes online)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Open business bank account</li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 2: Set Up QuickBooks</strong></p>
+                        <pre><code>1. Sign up for QuickBooks Online
+                        <p>2. Connect your business bank account 3. Connect Stripe/payment processor 4. Set up your Chart of Accounts (use template above) 5. Enter opening balances 6. Set up recurring transactions (subscriptions) 7. Invite your co-founder (if they&#x27;ll help with finances) 8. Invite your CPA/bookkeeper (read-only access)</code></pre> <strong>Step 3: Create Your Workflow</strong></p>
+                        <pre><code>Daily:
+                        <p>→ Check bank feeds in QuickBooks → Categorize transactions → Upload receipts Weekly: → Send invoices for new customers → Follow up on overdue invoices → Review cash position Monthly: → Close the month → Generate P&L, Balance Sheet → Review with co-founder → Update financial model</code></pre></p>
+                        <h2>Tax Basics for CoodLoom</h2>
+                        <h3>Types of Business Taxes</h3>
+                        <p><strong>1. Income Tax</strong></p>
+                        <ul>
+                        <li><strong>LLC</strong>: Pass-through to personal tax return (Schedule C)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>C-Corp</strong>: Corporate tax (21%) + personal tax on dividends (double taxation)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>S-Corp</strong>: Pass-through but can save on self-employment tax</li>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Strategy</strong>: Start as LLC for simplicity, switch to C-Corp if you raise VC funding. <strong>2. Self-Employment Tax</strong> (15.3%)</p>
+                        <ul>
+                        <li>Social Security: 12.4% (up to $160,200 in 2023)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Medicare: 2.9% (no limit) + 0.9% over $200K</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Payroll Tax</strong> (when you have employees)</p>
+                        <ul>
+                        <li>Social Security: 6.2% (employer) + 6.2% (employee)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Medicare: 1.45% (employer) + 1.45% (employee)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Federal Unemployment: 0.6%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>State Unemployment: varies by state</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Sales Tax</strong></p>
+                        <ul>
+                        <li><strong>Software/SaaS</strong>: Complex! Varies by state</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Hardware</strong>: Typically taxable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>CoodLoom Consideration</strong>: You&#x27;re selling POS systems (software + hardware)</li>
+                        <ul>
+                        <li>Software component: May be exempt in some states</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hardware component: Likely taxable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use a tool like TaxJar or Avalara</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>5. State &amp; Local Taxes</strong></p>
+                        <ul>
+                        <li>State income tax (varies by state, 0-13%)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Local business taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Franchise tax (annual fee in some states)</li>
+                        </li>
+                        </ul>
+                        <h3>Tax Deductions for CoodLoom</h3>
+                        <p><strong>Fully Deductible</strong>: ✅ Business software subscriptions (AWS, GitHub, etc.) ✅ Office rent or coworking space ✅ Business equipment (laptops, monitors, furniture) ✅ Marketing and advertising ✅ Professional services (lawyers, accountants) ✅ Business travel and meals (50% for meals) ✅ Health insurance (if self-employed) ✅ Business phone and internet ✅ Education and training (relevant to business) <strong>Not Deductible</strong>: ❌ Personal expenses ❌ Commuting to/from regular workplace ❌ Gym membership (unless it&#x27;s a business meeting venue) ❌ Entertainment (changed in 2018 tax law) <strong>Home Office Deduction</strong>: If you work from home, you can deduct:</p>
+                        <pre><code>Method 1 (Simplified): $5 per square foot (max 300 sq ft = $1,500)
+                        <p>Method 2 (Actual): Percentage of rent, utilities, insurance, repairs Example: Home: 1,500 sq ft total Office: 150 sq ft (10%) Rent: $2,000/mo = $24,000/yr Utilities: $3,000/yr Internet: $1,200/yr Total: $28,200 × 10% = $2,820 deduction</code></pre></p>
+                        <h3>Quarterly Estimated Tax Payments</h3>
+                        <p><strong>Who Must Pay</strong>: If you expect to owe $1,000+ in taxes <strong>Due Dates</strong>:</p>
+                        <ul>
+                        <li>Q1: April 15</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Q2: June 15</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Q3: September 15</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Q4: January 15 (next year)</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Calculate</strong>:</p>
+                        <pre><code>Method 1 (Safe Harbor): Pay 100% of last year&#x27;s tax (110% if AGI > $150K)
+                        <p>Method 2 (Estimate): Project current year income and pay 90% of expected tax CoodLoom Example: Expected profit: $100,000 Tax rate: ~30% (federal + state + self-employment) Total tax: $30,000 Quarterly payment: $30,000 ÷ 4 = $7,500</code></pre> <strong>How to Pay</strong>: IRS Direct Pay (free) or EFTPS (Electronic Federal Tax Payment System)</p>
+                        <h3>Tax Planning Strategies</h3>
+                        <p><strong>1. Timing Income &amp; Expenses</strong></p>
+                        <ul>
+                        <li>Defer revenue to next year (if beneficial)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Accelerate expenses into current year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buy equipment before year-end (Section 179 deduction)</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Retirement Contributions</strong></p>
+                        <ul>
+                        <li><strong>Solo 401(k)</strong>: Contribute up to $66,000 (2023) - huge tax deduction!</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>SEP IRA</strong>: Up to 25% of compensation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Traditional IRA</strong>: $6,500 base ($7,500 if 50+)</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Hire Your Co-Founder Spouse</strong></p>
+                        <ul>
+                        <li>If married, employ your spouse</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deduct salary, they get benefits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family health insurance becomes deductible</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Qualified Business Income (QBI) Deduction</strong></p>
+                        <ul>
+                        <li>Deduct up to 20% of qualified business income</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Phases out at higher incomes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complex rules - consult CPA</li>
+                        </li>
+                        </ul>
+                        <p><strong>5. R&amp;D Tax Credit</strong></p>
+                        <ul>
+                        <li>Software development may qualify!</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Federal credit: Up to 14% of qualified expenses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Some states have additional credits</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CoodLoom may qualify - consult a specialist</li>
+                        </li>
+                        </ul>
+                        <h3>Working with a CPA</h3>
+                        <p><strong>When to Hire</strong>:</p>
+                        <ul>
+                        <li>✅ Before filing your first business tax return</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ When making major decisions (incorporation, funding)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ When facing an IRS audit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Annually for tax strategy planning</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $1,500-5,000/year for small business <strong>What to Look For</strong>:</p>
+                        <ul>
+                        <li>Experience with startups/SaaS businesses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proactive (suggests tax strategies, not just compliance)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Available year-round (not just tax season)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Uses modern accounting software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communicates in plain English</li>
+                        </li>
+                        </ul>
+                        <p><strong>Questions to Ask Prospective CPAs</strong>: 1. &quot;Do you work with SaaS/tech startups?&quot; 2. &quot;Can you help with tax planning, not just filing?&quot; 3. &quot;What&#x27;s your process for year-round support?&quot; 4. &quot;Do you work with QuickBooks Online?&quot; 5. &quot;What&#x27;s your fee structure?&quot;</p>
+                        <h2>Common Accounting Mistakes to Avoid</h2>
+                        <h3>1. Mixing Personal &amp; Business Finances</h3>
+                        <p>❌ <strong>Wrong</strong>: Using personal credit card for business expenses ✅ <strong>Right</strong>: Dedicated business bank account and credit card</p>
+                        <h3>2. Not Tracking Mileage</h3>
+                        <p>❌ <strong>Wrong</strong>: Guessing at year-end ✅ <strong>Right</strong>: Use MileIQ or similar app (65.5¢/mile deduction in 2023)</p>
+                        <h3>3. Forgetting About Sales Tax</h3>
+                        <p>❌ <strong>Wrong</strong>: Ignoring sales tax obligations ✅ <strong>Right</strong>: Research requirements, register in applicable states, use TaxJar</p>
+                        <h3>4. Poor Receipt Management</h3>
+                        <p>❌ <strong>Wrong</strong>: Shoebox full of crumpled receipts ✅ <strong>Right</strong>: Digital receipts, immediately categorized</p>
+                        <h3>5. Not Reconciling Regularly</h3>
+                        <p>❌ <strong>Wrong</strong>: &quot;I&#x27;ll deal with it at tax time&quot; ✅ <strong>Right</strong>: Weekly bank reconciliation</p>
+                        <h3>6. Miscategorizing Expenses</h3>
+                        <p>❌ <strong>Wrong</strong>: Everything is &quot;miscellaneous&quot; ✅ <strong>Right</strong>: Proper categories for tax optimization</p>
+                        <h3>7. Not Paying Estimated Taxes</h3>
+                        <p>❌ <strong>Wrong</strong>: Surprise tax bill + penalties ✅ <strong>Right</strong>: Quarterly estimated payments</p>
+                        <h3>8. Forgetting About Depreciation</h3>
+                        <p>❌ <strong>Wrong</strong>: Missing out on depreciation deductions ✅ <strong>Right</strong>: Track all capital purchases, depreciate properly</p>
+                        <h2>Financial Hygiene Checklist</h2>
+                        <h3>Setup (One-Time)</h3>
+                        <ul>
+                        <li>[ ] Register business entity (LLC/C-Corp)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Obtain EIN from IRS</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Open business bank account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Get business credit card</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up QuickBooks Online</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create Chart of Accounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Connect payment processors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Find and hire a CPA</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up payroll system (when needed)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Research sales tax requirements</li>
+                        </li>
+                        </ul>
+                        <h3>Daily</h3>
+                        <ul>
+                        <li>[ ] Log all business transactions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Upload receipts immediately</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Send invoices promptly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Track time/mileage if billable</li>
+                        </li>
+                        </ul>
+                        <h3>Weekly</h3>
+                        <ul>
+                        <li>[ ] Reconcile bank accounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Follow up on unpaid invoices</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review cash position</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Plan upcoming expenses</li>
+                        </li>
+                        </ul>
+                        <h3>Monthly</h3>
+                        <ul>
+                        <li>[ ] Close the books</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Generate financial statements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review P&amp;L vs budget</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Pay bills on time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Update financial forecast</li>
+                        </li>
+                        </ul>
+                        <h3>Quarterly</h3>
+                        <ul>
+                        <li>[ ] Pay estimated taxes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review financials with co-founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Analyze trends and variance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Update investor deck (if applicable)</li>
+                        </li>
+                        </ul>
+                        <h3>Annually</h3>
+                        <ul>
+                        <li>[ ] File tax returns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] CPA strategic planning session</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review and update Chart of Accounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Analyze year-over-year performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set financial goals for next year</li>
+                        </li>
+                        </ul>
+                        <h2>Key Accounting Terms Glossary</h2>
+                        <p><strong>Accounts Payable (AP)</strong>: Money you owe to vendors/suppliers <strong>Accounts Receivable (AR)</strong>: Money customers owe you <strong>Accrual</strong>: Recording revenue/expenses when earned/incurred, not when cash changes hands <strong>Asset</strong>: Something of value the company owns <strong>Balance Sheet</strong>: Snapshot of financial position at a specific date <strong>Book Value</strong>: Value of asset minus depreciation <strong>COGS (Cost of Goods Sold)</strong>: Direct costs to deliver your product/service <strong>Depreciation</strong>: Allocating asset cost over its useful life <strong>EBITDA</strong>: Earnings Before Interest, Taxes, Depreciation, Amortization <strong>Equity</strong>: Owner&#x27;s stake in the company <strong>Gross Profit</strong>: Revenue minus COGS <strong>Income Statement (P&amp;L)</strong>: Revenue and expenses over a period <strong>Liability</strong>: Money the company owes <strong>Net Income</strong>: Bottom line profit after all expenses <strong>Operating Expenses (OpEx)</strong>: Costs to run the business (not COGS) <strong>Revenue Recognition</strong>: When to record a sale as revenue <strong>Working Capital</strong>: Current Assets minus Current Liabilities</p>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Set Up Your Accounting System</h3>
+                        <p>1. Open a business bank account for CoodLoom 2. Sign up for QuickBooks Online 3. Set up your Chart of Accounts 4. Connect your bank and Stripe 5. Enter your initial investment as equity</p>
+                        <h3>Exercise 2: Create Your First Financial Statements</h3>
+                        <p>Using your current CoodLoom numbers: 1. Build a simple P&amp;L for last month 2. Create a balance sheet as of today 3. Estimate a cash flow statement 4. What&#x27;s your gross margin? Net margin?</p>
+                        <h3>Exercise 3: Tax Planning</h3>
+                        <p>1. Calculate your expected annual profit 2. Estimate your total tax liability 3. Calculate quarterly estimated tax payments 4. List all available tax deductions 5. Research if you qualify for R&amp;D tax credit</p>
+                        <h3>Exercise 4: Build a Financial Dashboard</h3>
+                        <p>Create a simple spreadsheet with:</p>
+                        <ul>
+                        <li>Key metrics (MRR, expenses, profit, cash)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Charts showing trends</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target vs actual comparison</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update it monthly</li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <p>✓ <strong>Accounting isn&#x27;t optional</strong> - It&#x27;s a legal requirement and business necessity ✓ <strong>Start with proper setup</strong> - Business entity, bank account, accounting software ✓ <strong>The three statements tell different stories</strong> - P&amp;L (profitability), Balance Sheet (financial position), Cash Flow (liquidity) ✓ <strong>Cash flow ≠ Profit</strong> - You can be profitable but cash-poor (and vice versa) ✓ <strong>Taxes are complex</strong> - Work with a CPA who understands startups ✓ <strong>Daily discipline &gt; year-end scramble</strong> - Build good habits from day one ✓ <strong>Financial data drives decisions</strong> - Your numbers should inform every major choice ✓ <strong>Software makes it easier</strong> - Use QuickBooks, automate where possible</p>
+                        <h2>Next Steps</h2>
+                        <p>Move to Chapter 2: <strong>Pricing Strategy</strong> to learn how to price CoodLoom&#x27;s POS system for maximum profitability while remaining competitive.</p>
+                        <hr />
+                        <p><strong>Pro Tip</strong>: Set aside 30% of every dollar you make for taxes. Keep it in a separate savings account. When tax time comes, you&#x27;ll thank yourself!</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+<div></div>
+                            <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Pricing Strategy</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

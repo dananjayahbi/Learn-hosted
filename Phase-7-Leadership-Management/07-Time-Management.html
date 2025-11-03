@@ -1,0 +1,2501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Time Management - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Leadership Management</li>
+                    <li aria-current="page">Time Management</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Time Management</h1>
+                        <h2>Introduction</h2>
+                        <p>As CEO, you&#x27;ll have infinite demands on your time and finite hours in the day. Everyone wants a piece of you—team, customers, investors, partners. How you spend your time determines what gets built, what gets solved, and ultimately whether CoodLoom succeeds. This chapter teaches you how to protect your time, prioritize ruthlessly, and maximize your impact.</p>
+                        <h2>The CEO Time Reality</h2>
+                        <h3>Your Time Is the Company&#x27;s Scarcest Resource</h3>
+                        <p><strong>The Math</strong>:</p>
+                        <pre><code>You have: ~60 productive hours/week (if working 70 hour weeks)
+                        <p>Company needs: Leadership, strategy, hiring, fundraising, sales, product, culture, operations, firefighting... Reality: You can&#x27;t do everything. You must choose wisely.</code></pre> <strong>What Happens If You Don&#x27;t Manage Time</strong>:</p>
+                        <pre><code>- Reactive mode: Firefighting, never strategic
+                        <ul>
+                        <li>Burnout: Working 80+ hours, declining health</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Bottleneck: Team waiting on you for everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Poor decisions: Rushed, no time to think deeply</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key areas neglected: Hiring, strategy, relationships</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company suffers: Growth slows, culture degrades</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>How CEOs Actually Spend Time (Research)</h3>
+                        <p><strong>Average CEO Time Allocation</strong>:</p>
+                        <pre><code>Meetings: 60-70%
+                        <p>Email/Communication: 15-20% Deep work: 10-15% Travel: 5-10% Personal: Whatever&#x27;s left (often not enough)</code></pre> <strong>Where You SHOULD Spend Time</strong> (Early-stage startup):</p>
+                        <pre><code>Hiring & People: 25%
+                        <ul>
+                        <li>Interviews, recruiting, 1-on-1s, culture</li>
+                        </li>
+                        </ul>
+                        <p>Product & Strategy: 20%</p>
+                        <ul>
+                        <li>Vision, roadmap, customer feedback</li>
+                        </li>
+                        </ul>
+                        <p>Fundraising & Investors: 15%</p>
+                        <ul>
+                        <li>When fundraising: 50%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Between rounds: 10%</li>
+                        </li>
+                        </ul>
+                        <p>Sales & Customers: 15%</p>
+                        <ul>
+                        <li>Key deals, customer development, partnerships</li>
+                        </li>
+                        </ul>
+                        <p>Operations: 15%</p>
+                        <ul>
+                        <li>Systems, processes, firefighting</li>
+                        </li>
+                        </ul>
+                        <p>Communication: 10%</p>
+                        <ul>
+                        <li>All-hands, updates, alignment</li>
+                        </li>
+                        </ul>
+                        <p>Deep Thinking: 10%</p>
+                        <ul>
+                        <li>Strategic planning, reflection, learning</li>
+                        </li>
+                        </ul>
+                        <p>Personal: 10%</p>
+                        <ul>
+                        <li>Health, relationships, recovery</li>
+                        </li>
+                        </ul>
+                        <p>(This should be non-negotiable, but often gets cut first)</code></pre></p>
+                        <h3>The Stages of CEO Time</h3>
+                        <p><strong>Stage 1: Founder-Operator (Pre-product-market fit)</strong></p>
+                        <pre><code>Time split:
+                        <ul>
+                        <li>60% Building/doing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>30% Selling/learning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10% Managing</li>
+                        </li>
+                        </ul>
+                        <p>You wear all hats. You do everything. This is appropriate early on.</code></pre> <strong>Stage 2: Founder-CEO (Early growth)</strong></p>
+                        <pre><code>Time split:
+                        <ul>
+                        <li>40% Strategic (vision, hiring, fundraising)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>40% Leading (managing team, making decisions)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>20% Doing (key areas only)</li>
+                        </li>
+                        </ul>
+                        <p>Transitioning from doer to leader. Most painful phase.</code></pre> <strong>Stage 3: CEO (Scaling)</strong></p>
+                        <pre><code>Time split:
+                        <ul>
+                        <li>60% Strategic (long-term, big bets)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>30% Leading (through managers)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10% Doing (only what only you can do)</li>
+                        </li>
+                        </ul>
+                        <p>You lead leaders who do the work.</code></pre></p>
+                        <h2>Time Management Principles</h2>
+                        <h3>Principle 1: Not All Hours Are Equal</h3>
+                        <p><strong>Your Peak Hours Are Precious</strong>:</p>
+                        <pre><code>When are you sharpest?
+                        <ul>
+                        <li>Morning person? 6am-10am</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Night owl? 8pm-12am</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Afternoon? 2pm-6pm</li>
+                        </li>
+                        </ul>
+                        <p>Your peak 4 hours per day: Use for: Deep thinking, hard decisions, strategic work Don&#x27;t waste on: Email, routine meetings, administrative tasks</code></pre> <strong>Energy Management &gt; Time Management</strong>:</p>
+                        <pre><code>Track your energy, not just time:
+                        <p>High Energy Activities:</p>
+                        <ul>
+                        <li>Strategic planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Important decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Creative work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key meetings</li>
+                        </li>
+                        </ul>
+                        <p>Low Energy Activities:</p>
+                        <ul>
+                        <li>Email processing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expense reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Routine 1-on-1s</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Administrative tasks</li>
+                        </li>
+                        </ul>
+                        <p>Match task difficulty to energy level.</code></pre></p>
+                        <h3>Principle 2: Maker Time vs Manager Time</h3>
+                        <p><strong>Paul Graham&#x27;s Framework</strong>: <strong>Manager Time</strong>:</p>
+                        <pre><code>- Calendars divided into 30-min or 1-hour blocks
+                        <ul>
+                        <li>Meetings back-to-back</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reactive and responsive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Suitable for: Interviews, 1-on-1s, status updates</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Maker Time</strong>:</p>
+                        <pre><code>- Needs 3-4 hour uninterrupted blocks
+                        <ul>
+                        <li>Deep focus work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Creative and strategic</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Suitable for: Product strategy, writing, complex problems</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>For CoodLoom CEO</strong>:</p>
+                        <pre><code>Ideal split:
+                        <ul>
+                        <li>3 days Manager Time (Mon, Wed, Fri)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2 days Maker Time (Tue, Thu)</li>
+                        </li>
+                        </ul>
+                        <p>Or:</p>
+                        <ul>
+                        <li>Mornings: Maker Time (8am-12pm)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Afternoons: Manager Time (1pm-6pm)</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Principle 3: Batch Similar Tasks</h3>
+                        <p><strong>Context Switching Is Expensive</strong>:</p>
+                        <pre><code>Every task switch costs ~23 minutes to refocus (research).
+                        <p>Bad schedule: 8am: Code review 9am: Sales call 10am: Product design 11am: Interview 12pm: Investor update Good schedule: 8am-12pm: All interviews (hiring day) 1pm-3pm: All 1-on-1s 3pm-5pm: All customer calls</code></pre> <strong>Batching Strategies</strong>:</p>
+                        <pre><code>Meeting Days:
+                        <p>Mon/Wed/Fri: Back-to-back meetings Tue/Thu: No meetings (Maker Time) Batch by type:</p>
+                        <ul>
+                        <li>Monday: Customer/sales calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tuesday: Deep work (strategy, writing)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wednesday: Team (all-hands, 1-on-1s)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thursday: Deep work (product, roadmap)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Friday: Recruiting (interviews, offers)</li>
+                        </li>
+                        </ul>
+                        <p>Communication batching:</p>
+                        <ul>
+                        <li>Check email 3x/day (9am, 1pm, 5pm)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not constantly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Respond in batches</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Principle 4: Protect Strategic Thinking Time</h3>
+                        <p><strong>CEO&#x27;s Most Important Job</strong>: Think strategically about the future. <strong>The Reality</strong>: This gets crowded out by urgent but less important tasks. <strong>The Solution</strong>: Schedule it like a meeting. <strong>Weekly Strategic Time</strong>:</p>
+                        <pre><code>Block recurring:
+                        <ul>
+                        <li>Tuesday 9am-12pm: &quot;Strategic Work&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thursday 9am-12pm: &quot;Strategic Work&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Treat like board meeting (never cancel). Use for:</p>
+                        <ul>
+                        <li>Long-term planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Market analysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Big decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reading and learning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reflection on company progress</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly Strategic Day</strong>:</p>
+                        <pre><code>One full day per month:
+                        <ul>
+                        <li>Offsite (coffee shop, library, home)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No meetings, no Slack</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deep thinking about:</li>
+                        <ul>
+                        <li>Company direction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>OKRs and goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Market changes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s working/not working</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Big bets to make</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p>Output: Written strategy document, updated priorities</code></pre></p>
+                        <h2>The CEO Calendar</h2>
+                        <h3>Designing Your Ideal Week</h3>
+                        <p><strong>Template</strong>:</p>
+                        <pre><code>Monday (Manager Day):
+                        <p>8-9am: Email and planning 9-10am: Leadership team meeting 10-12pm: Customer/sales calls 12-1pm: Lunch (with team member or customer) 1-3pm: 1-on-1s 3-5pm: Investor/partner meetings 5-6pm: Email and follow-ups Tuesday (Maker Day): 8-9am: Email (brief) 9-12pm: DEEP WORK (Strategic thinking) 12-1pm: Lunch break 1-4pm: DEEP WORK (Product/strategy) 4-5pm: Review day, plan tomorrow 5-6pm: Learning time (reading, courses) Wednesday (Manager Day): 8-9am: Email and planning 9-10am: All-hands meeting 10-12pm: Interviews (recruiting) 12-1pm: Lunch 1-4pm: Meetings (various) 4-5pm: Team time (open office hours) 5-6pm: Email and follow-ups Thursday (Maker Day): 8-9am: Email (brief) 9-12pm: DEEP WORK (Strategic projects) 12-1pm: Lunch 1-4pm: DEEP WORK (Writing, planning) 4-5pm: Review metrics and dashboards 5-6pm: Learning time Friday (Manager Day): 8-9am: Email and planning 9-11am: Interviews (recruiting) 11-12pm: Leadership team office hours 12-1pm: Team lunch 1-3pm: Customer calls or demos 3-4pm: Week review and reflection 4-5pm: Next week planning 5-6pm: Wrap up, shutdown ritual Saturday/Sunday: OFF (with exceptions for emergencies)</code></pre></p>
+                        <h3>Calendar Rules</h3>
+                        <p><strong>Rule 1: Time Blocking</strong></p>
+                        <pre><code>Every hour should have a purpose:
+                        <p>❌ Open calendar with &quot;I&#x27;ll figure it out&quot; ✓ Blocked calendar with intentional time allocation Block time for:</p>
+                        <ul>
+                        <li>Deep work (non-negotiable)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email processing (specific times)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1-on-1s (recurring)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exercise (treat like a meeting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lunch (not working lunches every day)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buffer time (between meetings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weekly review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic thinking</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Rule 2: Theme Days</strong></p>
+                        <pre><code>Assign themes to days:
+                        <ul>
+                        <li>Monday: Customers & Sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tuesday: Deep Work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wednesday: Team & People</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thursday: Deep Work  </li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Friday: Recruiting & Planning</li>
+                        </li>
+                        </ul>
+                        <p>Makes context switching easier. Makes it easier to say no: &quot;I do customer calls on Mondays&quot;</code></pre> <strong>Rule 3: Office Hours</strong></p>
+                        <pre><code>Instead of ad-hoc &quot;Can I grab 15 minutes?&quot;
+                        <p>Set office hours:</p>
+                        <ul>
+                        <li>Wednesday 4-5pm: Open for anyone</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thursday 11am-12pm: Drop-in questions</li>
+                        </li>
+                        </ul>
+                        <p>Post on Slack, respect the time. People can book or drop in. Reduces random interruptions.</code></pre> <strong>Rule 4: Meeting-Free Time</strong></p>
+                        <pre><code>Protect certain blocks:
+                        <ul>
+                        <li>Before 9am: Your morning routine</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tuesday/Thursday 9am-12pm: Deep work (NO meetings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>12-1pm: Lunch break</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>After 6pm: Personal time (except rare exceptions)</li>
+                        </li>
+                        </ul>
+                        <p>Put these in your calendar as &quot;Busy&quot; Don&#x27;t let anyone book over them.</code></pre> <strong>Rule 5: Buffer Time</strong></p>
+                        <pre><code>Don&#x27;t schedule back-to-back all day:
+                        <p>Include:</p>
+                        <ul>
+                        <li>15 min buffer between meetings (prep, bathroom, notes)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>30 min buffer for lunch (actual break)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>30 min at end of day (wrap up, plan tomorrow)</li>
+                        </li>
+                        </ul>
+                        <p>Your calendar shouldn&#x27;t be 100% booked.</code></pre></p>
+                        <h3>Meeting Management</h3>
+                        <p><strong>Before You Accept Any Meeting</strong>:</p>
+                        <pre><code>Ask:
+                        <p>1. What&#x27;s the specific goal? 2. What&#x27;s the agenda? 3. Am I necessary, or can someone else go? 4. Can this be an email or doc instead? 5. Is this the right time investment? If answers are unclear: Decline or ask for clarity first.</code></pre> <strong>Meeting Rules</strong>:</p>
+                        <pre><code>Default Meeting Length: 25 minutes (not 30)
+                        <ul>
+                        <li>Parkinson&#x27;s Law: Work expands to fill time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>25 min forces efficiency</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gives you 5 min buffer</li>
+                        </li>
+                        </ul>
+                        <p>Standing Meetings Only:</p>
+                        <ul>
+                        <li>Weekly 1-on-1s</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weekly all-hands</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly board/investor updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quarterly planning</li>
+                        </li>
+                        </ul>
+                        <p>Everything else: Question it. No Agenda = No Meeting:</p>
+                        <ul>
+                        <li>Require agenda 24 hours before</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No agenda? Decline.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Agenda sent at start? Reschedule.</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Running Efficient Meetings</strong>:</p>
+                        <pre><code>Start on time (even if people missing):
+                        <ul>
+                        <li>Respect those who arrived on time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Late people learn to be on time</li>
+                        </li>
+                        </ul>
+                        <p>One person facilitates:</p>
+                        <ul>
+                        <li>Keeps discussion on track</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manages time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ensures all voices heard</li>
+                        </li>
+                        </ul>
+                        <p>End with action items:</p>
+                        <ul>
+                        <li>Who, What, When</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document in meeting notes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow up on progress</li>
+                        </li>
+                        </ul>
+                        <p>End 5 minutes early:</p>
+                        <ul>
+                        <li>55 min instead of 60</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gives people bathroom/prep time</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Saying No</h2>
+                        <h3>The Power of No</h3>
+                        <p><strong>Every Yes Is a No to Something Else</strong>:</p>
+                        <pre><code>Say yes to: Investor call
+                        <p>Say no to: Strategic thinking time Say yes to: Speaking at conference Say no to: Product roadmap work Say yes to: Coffee with random person Say no to: Exercise and health Be intentional about what you say yes to.</code></pre></p>
+                        <h3>What to Say No To</h3>
+                        <p><strong>Say No To</strong>:</p>
+                        <pre><code>❌ Coffee meetings with no clear purpose
+                        <p>❌ Conferences that don&#x27;t serve strategic goal ❌ Networking events &quot;just to network&quot; ❌ Features requested by one customer ❌ Committees and boards (early stage) ❌ Media opportunities with low reach ❌ Mentoring/advising many other startups ❌ Social obligations that drain you ❌ Anything that doesn&#x27;t serve your goals</code></pre> <strong>Exception</strong>: Sometimes you need to say yes to build relationships. But be selective.</p>
+                        <h3>How to Say No Gracefully</h3>
+                        <p><strong>Template Responses</strong>: <strong>Vague meeting request</strong>:</p>
+                        <pre><code>&quot;Thanks for reaching out! To make sure I can be helpful, 
+                        <p>could you share more about:</p>
+                        <ul>
+                        <li>The specific goal of the meeting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Questions you&#x27;d like answered</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Why you think I&#x27;m the right person</li>
+                        </li>
+                        </ul>
+                        <p>Some of these might be better addressed via [email/doc/someone else].&quot;</code></pre> <strong>Conference speaking request</strong>:</p>
+                        <pre><code>&quot;Thanks for the invite! I&#x27;m being very selective about speaking 
+                        <p>engagements right now to focus on building CoodLoom. My criteria for saying yes:</p>
+                        <ul>
+                        <li>[Audience size/quality]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Strategic value]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Timing]</li>
+                        </li>
+                        </ul>
+                        <p>This doesn&#x27;t quite meet those criteria, so I&#x27;ll have to pass. But I hope it&#x27;s a great event!&quot;</code></pre> <strong>Investment opportunity / side project</strong>:</p>
+                        <pre><code>&quot;I appreciate you thinking of me. Right now, I&#x27;m 100% focused 
+                        <p>on CoodLoom and need to decline any outside commitments. Let me know if there&#x27;s a small way I can help without a significant time commitment.&quot;</code></pre> <strong>Social obligation</strong>:</p>
+                        <pre><code>&quot;I&#x27;d love to, but I&#x27;m being really careful about my time and energy 
+                        <p>right now. I need to pass, but let&#x27;s find another time to connect.&quot;</code></pre> <strong>The Key</strong>: Don&#x27;t over-explain. Don&#x27;t apologize excessively. Just politely decline.</p>
+                        <h2>Delegation and Leverage</h2>
+                        <h3>What to Delegate</h3>
+                        <p><strong>The Delegation Matrix</strong>:</p>
+                        <pre><code>HIGH IMPACT          LOW IMPACT
+                        <p>┌─────────────────────┬───────────────┐ ONLY YOU      │    DO YOURSELF      │   ELIMINATE   │ CAN DO        │  (Vision, Strategy) │   (Say no)    │ ├─────────────────────┼───────────────┤ OTHERS        │     DELEGATE        │   AUTOMATE    │ CAN DO        │  (Train & Empower)  │  or DELEGATE  │ └─────────────────────┴───────────────┘</code></pre> <strong>Only You Can Do</strong>:</p>
+                        <pre><code>- Set company vision and strategy
+                        <ul>
+                        <li>Make final decisions on major issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key hires (especially leadership)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key investor relationships</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Major customer relationships (early on)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture setting and modeling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Board management</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Others Can Do</strong> (Delegate these):</p>
+                        <pre><code>- Day-to-day operations
+                        <ul>
+                        <li>Tactical decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Most hiring (you approve)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Most customer interactions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Most product decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Internal communications</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Administrative tasks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data gathering and analysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>First drafts of documents</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>How to Delegate Effectively</h3>
+                        <p><strong>Step 1: Choose the Right Person</strong></p>
+                        <pre><code>Who has:
+                        <ul>
+                        <li>Necessary skills (or can develop them)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Available capacity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Interest in learning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trust and reliability</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 2: Provide Context</strong></p>
+                        <pre><code>Explain:
+                        <ul>
+                        <li>Why this matters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How it fits bigger picture</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success criteria</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Constraints and non-negotiables</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Resources available</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timeline</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 3: Define Decision Authority</strong></p>
+                        <pre><code>Level 1: Do and don&#x27;t tell me (low-stakes)
+                        <p>Level 2: Do and tell me (most tasks) Level 3: Do and ask for input first (medium-stakes) Level 4: Ask me before doing (high-stakes) Be explicit about which level.</code></pre> <strong>Step 4: Get Out of the Way</strong></p>
+                        <pre><code>Don&#x27;t:
+                        <ul>
+                        <li>Micromanage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take it back if they do it differently</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check in every hour</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Redo their work your way</li>
+                        </li>
+                        </ul>
+                        <p>Do:</p>
+                        <ul>
+                        <li>Be available for questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check in at milestones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give feedback on outcomes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Let them fail on small things</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 5: Follow Up</strong></p>
+                        <pre><code>At deadline:
+                        <ul>
+                        <li>Review the work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give specific feedback</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Recognize good work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Coach on improvements</li>
+                        </li>
+                        </ul>
+                        <p>Next time:</p>
+                        <ul>
+                        <li>Delegate more or differently based on results</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Building Your Second Brain</h3>
+                        <p><strong>Multiply Yourself</strong>: <strong>Hire Executive Assistant</strong> (When you can afford):</p>
+                        <pre><code>They handle:
+                        <ul>
+                        <li>Calendar management</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email triage and responses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expense reports</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Travel booking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meeting prep and notes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Project coordination</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Research and data gathering</li>
+                        </li>
+                        </ul>
+                        <p>ROI: Saves you 10-20 hours/week Cost: $40-80k/year (or virtual assistant $20-40k) Break-even: When your time is worth $50+/hour</code></pre> <strong>Document Your Decision-Making</strong>:</p>
+                        <pre><code>Create:
+                        <ul>
+                        <li>Decision frameworks (write them down)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Approval levels (what needs your input)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communication templates (common emails)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Standard operating procedures</li>
+                        </li>
+                        </ul>
+                        <p>Then: Team can make more decisions without you</code></pre> <strong>Train Decision-Makers</strong>:</p>
+                        <pre><code>Instead of: You making all decisions
+                        <p>Train: Team to make decisions like you would How:</p>
+                        <ul>
+                        <li>Explain your reasoning out loud</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Let them propose solutions first</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask &quot;What would you do?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give feedback on their judgment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Increase autonomy over time</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Energy Management</h2>
+                        <h3>Protect Your Health</h3>
+                        <p><strong>Non-Negotiable Self-Care</strong>: <strong>Sleep</strong> (7-8 hours):</p>
+                        <pre><code>Why: Cognitive function, decision-making, emotional regulation
+                        <p>How:</p>
+                        <ul>
+                        <li>Consistent bedtime (even weekends)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No screens 1 hour before bed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Dark, cool room</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>No alcohol before bed</li>
+                        </li>
+                        </ul>
+                        <p>Research: CEOs who sleep <6 hours make worse decisions, have worse team relationships, and burn out faster.</code></pre> <strong>Exercise</strong> (30 min, 4-5x/week):</p>
+                        <pre><code>Why: Energy, mental clarity, stress relief, health
+                        <p>How:</p>
+                        <ul>
+                        <li>Block it in calendar (treat like meeting)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Morning preferred (gets it done)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Whatever you enjoy (sustainability matters)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Walking meetings count</li>
+                        </li>
+                        </ul>
+                        <p>Research: Exercise improves cognitive function and reduces decision fatigue.</code></pre> <strong>Nutrition</strong> (Don&#x27;t skip meals):</p>
+                        <pre><code>Why: Energy, focus, health
+                        <p>How:</p>
+                        <ul>
+                        <li>Breakfast (don&#x27;t skip)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Real lunch (not at desk)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Healthy snacks available</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Limit caffeine after 2pm</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hydration (64+ oz water/day)</li>
+                        </li>
+                        </ul>
+                        <p>Avoid: All-day grazing, energy drinks, skipping meals</code></pre> <strong>Mental Health</strong>:</p>
+                        <pre><code>High-stress role. Preventative care essential:
+                        <ul>
+                        <li>Therapist or coach (not weakness, strength)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meditation or mindfulness (10 min/day)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hobbies and interests outside work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Social connections (friends, family)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Vacation (actually disconnect)</li>
+                        </li>
+                        </ul>
+                        <p>Burnout warning signs:</p>
+                        <ul>
+                        <li>Cynicism about work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decreased performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Emotional exhaustion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Physical symptoms (headaches, insomnia)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Detachment from team</li>
+                        </li>
+                        </ul>
+                        <p>If experiencing: Take action immediately. You can&#x27;t lead if you&#x27;re burnt out.</code></pre></p>
+                        <h3>The Shutdown Ritual</h3>
+                        <p><strong>End Your Day</strong> (15 minutes):</p>
+                        <pre><code>5:45pm (or whenever your day ends):
+                        <p>1. Review today (5 min):</p>
+                        <ul>
+                        <li>What got done?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What didn&#x27;t?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Any urgent items for tomorrow?</li>
+                        </li>
+                        </ul>
+                        <p>2. Plan tomorrow (5 min):</p>
+                        <ul>
+                        <li>Top 3 priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review calendar</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prepare for morning meetings</li>
+                        </li>
+                        </ul>
+                        <p>3. Clear your brain (5 min):</p>
+                        <ul>
+                        <li>Write down any lingering thoughts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close all tabs and apps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Say (out loud): &quot;Shutdown complete&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Then: Actually stop working. Don&#x27;t: Check email &quot;just once&quot; at 9pm Check Slack &quot;real quick&quot; before bed Think about work problems all evening Your brain needs recovery time.</code></pre></p>
+                        <h2>Time Management Tools</h2>
+                        <h3>Calendar Management</h3>
+                        <p><strong>Google Calendar / Outlook</strong>:</p>
+                        <pre><code>Setup:
+                        <ul>
+                        <li>Color code: Deep work (blue), Meetings (red), </li>
+                        </li>
+                        </ul>
+                        <p>Personal (green), Buffer (yellow)</p>
+                        <ul>
+                        <li>Default meeting length: 25 or 50 minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Working hours set (respects boundaries)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meeting rooms auto-decline overlaps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Speedy meetings on (ends 5 min early)</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Calendly / Scheduling Tool</strong>:</p>
+                        <pre><code>For: External meetings, interviews
+                        <p>Setup:</p>
+                        <ul>
+                        <li>Limited availability windows</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buffer time between meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Custom questions (pre-qualify)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timezone handling</li>
+                        </li>
+                        </ul>
+                        <p>Saves: 10+ email exchanges per meeting</code></pre></p>
+                        <h3>Task Management</h3>
+                        <p><strong>Simple System</strong>:</p>
+                        <pre><code>Tool: Notion, Asana, Todoist, or paper
+                        <p>Structure:</p>
+                        <ul>
+                        <li>Today: Must do (3-5 items max)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>This week: Should do (10-15 items)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>This month: Could do (20-30 items)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Someday: Ideas and aspirations</li>
+                        </li>
+                        </ul>
+                        <p>Daily process:</p>
+                        <ul>
+                        <li>Start of day: Review today, adjust</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>End of day: Review tomorrow, plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weekly: Review week, plan next week</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>The 1-3-5 Rule</strong>:</p>
+                        <pre><code>Every day:
+                        <ul>
+                        <li>1 big thing (2-4 hours)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>3 medium things (30-60 min each)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5 small things (5-15 min each)</li>
+                        </li>
+                        </ul>
+                        <p>Forces prioritization. Prevents overwhelm. Provides clarity.</code></pre></p>
+                        <h3>Communication Management</h3>
+                        <p><strong>Email</strong>:</p>
+                        <pre><code>Batch process:
+                        <ul>
+                        <li>9am (15 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1pm (15 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5pm (15 min)</li>
+                        </li>
+                        </ul>
+                        <p>Use filters and labels:</p>
+                        <ul>
+                        <li>Priority: Action needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>FYI: Read when time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Automated: Archive</li>
+                        </li>
+                        </ul>
+                        <p>Templates for common emails:</p>
+                        <ul>
+                        <li>Intro requests</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer responses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Investor updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Polite declines</li>
+                        </li>
+                        </ul>
+                        <p>Unsubscribe aggressively.</code></pre> <strong>Slack</strong>:</p>
+                        <pre><code>Settings:
+                        <ul>
+                        <li>Notifications off (except DMs from key people)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Do Not Disturb: 6pm-9am, weekends</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check deliberately (don&#x27;t leave open all day)</li>
+                        </li>
+                        </ul>
+                        <p>Process:</p>
+                        <ul>
+                        <li>Check 3-4x per day</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Respond in batches</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use threads (reduces noise)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mute channels you don&#x27;t need</li>
+                        </li>
+                        </ul>
+                        <p>Use status:</p>
+                        <ul>
+                        <li>🔴 In deep work (don&#x27;t disturb)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🟡 In meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🟢 Available</code></pre></li>
+                        </li>
+                        </ul>
+                        <h2>Time Audit</h2>
+                        <h3>How to Audit Your Time</h3>
+                        <p><strong>Week 1: Track Everything</strong>:</p>
+                        <pre><code>Use tool (RescueTime, Toggl) or spreadsheet.
+                        <p>Track in 30-min increments:</p>
+                        <ul>
+                        <li>What you did</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Category (meetings, email, deep work, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Energy level (1-10)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Distractions (yes/no)</li>
+                        </li>
+                        </ul>
+                        <p>Do this for full week without changing behavior.</code></pre> <strong>Week 2: Analyze</strong>:</p>
+                        <pre><code>Questions:
+                        <p>1. Where did time actually go? 2. How much time on high-value work? 3. How much time on low-value work? 4. How much time reactive vs proactive? 5. When was I most productive? 6. What drained my energy? 7. What gave me energy? 8. What surprised me?</code></pre> <strong>Week 3: Redesign</strong>:</p>
+                        <pre><code>Based on insights:
+                        <ul>
+                        <li>Eliminate: What can I stop doing?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Delegate: What can others do?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Batch: What can I group together?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Protect: When do I need deep work time?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Change: What habits need to shift?</li>
+                        </li>
+                        </ul>
+                        <p>Create new ideal calendar. Test for 2 weeks. Iterate.</code></pre></p>
+                        <h3>Regular Time Review</h3>
+                        <p><strong>Weekly Review</strong> (Friday, 30 minutes):</p>
+                        <pre><code>1. How did I spend time this week?
+                        <p>2. Did I work on top priorities? 3. What drained time with low return? 4. What gave high return on time? 5. What will I change next week? Adjust next week&#x27;s calendar based on this.</code></pre> <strong>Monthly Review</strong> (Last day of month, 60 minutes):</p>
+                        <pre><code>1. What were my goals this month?
+                        <p>2. Did my time allocation match goals? 3. What patterns do I see? 4. What&#x27;s working/not working? 5. What systematic changes do I need to make? Update your time management system.</code></pre></p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Time is your scarcest resource</strong>: Protect it ruthlessly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Not all hours are equal</strong>: Use peak hours for peak work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Manager time vs Maker time</strong>: Need both, schedule separately</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Batch similar tasks</strong>: Reduce context switching cost</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Protect strategic thinking</strong>: Most important, most neglected</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Say no to almost everything</strong>: Every yes is a no to something else</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Delegate or drown</strong>: Others can do 70% of what you do</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Energy &gt; time</strong>: Manage your energy, not just calendar</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Sleep, exercise, health</strong>: Non-negotiable for performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Audit regularly</strong>: What gets measured gets managed</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Time Audit</h3>
+                        <p>Track your time for one week. Analyze results. What surprised you?</p>
+                        <h3>Exercise 2: Ideal Week Design</h3>
+                        <p>Design your ideal week calendar:</p>
+                        <ul>
+                        <li>Deep work blocks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meeting blocks  </li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Personal time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Buffer time</li>
+                        </li>
+                        </ul>
+                        <p>Share with team so they know when to reach you.</p>
+                        <h3>Exercise 3: Delegation List</h3>
+                        <p>List everything you did this week. For each item:</p>
+                        <ul>
+                        <li>Must I do this? (Only me)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Could someone else? (Delegate)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Should this exist? (Eliminate)</li>
+                        </li>
+                        </ul>
+                        <p>Delegate or eliminate 30% this month.</p>
+                        <h3>Exercise 4: Energy Audit</h3>
+                        <p>Track your energy levels hourly for 3 days. When are you highest energy? Schedule hardest work then.</p>
+                        <h3>Exercise 5: No Practice</h3>
+                        <p>Practice saying no to 10 requests this month. Use templates provided. Get comfortable declining.</p>
+                        <h2>Next Steps</h2>
+                        <p>1. <strong>Do time audit</strong>: Track one full week starting Monday 2. <strong>Design ideal calendar</strong>: Use template provided 3. <strong>Set up office hours</strong>: Reduce ad-hoc interruptions 4. <strong>Create delegation plan</strong>: Identify 5 things to delegate this month 5. <strong>Read &quot;168 Hours&quot;</strong>: By Laura Vanderkam Move to <strong>Chapter 8: Board Management</strong> to learn how to work effectively with advisors and investors.</p>
+                        <hr />
+                        <p><em>Remember: How you spend your time is how you spend your life. As CEO, how you spend your time determines what kind of company you build. Choose wisely.</em></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Conflict Resolution</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Board Management</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

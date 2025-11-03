@@ -1,0 +1,2290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Conflict Resolution - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Leadership Management</li>
+                    <li aria-current="page">Conflict Resolution</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Conflict Resolution</h1>
+                        <h2>Introduction</h2>
+                        <p>Conflict is inevitable in any growing company. Different perspectives, competing priorities, personality clashes, and high-stakes decisions create friction. As CEO, your ability to navigate and resolve conflict determines whether your team becomes stronger or fractures. This chapter teaches you how to turn conflict into opportunity for growth.</p>
+                        <h2>Understanding Conflict</h2>
+                        <h3>Conflict Is Not Always Bad</h3>
+                        <p><strong>Healthy Conflict</strong> (Productive):</p>
+                        <pre><code>✓ Debate about product direction
+                        <p>✓ Discussion about priorities ✓ Challenging assumptions ✓ Questioning decisions ✓ Different approaches to problems ✓ Constructive disagreement Result: Better decisions, innovation, growth</code></pre> <strong>Unhealthy Conflict</strong> (Destructive):</p>
+                        <pre><code>✗ Personal attacks
+                        <p>✗ Hidden agendas ✗ Passive aggression ✗ Undermining others ✗ Political games ✗ Avoiding necessary conversations Result: Toxicity, turnover, dysfunction</code></pre> <strong>Your Goal</strong>: Encourage healthy conflict, eliminate unhealthy conflict.</p>
+                        <h3>Types of Conflict</h3>
+                        <p><strong>1. Task Conflict</strong> (About work):</p>
+                        <pre><code>Example: &quot;Should we build feature A or B first?&quot;
+                        <p>Status: Healthy and necessary Action: Encourage debate, make decision, move forward</code></pre> <strong>2. Process Conflict</strong> (About how work gets done):</p>
+                        <pre><code>Example: &quot;Should we use Agile or Kanban?&quot;
+                        <p>Status: Can be healthy, but limit time spent Action: Test approaches, decide based on results</code></pre> <strong>3. Relationship Conflict</strong> (Personal):</p>
+                        <pre><code>Example: &quot;I don&#x27;t trust Alex&quot; or &quot;Sarah is always difficult&quot;
+                        <p>Status: Unhealthy, address immediately Action: Mediate, set expectations, monitor</code></pre> <strong>4. Values Conflict</strong> (Core beliefs):</p>
+                        <pre><code>Example: &quot;I believe we should prioritize profit, you believe 
+                        <p>we should prioritize mission&quot; Status: Serious, may be irreconcilable Action: Deep conversation, may need to part ways</code></pre></p>
+                        <h3>The Conflict Escalation Pattern</h3>
+                        <pre><code>Stage 1: Tension
+                        <ul>
+                        <li>Discomfort in interactions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoiding certain topics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Subtle comments</li>
+                        </li>
+                        </ul>
+                        <p>→ Action: Address early before it grows Stage 2: Disagreement</p>
+                        <ul>
+                        <li>Open debate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Different viewpoints</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Some frustration</li>
+                        </li>
+                        </ul>
+                        <p>→ Action: Facilitate productive discussion Stage 3: Dispute</p>
+                        <ul>
+                        <li>Positions harden</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Us vs them&quot; thinking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Emotional reactions</li>
+                        </li>
+                        </ul>
+                        <p>→ Action: Mediate, find common ground Stage 4: Fight</p>
+                        <ul>
+                        <li>Personal attacks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Breakdown of trust</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Refusal to collaborate</li>
+                        </li>
+                        </ul>
+                        <p>→ Action: Formal intervention, potential separation Stage 5: War</p>
+                        <ul>
+                        <li>Sabotage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Recruitment of allies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Irreparable damage</li>
+                        </li>
+                        </ul>
+                        <p>→ Action: Remove one or both parties The earlier you intervene, the better the outcome.</code></pre></p>
+                        <h2>The Conflict Resolution Framework</h2>
+                        <h3>Step 1: Recognize Early</h3>
+                        <p><strong>Warning Signs</strong>:</p>
+                        <pre><code>Behavioral:
+                        <ul>
+                        <li>Someone stops speaking up in meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Passive-aggressive comments in Slack</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Avoiding certain team members</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decreased collaboration</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complaints through back channels</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Body language changes (crossed arms, no eye contact)</li>
+                        </li>
+                        </ul>
+                        <p>Performance:</p>
+                        <ul>
+                        <li>Missed deadlines</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quality decline</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Increased errors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lack of coordination</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Duplicated work</li>
+                        </li>
+                        </ul>
+                        <p>Cultural:</p>
+                        <ul>
+                        <li>Gossip increases</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Silos form</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Us vs them&quot; language</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Blame culture emerges</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Your Response</strong>:</p>
+                        <pre><code>Don&#x27;t ignore hoping it resolves itself. It won&#x27;t.
+                        <p>Within 24-48 hours: 1. Talk to each party separately 2. Understand both perspectives 3. Assess severity 4. Decide on approach 5. Take action</code></pre></p>
+                        <h3>Step 2: Gather Information</h3>
+                        <p><strong>Before Intervening</strong>: <strong>Talk to Each Party Privately</strong>:</p>
+                        <pre><code>Questions to Ask:
+                        <ul>
+                        <li>&quot;Help me understand what&#x27;s happening from your perspective&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s your relationship been like with [person]?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What specifically has occurred that concerns you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How is this affecting your work?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What would an ideal resolution look like?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What have you tried already?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Listen for:</p>
+                        <ul>
+                        <li>Specific incidents (not vague feelings)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Patterns over time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Impact on work and team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Their role in the conflict (not just blaming others)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Willingness to resolve</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Consider Multiple Perspectives</strong>:</p>
+                        <pre><code>Talk to:
+                        <ul>
+                        <li>Both parties involved</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Others on the team (if appropriate)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Previous managers (if relevant)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>HR or advisors</li>
+                        </li>
+                        </ul>
+                        <p>Avoid:</p>
+                        <ul>
+                        <li>Taking sides before understanding fully</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Making assumptions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Believing only one side</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Skipping this step</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Step 3: Classify the Conflict</h3>
+                        <p><strong>Type A: Simple Misunderstanding</strong></p>
+                        <pre><code>Example: Engineer thought deadline was Friday, PM thought Thursday
+                        <p>Root cause: Communication gap Solution: Clarify and move forward Time: 15 minutes</code></pre> <strong>Type B: Different Working Styles</strong></p>
+                        <pre><code>Example: Detail-oriented person vs big-picture person clashing
+                        <p>Root cause: Personality/style differences Solution: Understand and adapt to each other Time: 1-2 conversations</code></pre> <strong>Type C: Competing Priorities</strong></p>
+                        <pre><code>Example: Sales wants feature now, Engineering says it takes 3 months
+                        <p>Root cause: Different incentives/perspectives Solution: Align on company priorities, make trade-offs clear Time: 1-2 meetings + decision</code></pre> <strong>Type D: Performance or Behavior Issue</strong></p>
+                        <pre><code>Example: One person not pulling weight, causing frustration
+                        <p>Root cause: Performance or professionalism problem Solution: Performance management, clear expectations Time: PIP or immediate action</code></pre> <strong>Type E: Values Misalignment</strong></p>
+                        <pre><code>Example: Fundamental disagreement about company direction or ethics
+                        <p>Root cause: Core values don&#x27;t match Solution: Deep conversation, may require departure Time: Multiple conversations, possibly permanent separation</code></pre></p>
+                        <h3>Step 4: Choose Your Approach</h3>
+                        <p><strong>Direct Conversation</strong> (Most common):</p>
+                        <pre><code>When:
+                        <ul>
+                        <li>First instance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Both parties reasonable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Moderate severity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Relationship salvageable</li>
+                        </li>
+                        </ul>
+                        <p>You facilitate discussion between parties.</code></pre> <strong>Mediated Conversation</strong> (More serious):</p>
+                        <pre><code>When:
+                        <ul>
+                        <li>Significant tension</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Previous attempts failed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Power imbalance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High stakes</li>
+                        </li>
+                        </ul>
+                        <p>You actively mediate, set ground rules, guide discussion.</code></pre> <strong>Decision-Making</strong> (Competing priorities):</p>
+                        <pre><code>When:
+                        <ul>
+                        <li>Legitimate disagreement about direction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Both have valid points</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Someone needs to decide</li>
+                        </li>
+                        </ul>
+                        <p>You listen to both sides, make the call, both commit.</code></pre> <strong>Performance Management</strong> (Individual issue):</p>
+                        <pre><code>When:
+                        <ul>
+                        <li>One person is the problem</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Behavior or performance issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Affecting team negatively</li>
+                        </li>
+                        </ul>
+                        <p>You address with individual, set expectations, follow up.</code></pre> <strong>Separation</strong> (Irreconcilable):</p>
+                        <pre><code>When:
+                        <ul>
+                        <li>All other approaches failed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Toxic behavior continues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Values fundamentally misaligned</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Damage to team too great</li>
+                        </li>
+                        </ul>
+                        <p>You let one or both people go.</code></pre></p>
+                        <h3>Step 5: Facilitate Resolution</h3>
+                        <p><strong>The Mediation Meeting</strong>: <strong>Preparation</strong> (Day before):</p>
+                        <pre><code>1. Confirm both parties willing to meet
+                        <p>2. Set expectations for the conversation 3. Schedule 60-90 minutes 4. Choose neutral location 5. Prepare your facilitation questions</code></pre> <strong>Opening</strong> (5 minutes):</p>
+                        <pre><code>Your script:
+                        <p>&quot;Thank you both for being here. I know this is uncomfortable, but I believe we can work through this together. Here&#x27;s how this will work: 1. Each of you will share your perspective (10 min each) 2. No interrupting while the other speaks 3. Then we&#x27;ll discuss together 4. Goal is mutual understanding and path forward 5. I&#x27;m here to facilitate, not judge Ground rules:</p>
+                        <ul>
+                        <li>Focus on behaviors and impact, not character</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use &#x27;I&#x27; statements, not &#x27;you&#x27; accusations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Listen to understand, not to respond</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assume positive intent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commit to resolution</li>
+                        </li>
+                        </ul>
+                        <p>Any questions before we start?&quot;</code></pre> <strong>Perspective Sharing</strong> (20 minutes):</p>
+                        <pre><code>&quot;[Person A], please share your perspective. [Person B], 
+                        <p>please just listen for now.&quot; [Person A shares - 10 minutes] &quot;Thank you. [Person B], what did you hear [Person A] say?&quot; [Check for understanding] &quot;Now [Person B], please share your perspective.&quot; [Person B shares - 10 minutes] &quot;Thank you. [Person A], what did you hear [Person B] say?&quot; [Check for understanding]</code></pre> <strong>Discussion</strong> (30 minutes):</p>
+                        <pre><code>Facilitate exploration:
+                        <ul>
+                        <li>&quot;Where do you agree?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s the core issue from each perspective?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s the impact on your work? On the team?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What do you each need from the other going forward?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What are you willing to commit to?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Guide toward:</p>
+                        <ul>
+                        <li>Understanding (not necessarily agreement)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Acknowledgment of impact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specific behavior changes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Path forward</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Resolution</strong> (10 minutes):</p>
+                        <pre><code>Document agreements:
+                        <ul>
+                        <li>&quot;So I&#x27;m hearing you&#x27;ll both commit to [X]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Is that accurate?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;[Person A] will [specific behavior]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;[Person B] will [specific behavior]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;We&#x27;ll check in [timeframe]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;If this continues, [consequences]&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Get verbal commitment from both.</code></pre> <strong>Follow-up</strong> (5 minutes):</p>
+                        <pre><code>Send email same day:
+                        <ul>
+                        <li>Summary of discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Agreements made</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Next steps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check-in date</li>
+                        </li>
+                        </ul>
+                        <p>Thank them for engaging constructively.</code></pre></p>
+                        <h3>Step 6: Monitor and Follow-up</h3>
+                        <p><strong>Weekly Check-ins</strong> (First month):</p>
+                        <pre><code>Talk to each party separately:
+                        <ul>
+                        <li>&quot;How&#x27;s it going with [person]?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Are you both following through on commitments?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Any concerns?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s better? What&#x27;s not?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Observe interactions in meetings, Slack, etc.</code></pre> <strong>Monthly Check-ins</strong> (Months 2-3):</p>
+                        <pre><code>Less frequent but ongoing:
+                        <ul>
+                        <li>Continue to monitor</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Recognize improvements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address any backsliding immediately</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Success Indicators</strong>:</p>
+                        <pre><code>✓ Collaborating effectively
+                        <p>✓ Communicating directly ✓ No complaints from others ✓ Work quality and speed normal ✓ Positive body language ✓ Constructive disagreement (healthy conflict)</code></pre> <strong>Failure Indicators</strong>:</p>
+                        <pre><code>✗ Avoiding each other
+                        <p>✗ Passive aggression continues ✗ Others complain about tension ✗ Work suffers ✗ Commitments not kept If after 30 days no improvement → Stronger action needed</code></pre></p>
+                        <h2>Special Conflict Scenarios</h2>
+                        <h3>Conflict with Co-founder</h3>
+                        <p><strong>This Is Critical</strong> (Company survival): <strong>Common Co-founder Conflicts</strong>:</p>
+                        <pre><code>- Strategic direction disagreement
+                        <ul>
+                        <li>Equity split disputes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Role and responsibility confusion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work ethic differences</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Values misalignment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Communication breakdown</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Power struggles</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Address</strong>: <strong>Step 1: Scheduled Weekly Sync</strong></p>
+                        <pre><code>30-60 minutes, just co-founders:
+                        <ul>
+                        <li>What&#x27;s working?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s not?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Where do we disagree?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What needs to change?</li>
+                        </li>
+                        </ul>
+                        <p>Establish this early, before conflict arises.</code></pre> <strong>Step 2: Founders&#x27; Agreement</strong></p>
+                        <pre><code>Document:
+                        <ul>
+                        <li>Roles and responsibilities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision-making authority</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conflict resolution process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equity vesting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit scenarios</li>
+                        </li>
+                        </ul>
+                        <p>Review and update quarterly.</code></pre> <strong>Step 3: External Mediator</strong></p>
+                        <pre><code>For serious conflicts:
+                        <ul>
+                        <li>Hire executive coach or startup therapist</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work through issues with neutral third party</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>More common than you think</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Not a sign of failure</li>
+                        </li>
+                        </ul>
+                        <p>Better than letting company die.</code></pre> <strong>Step 4: Structured Separation</strong> (Last resort)</p>
+                        <pre><code>If irreconcilable:
+                        <ul>
+                        <li>One founder buys out the other</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clean break with vesting acceleration</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>NDA and non-compete</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Clear communication to team</li>
+                        </li>
+                        </ul>
+                        <p>Messy co-founder divorce kills companies. Clean separation allows one to continue.</code></pre></p>
+                        <h3>Conflict with Investor</h3>
+                        <p><strong>Types</strong>:</p>
+                        <pre><code>- Strategic direction disagreement
+                        <ul>
+                        <li>Board seat disputes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow-on funding expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timeline pressure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit strategy differences</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Handle</strong>:</p>
+                        <pre><code>1. Understand their perspective
+                        <ul>
+                        <li>What&#x27;s driving their concern?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What outcome do they want?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s negotiable?</li>
+                        </li>
+                        </ul>
+                        <p>2. Prepare your case</p>
+                        <ul>
+                        <li>Data supporting your position</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Alternative perspectives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proposed compromise</li>
+                        </li>
+                        </ul>
+                        <p>3. Direct conversation</p>
+                        <ul>
+                        <li>Don&#x27;t avoid or go around</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address concerns head-on</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Find middle ground</li>
+                        </li>
+                        </ul>
+                        <p>4. Escalate if needed</p>
+                        <ul>
+                        <li>Other board members</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lead investor</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Legal counsel (last resort)</li>
+                        </li>
+                        </ul>
+                        <p>Remember: You work for the company, not the investor. But investors have rights and influence.</code></pre></p>
+                        <h3>Conflict Between Team Members</h3>
+                        <p><strong>When Two Team Members Conflict</strong>: <strong>Your role depends on hierarchy</strong>: <strong>If you&#x27;re their manager</strong>:</p>
+                        <pre><code>- You must intervene
+                        <ul>
+                        <li>Follow full resolution framework</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make decision if needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monitor closely</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document everything</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>If they have another manager</strong>:</p>
+                        <pre><code>- Coach the manager
+                        <ul>
+                        <li>Step in if manager ineffective</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide support and guidance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ultimate escalation point</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Common Mistakes</strong>:</p>
+                        <pre><code>❌ Ignoring it (&quot;They&#x27;re adults, they&#x27;ll work it out&quot;)
+                        <p>❌ Taking sides immediately ❌ Forcing friendship (&quot;Just get along&quot;) ❌ Moving one person to avoid conflict ❌ Letting it fester for months ✓ Address promptly ✓ Stay neutral until informed ✓ Focus on professional relationship ✓ Use conflict as development opportunity ✓ Act within days, not months</code></pre></p>
+                        <h3>Conflict with Customer</h3>
+                        <p><strong>De-escalation Framework</strong>: <strong>Step 1: Acknowledge</strong> (Immediately)</p>
+                        <pre><code>&quot;I understand you&#x27;re frustrated. Thank you for bringing 
+                        <p>this to our attention. I want to make this right.&quot; Don&#x27;t:</p>
+                        <ul>
+                        <li>Defend immediately</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Blame them</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make excuses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ignore</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 2: Listen</strong> (Fully)</p>
+                        <pre><code>&quot;Tell me exactly what happened from your perspective.&quot;
+                        <p>Let them vent without interrupting. Take notes. Ask clarifying questions. Confirm understanding.</code></pre> <strong>Step 3: Apologize</strong> (If appropriate)</p>
+                        <pre><code>&quot;I&#x27;m sorry this happened. That&#x27;s not the experience we 
+                        <p>want you to have.&quot; Even if it&#x27;s not your fault: &quot;I&#x27;m sorry you had this experience.&quot;</code></pre> <strong>Step 4: Solve</strong> (Collaboratively)</p>
+                        <pre><code>&quot;Here&#x27;s what I can do: [options]&quot;
+                        <p>&quot;What would make this right for you?&quot; Find solution that works for both.</code></pre> <strong>Step 5: Follow-through</strong> (Completely)</p>
+                        <pre><code>Do what you promised.
+                        <p>Check back: &quot;Did we resolve this?&quot; Learn: &quot;How do we prevent this?&quot;</code></pre> <strong>When to Stand Firm</strong>:</p>
+                        <pre><code>- Customer is abusive to team
+                        <ul>
+                        <li>Request is unreasonable/impossible</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Would set bad precedent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>They&#x27;re not right fit</li>
+                        </li>
+                        </ul>
+                        <p>&quot;I understand your frustration, but we&#x27;re not able to [unreasonable request]. We can offer [reasonable alternative], or if this doesn&#x27;t work for you, we understand if you need to find another solution.&quot;</code></pre></p>
+                        <h2>Difficult Conversations</h2>
+                        <h3>The Structure</h3>
+                        <p><strong>Opening</strong> (30 seconds):</p>
+                        <pre><code>Be direct, don&#x27;t soften:
+                        <p>❌ &quot;Hey, how&#x27;s it going? Nice weather... So anyway...&quot; ✓ &quot;I wanted to talk about [specific issue]. Do you have 15 minutes?&quot; Set tone: ❌ &quot;Don&#x27;t take this the wrong way, but...&quot; ✓ &quot;I value you and I want to address something directly.&quot;</code></pre> <strong>Situation-Behavior-Impact</strong> (2-3 minutes):</p>
+                        <pre><code>Situation: &quot;In yesterday&#x27;s client call...&quot;
+                        <p>Behavior: &quot;...you interrupted the client three times...&quot; Impact: &quot;...which made them defensive and we lost momentum.&quot; Not: &quot;You&#x27;re always unprofessional&quot; (Character attack) &quot;You need to be better&quot; (Vague)</code></pre> <strong>Listen</strong> (5 minutes):</p>
+                        <pre><code>&quot;What happened from your perspective?&quot;
+                        <p>Actually listen. Don&#x27;t:</p>
+                        <ul>
+                        <li>Prepare your rebuttal</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Interrupt</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Dismiss their view</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get defensive</li>
+                        </li>
+                        </ul>
+                        <p>Acknowledge their perspective: &quot;I hear that you felt [X]. Help me understand why...&quot;</code></pre> <strong>Discuss Forward</strong> (5 minutes):</p>
+                        <pre><code>&quot;Going forward, what I need is [specific behavior].&quot;
+                        <p>&quot;What support do you need from me?&quot; &quot;How will we prevent this?&quot; Get commitment: &quot;Can you commit to [specific action]?&quot; Get verbal &quot;yes.&quot;</code></pre> <strong>Document</strong> (After):</p>
+                        <pre><code>Send email summarizing:
+                        <ul>
+                        <li>What you discussed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commitments made</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Next steps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check-in date</li>
+                        </li>
+                        </ul>
+                        <p>Especially important for performance issues.</code></pre></p>
+                        <h3>Common Difficult Conversations</h3>
+                        <p><strong>Performance Below Expectations</strong>:</p>
+                        <pre><code>&quot;I want to talk about your performance on [project]. 
+                        <p>The expectation was [X], and the result was [Y]. Here&#x27;s the gap: [specific examples] This is impacting: [team/customer/business] Going forward, I need you to [specific improvements] by [specific date]. I&#x27;ll support you with [resources]. Can you commit to this?&quot;</code></pre> <strong>Behavioral Issue</strong>:</p>
+                        <pre><code>&quot;I need to give you direct feedback. In [situation], 
+                        <p>you [behavior], which resulted in [impact]. Our value is [relevant value], and this doesn&#x27;t align. I need you to [alternative behavior] going forward. Can you commit to that?&quot;</code></pre> <strong>Compensation Discussion</strong>:</p>
+                        <pre><code>&quot;I know you were hoping for [X] raise, and I&#x27;m able 
+                        <p>to offer [Y]. Here&#x27;s why: [Business context, market data, budget reality] Here&#x27;s what would need to change for you to get to [X]: [Specific performance improvements] Let&#x27;s create a plan to get you there.&quot;</code></pre> <strong>Letting Someone Go</strong>:</p>
+                        <pre><code>&quot;I&#x27;ve decided that today will be your last day with CoodLoom.
+                        <p>We&#x27;ve discussed performance concerns over the past [time period], and despite the support we&#x27;ve provided, we haven&#x27;t seen the improvement we need. Here&#x27;s what happens next:</p>
+                        <ul>
+                        <li>[Severance details]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Benefits information]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Equipment return]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Reference policy]</li>
+                        </li>
+                        </ul>
+                        <p>I wish you the best in finding the right fit.&quot; [Don&#x27;t debate, don&#x27;t drag out, be respectful]</code></pre></p>
+                        <h2>Building Conflict-Resilient Culture</h2>
+                        <h3>Psychological Safety</h3>
+                        <p><strong>Create Environment Where</strong>:</p>
+                        <pre><code>✓ People can disagree with leadership
+                        <p>✓ Mistakes are learning opportunities ✓ Questions are encouraged ✓ Concerns can be raised without fear ✓ Healthy debate is normalized ✓ Direct communication is expected</code></pre> <strong>How to Build It</strong>:</p>
+                        <pre><code>Model it:
+                        <ul>
+                        <li>Admit your mistakes publicly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask for feedback and act on it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thank people who disagree</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Show vulnerability</li>
+                        </li>
+                        </ul>
+                        <p>Reward it:</p>
+                        <ul>
+                        <li>Recognize people who speak up</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Promote people who challenge constructively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Punish backstabbing and politics</li>
+                        </li>
+                        </ul>
+                        <p>Systematize it:</p>
+                        <ul>
+                        <li>Anonymous feedback channels</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Regular retrospectives</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;No stupid questions&quot; culture</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Disagree and commit principle</code></pre></li>
+                        </li>
+                        </ul>
+                        <h3>Teaching Conflict Skills</h3>
+                        <p><strong>Train Your Team</strong>:</p>
+                        <pre><code>Topics:
+                        <ul>
+                        <li>How to give feedback (SBI model)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How to receive feedback (without defensiveness)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How to disagree constructively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How to resolve conflicts themselves</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>When to escalate</li>
+                        </li>
+                        </ul>
+                        <p>Methods:</p>
+                        <ul>
+                        <li>Workshops (bring in expert)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Role-playing scenarios</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manager training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Resources and books</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>Create Norms</strong>:</p>
+                        <pre><code>&quot;How we disagree at CoodLoom&quot;:
+                        <p>1. Address directly, not through back channels 2. Critique ideas, not people 3. Listen to understand, not to win 4. Assume positive intent 5. Disagree and commit 6. Focus on what&#x27;s best for customers/company Post this, reference it, live it.</code></pre></p>
+                        <h3>Regular Check-ins</h3>
+                        <p><strong>Prevent Conflicts Before They Start</strong>: <strong>Weekly 1-on-1s</strong>:</p>
+                        <pre><code>Create space for:
+                        <ul>
+                        <li>&quot;Anything bothering you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Any tensions on the team?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Feedback for me?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Catch issues at Stage 1, not Stage 4.</code></pre> <strong>Monthly Retrospectives</strong>:</p>
+                        <pre><code>&quot;What&#x27;s working?&quot;
+                        <p>&quot;What&#x27;s not working?&quot; &quot;What should we change?&quot; Surface tensions early.</code></pre> <strong>Quarterly Surveys</strong>:</p>
+                        <pre><code>Anonymous questions:
+                        <ul>
+                        <li>&quot;Do you feel comfortable raising concerns?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Are conflicts resolved effectively?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Is there anyone you struggle to work with?&quot;</li>
+                        </li>
+                        </ul>
+                        <p>Address patterns you see.</code></pre></p>
+                        <h2>Your Conflict Resolution Toolkit</h2>
+                        <h3>Pre-Conflict (Prevention)</h3>
+                        <pre><code>□ Clear roles and responsibilities
+                        <p>□ Documented decision-making process □ Regular 1-on-1s □ Psychological safety established □ Feedback culture normalized □ Values clearly defined and lived □ Communication norms set □ Regular team retrospectives</code></pre></p>
+                        <h3>During Conflict (Resolution)</h3>
+                        <pre><code>□ Recognition checklist (warning signs)
+                        <p>□ Information gathering template □ Conflict classification framework □ Mediation meeting script □ Resolution agreement template □ Follow-up schedule</code></pre></p>
+                        <h3>Post-Conflict (Learning)</h3>
+                        <pre><code>□ Conflict log (patterns over time)
+                        <p>□ Root cause analysis □ Process improvements □ Team debriefs (when appropriate) □ Personal reflection</code></pre></p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ <strong>Intervene early</strong>: Stage 1 tension is easier than Stage 4 war</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Healthy conflict is good</strong>: Debate and disagreement drive better decisions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Address within 48 hours</strong>: Don&#x27;t let conflicts fester</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Listen to all sides</strong>: Don&#x27;t rush to judgment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Focus on behavior</strong>: Not character or personality</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Document everything</strong>: Especially for serious or recurring issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Follow up religiously</strong>: Resolution requires monitoring</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Build prevention systems</strong>: Psychological safety, regular check-ins, clear norms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Model directly</strong>: Have difficult conversations yourself, team learns from you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ <strong>Know when to separate</strong>: Some conflicts aren&#x27;t resolvable</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Conflict Inventory</h3>
+                        <p>List current or recent conflicts:</p>
+                        <ul>
+                        <li>What type were they?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How quickly did you address them?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What was the outcome?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What would you do differently?</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Practice Scripts</h3>
+                        <p>Write out scripts for 3 difficult conversations you need to have:</p>
+                        <ul>
+                        <li>Use SBI model</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Be specific</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Focus on forward behavior</li>
+                        </li>
+                        </ul>
+                        <p>Practice out loud.</p>
+                        <h3>Exercise 3: Prevention Audit</h3>
+                        <p>Rate 1-10:</p>
+                        <ul>
+                        <li>How psychologically safe is your team?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How quickly do you address tensions?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How clear are roles and decision rights?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How well do people give/receive feedback?</li>
+                        </li>
+                        </ul>
+                        <p>For each below 7: Create improvement plan.</p>
+                        <h3>Exercise 4: Mediation Practice</h3>
+                        <p>Role-play a mediation with a friend:</p>
+                        <ul>
+                        <li>Set up scenario</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Practice your facilitation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get feedback on your approach</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 5: Conflict Norms</h3>
+                        <p>Document &quot;How we handle conflict at CoodLoom&quot;:</p>
+                        <ul>
+                        <li>5-7 specific norms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share with team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reference in conflicts</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>1. <strong>Address pending conflicts</strong>: List any current tensions and address this week 2. <strong>Create templates</strong>: Mediation agenda, resolution agreement, follow-up schedule 3. <strong>Train managers</strong>: Share this framework with anyone managing people 4. <strong>Build prevention</strong>: Establish regular check-ins and psychological safety 5. <strong>Read &quot;Crucial Conversations&quot;</strong>: By Patterson, Grenny, McMillan, Switzler Move to <strong>Chapter 7: Time Management</strong> to learn how to prioritize your time and energy as CEO.</p>
+                        <hr />
+                        <p><em>Remember: Conflict avoided is conflict postponed. Conflict addressed early and directly is conflict resolved. Your willingness to have difficult conversations sets the standard for your entire company.</em></p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Company Culture</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Time Management</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

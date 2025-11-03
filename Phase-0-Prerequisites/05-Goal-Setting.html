@@ -1,0 +1,3034 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Goal Setting: Defining Your Vision for CoodLoom - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Prerequisites</li>
+                    <li aria-current="page">Goal Setting: Defining Your Vision for CoodLoom</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Goal Setting: Defining Your Vision for CoodLoom</h1>
+                        <h2>Introduction</h2>
+                        <p>You&#x27;ve learned business fundamentals, assessed your readiness, and understood the industry. Now it&#x27;s time to define exactly where you want to take CoodLoom. Clear goals are the difference between wandering and purposeful progress. <strong>This chapter will help you</strong>:</p>
+                        <ul>
+                        <li>Define your long-term vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set specific, measurable goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create actionable milestones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build accountability systems</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Align with your co-founder on direction</li>
+                        </li>
+                        </ul>
+                        <h2>Part 1: Vision Definition</h2>
+                        <h3>Your &quot;Why&quot; - The Foundation</h3>
+                        <p>Before setting goals, you need to understand your deeper purpose. <strong>Reflection Exercise</strong>: Complete these statements: <strong>1. I&#x27;m building CoodLoom because...</strong></p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <p><strong>2. The problem I want to solve is...</strong></p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <p><strong>3. Success for me means...</strong></p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <p><strong>4. In 10 years, I want to...</strong></p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <p><strong>5. The impact I want to make is...</strong></p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <h3>Vision Statement for CoodLoom</h3>
+                        <p>A vision statement answers: <strong>&quot;What do we aspire to become?&quot;</strong> <strong>Template</strong>:</p>
+                        <pre><code>&quot;[Company] aspires to be [position in market] by [unique approach],
+                        <p>enabling [target customers] to [transformation/benefit], ultimately creating [broader impact].&quot;</code></pre> <strong>Examples from Successful Companies</strong>: <strong>Shopify</strong>: &quot;Make commerce better for everyone, so businesses can focus on what they do best: building and selling their products.&quot; <strong>Square</strong>: &quot;We started Square to make commerce easy and accessible to everyone.&quot; <strong>Microsoft</strong> (early): &quot;A computer on every desk and in every home.&quot; <strong>Your CoodLoom Vision Statement</strong> (Draft):</p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <p><strong>Questions to Test Your Vision</strong>:</p>
+                        <ul>
+                        <li>Is it inspiring? (Does it excite you?)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is it clear? (Can anyone understand it?)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is it ambitious? (Does it push boundaries?)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is it focused? (Does it guide decisions?)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Is it enduring? (Will it last 10+ years?)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Refinement</strong>: Share with 5 people and ask: 1. What do you think CoodLoom does? 2. Who do you think it&#x27;s for? 3. Does this sound exciting/valuable? <strong>Final Vision Statement</strong>:</p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <h3>Mission Statement for CoodLoom</h3>
+                        <p>A mission statement answers: <strong>&quot;What do we do, for whom, and how?&quot;</strong> <strong>Template</strong>:</p>
+                        <pre><code>&quot;[Company] [what you do] for [target customer]
+                        <p>through [how you do it differently].&quot;</code></pre> <strong>Examples</strong>: <strong>Toast</strong>: &quot;We build software that helps restaurants operate their business, serve their guests, and grow their brands.&quot; <strong>Clover</strong>: &quot;We help businesses run, grow, and make smarter decisions through our point-of-sale and business management platform.&quot; <strong>Your CoodLoom Mission Statement</strong>:</p>
+                        <hr />
+                        <hr />
+                        <hr />
+                        <h3>Values - Your Operating Principles</h3>
+                        <p>Values guide how you build and run CoodLoom. <strong>Common Startup Values</strong> (select or customize):</p>
+                        <ul>
+                        <li>Customer obsession</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Move fast and iterate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Transparency and honesty</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Excellence and quality</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Innovation and creativity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Collaboration and teamwork</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ownership and accountability</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Continuous learning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work-life harmony</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Integrity and ethics</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your Top 5 CoodLoom Values</strong>: 1. _________________ (Why: _________________) 2. _________________ (Why: _________________) 3. _________________ (Why: _________________) 4. _________________ (Why: _________________) 5. _________________ (Why: _________________) <strong>For each value, define what it means</strong>: <strong>Example - &quot;Customer Obsession&quot;</strong>:</p>
+                        <ul>
+                        <li>We talk to customers weekly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>We respond to support in &lt;4 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>We build features customers need, not what&#x27;s cool</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>We measure success by customer success</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your Values in Action</strong>: <strong>Value 1</strong>: _________________</p>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Value 2</strong>: _________________</p>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <p>(Continue for all 5 values)</p>
+                        <h2>Part 2: Long-Term Goals (3-10 Years)</h2>
+                        <h3>The &quot;Big Hairy Audacious Goal&quot; (BHAG)</h3>
+                        <p>A BHAG is your 10-year moonshot goal - ambitious but achievable. <strong>Examples</strong>:</p>
+                        <ul>
+                        <li>&quot;Become the #1 POS for [specific industry] in [region]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Reach $100M in revenue&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Serve 10,000+ small businesses&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Build a $500M+ company&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Exit for $50M+&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Your 10-Year BHAG for CoodLoom</strong>:</p>
+                        <hr />
+                        <hr />
+                        <p><strong>Make it SMART</strong>:</p>
+                        <ul>
+                        <li><strong>Specific</strong>: Exactly what you want to achieve</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Measurable</strong>: How you&#x27;ll know you achieved it</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Achievable</strong>: Ambitious but realistic</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Relevant</strong>: Aligned with your vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Time-bound</strong>: 10-year target</li>
+                        </li>
+                        </ul>
+                        <h3>5-Year Vision</h3>
+                        <p>Where do you want CoodLoom to be in 5 years? <strong>Business Metrics</strong> (5-Year Targets):</p>
+                        <ul>
+                        <li>Annual Recurring Revenue: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Number of Customers: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly Recurring Revenue: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team Size: __________ employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Market Position: __________ (e.g., &quot;Top 5 in our niche&quot;)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Geographic Reach: __________ (e.g., &quot;Operating in 10 states&quot;)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Product Vision</strong> (5 Years):</p>
+                        <ul>
+                        <li>Core Features: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Platform Capabilities: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Integrations: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technology: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Market Position</strong> (5 Years):</p>
+                        <ul>
+                        <li>Target Market: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Market Share: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Brand Recognition: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive Advantage: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Personal Goals</strong> (5 Years):</p>
+                        <ul>
+                        <li>Your Role: __________ (CEO, CTO, other?)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Salary/Compensation: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work-Life Balance: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Skills Developed: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Team &amp; Culture</strong> (5 Years):</p>
+                        <ul>
+                        <li>Team Structure: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Company Culture: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Remote/Office: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Hires: _______________________________</li>
+                        </li>
+                        </ul>
+                        <h3>3-Year Milestones</h3>
+                        <p><strong>Year 1 Target</strong>:</p>
+                        <ul>
+                        <li>Revenue: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customers: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Achievement: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Year 2 Target</strong>:</p>
+                        <ul>
+                        <li>Revenue: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customers: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Achievement: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Year 3 Target</strong>:</p>
+                        <ul>
+                        <li>Revenue: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customers: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Achievement: _______________________________</li>
+                        </li>
+                        </ul>
+                        <h2>Part 3: Short-Term Goals (1 Year)</h2>
+                        <h3>Year 1 Goals for CoodLoom</h3>
+                        <p><strong>SMART Goals Framework</strong>: Each goal should be:</p>
+                        <ul>
+                        <li><strong>S</strong>pecific: Crystal clear what you&#x27;re achieving</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>M</strong>easurable: Quantifiable with metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>A</strong>chievable: Challenging but realistic</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>R</strong>elevant: Aligned with vision/mission</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>T</strong>ime-bound: Specific deadline</li>
+                        </li>
+                        </ul>
+                        <p><strong>Revenue &amp; Financial Goals</strong>: <strong>Goal 1</strong>: Achieve $__________ in MRR by [Date]</p>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Current baseline</strong>: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Key initiatives</strong>: </li>
+                        </li>
+                        </ul>
+                        <p>1. _______________________________ 2. _______________________________ 3. _______________________________</p>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 2</strong>: Reach $__________ total revenue by year-end</p>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Monthly target</strong>: $__________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Key initiatives</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Customer Goals</strong>: <strong>Goal 3</strong>: Acquire ______ new paying customers by [Date]</p>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Current baseline</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Acquisition channels</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 4</strong>: Achieve &lt;___% monthly churn rate</p>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Current baseline</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Retention initiatives</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Product Goals</strong>: <strong>Goal 5</strong>: Launch [specific features] by [Date]</p>
+                        <ul>
+                        <li><strong>Features</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Launch date</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 6</strong>: Achieve 99.__% uptime</p>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Current baseline</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Initiatives</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Market Goals</strong>: <strong>Goal 7</strong>: Establish CoodLoom in [specific niche/market]</p>
+                        <ul>
+                        <li><strong>Target market</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why this market</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Timeline</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 8</strong>: Achieve _____% market share in [segment]</p>
+                        <ul>
+                        <li><strong>Market definition</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Current position</strong>: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Strategy</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success metrics</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Operational Goals</strong>: <strong>Goal 9</strong>: Build team to _____ people</p>
+                        <ul>
+                        <li><strong>Roles needed</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why these roles</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Hiring timeline</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 10</strong>: Establish [specific processes/systems]</p>
+                        <ul>
+                        <li><strong>Systems</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Implementation plan</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Personal Development Goals</strong>: <strong>Goal 11</strong>: Master [specific business skill]</p>
+                        <ul>
+                        <li><strong>Skill</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why needed</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Learning plan</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal 12</strong>: Build network of _____ [mentors/advisors/partners]</p>
+                        <ul>
+                        <li><strong>Who</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Why important</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Strategy</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Success criteria</strong>: _______________________________</li>
+                        </li>
+                        </ul>
+                        <h3>Prioritizing Your Goals</h3>
+                        <p>You can&#x27;t focus on everything at once. Prioritize your Year 1 goals: <strong>Must Achieve</strong> (Critical for survival/progress): 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>Should Achieve</strong> (Important but not critical): 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>Nice to Achieve</strong> (Aspirational): 1. _______________________________ 2. _______________________________ <strong>Focus Rule</strong>: You should have 3-5 &quot;Must Achieve&quot; goals that get 80% of your attention.</p>
+                        <h2>Part 4: Quarterly Goals (OKRs)</h2>
+                        <h3>Understanding OKRs</h3>
+                        <p><strong>OKR = Objectives and Key Results</strong> <strong>Objective</strong>: What you want to achieve (qualitative, inspirational) <strong>Key Results</strong>: How you&#x27;ll measure success (quantitative, specific) <strong>Example</strong>:</p>
+                        <ul>
+                        <li><strong>Objective</strong>: Dominate the coffee shop POS market in Seattle</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Key Result 1</strong>: Sign 25 Seattle coffee shops</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Key Result 2</strong>: Achieve 4.8+ star average review score</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Key Result 3</strong>: Capture 15% of Seattle coffee shop market</li>
+                        </li>
+                        </ul>
+                        <h3>Q1 OKRs (First 90 Days)</h3>
+                        <p><strong>Objective 1</strong>: _______________________________ <strong>Key Result 1.1</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Result 1.2</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Result 1.3</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Objective 2</strong>: _______________________________ <strong>Key Result 2.1</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Result 2.2</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Result 2.3</strong>: _______________________________</p>
+                        <ul>
+                        <li>Baseline: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Target: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deadline: __________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Objective 3</strong>: _______________________________ <strong>Key Result 3.1</strong>: _______________________________ <strong>Key Result 3.2</strong>: _______________________________ <strong>Key Result 3.3</strong>: _______________________________ <strong>Best Practices</strong>:</p>
+                        <ul>
+                        <li>3-5 objectives per quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>3-4 key results per objective</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make key results measurable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>70% achievement is good (means you&#x27;re stretching)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Review weekly, update quarterly</li>
+                        </li>
+                        </ul>
+                        <h3>Q2-Q4 Planning</h3>
+                        <p><strong>Q2 Focus Areas</strong> (placeholder, will refine after Q1): 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>Q3 Focus Areas</strong>: 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>Q4 Focus Areas</strong>: 1. _______________________________ 2. _______________________________ 3. _______________________________</p>
+                        <h2>Part 5: Monthly Milestones</h2>
+                        <h3>Month-by-Month Plan (First 6 Months)</h3>
+                        <p><strong>Month 1: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives:</li>
+                        </li>
+                        </ul>
+                        <p>1. _______________________________ 2. _______________________________ 3. _______________________________</p>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 2: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives:</li>
+                        </li>
+                        </ul>
+                        <p>1. _______________________________ 2. _______________________________ 3. _______________________________</p>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 3: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives:</li>
+                        </li>
+                        </ul>
+                        <p>1. _______________________________ 2. _______________________________ 3. _______________________________</p>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 4: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 5: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Month 6: [Month Name]</strong></p>
+                        <ul>
+                        <li>Primary Goal: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key Initiatives: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success Metrics: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Must Complete: _______________________________</li>
+                        </li>
+                        </ul>
+                        <h2>Part 6: Weekly Planning System</h2>
+                        <h3>Weekly Goal-Setting Template</h3>
+                        <p>Use this template every week: <strong>Week of</strong>: [Date] <strong>This Week&#x27;s Primary Focus</strong>: _______________________________ <strong>Top 3 Goals</strong>: 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>Key Meetings/Events</strong>:</p>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Metrics to Move</strong>:</p>
+                        <ul>
+                        <li>MRR: $______ → $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customers: ____ → ____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Other]: ____ → ____</li>
+                        </li>
+                        </ul>
+                        <p><strong>Obstacles to Address</strong>: 1. _______________________________ 2. _______________________________ <strong>Support Needed</strong>:</p>
+                        <ul>
+                        <li>_______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Friday Review Questions</strong>:</p>
+                        <ul>
+                        <li>Did I achieve my top 3 goals? (Y/N for each)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What went well?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What didn&#x27;t go well?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What did I learn?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What will I do differently next week?</li>
+                        </li>
+                        </ul>
+                        <h2>Part 7: Metrics &amp; Tracking</h2>
+                        <h3>Your CoodLoom Dashboard</h3>
+                        <p><strong>What Gets Measured Gets Managed</strong> Track these metrics weekly: <strong>Financial Metrics</strong>:</p>
+                        <ul>
+                        <li>[ ] Monthly Recurring Revenue (MRR): $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] New MRR this week: $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Churned MRR this week: $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Net New MRR: $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Total Revenue (month to date): $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Burn Rate: $______/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Runway: ______ months</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Cash Balance: $______</li>
+                        </li>
+                        </ul>
+                        <p><strong>Customer Metrics</strong>:</p>
+                        <ul>
+                        <li>[ ] Total Active Customers: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] New Customers (this week): ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Churned Customers (this week): ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Net New Customers: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Pipeline (prospects): ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Conversion Rate: ______%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Average Revenue Per User (ARPU): $______</li>
+                        </li>
+                        </ul>
+                        <p><strong>Product Metrics</strong>:</p>
+                        <ul>
+                        <li>[ ] Active Users (daily/weekly): ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Uptime: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Support Tickets: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Average Response Time: ______ hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Feature Adoption Rate: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] NPS Score: ______</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales &amp; Marketing Metrics</strong>:</p>
+                        <ul>
+                        <li>[ ] Website Visitors: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Demo Requests: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Trial Signups: ______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Trial-to-Paid Conversion: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Customer Acquisition Cost (CAC): $______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] LTV:CAC Ratio: ______</li>
+                        </li>
+                        </ul>
+                        <p><strong>Growth Metrics</strong>:</p>
+                        <ul>
+                        <li>[ ] MRR Growth Rate: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Customer Growth Rate: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Churn Rate: ______ %</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Net Revenue Retention: ______ %</li>
+                        </li>
+                        </ul>
+                        <h3>Creating Your Tracking System</h3>
+                        <p><strong>Options</strong>: <strong>1. Spreadsheet</strong> (Start here)</p>
+                        <ul>
+                        <li>Google Sheets or Excel</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weekly manual entry</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Simple charts/graphs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Free and flexible</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Dashboard Tools</strong> (Later stage)</p>
+                        <ul>
+                        <li>ChartMogul (SaaS metrics)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Baremetrics (SaaS metrics)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Databox (custom dashboards)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Google Data Studio (free)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Action</strong>: Create a Google Sheet with:</p>
+                        <ul>
+                        <li>Sheet 1: Weekly metrics (one row per week)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sheet 2: Monthly rollup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sheet 3: Charts/visualizations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sheet 4: Goal tracking</li>
+                        </li>
+                        </ul>
+                        <h3>Goal Tracking Template</h3>
+                        <p><strong>Goal</strong>: _______________________________ | Week | Target | Actual | Status | Notes | |------|--------|--------|--------|-------| | 1 | | | | | | 2 | | | | | | 3 | | | | | | 4 | | | | | <strong>Status Codes</strong>:</p>
+                        <ul>
+                        <li>🟢 On track</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🟡 At risk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🔴 Off track</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✅ Achieved</li>
+                        </li>
+                        </ul>
+                        <h2>Part 8: Accountability Systems</h2>
+                        <h3>Building Accountability</h3>
+                        <p><strong>Why Accountability Matters</strong>:</p>
+                        <ul>
+                        <li>Makes goals real</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Creates external pressure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provides support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Increases follow-through</li>
+                        </li>
+                        </ul>
+                        <p><strong>Accountability Partners</strong>: <strong>1. Co-Founder</strong> (Primary)</p>
+                        <ul>
+                        <li>Weekly check-in: [Day/Time]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What to review: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Format: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Mentor/Advisor</strong></p>
+                        <ul>
+                        <li>Monthly check-in: [Day/Time]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What to review: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How to prepare: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Peer Group</strong></p>
+                        <ul>
+                        <li>Who: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How often: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Format: _______________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Public Commitment</strong></p>
+                        <ul>
+                        <li>Where: _______________________________ (blog, Twitter, LinkedIn)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What to share: _______________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Frequency: _______________________________</li>
+                        </li>
+                        </ul>
+                        <h3>Co-Founder Alignment</h3>
+                        <p><strong>Weekly Co-Founder Sync</strong> (1 hour): <strong>Agenda Template</strong>: 1. Wins from last week (5 min) 2. Metrics review (10 min) 3. Progress on goals (15 min) 4. Challenges/obstacles (15 min) 5. Priorities for next week (10 min) 6. Action items (5 min) <strong>Questions to Always Ask</strong>:</p>
+                        <ul>
+                        <li>Are we still aligned on vision/goals?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s blocking progress?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What support do you need from me?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Are we spending time on the right things?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Document Decisions</strong>: Keep a shared doc with:</p>
+                        <ul>
+                        <li>Decisions made</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Action items (owner + deadline)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Open questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Key metrics</li>
+                        </li>
+                        </ul>
+                        <h3>Monthly Review Process</h3>
+                        <p><strong>First Friday of Every Month</strong> (2 hours): <strong>Part 1: Reflect</strong> (30 min)</p>
+                        <ul>
+                        <li>Review last month&#x27;s goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Calculate achievement rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Identify what worked/didn&#x27;t work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Celebrate wins</li>
+                        </li>
+                        </ul>
+                        <p><strong>Part 2: Analyze</strong> (30 min)</p>
+                        <ul>
+                        <li>Review all metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Identify trends (good and bad)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spot patterns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand root causes</li>
+                        </li>
+                        </ul>
+                        <p><strong>Part 3: Plan</strong> (45 min)</p>
+                        <ul>
+                        <li>Set next month&#x27;s goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assign ownership</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Identify resource needs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address obstacles proactively</li>
+                        </li>
+                        </ul>
+                        <p><strong>Part 4: Commit</strong> (15 min)</p>
+                        <ul>
+                        <li>Finalize priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Schedule key activities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update tracking systems</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share with team/stakeholders</li>
+                        </li>
+                        </ul>
+                        <h2>Part 9: Dealing with Goal Challenges</h2>
+                        <h3>When You&#x27;re Off Track</h3>
+                        <p><strong>It Will Happen</strong>. Here&#x27;s how to handle it: <strong>Step 1: Diagnose Why</strong></p>
+                        <ul>
+                        <li>Was the goal unrealistic?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Did priorities change?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Were there external factors?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Did I not execute?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Did I lack skills/resources?</li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 2: Decide What to Do</strong></p>
+                        <ul>
+                        <li><strong>Adjust the goal</strong>: If unrealistic</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Increase effort</strong>: If execution issue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Change approach</strong>: If strategy wrong</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Deprioritize</strong>: If no longer relevant</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Get help</strong>: If skill/resource gap</li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 3: Communicate</strong></p>
+                        <ul>
+                        <li>Tell co-founder immediately</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update stakeholders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revise plans</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document learnings</li>
+                        </li>
+                        </ul>
+                        <p><strong>Step 4: Learn</strong></p>
+                        <ul>
+                        <li>What assumption was wrong?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What did I underestimate?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What will I do differently?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>How can I prevent this?</li>
+                        </li>
+                        </ul>
+                        <h3>When Goals Conflict</h3>
+                        <p><strong>Example</strong>: &quot;Grow fast&quot; vs &quot;Stay profitable&quot; <strong>Resolution Process</strong>: 1. Identify the conflict explicitly 2. Understand the trade-offs 3. Refer back to vision/values 4. Make intentional choice 5. Accept consequences 6. Revisit periodically <strong>Your Values Dictate Priorities</strong>:</p>
+                        <ul>
+                        <li>If you value sustainability → Profit may win</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If you value impact → Growth may win</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>If you value control → Bootstrapping may win</li>
+                        </li>
+                        </ul>
+                        <h3>Pivoting vs Persisting</h3>
+                        <p><strong>When to Consider Changing Goals</strong>:</p>
+                        <ul>
+                        <li>✓ New information invalidates assumption</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Market fundamentally changes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Better opportunity emerges</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Current path clearly not working</li>
+                        </li>
+                        </ul>
+                        <p><strong>When to Keep Pushing</strong>:</p>
+                        <ul>
+                        <li>✓ Goal is still aligned with vision</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Making progress (even if slow)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Haven&#x27;t given it enough time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Obstacles are temporary</li>
+                        </li>
+                        </ul>
+                        <p><strong>Red Flags</strong> (Time to pivot):</p>
+                        <ul>
+                        <li>🚩 No customer traction after 6+ months serious effort</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🚩 Consistent feedback that you&#x27;re solving wrong problem</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🚩 Market is disappearing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🚩 Unit economics don&#x27;t work and can&#x27;t be fixed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>🚩 Team/co-founder fundamentally misaligned</li>
+                        </li>
+                        </ul>
+                        <h2>Part 10: Your Personal CEO Journey</h2>
+                        <h3>Your Personal Goals as CEO</h3>
+                        <p><strong>Year 1 Personal Goals</strong>: <strong>Skills to Master</strong>: 1. _______________________________ (by Month ___) 2. _______________________________ (by Month ___) 3. _______________________________ (by Month ___) <strong>Habits to Build</strong>: 1. _______________________________ (daily/weekly) 2. _______________________________ (daily/weekly) 3. _______________________________ (daily/weekly) <strong>Network to Build</strong>:</p>
+                        <ul>
+                        <li>Connect with _____ founders</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Find _____ mentors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Join _____ communities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Attend _____ events</li>
+                        </li>
+                        </ul>
+                        <p><strong>Work-Life Balance Goals</strong>:</p>
+                        <ul>
+                        <li>Work hours: _____ per week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exercise: _____ times per week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Family time: _____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hobbies/interests: _____</li>
+                        </li>
+                        </ul>
+                        <p><strong>Financial Goals</strong>:</p>
+                        <ul>
+                        <li>Personal savings target: $_____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly personal expenses: $_____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Salary from CoodLoom: $_____ (Month ___)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Emergency fund: _____ months</li>
+                        </li>
+                        </ul>
+                        <h3>Daily/Weekly Habits for Success</h3>
+                        <p><strong>Morning Routine</strong> (Suggestion):</p>
+                        <ul>
+                        <li>6:00 AM - Wake up, exercise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>7:00 AM - Read/learn (30 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>7:30 AM - Plan day, review goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>8:00 AM - Deep work on #1 priority</li>
+                        </li>
+                        </ul>
+                        <p><strong>Weekly Routine</strong>:</p>
+                        <ul>
+                        <li><strong>Monday</strong>: Week planning, priorities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Tuesday-Thursday</strong>: Execution, deep work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Friday</strong>: Review, reflection, admin</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Weekend</strong>: Recharge (some work is okay, but rest!)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly Routine</strong>:</p>
+                        <ul>
+                        <li>First Friday: Monthly review &amp; planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mid-month: Co-founder deep dive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>End-month: Financial review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ongoing: Customer conversations</li>
+                        </li>
+                        </ul>
+                        <p><strong>Learning Time</strong> (30-60 min daily):</p>
+                        <ul>
+                        <li>Read business books/articles</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take online courses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Listen to podcasts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Study competitors</li>
+                        </li>
+                        </ul>
+                        <h3>Self-Care &amp; Sustainability</h3>
+                        <p><strong>Warning Signs You&#x27;re Burning Out</strong>:</p>
+                        <ul>
+                        <li>Constant exhaustion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Irritability</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decreased productivity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Health issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Relationship strain</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Loss of passion</li>
+                        </li>
+                        </ul>
+                        <p><strong>Prevention</strong>:</p>
+                        <ul>
+                        <li>[ ] Regular exercise (_____ times/week)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Adequate sleep (_____ hours/night)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Healthy eating</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Social connections</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Hobbies outside work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Periodic breaks/vacations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Therapy/coaching if needed</li>
+                        </li>
+                        </ul>
+                        <p><strong>Remember</strong>: You can&#x27;t build a sustainable business if you&#x27;re not sustainable.</p>
+                        <h2>Part 11: Making It Real</h2>
+                        <h3>Your Commitment Contract</h3>
+                        <p><strong>I, [Your Name], commit to the following for CoodLoom:</strong> <strong>My Vision</strong>:</p>
+                        <hr />
+                        <p><strong>My 1-Year Goals</strong> (Top 3): 1. _______________________________ 2. _______________________________ 3. _______________________________ <strong>My Q1 Focus</strong>:</p>
+                        <hr />
+                        <p><strong>My Weekly Commitment</strong>:</p>
+                        <hr />
+                        <p><strong>How I&#x27;ll Track Progress</strong>:</p>
+                        <hr />
+                        <p><strong>How I&#x27;ll Stay Accountable</strong>:</p>
+                        <hr />
+                        <p><strong>What I&#x27;ll Do When I&#x27;m Off Track</strong>:</p>
+                        <hr />
+                        <p><strong>Signed</strong>: _____________________ Date: _______ <strong>Co-Founder Signature</strong>: _____________________ Date: _______</p>
+                        <h3>Next Actions (Do Today)</h3>
+                        <p><strong>Before moving to Phase 1</strong>:</p>
+                        <ul>
+                        <li>[ ] Complete your vision and mission statements</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Define your top 5 values</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set your 1-year SMART goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Draft your Q1 OKRs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Create your Month 1 plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set up your metrics tracking system</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Schedule weekly co-founder syncs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Schedule monthly reviews</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Share goals with accountability partner</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sign your commitment contract</li>
+                        </li>
+                        </ul>
+                        <h3>Sharing Your Goals</h3>
+                        <p><strong>Who to Share With</strong>:</p>
+                        <ul>
+                        <li>✓ Co-founder (100% transparency)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Close family/partner</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Mentors/advisors</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Accountability partners</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>? Public (consider benefits vs pressure)</li>
+                        </li>
+                        </ul>
+                        <p><strong>What to Share Publicly</strong> (Blog/Social):</p>
+                        <ul>
+                        <li>Your vision/mission</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Major milestones achieved</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lessons learned</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Challenges faced (be authentic)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Help you need</li>
+                        </li>
+                        </ul>
+                        <p><strong>What to Keep Private</strong>:</p>
+                        <ul>
+                        <li>Detailed financials</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Competitive strategies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Internal challenges</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Personal struggles (unless comfortable)</li>
+                        </li>
+                        </ul>
+                        <h2>Resources &amp; Templates</h2>
+                        <h3>Goal-Setting Templates</h3>
+                        <p><strong>Available in Resources Folder</strong>: 1. Vision &amp; Mission Worksheet 2. Annual Goals Template 3. OKR Planning Template 4. Weekly Planning Template 5. Monthly Review Template 6. Metrics Dashboard Template 7. Commitment Contract 8. Co-Founder Alignment Doc</p>
+                        <h3>Recommended Tools</h3>
+                        <p><strong>Goal Tracking</strong>:</p>
+                        <ul>
+                        <li>Notion (all-in-one)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asana (task management)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Trello (visual boards)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Google Sheets (simple, flexible)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Metrics</strong>:</p>
+                        <ul>
+                        <li>Google Sheets (start here)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>ChartMogul (SaaS metrics)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Baremetrics (SaaS metrics)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Google Analytics (website)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Time Management</strong>:</p>
+                        <ul>
+                        <li>RescueTime (track where time goes)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Toggl (time tracking)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Calendar blocking</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pomodoro technique</li>
+                        </li>
+                        </ul>
+                        <h3>Further Reading</h3>
+                        <p><strong>Goal Setting</strong>:</p>
+                        <ul>
+                        <li>&quot;Measure What Matters&quot; by John Doerr (OKRs)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;The 4 Disciplines of Execution&quot; by McChesney et al.</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Traction&quot; by Gino Wickman (EOS system)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Founder Habits</strong>:</p>
+                        <ul>
+                        <li>&quot;Atomic Habits&quot; by James Clear</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;The Daily Stoic&quot; by Ryan Holiday</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Deep Work&quot; by Cal Newport</li>
+                        </li>
+                        </ul>
+                        <p><strong>Strategy</strong>:</p>
+                        <ul>
+                        <li>&quot;Good Strategy Bad Strategy&quot; by Richard Rumelt</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Playing to Win&quot; by A.G. Lafley</li>
+                        </li>
+                        </ul>
+                        <h2>Key Takeaways</h2>
+                        <p>✓ <strong>Vision provides direction</strong> - Know where you&#x27;re going ✓ <strong>Goals provide milestones</strong> - Break journey into steps ✓ <strong>Metrics provide feedback</strong> - Know if you&#x27;re on track ✓ <strong>Accountability provides motivation</strong> - Share goals, stay committed ✓ <strong>Reviews provide learning</strong> - Regular reflection improves execution ✓ <strong>Flexibility is essential</strong> - Adjust goals as you learn ✓ <strong>Personal sustainability matters</strong> - Take care of yourself ✓ <strong>Start simple</strong> - Don&#x27;t overcomplicate, just begin</p>
+                        <h2>What&#x27;s Next?</h2>
+                        <p><strong>You&#x27;ve completed Phase 0!</strong> You now have:</p>
+                        <ul>
+                        <li>✓ Entrepreneurial mindset foundation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Business fundamentals knowledge</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Industry understanding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Self-awareness of readiness</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Clear vision and goals for CoodLoom</li>
+                        </li>
+                        </ul>
+                        <p><strong>Move to Phase 1: Startup Foundations</strong> where you&#x27;ll:</p>
+                        <ul>
+                        <li>Formalize your business structure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create your business plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Develop your go-to-market strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start building systematically</li>
+                        </li>
+                        </ul>
+                        <p><strong>But first</strong>: Take one day to complete all the exercises in this chapter. Your goals will guide everything you do next.</p>
+                        <hr />
+                        <p><strong>Your CoodLoom journey starts now. Make it count!</strong> 🚀</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Self Assessment</span>
+                                        </a>
+<div></div>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

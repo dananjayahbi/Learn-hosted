@@ -1,0 +1,2164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Sales Process - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Scaling Operations</li>
+                    <li aria-current="page">Sales Process</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Sales Process</h1>
+                        <h2>Introduction</h2>
+                        <p>A repeatable sales process is the engine of your business. This chapter teaches you how to build a sales machine that converts leads to customers consistently.</p>
+                        <h2>Understanding B2B SaaS Sales</h2>
+                        <h3>Sales Process Overview</h3>
+                        <p><strong>The Funnel</strong>:</p>
+                        <pre><code>Leads (100)
+                        <p>↓ Qualified Leads (40) ↓ Opportunities (20) ↓ Demos/Meetings (15) ↓ Proposals Sent (10) ↓ Customers (3)</code></pre> <strong>Conversion Rate</strong>: 3% lead-to-customer (typical B2B SaaS)</p>
+                        <h3>Sales Cycle Stages</h3>
+                        <p><strong>1. Lead Generation</strong></p>
+                        <ul>
+                        <li>Inbound (content, SEO, referrals)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Outbound (cold email, calls, LinkedIn)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Partners (referrals, integrations)</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Qualification</strong></p>
+                        <ul>
+                        <li>BANT (Budget, Authority, Need, Timeline)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Good fit for your solution?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prioritize best opportunities</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Discovery</strong></p>
+                        <ul>
+                        <li>Understand their problem</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Identify pain points</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Map to your solution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build relationship</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Demo/Presentation</strong></p>
+                        <ul>
+                        <li>Show how you solve their problem</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address specific pain points</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handle objections</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create urgency</li>
+                        </li>
+                        </ul>
+                        <p><strong>5. Proposal/Negotiation</strong></p>
+                        <ul>
+                        <li>Pricing discussion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Terms negotiation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address final concerns</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Secure commitment</li>
+                        </li>
+                        </ul>
+                        <p><strong>6. Close</strong></p>
+                        <ul>
+                        <li>Sign contract</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process payment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handoff to onboarding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Request referrals</li>
+                        </li>
+                        </ul>
+                        <h2>Building Your Sales Playbook</h2>
+                        <h3>The Sales Playbook Purpose</h3>
+                        <p><strong>What</strong>: Document every step of your sales process <strong>Why</strong>: Enables consistency, training, and scale <strong>When</strong>: Create as you figure out what works</p>
+                        <h3>Playbook Components</h3>
+                        <h4>1. Ideal Customer Profile (ICP)</h4>
+                        <p><strong>CoodLoom Example</strong>: <strong>Company Characteristics</strong>:</p>
+                        <ul>
+                        <li>Industry: [Target industries]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Size: 10-500 employees</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revenue: $1M-50M</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tech stack: [Compatible tools]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Location: US, Canada, UK, EU</li>
+                        </li>
+                        </ul>
+                        <p><strong>Buyer Persona</strong>:</p>
+                        <ul>
+                        <li>Title: VP Operations, CTO, CEO</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pain: [Specific problem]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: [What they want to achieve]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Budget: $10k-100k/year software budget</li>
+                        </li>
+                        </ul>
+                        <p><strong>Buying Process</strong>:</p>
+                        <ul>
+                        <li>Decision maker: VP level</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Influencers: Team using product</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Timeline: 2-8 weeks typically</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Evaluation criteria: [What they care about]</li>
+                        </li>
+                        </ul>
+                        <h4>2. Lead Qualification Criteria</h4>
+                        <p><strong>BANT Framework</strong>: <strong>Budget</strong>: Can they afford $X-Y/month?</p>
+                        <ul>
+                        <li>Qualifying question: &quot;Have you allocated budget for this?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Red flag: &quot;We have no budget&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Green flag: &quot;Yes, budgeted $X&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Authority</strong>: Are you talking to the decision maker?</p>
+                        <ul>
+                        <li>Qualifying question: &quot;Who else is involved in this decision?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Red flag: &quot;I need to check with [5 people]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Green flag: &quot;I make the final decision&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Need</strong>: Do they have the problem you solve?</p>
+                        <ul>
+                        <li>Qualifying question: &quot;What&#x27;s prompting you to look now?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Red flag: &quot;Just browsing&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Green flag: &quot;We&#x27;re spending 10 hours/week on this manually&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Timeline</strong>: When do they want to buy?</p>
+                        <ul>
+                        <li>Qualifying question: &quot;What&#x27;s your timeline?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Red flag: &quot;No rush&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Green flag: &quot;Need it by [specific date]&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Scoring System</strong>:</p>
+                        <ul>
+                        <li>4/4 = Hot lead (demo immediately)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>3/4 = Warm lead (schedule demo)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2/4 = Nurture (stay in touch)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>0-1/4 = Disqualify (politely decline)</li>
+                        </li>
+                        </ul>
+                        <h4>3. Discovery Question Bank</h4>
+                        <p><strong>Opening Questions</strong>:</p>
+                        <ul>
+                        <li>&quot;Tell me about your business&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What does your typical day look like?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How are you handling [process] today?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pain Questions</strong>:</p>
+                        <ul>
+                        <li>&quot;What&#x27;s the biggest challenge with [current solution]?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What happens if this doesn&#x27;t get solved?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How much time/money does this cost you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What have you tried so far?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal Questions</strong>:</p>
+                        <ul>
+                        <li>&quot;What does success look like?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;If we could solve this perfectly, what would change?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What would this enable you to do?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Timeline Questions</strong>:</p>
+                        <ul>
+                        <li>&quot;Why now?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s driving the urgency?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What happens if you wait 6 months?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Decision Process Questions</strong>:</p>
+                        <ul>
+                        <li>&quot;How have you made similar decisions before?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Who else needs to be involved?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What criteria will you use to evaluate options?&quot;</li>
+                        </li>
+                        </ul>
+                        <h4>4. Demo Script</h4>
+                        <p><strong>Demo Structure</strong> (30-45 minutes): <strong>1. Opening (5 min)</strong></p>
+                        <pre><code>&quot;Thanks for joining! Before I jump in, I want to make sure we focus on what&#x27;s most important to you. You mentioned [pain point from discovery]. Is that still the main concern?&quot;
+                        <p>[Let them talk - don&#x27;t skip this!] &quot;Perfect. I&#x27;ll show you exactly how we solve that, and we&#x27;ll have time for questions throughout.&quot;</code></pre> <strong>2. Context Setting (2 min)</strong></p>
+                        <pre><code>&quot;Quick context: CoodLoom helps [target customer] solve [problem] by [solution approach]. We&#x27;ve helped companies like [similar customer] achieve [specific outcome].&quot;</code></pre>
+                        <p><strong>3. Problem-Solution Demo (20 min)</strong> <strong>DON&#x27;T</strong>: Click through every feature <strong>DO</strong>: Show how you solve THEIR specific problem</p>
+                        <pre><code>&quot;So you mentioned you&#x27;re currently [their current process]. Let me show you how this looks in CoodLoom...&quot;
+                        <p>[Show specific workflow that solves their problem] &quot;See how that&#x27;s different from [their pain point]? This means you can [benefit].&quot; [Check in] &quot;Does that make sense? Questions so far?&quot;</code></pre> <strong>4. Objection Handling (10 min)</strong> Pre-empt common objections:</p>
+                        <pre><code>&quot;At this point, customers often ask about [common objection]. Here&#x27;s how we handle that...&quot;</code></pre>
+                        <p><strong>5. Closing (8 min)</strong></p>
+                        <pre><code>&quot;So we&#x27;ve covered how CoodLoom solves [pain 1], [pain 2], and [pain 3]. On a scale of 1-10, how likely are you to move forward?&quot;
+                        <p>[If 8-10] &quot;Great! What are next steps?&quot; [If 5-7] &quot;What would get you to a 10?&quot; [If <5] &quot;What are your main concerns?&quot;</code></pre></p>
+                        <h4>5. Objection Handling Guide</h4>
+                        <p><strong>Common Objections &amp; Responses</strong>: <strong>&quot;It&#x27;s too expensive&quot;</strong></p>
+                        <pre><code>&quot;I understand price is important. Can I ask - compared to what? Because when we look at the cost of [current situation], which is [X hours/week * hourly rate], CoodLoom actually pays for itself in [timeframe]. Does that math make sense?&quot;</code></pre>
+                        <p><strong>&quot;We need to think about it&quot;</strong></p>
+                        <pre><code>&quot;Absolutely, it&#x27;s an important decision. Can I ask what specifically you want to think about? [Listen] Let&#x27;s address that now so you have everything you need to make a decision.&quot;</code></pre>
+                        <p><strong>&quot;We&#x27;re using [competitor]&quot;</strong></p>
+                        <pre><code>&quot;Great! [Competitor] is a good product. What&#x27;s prompting you to look at alternatives? [Listen] Got it. Here&#x27;s where we&#x27;re different: [specific differentiators]. Want to see that in action?&quot;</code></pre>
+                        <p><strong>&quot;We need [feature you don&#x27;t have]&quot;</strong></p>
+                        <pre><code>&quot;Good question. Can I understand more about that use case? [Listen] Here&#x27;s how other customers handle that: [workaround or roadmap]. Would that work for you?&quot;</code></pre>
+                        <p><strong>&quot;We need to get buy-in from [others]&quot;</strong></p>
+                        <pre><code>&quot;Makes sense. Who specifically needs to be involved? [Listen] What concerns will they have? Let me help you make the case - I can provide [ROI calculator, case study, join next meeting].&quot;</code></pre>
+                        <p><strong>&quot;Can we try it for free first?&quot;</strong></p>
+                        <pre><code>&quot;We don&#x27;t offer a free trial because [reason], but we do offer a [30-day money-back guarantee / pilot program]. If it doesn&#x27;t work, you get a full refund. Fair?&quot;</code></pre>
+                        <h4>6. Pricing &amp; Proposal</h4>
+                        <p><strong>Pricing Discussion Framework</strong>: <strong>1. Anchor on Value First</strong></p>
+                        <pre><code>&quot;Before we talk pricing, let&#x27;s review what you&#x27;ll get:
+                        <ul>
+                        <li>[Outcome 1]: Saves you $X/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Outcome 2]: Increases revenue by $Y</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Outcome 3]: Reduces time by Z hours/week</li>
+                        </li>
+                        </ul>
+                        <p>Total value: $[ROI]/year</code></pre> <strong>2. Present Options</strong> (Good, Better, Best)</p>
+                        <pre><code>We have three options:
+                        <p>STARTER: $X/month</p>
+                        <ul>
+                        <li>[Core features]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Best for: [Use case]</li>
+                        </li>
+                        </ul>
+                        <p>PROFESSIONAL: $Y/month (Most Popular)</p>
+                        <ul>
+                        <li>Everything in Starter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Additional features]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Best for: [Use case]</li>
+                        </li>
+                        </ul>
+                        <p>ENTERPRISE: $Z/month</p>
+                        <ul>
+                        <li>Everything in Professional</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Premium features]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Best for: [Use case]</li>
+                        </li>
+                        </ul>
+                        <p>Based on what you&#x27;ve shared, I&#x27;d recommend [PROFESSIONAL] because [reason].</code></pre> <strong>3. Handle Price Pushback</strong></p>
+                        <pre><code>&quot;I hear you on budget. Let&#x27;s look at it this way:
+                        <ul>
+                        <li>Cost: $X/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Savings: $Y/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Net value: $[Y-X]/month</li>
+                        </li>
+                        </ul>
+                        <p>You&#x27;re actually making money, not spending it. Does that change the equation?&quot;</code></pre> <strong>Proposal Template</strong>:</p>
+                        <pre><code>markdown
+                        <h1>Proposal for [Company Name]</h1>
+                        <h2>Executive Summary</h2>
+                        <p>[Brief recap of their problem and your solution]</p>
+                        <h2>Current Challenges</h2>
+                        <ul>
+                        <li>[Pain point 1]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Pain point 2]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Pain point 3]</li>
+                        </li>
+                        </ul>
+                        <h2>Proposed Solution</h2>
+                        <p>CoodLoom will help you:</p>
+                        <ul>
+                        <li>[Outcome 1]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Outcome 2]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Outcome 3]</li>
+                        </li>
+                        </ul>
+                        <h2>Investment</h2>
+                        <p>[Pricing option they selected]</p>
+                        <ul>
+                        <li>$X/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[What&#x27;s included]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Payment terms]</li>
+                        </li>
+                        </ul>
+                        <h2>Implementation Timeline</h2>
+                        <ul>
+                        <li>Week 1: Onboarding & setup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 2: Training & launch</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 3-4: Optimization</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 5+: Ongoing success</li>
+                        </li>
+                        </ul>
+                        <h2>ROI Analysis</h2>
+                        <ul>
+                        <li>Monthly cost: $X</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly value: $Y</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>ROI: [X]%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Payback period: [Z] months</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>1. Review and approve proposal 2. Sign agreement 3. Schedule kickoff call 4. Go live!</p>
+                        <h2>Questions?</h2>
+                        <p>[Your contact info] Valid until: [Date - create urgency]</code></pre></p>
+                        <h4>7. Closing Techniques</h4>
+                        <p><strong>The Assumptive Close</strong>:</p>
+                        <pre><code>&quot;Great! Let me send over the agreement. Which email should I send it to?&quot;</code></pre>
+                        <p><strong>The Direct Close</strong>:</p>
+                        <pre><code>&quot;So based on everything we&#x27;ve discussed, does it make sense to move forward?&quot;</code></pre>
+                        <p><strong>The Timeline Close</strong>:</p>
+                        <pre><code>&quot;If we get started this week, you&#x27;ll be live by [date] and start seeing results by [date]. Does that timeline work?&quot;</code></pre>
+                        <p><strong>The Either/Or Close</strong>:</p>
+                        <pre><code>&quot;Would you prefer to start with the Professional or Enterprise plan?&quot;</code></pre>
+                        <p><strong>The Puppy Dog Close</strong> (Trial):</p>
+                        <pre><code>&quot;How about this: Let&#x27;s get you set up for 30 days. If it doesn&#x27;t work, full refund. Fair enough?&quot;</code></pre>
+                        <h2>Sales Metrics &amp; KPIs</h2>
+                        <h3>Key Metrics to Track</h3>
+                        <p><strong>Volume Metrics</strong>:</p>
+                        <ul>
+                        <li><strong>Leads</strong>: How many enter the funnel?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Qualified Leads</strong>: Meeting BANT criteria</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Opportunities</strong>: Active sales process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Demos Conducted</strong>: Presentations given</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Proposals Sent</strong>: Formal proposals</li>
+                        </li>
+                        </ul>
+                        <p><strong>Conversion Metrics</strong>:</p>
+                        <ul>
+                        <li><strong>Lead → Qualified</strong>: Target 30-50%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Qualified → Demo</strong>: Target 50-70%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Demo → Proposal</strong>: Target 60-80%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Proposal → Close</strong>: Target 30-50%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Overall Close Rate</strong>: Target 3-5%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Efficiency Metrics</strong>:</p>
+                        <ul>
+                        <li><strong>Average Deal Size</strong>: Track and increase</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Sales Cycle Length</strong>: Days from lead to close</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Time to First Meeting</strong>: Speed matters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Win Rate</strong>: % of opportunities won</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Loss Reasons</strong>: Why deals don&#x27;t close</li>
+                        </li>
+                        </ul>
+                        <p><strong>Revenue Metrics</strong>:</p>
+                        <ul>
+                        <li><strong>MRR Added</strong>: New recurring revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Average Contract Value (ACV)</strong>: Annual value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Customer Acquisition Cost (CAC)</strong>: Cost to acquire</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>CAC Payback Period</strong>: Months to break even</li>
+                        </li>
+                        </ul>
+                        <h3>Sales Dashboard</h3>
+                        <p><strong>Daily View</strong>:</p>
+                        <ul>
+                        <li>New leads today</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Demos scheduled</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proposals outstanding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Closes today</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activities completed</li>
+                        </li>
+                        </ul>
+                        <p><strong>Weekly View</strong>:</p>
+                        <ul>
+                        <li>Pipeline value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deals in each stage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversion rates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activities per rep</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Forecast accuracy</li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly View</strong>:</p>
+                        <ul>
+                        <li>MRR growth</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deals won/lost</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Average deal size</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales cycle length</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CAC trends</li>
+                        </li>
+                        </ul>
+                        <h2>Outbound Sales Strategy</h2>
+                        <h3>Cold Email Campaigns</h3>
+                        <p><strong>Formula for Good Cold Emails</strong>: <strong>Subject Line</strong>: Short, personal, value-driven</p>
+                        <ul>
+                        <li>&quot;Quick question about [pain point]&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;[Mutual connection] suggested I reach out&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Idea for [specific goal]&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Email Template</strong>:</p>
+                        <pre><code>Subject: Reducing time spent on [process] at [Company]
+                        <p>Hi [Name], I noticed [Company] is [relevant context from research]. Most [similar companies] spend 10+ hours/week on [pain point]. We help companies like [similar customer] automate this completely, saving [specific outcome]. Would you be interested in a quick 15-minute call to see if this could work for [Company]? Best, [Your Name] P.S. Here&#x27;s a [quick 2-min video/case study] showing how [similar company] does this.</code></pre> <strong>Cold Email Sequence</strong>:</p>
+                        <ul>
+                        <li><strong>Day 1</strong>: Initial email</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Day 3</strong>: Follow-up (add value)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Day 7</strong>: Different angle</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Day 14</strong>: Breakup email (&quot;Should I give up?&quot;)</li>
+                        </li>
+                        </ul>
+                        <h3>LinkedIn Outreach</h3>
+                        <p><strong>Process</strong>: 1. <strong>Connect</strong> with personalized note 2. <strong>Engage</strong> with their content 3. <strong>Message</strong> with value 4. <strong>Call</strong> if responsive <strong>Connection Request</strong>:</p>
+                        <pre><code>Hi [Name], I help [title] at [industry] companies solve [problem]. Would love to connect and share ideas!</code></pre>
+                        <p><strong>Follow-up Message</strong>:</p>
+                        <pre><code>Hi [Name], thanks for connecting! 
+                        <p>Quick question: How is [Company] currently handling [specific process]? I ask because we help companies like [similar company] [specific outcome]. Thought it might be relevant. Worth a quick call to explore?</code></pre></p>
+                        <h3>Cold Calling (If Applicable)</h3>
+                        <p><strong>Call Structure</strong> (2-3 minutes): <strong>1. Introduction (15 sec)</strong></p>
+                        <pre><code>&quot;Hi [Name], this is [Your Name] from CoodLoom. Did I catch you at a bad time?&quot;
+                        <p>[If bad time] &quot;When would be better?&quot; [If good time] &quot;Great, I&#x27;ll keep this brief.&quot;</code></pre> <strong>2. Reason for Call (30 sec)</strong></p>
+                        <pre><code>&quot;The reason I&#x27;m calling is I noticed [Company] is [context]. We work with companies like [similar customer] to solve [problem], helping them [specific outcome].&quot;</code></pre>
+                        <p><strong>3. Permission to Continue (10 sec)</strong></p>
+                        <pre><code>&quot;Is that something you&#x27;re currently dealing with?&quot;</code></pre>
+                        <p><strong>4. Discovery (1 min)</strong></p>
+                        <pre><code>[If yes] &quot;Tell me more about how you&#x27;re handling that today?&quot;
+                        <p>[Listen actively, take notes]</code></pre> <strong>5. Next Steps (30 sec)</strong></p>
+                        <pre><code>&quot;Based on what you&#x27;ve shared, I think we could definitely help. Would you be open to a quick 15-minute demo to see if it&#x27;s a fit?&quot;</code></pre>
+                        <h2>Sales Tools &amp; Tech Stack</h2>
+                        <h3>Essential Sales Tools</h3>
+                        <p><strong>CRM</strong> (Pick One):</p>
+                        <ul>
+                        <li><strong>HubSpot</strong>: Free tier, great for starting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Pipedrive</strong>: Simple, sales-focused</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Salesforce</strong>: Enterprise, complex</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Close</strong>: Made for startups</li>
+                        </li>
+                        </ul>
+                        <p><strong>Email Tools</strong>:</p>
+                        <ul>
+                        <li><strong>Mailshake</strong>: Cold email automation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Lemlist</strong>: Personalized cold email</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Apollo.io</strong>: B2B database + outreach</li>
+                        </li>
+                        </ul>
+                        <p><strong>Calendar</strong>:</p>
+                        <ul>
+                        <li><strong>Calendly</strong>: Easy scheduling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Chili Piper</strong>: Advanced routing</li>
+                        </li>
+                        </ul>
+                        <p><strong>Proposals</strong>:</p>
+                        <ul>
+                        <li><strong>PandaDoc</strong>: Proposal software</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>DocuSign</strong>: E-signatures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>HelloSign</strong>: Simple e-signatures</li>
+                        </li>
+                        </ul>
+                        <p><strong>Calling</strong>:</p>
+                        <ul>
+                        <li><strong>Aircall</strong>: Cloud phone</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Dialpad</strong>: Sales-focused calling</li>
+                        </li>
+                        </ul>
+                        <h3>Tech Stack by Stage</h3>
+                        <p><strong>Stage 1: Solo Founder</strong></p>
+                        <ul>
+                        <li>HubSpot (Free)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Google Calendar</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gmail</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Google Docs (proposals)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $0/month <strong>Stage 2: First Sales Hire</strong></p>
+                        <ul>
+                        <li>HubSpot (Starter)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Calendly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mailshake or Lemlist</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>DocuSign</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $200-300/month <strong>Stage 3: Sales Team</strong></p>
+                        <ul>
+                        <li>Salesforce or HubSpot Professional</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Apollo.io</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>PandaDoc</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Aircall</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales engagement platform</li>
+                        </li>
+                        </ul>
+                        <p><strong>Cost</strong>: $500-1000+/month</p>
+                        <h2>Scaling Sales</h2>
+                        <h3>Solo Founder → Sales Rep</h3>
+                        <p><strong>What You Do</strong>:</p>
+                        <ul>
+                        <li>All demos</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>All closings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Qualify leads</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document everything</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goal</strong>: Figure out what works</p>
+                        <h3>First Sales Rep</h3>
+                        <p><strong>Hire When</strong>: $50-75k MRR <strong>Onboarding</strong> (30 days):</p>
+                        <ul>
+                        <li>Week 1: Shadow you on all calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 2: Co-present demos with you</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 3: Lead demos, you observe</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 4: Independent with weekly reviews</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ramp Time</strong>: 3-6 months to full productivity <strong>Compensation</strong>: $50-70k base + commission (OTE $80-120k) <strong>Commission Structure</strong>:</p>
+                        <ul>
+                        <li>10-20% of first-year value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Or: % of monthly recurring revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Paid when customer pays</li>
+                        </li>
+                        </ul>
+                        <h3>Building a Sales Team</h3>
+                        <p><strong>Hiring Sequence</strong>: 1. First sales rep (closer) 2. SDR (lead generation) 3. Second sales rep 4. Sales engineer (complex deals) 5. Sales manager (at 5+ reps) <strong>Team Structure</strong> (at scale):</p>
+                        <pre><code>VP Sales
+                        <p>↓ ┌───┴───┐ │       │ Sales Mgr   SDR Mgr │       │ ├─ AE1  ├─ SDR1 ├─ AE2  ├─ SDR2 └─ AE3  └─ SDR3</code></pre></p>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Define Your ICP</h3>
+                        <p>Fill in your ideal customer profile:</p>
+                        <ul>
+                        <li>Company size: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Industry: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Budget: __________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pain points: __________</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Create Your Demo Script</h3>
+                        <p>Outline your 30-minute demo: 1. Opening (5 min): __________ 2. Problem/Solution (20 min): __________ 3. Closing (5 min): __________</p>
+                        <h3>Exercise 3: Track Your Metrics</h3>
+                        <p>Set up tracking for:</p>
+                        <ul>
+                        <li>[ ] Leads per week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Demos per week</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Close rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Average deal size</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Sales cycle length</li>
+                        </li>
+                        </ul>
+                        <h2>Common Sales Mistakes</h2>
+                        <h3>❌ Mistake 1: Spray and Pray</h3>
+                        <p><strong>Problem</strong>: Contact everyone, qualify no one <strong>Fix</strong>: Focus on ideal customers</p>
+                        <h3>❌ Mistake 2: Feature Dumping</h3>
+                        <p><strong>Problem</strong>: Show every feature in demo <strong>Fix</strong>: Show only what solves their problem</p>
+                        <h3>❌ Mistake 3: Not Following Up</h3>
+                        <p><strong>Problem</strong>: Give up after one email <strong>Fix</strong>: 3-5 touchpoints minimum</p>
+                        <h3>❌ Mistake 4: Discounting Too Quickly</h3>
+                        <p><strong>Problem</strong>: Train customers to negotiate <strong>Fix</strong>: Sell value, hold pricing</p>
+                        <h3>❌ Mistake 5: No Sales Process</h3>
+                        <p><strong>Problem</strong>: Every deal is different <strong>Fix</strong>: Document and follow repeatable process</p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ Build a repeatable sales process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Qualify ruthlessly using BANT</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Discovery before demo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Sell outcomes, not features</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Handle objections proactively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Track metrics religiously</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Document everything in your playbook</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Hire sales help at $50k+ MRR</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>Move to Chapter 8: <strong>Marketing Automation</strong> to learn how to scale customer acquisition.</p>
+                        <hr />
+                        <p><strong>Remember</strong>: &quot;Sales is a process, not an art. Make it repeatable!&quot;</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Team Building</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Marketing Automation</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,3282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Sales Team Building - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Growth Expansion</li>
+                    <li aria-current="page">Sales Team Building</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Sales Team Building</h1>
+                        <h2>Introduction</h2>
+                        <p>You can&#x27;t scale a SaaS company on founder-led sales forever. At some point, you need to build a sales team that can replicate your success. This chapter covers how to hire, train, and manage a high-performing sales organization that drives predictable revenue growth.</p>
+                        <h2>Key Concepts</h2>
+                        <h3>1. The Sales Hiring Journey</h3>
+                        <p><strong>Stage 1: Founder-Led Sales</strong> (0-10 customers)</p>
+                        <ul>
+                        <li>Founders do all selling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn what works</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand customer objections</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Validate pricing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Don&#x27;t hire yet!</strong></li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: First Sales Hire</strong> (10-30 customers)</p>
+                        <ul>
+                        <li>Hire one sales rep</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Train intensively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Work alongside them</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Prove it&#x27;s repeatable</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Small Team</strong> (30-100 customers)</p>
+                        <ul>
+                        <li>Hire 2-5 reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Designate sales manager (maybe you)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create playbooks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Establish metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build sales operations</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4: Scaled Team</strong> (100+ customers)</p>
+                        <ul>
+                        <li>Dedicated sales leader (VP Sales)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Multiple teams (SDRs, AEs, CSMs)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specialized roles</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Formal training program</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales ops team</li>
+                        </li>
+                        </ul>
+                        <p><strong>Common Mistake</strong>: Hiring too early. Wait until you have 10+ customers from founder-led sales.</p>
+                        <h3>2. Sales Team Structure</h3>
+                        <p><strong>For B2B SaaS:</strong> <strong>Small Team (1-5 people):</strong></p>
+                        <pre><code>CEO (closes deals)
+                        <p>├── Sales Rep 1 (full-cycle: prospect to close) ├── Sales Rep 2 (full-cycle: prospect to close) └── Sales Rep 3 (full-cycle: prospect to close)</code></pre> <strong>Medium Team (5-15 people):</strong></p>
+                        <pre><code>VP Sales
+                        <p>├── SDR Team (3-5 people) │   ├── SDR Manager │   └── SDRs (prospecting, qualifying) ├── AE Team (3-5 people) │   ├── AE Manager │   └── Account Executives (demos, closing) └── Sales Ops (1 person) └── CRM, reporting, tools</code></pre> <strong>Large Team (15+ people):</strong></p>
+                        <pre><code>CRO (Chief Revenue Officer)
+                        <p>├── VP Sales Development │   └── SDR Teams (by region/segment) ├── VP Sales │   └── AE Teams (by region/segment) ├── VP Customer Success │   └── CSM Teams └── VP Sales Operations └── Ops, enablement, analytics</code></pre></p>
+                        <h3>3. Sales Roles Defined</h3>
+                        <p><strong>SDR (Sales Development Rep)</strong></p>
+                        <ul>
+                        <li><strong>Focus</strong>: Top of funnel (prospecting, qualifying)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Activities</strong>: Cold outreach, lead qualification, booking meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Quota</strong>: 20-40 qualified meetings/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Compensation</strong>: $40K-60K base + $40K-60K variable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Career path</strong>: Promote to AE after 12-18 months</li>
+                        </li>
+                        </ul>
+                        <p><strong>AE (Account Executive)</strong></p>
+                        <ul>
+                        <li><strong>Focus</strong>: Mid to bottom funnel (demos, closing)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Activities</strong>: Product demos, proposals, negotiation, closing</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Quota</strong>: $500K-$1M ARR/year (depends on product)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Compensation</strong>: $60K-80K base + $60K-80K variable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Career path</strong>: Senior AE, Team Lead, Manager</li>
+                        </li>
+                        </ul>
+                        <p><strong>CSM (Customer Success Manager)</strong></p>
+                        <ul>
+                        <li><strong>Focus</strong>: Retention and expansion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Activities</strong>: Onboarding, adoption, upsells, renewals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Quota</strong>: &lt;5% churn, 20% expansion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Compensation</strong>: $50K-70K base + $30K-50K variable</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Manager</strong></p>
+                        <ul>
+                        <li><strong>Focus</strong>: Team performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Activities</strong>: Coaching, hiring, forecasting, strategy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Manages</strong>: 5-8 reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Compensation</strong>: $80K-120K base + $40K-80K variable</li>
+                        </li>
+                        </ul>
+                        <p><strong>VP Sales</strong></p>
+                        <ul>
+                        <li><strong>Focus</strong>: Overall sales strategy and execution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Activities</strong>: Team building, process, forecasting, board updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Manages</strong>: Sales managers and key accounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Compensation</strong>: $120K-180K base + $80K-150K variable + equity</li>
+                        </li>
+                        </ul>
+                        <h2>Hiring Your First Sales Rep</h2>
+                        <h3>When to Hire</h3>
+                        <p><strong>Ready to Hire When:</strong></p>
+                        <ul>
+                        <li>✓ 10+ customers from founder-led sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Repeatable sales process documented</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Product is stable (not constantly breaking)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Clear ideal customer profile</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Customer success process exists</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Can afford 6-12 months to ramp</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ You have time to train them</li>
+                        </li>
+                        </ul>
+                        <p><strong>Not Ready When:</strong></p>
+                        <ul>
+                        <li>✗ No consistent founder-led sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Product still finding PMF</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ High churn (&gt;5% monthly)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ No sales process documented</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Can&#x27;t afford 6-month ramp time</li>
+                        </li>
+                        </ul>
+                        <h3>Ideal First Sales Rep Profile</h3>
+                        <p><strong>Background:</strong></p>
+                        <ul>
+                        <li>2-5 years B2B sales experience</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SaaS experience preferred (but not required)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sold to similar customer (restaurant industry for CoodLoom)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hungry and coachable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track record of quota achievement</li>
+                        </li>
+                        </ul>
+                        <p><strong>Skills:</strong></p>
+                        <ul>
+                        <li>✓ Self-starter (you can&#x27;t babysit)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Organized (manages own pipeline)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Curious (asks good questions)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Resilient (handles rejection)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Consultative (not pushy)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Tech-savvy (learns software quickly)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Red Flags:</strong></p>
+                        <ul>
+                        <li>✗ Too senior (VP wanting AE role)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Job hopper (3+ jobs in 2 years)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Blames others for failures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Can&#x27;t explain their sales process</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Needs extensive hand-holding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✗ Arrogant or pushy</li>
+                        </li>
+                        </ul>
+                        <h3>Interview Process</h3>
+                        <p><strong>Stage 1: Phone Screen (30 min)</strong></p>
+                        <ul>
+                        <li>Recruiter or founder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Basic qualification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Understand background</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gauge interest</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Screen out obviously wrong fits</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: Video Interview (60 min)</strong></p>
+                        <ul>
+                        <li>Hiring manager (probably you)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deeper dive on experience</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales methodology questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Situational questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture fit assessment</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sample Questions:</strong></p>
+                        <ul>
+                        <li>&quot;Walk me through your current sales process, start to finish.&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Tell me about your best deal. What made it successful?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Tell me about a deal you lost. What happened?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How do you handle objections about price?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;How do you prioritize your time?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What motivates you?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Role Play (45 min)</strong></p>
+                        <ul>
+                        <li>Have them sell you something</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Give them your product to demo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>See how they think on feet</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Assess communication skills</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Check for coachability</li>
+                        </li>
+                        </ul>
+                        <p><strong>Scenarios:</strong></p>
+                        <ul>
+                        <li>&quot;Sell me this pen&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Demo our POS to me (I&#x27;m a restaurant owner)&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Handle this objection: &#x27;Too expensive&#x27;&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4: Reference Checks</strong></p>
+                        <ul>
+                        <li>Call 2-3 references</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask about quota attainment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Ask about strengths/weaknesses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Verify claims from interviews</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 5: Offer</strong></p>
+                        <ul>
+                        <li>Clear comp structure</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Expectations and quotas</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Onboarding plan</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start date</li>
+                        </li>
+                        </ul>
+                        <p><strong>Total Timeline</strong>: 2-3 weeks</p>
+                        <h3>Compensation Structure</h3>
+                        <p><strong>Base + Variable Model:</strong> <strong>For CoodLoom AE (Full-Cycle Rep):</strong></p>
+                        <ul>
+                        <li><strong>Base</strong>: $60,000/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Variable</strong>: $60,000/year (on-target earnings = OTE)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Total OTE</strong>: $120,000/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Quota</strong>: $600,000 ARR/year</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Commission</strong>: 10% of ARR (first year revenue)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ramp Period:</strong></p>
+                        <ul>
+                        <li>Month 1-3: No quota (learning)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Month 4-6: 50% quota</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Month 7-9: 75% quota</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Month 10+: 100% quota</li>
+                        </li>
+                        </ul>
+                        <p><strong>Accelerators:</strong></p>
+                        <ul>
+                        <li>100-110% of quota: 1x commission rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>110-125% of quota: 1.25x commission rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>125%+ of quota: 1.5x commission rate</li>
+                        </li>
+                        </ul>
+                        <p><strong>Example Earnings:</strong></p>
+                        <ul>
+                        <li>100% quota ($600K sold): $60K base + $60K variable = $120K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>120% quota ($720K sold): $60K base + $72K variable = $132K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>150% quota ($900K sold): $60K base + $105K variable = $165K</li>
+                        </li>
+                        </ul>
+                        <h2>Building the Sales Playbook</h2>
+                        <h3>What to Document</h3>
+                        <p><strong>1. Ideal Customer Profile (ICP)</strong></p>
+                        <pre><code>Industry: Full-service restaurants
+                        <p>Size: 10-50 employees Revenue: $500K-$3M annually Location: Major metro areas Tech adoption: Moderate to high Pain points: Slow checkout, poor reporting, outdated POS</code></pre> <strong>2. Buyer Personas</strong></p>
+                        <pre><code>Persona 1: Restaurant Owner
+                        <ul>
+                        <li>Age: 35-55</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: Increase profits, reduce theft, better insights</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Challenges: Tight margins, staff turnover, competition</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision criteria: ROI, reliability, ease of use</li>
+                        </li>
+                        </ul>
+                        <p>Persona 2: Restaurant Manager</p>
+                        <ul>
+                        <li>Age: 28-45</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: Smooth operations, happy staff, owner satisfaction</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Challenges: Staff training, system downtime, complexity</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Decision criteria: Ease of use, staff adoption, support quality</code></pre></li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Value Proposition</strong></p>
+                        <pre><code>For restaurant owners who are frustrated with slow, unreliable POS systems, CoodLoom is a modern cloud-based POS that processes orders 30% faster and provides real-time sales insights. Unlike legacy systems, CoodLoom is easy to use, always up-to-date, and backed by excellent support.</code></pre>
+                        <p><strong>4. Sales Process Stages</strong> <strong>Stage 1: Prospecting</strong></p>
+                        <ul>
+                        <li>Source: Cold outreach, inbound leads, referrals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activity: Initial contact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goal: Book discovery call</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Duration: Ongoing</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: Discovery Call</strong></p>
+                        <ul>
+                        <li>Duration: 30 minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goal: Understand needs, qualify fit</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Outcome: Book demo or disqualify</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success rate: 60% → Demo</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Product Demo</strong></p>
+                        <ul>
+                        <li>Duration: 45-60 minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goal: Show value, excitement</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Outcome: Proposal or follow-up</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success rate: 50% → Proposal</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4: Proposal</strong></p>
+                        <ul>
+                        <li>Duration: Async + 30 min follow-up</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goal: Present pricing, ROI</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Outcome: Negotiation or close</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success rate: 40% → Negotiation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 5: Negotiation</strong></p>
+                        <ul>
+                        <li>Duration: 1-2 weeks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goal: Address concerns, finalize terms</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Outcome: Closed-won or closed-lost</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Success rate: 70% → Close</li>
+                        </li>
+                        </ul>
+                        <p><strong>Overall: 100 prospects → 60 discoveries → 30 demos → 12 proposals → 8 closes</strong> <strong>5. Qualifying Framework: BANT</strong> <strong>Budget</strong>: Can they afford it?</p>
+                        <ul>
+                        <li>&quot;What&#x27;s your current POS costing you?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What budget have you allocated for this?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Authority</strong>: Can they decide?</p>
+                        <ul>
+                        <li>&quot;Who else is involved in this decision?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s your decision-making process?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Need</strong>: Do they have the problem?</p>
+                        <ul>
+                        <li>&quot;What challenges are you facing with current POS?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What would success look like?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Timeline</strong>: When will they buy?</p>
+                        <ul>
+                        <li>&quot;When are you looking to make a change?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s driving the timeline?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Qualified lead</strong>: Yes to all four. Otherwise, nurture or disqualify. <strong>6. Demo Script</strong> <strong>Intro (5 min):</strong></p>
+                        <ul>
+                        <li>Agenda overview</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn about their restaurant</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Confirm their pain points</li>
+                        </li>
+                        </ul>
+                        <p><strong>Discovery (10 min):</strong></p>
+                        <ul>
+                        <li>&quot;Tell me about your current process&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What works well?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s frustrating?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What would ideal solution look like?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>Demo (30 min):</strong></p>
+                        <ul>
+                        <li>Address their specific pain points</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Show relevant features</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use their menu/data if possible</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handle objections</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Create &quot;aha&quot; moments</li>
+                        </li>
+                        </ul>
+                        <p><strong>Wrap-up (5 min):</strong></p>
+                        <ul>
+                        <li>Recap value shown</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Answer questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Next steps (proposal, trial, etc.)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Book follow-up</li>
+                        </li>
+                        </ul>
+                        <p><strong>7. Common Objections &amp; Responses</strong> <strong>&quot;Too expensive&quot;</strong></p>
+                        <ul>
+                        <li>&quot;I understand cost is important. Let&#x27;s look at ROI...&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Compared to [current system], we&#x27;re actually [cheaper/same] when you consider...&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What if we could show you&#x27;ll save [X hours/week] or increase sales by [Y%]?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>&quot;We&#x27;re happy with current system&quot;</strong></p>
+                        <ul>
+                        <li>&quot;That&#x27;s great to hear. What do you like most about it?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;If you could wave a magic wand and improve one thing, what would it be?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;Most of our customers were happy with their old system too, until they saw...&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>&quot;Need to think about it&quot;</strong></p>
+                        <ul>
+                        <li>&quot;Totally understand. What specifically do you need to think about?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What questions can I answer to help you make a decision?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What&#x27;s your timeline for making a change?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>&quot;Not the right time&quot;</strong></p>
+                        <ul>
+                        <li>&quot;I understand timing is important. What&#x27;s driving that timeline?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What would need to change for it to be the right time?&quot;</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>&quot;What if we could get you started with minimal disruption?&quot;</li>
+                        </li>
+                        </ul>
+                        <p><strong>8. Sales Email Templates</strong> <strong>Initial Outreach:</strong></p>
+                        <pre><code>Subject: Quick question about [Restaurant Name]
+                        <p>Hi [Name], I noticed [Restaurant Name] has been growing (saw your recent expansion/review/etc.). Congrats! Quick question: How are you currently managing your POS and sales data? We work with restaurants like [Similar Restaurant] to:</p>
+                        <ul>
+                        <li>Speed up checkout by 30%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reduce errors and theft</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Get real-time sales insights</li>
+                        </li>
+                        </ul>
+                        <p>Would you be open to a 15-minute call to see if we could help [Restaurant Name] similarly? Best, [Your Name]</code></pre> <strong>Follow-up:</strong></p>
+                        <pre><code>Subject: Re: Quick question about [Restaurant Name]
+                        <p>Hi [Name], Following up on my email from last week. I know you&#x27;re busy, so I&#x27;ll keep this brief. We&#x27;ve helped [Similar Restaurant] achieve [specific result]. I&#x27;d love to show you how we could help [Restaurant Name] too. Would any of these times work for a quick 15-minute call?</p>
+                        <ul>
+                        <li>Tuesday 2pm</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Wednesday 10am</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Thursday 3pm</li>
+                        </li>
+                        </ul>
+                        <p>If none work, just reply with a better time. Thanks, [Your Name]</code></pre></p>
+                        <h2>Training Your Sales Team</h2>
+                        <h3>30-60-90 Day Onboarding Plan</h3>
+                        <p><strong>Days 1-30: Learn</strong></p>
+                        <ul>
+                        <li>Week 1: Product training</li>
+                        <ul>
+                        <li>Use the product extensively</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Know every feature</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complete mock transactions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Break things and learn limits</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 2: Market &amp; customer training</li>
+                        <ul>
+                        <li>Read all case studies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Listen to sales call recordings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shadow customer support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn about competitors</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 3: Sales process training</li>
+                        <ul>
+                        <li>Review playbook</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Practice demos with team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Role-play objection handling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Set up CRM and tools</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 4: First customer interactions</li>
+                        <ul>
+                        <li>Join live sales calls (observe)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Attend customer meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start prospecting activities</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Book first solo discovery call</li>
+                        </li>
+                        </ul>
+                        </li>
+                        </ul>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                        <li>Complete product certification</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pass sales process quiz</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Shadow 10+ sales calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build pipeline of 20 prospects</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 31-60: Practice</strong></p>
+                        <ul>
+                        <li>Lead discovery calls (you shadow)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conduct demos (you shadow)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Handle objections (you intervene if needed)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Send proposals (you review)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close first deal (with your help)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                        <li>10 discovery calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5 demos</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2 proposals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>1 closed deal (team celebration!)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 61-90: Perform</strong></p>
+                        <ul>
+                        <li>Full autonomy on deals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You spot-check, don&#x27;t shadow</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close 2-3 deals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Hit 50% of quota</li>
+                        </li>
+                        </ul>
+                        <p><strong>Goals:</strong></p>
+                        <ul>
+                        <li>20 discovery calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>10 demos</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>4 proposals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>2-3 closed deals</li>
+                        </li>
+                        </ul>
+                        <h3>Ongoing Training</h3>
+                        <p><strong>Weekly:</strong></p>
+                        <ul>
+                        <li>1-on-1 with manager (30-60 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team huddle (15 min)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pipeline review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Deal coaching</li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly:</strong></p>
+                        <ul>
+                        <li>Team sales training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Product updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Guest speaker (customer, exec)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Performance review</li>
+                        </li>
+                        </ul>
+                        <p><strong>Quarterly:</strong></p>
+                        <ul>
+                        <li>Sales kickoff</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Territory/quota adjustments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Skill development workshops</li>
+                        </li>
+                        </ul>
+                        <h2>Managing Sales Performance</h2>
+                        <h3>Key Sales Metrics</h3>
+                        <p><strong>Activity Metrics</strong> (Leading Indicators):</p>
+                        <ul>
+                        <li>Calls made</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Emails sent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meetings booked</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Demos conducted</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proposals sent</li>
+                        </li>
+                        </ul>
+                        <p><strong>Pipeline Metrics</strong>:</p>
+                        <ul>
+                        <li>Pipeline value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pipeline coverage (3-4x quota)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Stage conversion rates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Average deal size</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales cycle length</li>
+                        </li>
+                        </ul>
+                        <p><strong>Results Metrics</strong> (Lagging Indicators):</p>
+                        <ul>
+                        <li>Quota attainment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Revenue closed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Win rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Average contract value (ACV)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer acquisition cost (CAC)</li>
+                        </li>
+                        </ul>
+                        <h3>Sales Dashboard Example</h3>
+                        <p><strong>Rep: Sarah Johnson | Month: November</strong></p>
+                        <pre><code>Activity:
+                        <ul>
+                        <li>Calls: 180 (goal: 150) ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Meetings booked: 22 (goal: 20) ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Demos: 12 (goal: 10) ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Proposals: 5 (goal: 6) ~</li>
+                        </li>
+                        </ul>
+                        <p>Pipeline:</p>
+                        <ul>
+                        <li>Total value: $180K (goal: $150K) ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Coverage ratio: 3.6x (goal: 3x) ✓</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weighted pipeline: $72K</li>
+                        </li>
+                        </ul>
+                        <p>Results:</p>
+                        <ul>
+                        <li>Closed: $45K (goal: $50K for month) ~</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>YTD: $380K (goal: $450K) ~</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Q4 pace: On track</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Win rate: 38% (avg: 35%) ✓</li>
+                        </li>
+                        </ul>
+                        <p>Top Deals: 1. Bella Vita - $12K ARR (proposal stage) 2. Taco Fiesta - $18K ARR (demo stage) 3. The Steakhouse - $15K ARR (discovery stage)</code></pre></p>
+                        <h3>One-on-Ones Structure</h3>
+                        <p><strong>Weekly 1-on-1 (30-45 min):</strong> <strong>Pipeline Review (15 min):</strong></p>
+                        <ul>
+                        <li>What moved forward this week?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What&#x27;s stuck? Why?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>What needs help?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Forecast for this month/quarter</li>
+                        </li>
+                        </ul>
+                        <p><strong>Deal Coaching (15 min):</strong></p>
+                        <ul>
+                        <li>Deep dive on 1-2 key deals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategize next steps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Role-play scenarios</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Address blockers</li>
+                        </li>
+                        </ul>
+                        <p><strong>Professional Development (10 min):</strong></p>
+                        <ul>
+                        <li>Wins to celebrate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Areas to improve</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Career goals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support needed</li>
+                        </li>
+                        </ul>
+                        <p><strong>Action Items:</strong></p>
+                        <ul>
+                        <li>Rep commits to specific actions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manager commits to support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow up next week</li>
+                        </li>
+                        </ul>
+                        <h3>Performance Improvement Plans</h3>
+                        <p><strong>When to Use:</strong></p>
+                        <ul>
+                        <li>Consistently missing quota (3+ months)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Activity metrics below targets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Skill gaps not improving</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Attitude/culture issues</li>
+                        </li>
+                        </ul>
+                        <p><strong>30-60-90 Day PIP Structure:</strong> <strong>Days 1-30:</strong></p>
+                        <ul>
+                        <li>Clear expectations documented</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Weekly check-ins</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specific improvement areas</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support provided (training, coaching)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 31-60:</strong></p>
+                        <ul>
+                        <li>Progress review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Adjust if needed</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Continue support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Mid-point assessment</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 61-90:</strong></p>
+                        <ul>
+                        <li>Final review</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Either: Improvement shown (success!) or separation</li>
+                        </li>
+                        </ul>
+                        <p><strong>Document everything</strong> for legal protection.</p>
+                        <h2>Scaling Sales Operations</h2>
+                        <h3>When to Add Sales Operations</h3>
+                        <p><strong>Hire Sales Ops when:</strong></p>
+                        <ul>
+                        <li>5+ sales reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data quality issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manual processes slowing team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Manager spending 50%+ time on ops tasks</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Forecasting is painful</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Ops Responsibilities:</strong></p>
+                        <ul>
+                        <li>CRM management and data quality</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales tools and tech stack</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Reporting and dashboards</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Territory and quota planning</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Commission calculations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process optimization</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales training coordination</li>
+                        </li>
+                        </ul>
+                        <h3>Building Sales Infrastructure</h3>
+                        <p><strong>Tools You&#x27;ll Need:</strong> <strong>CRM</strong> (HubSpot, Salesforce, Pipedrive)</p>
+                        <ul>
+                        <li>Manage contacts and deals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track pipeline</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Forecast revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Store customer data</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Engagement</strong> (Outreach, SalesLoft, Apollo)</p>
+                        <ul>
+                        <li>Automate outreach sequences</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track emails and calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Book meetings</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Analytics</li>
+                        </li>
+                        </ul>
+                        <p><strong>Video Demos</strong> (Zoom, Loom)</p>
+                        <ul>
+                        <li>Conduct demos</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Record presentations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Share async demos</li>
+                        </li>
+                        </ul>
+                        <p><strong>Proposal Software</strong> (PandaDoc, Proposify)</p>
+                        <ul>
+                        <li>Create professional proposals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>E-signatures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track engagement</li>
+                        </li>
+                        </ul>
+                        <p><strong>Analytics</strong> (Gong, Chorus)</p>
+                        <ul>
+                        <li>Record sales calls</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversation intelligence</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Coaching insights</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compensation</strong> (QuotaPath, Spiff)</p>
+                        <ul>
+                        <li>Calculate commissions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track quota attainment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Motivate reps</li>
+                        </li>
+                        </ul>
+                        <h3>Forecasting</h3>
+                        <p><strong>Types of Forecasts:</strong> <strong>Pipeline Forecast:</strong></p>
+                        <ul>
+                        <li>Stage-weighted pipeline value</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Example: $100K in demo stage (40% likely) = $40K forecast</li>
+                        </li>
+                        </ul>
+                        <p><strong>Historical Forecast:</strong></p>
+                        <ul>
+                        <li>Based on past performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Example: Historically close $50K/month, forecast $50K</li>
+                        </li>
+                        </ul>
+                        <p><strong>Bottoms-Up Forecast:</strong></p>
+                        <ul>
+                        <li>Reps forecast their deals</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Roll up to team forecast</li>
+                        </li>
+                        </ul>
+                        <p><strong>Top-Down Forecast:</strong></p>
+                        <ul>
+                        <li>Leadership sets targets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Allocate to teams</li>
+                        </li>
+                        </ul>
+                        <p><strong>Best Practice</strong>: Use multiple methods, compare, adjust. <strong>Forecast Meetings:</strong></p>
+                        <ul>
+                        <li>Weekly: Review pipeline changes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Monthly: Update forecast for quarter</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Quarterly: Set next quarter targets</li>
+                        </li>
+                        </ul>
+                        <h2>Hiring Sales Leadership</h2>
+                        <h3>When to Hire VP Sales</h3>
+                        <p><strong>Hire VP Sales when:</strong></p>
+                        <ul>
+                        <li>5-10 sales reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You (CEO/founder) spending 50%+ on sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Need strategic sales expertise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Raising significant capital</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Entering new phase of growth</li>
+                        </li>
+                        </ul>
+                        <p><strong>Too Early:</strong></p>
+                        <ul>
+                        <li>&lt;3 sales reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process not repeatable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>You don&#x27;t know what works yet</li>
+                        </li>
+                        </ul>
+                        <p><strong>VP Sales Profile:</strong> <strong>Experience:</strong></p>
+                        <ul>
+                        <li>10+ years sales experience</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>5+ years sales leadership</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Scaled team from X to Y</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Industry or segment expertise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Built processes and systems</li>
+                        </li>
+                        </ul>
+                        <p><strong>Skills:</strong></p>
+                        <ul>
+                        <li>Strategic thinker</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Team builder</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process-oriented</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data-driven</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Excellent communicator</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture fit</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compensation:</strong></p>
+                        <ul>
+                        <li>Base: $120K-180K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Variable: $80K-150K</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equity: 0.5-1.5% (depending on stage)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Total: $200K-330K OTE</li>
+                        </li>
+                        </ul>
+                        <h2>Common Sales Mistakes</h2>
+                        <h3>1. Hiring Too Senior Too Early</h3>
+                        <p><strong>Mistake</strong>: Hiring VP Sales as first sales hire <strong>Problem</strong>: Too expensive, wants to manage not sell <strong>Solution</strong>: Hire IC (individual contributor) first</p>
+                        <h3>2. No Onboarding Plan</h3>
+                        <p><strong>Mistake</strong>: Throwing rep into calls immediately <strong>Problem</strong>: Rep fails, wastes time, costs money <strong>Solution</strong>: 30-60-90 day onboarding plan</p>
+                        <h3>3. Unrealistic Quotas</h3>
+                        <p><strong>Mistake</strong>: Setting quota at $1M when no rep has done $500K <strong>Problem</strong>: Demotivated team, high turnover <strong>Solution</strong>: Base quotas on actual performance data</p>
+                        <h3>4. Not Firing Fast Enough</h3>
+                        <p><strong>Mistake</strong>: Keeping underperformers for 6+ months <strong>Problem</strong>: Costs money, hurts team morale <strong>Solution</strong>: PIP within 3 months, decision by 6 months</p>
+                        <h3>5. Neglecting Training</h3>
+                        <p><strong>Mistake</strong>: Train once, then let reps figure it out <strong>Problem</strong>: Inconsistent results, skill gaps persist <strong>Solution</strong>: Ongoing weekly training and coaching</p>
+                        <h3>6. Poor CRM Hygiene</h3>
+                        <p><strong>Mistake</strong>: Not enforcing CRM usage <strong>Problem</strong>: Can&#x27;t forecast, lost opportunities <strong>Solution</strong>: Make CRM mandatory, part of performance review</p>
+                        <h3>7. Comp Plan Too Complex</h3>
+                        <p><strong>Mistake</strong>: 10-page compensation plans <strong>Problem</strong>: Reps don&#x27;t understand, gaming the system <strong>Solution</strong>: Simple, clear comp plans (1 page)</p>
+                        <h2>Case Studies</h2>
+                        <h3>Case Study 1: Salesforce - Inside Sales Model</h3>
+                        <p><strong>Challenge</strong>: Scale B2B SaaS sales <strong>Approach:</strong></p>
+                        <ul>
+                        <li>Pioneered inside sales for enterprise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SDR → AE → CSM model</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Heavy process and training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Technology-enabled selling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Repeatable, scalable model</li>
+                        </li>
+                        </ul>
+                        <p><strong>Results:</strong></p>
+                        <ul>
+                        <li>Scaled to thousands of reps</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>$31B+ revenue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Model copied by all SaaS</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Lessons:</strong></p>
+                        <ul>
+                        <li>Inside sales can work for enterprise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Process + technology = scale</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Invest in training</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specialize roles (SDR vs. AE)</li>
+                        </li>
+                        </ul>
+                        <h3>Case Study 2: HubSpot - Product-Led Sales</h3>
+                        <p><strong>Challenge</strong>: Scale with freemium model <strong>Approach:</strong></p>
+                        <ul>
+                        <li>Free CRM drives awareness</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Product-qualified leads (PQLs)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales helps convert power users</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer success drives expansion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Blended PLG + sales-led</li>
+                        </li>
+                        </ul>
+                        <p><strong>Results:</strong></p>
+                        <ul>
+                        <li>150K+ customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Efficient scaling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Low CAC</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High NRR</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Lessons:</strong></p>
+                        <ul>
+                        <li>Product can drive leads</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sales focuses on conversion and expansion</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Specialize by customer segment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Efficiency over headcount</li>
+                        </li>
+                        </ul>
+                        <h3>Case Study 3: Gong - Elite Sales Org</h3>
+                        <p><strong>Challenge</strong>: Build world-class sales team <strong>Approach:</strong></p>
+                        <ul>
+                        <li>Hire A+ talent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Extensive training (Gong University)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use own product for coaching</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data-driven everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strong culture</li>
+                        </li>
+                        </ul>
+                        <p><strong>Results:</strong></p>
+                        <ul>
+                        <li>3,000+ customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>$200M+ ARR</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>95%+ quota attainment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Industry-leading win rates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Key Lessons:</strong></p>
+                        <ul>
+                        <li>Invest in the best people</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Training is never done</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use data to coach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Culture eats strategy</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Build Your Sales Job Description</h3>
+                        <p><strong>Role:</strong> Sales Representative <strong>About Us:</strong> [Your company description] <strong>About the Role:</strong> [What they&#x27;ll do] <strong>Responsibilities:</strong></p>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Requirements:</strong></p>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compensation:</strong></p>
+                        <ul>
+                        <li>Base: $_______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Variable: $_______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>OTE: $_______</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Equity: _______</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Design Your Sales Comp Plan</h3>
+                        <p><strong>Role:</strong> _______________ <strong>Base Salary:</strong> $_______/year <strong>Variable:</strong> $_______/year (if 100% quota) <strong>Total OTE:</strong> $_______/year <strong>Quota:</strong> $_______ARR/year <strong>Commission Structure:</strong></p>
+                        <ul>
+                        <li>0-100% quota: __% commission rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>100-110% quota: __% commission rate</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>110%+ quota: __% commission rate</li>
+                        </li>
+                        </ul>
+                        <p><strong>Ramp Period:</strong></p>
+                        <ul>
+                        <li>Months 1-3: __% quota</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Months 4-6: __% quota</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Months 7-9: __% quota</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Months 10+: 100% quota</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 3: Create Your Sales Process</h3>
+                        <p><strong>Stage 1:</strong> _______________</p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit criteria: ______________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversion rate: ___%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2:</strong> _______________</p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit criteria: ______________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversion rate: ___%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3:</strong> _______________</p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit criteria: ______________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversion rate: ___%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 4:</strong> _______________</p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exit criteria: ______________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Conversion rate: ___%</li>
+                        </li>
+                        </ul>
+                        <p><strong>Overall Conversion:</strong> ___%</p>
+                        <h3>Exercise 4: 90-Day Onboarding Plan</h3>
+                        <p><strong>Days 1-30: Learn</strong></p>
+                        <ul>
+                        <li>Week 1: ____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 2: ____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 3: ____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Week 4: ____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: _____________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 31-60: Practice</strong></p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support: ___________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: _____________________</li>
+                        </li>
+                        </ul>
+                        <p><strong>Days 61-90: Perform</strong></p>
+                        <ul>
+                        <li>Activities: _________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Metrics: ___________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Goals: _____________________</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 5: Build Your Sales Forecast</h3>
+                        <p><strong>Month:</strong> ____________ <strong>Pipeline by Stage:</strong> | Stage | # of Deals | Total Value | Close % | Weighted Value | |---|---|---|---|---| | Discovery | ___ | $___ | 20% | $___ | | Demo | ___ | $___ | 40% | $___ | | Proposal | ___ | $___ | 60% | $___ | | Negotiation | ___ | $___ | 80% | $___ | | <strong>Total</strong> | | $___ | | $___ | <strong>Forecast:</strong> $_______ <strong>Quota:</strong> $_______ <strong>Gap:</strong> $_______ <strong>Actions to Close Gap:</strong> 1. ______________________________ 2. ______________________________ 3. ______________________________</p>
+                        <h2>Tools and Resources</h2>
+                        <p><strong>CRM:</strong></p>
+                        <ul>
+                        <li>HubSpot (free to start)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Salesforce (enterprise)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pipedrive (simple)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close (built for sales)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Sales Engagement:</strong></p>
+                        <ul>
+                        <li>Outreach.io</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SalesLoft</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Apollo.io</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Lemlist</li>
+                        </li>
+                        </ul>
+                        <p><strong>Conversation Intelligence:</strong></p>
+                        <ul>
+                        <li>Gong</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Chorus</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Jiminny</li>
+                        </li>
+                        </ul>
+                        <p><strong>Compensation:</strong></p>
+                        <ul>
+                        <li>QuotaPath</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Spiff</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CaptivateIQ</li>
+                        </li>
+                        </ul>
+                        <p><strong>Training:</strong></p>
+                        <ul>
+                        <li>Sales Hacker</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Winning by Design</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Gong Labs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Pavilion (membership)</li>
+                        </li>
+                        </ul>
+                        <h2>Recommended Reading</h2>
+                        <p>1. <strong>&quot;The Sales Development Playbook&quot;</strong> by Trish Bertuzzi - SDR best practices 2. <strong>&quot;Predictable Revenue&quot;</strong> by Aaron Ross - Sales development model 3. <strong>&quot;The Qualified Sales Leader&quot;</strong> by John McMahon - Sales leadership 4. <strong>&quot;Founding Sales&quot;</strong> by Pete Kazanjy - First sales hires 5. <strong>&quot;SPIN Selling&quot;</strong> by Neil Rackham - Consultative selling 6. <strong>&quot;The Challenger Sale&quot;</strong> by Matthew Dixon - Sales methodology 7. <strong>&quot;Fanatical Prospecting&quot;</strong> by Jeb Blount - Prospecting tactics</p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ Don&#x27;t hire sales reps until you have 10+ founder-led sales</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Hire hungry, coachable reps over experienced but complacent ones</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Document your sales process before scaling</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Invest in thorough 30-60-90 day onboarding</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Keep compensation plans simple and transparent</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Track both activity (leading) and results (lagging) metrics</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Coach weekly, course-correct fast</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Hire sales ops and VP Sales at the right time (not too early)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Build repeatable, scalable processes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Culture and training matter as much as talent</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>Move to Chapter 7: <strong>Customer Success</strong> to learn how to retain and expand your customer base - the other side of the revenue equation.</p>
+                        <hr />
+                        <p><strong>Remember</strong>: Sales is a profession. Treat it like one. Hire professionals, train them properly, give them the tools they need, and hold them accountable. A great sales team is your growth engine.</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Marketing Channels</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Customer Success</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>

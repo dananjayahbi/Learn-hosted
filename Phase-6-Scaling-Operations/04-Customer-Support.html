@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Comprehensive Business Learning Path">
+    <title>Customer Support - Business Learning</title>
+    <style>
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-size: 16px;
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #f5f5f5;
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: more) {
+    body {
+        color: #000;
+        background-color: #fff;
+    }
+}
+
+/* Typography - Fixed spacing */
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0.8em;
+    margin-bottom: 0.4em;
+    line-height: 1.2;
+    font-weight: 600;
+}
+
+h1 { font-size: 2em; }
+h2 { font-size: 1.75em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.25em; }
+h5 { font-size: 1.1em; }
+h6 { font-size: 1em; }
+
+p {
+    margin-bottom: 0.8em;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: underline;
+    outline-offset: 2px;
+}
+
+a:visited {
+    color: #6600cc;
+}
+
+a:hover,
+a:focus {
+    color: #004499;
+}
+
+/* Improve focus visibility */
+a:focus,
+button:focus,
+input:focus {
+    outline: 2px solid #0066cc;
+    outline-offset: 2px;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    background-color: #fff;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header */
+.main-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+    border-bottom: 3px solid #0066cc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    position: relative;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    gap: 0.4rem;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 0.5rem;
+    position: absolute;
+    left: 1rem;
+}
+
+.mobile-menu-toggle span {
+    width: 1.5rem;
+    height: 0.2rem;
+    background-color: #fff;
+    transition: all 0.3s ease;
+    transform-origin: center;
+}
+
+.mobile-menu-toggle.active span:nth-child(1) {
+    transform: rotate(45deg) translate(0.5rem, 0.5rem);
+}
+
+.mobile-menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.mobile-menu-toggle.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(0.5rem, -0.5rem);
+}
+
+.main-header h1 {
+    margin: 0;
+    font-size: 1.5em;
+}
+
+.main-header a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.main-header a:hover {
+    text-decoration: underline;
+}
+
+/* Main Content */
+.main-content {
+    flex: 1;
+    padding: 0;
+}
+
+.content-wrapper {
+    display: flex;
+    min-height: 100%;
+}
+
+/* Sidebar Navigation */
+.sidebar {
+    width: 250px;
+    background-color: #f9f9f9;
+    border-right: 1px solid #ddd;
+    overflow-y: auto;
+    padding: 0;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.sidebar-nav {
+    position: sticky;
+    top: 0;
+}
+
+.nav-header {
+    padding: 0.8em;
+    border-bottom: 1px solid #ddd;
+    background-color: #f0f0f0;
+}
+
+.nav-header h3 {
+    margin: 0;
+    font-size: 1.1em;
+}
+
+.phase-section {
+    padding: 0.8em;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.phase-section.active {
+    background-color: #e8f4ff;
+}
+
+.phase-title {
+    margin: 0 0 0.4em 0;
+    font-size: 0.95em;
+    font-weight: 600;
+    color: #0066cc;
+}
+
+.chapters-list {
+    list-style: none;
+}
+
+.chapter-item {
+    margin-bottom: 0.3em;
+}
+
+.chapter-item a {
+    display: block;
+    padding: 0.4em 0.5em;
+    text-decoration: none;
+    font-size: 0.9em;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.chapter-item a:hover {
+    background-color: #ddeeff;
+}
+
+.chapter-item.active a {
+    background-color: #0066cc;
+    color: #fff;
+}
+
+.chapter-item.active a:visited {
+    color: #fff;
+}
+
+/* Article Content */
+.article-content {
+    flex: 1;
+    padding: 1.5em;
+    overflow-y: auto;
+}
+
+.index-article {
+    max-width: none;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 1em;
+    padding-bottom: 0.8em;
+    border-bottom: 1px solid #ddd;
+}
+
+.breadcrumb ol {
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.25em;
+    font-size: 0.9em;
+}
+
+.breadcrumb li {
+    display: inline;
+}
+
+.breadcrumb li:not(:last-child)::after {
+    content: " / ";
+    margin: 0 0.25em;
+    color: #999;
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Article Body - Fix spacing */
+.article-body {
+    max-width: 900px;
+    margin-bottom: 1.5em;
+}
+
+.article-body strong {
+    font-weight: 600;
+}
+
+.article-body em {
+    font-style: italic;
+}
+
+.article-body code {
+    background-color: #f4f4f4;
+    padding: 0.2em 0.4em;
+    border-radius: 3px;
+    font-family: "Monaco", "Courier New", monospace;
+    font-size: 0.9em;
+}
+
+.article-body pre {
+    background-color: #f4f4f4;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 0.8em;
+    overflow-x: auto;
+    margin-bottom: 0.8em;
+    font-size: 0.85em;
+    line-height: 1.4;
+}
+
+.article-body pre code {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    margin: 0;
+    display: block;
+    white-space: pre;
+}
+
+.article-body ul, 
+.article-body ol {
+    margin-bottom: 0.8em;
+    margin-left: 1.8em;
+    margin-top: 0.3em;
+}
+
+.article-body li {
+    margin-bottom: 0.2em;
+    line-height: 1.5;
+}
+
+.article-body li p {
+    margin-bottom: 0.2em;
+}
+
+.article-body li:last-child {
+    margin-bottom: 0;
+}
+
+.article-body blockquote {
+    border-left: 4px solid #0066cc;
+    padding-left: 0.8em;
+    margin-left: 0;
+    margin-bottom: 0.8em;
+    color: #666;
+    margin-top: 0.3em;
+}
+
+.article-body blockquote p {
+    margin-bottom: 0.2em;
+}
+
+.article-body hr {
+    border: none;
+    border-top: 1px solid #ddd;
+    margin: 1.2em 0;
+}
+
+.article-body table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 0.8em;
+    font-size: 0.95em;
+    margin-top: 0.3em;
+}
+
+.article-body table th,
+.article-body table td {
+    border: 1px solid #ddd;
+    padding: 0.4em 0.5em;
+    text-align: left;
+}
+
+.article-body table th {
+    background-color: #f4f4f4;
+    font-weight: 600;
+}
+
+.article-body table tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+/* Index Page Grid */
+.phases-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.2em;
+    margin-top: 1.5em;
+}
+
+.phase-card {
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    padding: 1.2em;
+    background-color: #f9f9f9;
+    transition: box-shadow 0.2s;
+}
+
+.phase-card:hover {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.phase-card h3 {
+    margin-top: 0;
+}
+
+.phase-card ul {
+    list-style: none;
+    margin-left: 0;
+}
+
+.phase-card li {
+    margin-bottom: 0.4em;
+}
+
+.phase-card a {
+    text-decoration: none;
+    font-size: 0.95em;
+}
+
+/* Chapter Navigation */
+.chapter-navigation {
+    margin-top: 2em;
+    padding-top: 1.5em;
+    border-top: 1px solid #ddd;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 1em;
+    flex-wrap: wrap;
+}
+
+.nav-prev,
+.nav-next {
+    flex: 1;
+    min-width: 180px;
+    padding: 1em;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+    text-decoration: none;
+    color: inherit;
+    display: flex;
+    flex-direction: column;
+    gap: 0.3em;
+    transition: background-color 0.2s;
+}
+
+.nav-prev:hover,
+.nav-next:hover {
+    background-color: #e8f4ff;
+}
+
+.nav-label {
+    font-size: 0.85em;
+    color: #666;
+}
+
+.nav-title {
+    font-weight: 600;
+    color: #0066cc;
+    text-decoration: underline;
+}
+
+/* Footer */
+.main-footer {
+    background-color: #f0f0f0;
+    border-top: 1px solid #ddd;
+    padding: 1em;
+    text-align: center;
+    font-size: 0.9em;
+    color: #666;
+}
+
+/* Checkbox styling */
+.checkbox {
+    display: inline-block;
+    width: 1.2em;
+    height: 1.2em;
+    margin-right: 0.5em;
+    vertical-align: middle;
+    color: #0066cc;
+    font-weight: bold;
+}
+
+/* Compress code block lines */
+.article-body pre {
+    margin-top: 0 !important;
+    margin-bottom: 0.8em !important;
+}
+
+.article-body pre + p,
+.article-body ul + p,
+.article-body ol + p {
+    margin-top: 0.3em;
+}
+
+.article-body p + pre,
+.article-body p + ul,
+.article-body p + ol {
+    margin-top: 0.3em;
+}
+
+/* Responsive Design - Tablet */
+@media (max-width: 1024px) {
+    .sidebar {
+        width: 220px;
+    }
+    
+    .article-content {
+        padding: 1.2em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    }
+}
+
+/* Responsive Design - Tablet/Small Laptop */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .main-header {
+        padding: 0.8rem 1rem;
+    }
+    
+    .content-wrapper {
+        flex-direction: column;
+        position: relative;
+    }
+    
+    .sidebar {
+        width: 100%;
+        position: fixed;
+        left: 0;
+        top: 60px;
+        height: calc(100vh - 60px);
+        border-right: none;
+        border-bottom: 1px solid #ddd;
+        transform: translateX(-100%);
+        z-index: 1000;
+        max-height: none;
+        overflow-y: auto;
+        opacity: 0;
+        pointer-events: none;
+    }
+    
+    .sidebar.active {
+        transform: translateX(0);
+        opacity: 1;
+        pointer-events: auto;
+    }
+    
+    .sidebar-nav {
+        display: flex;
+        flex-direction: column;
+        position: static;
+        overflow-x: auto;
+    }
+    
+    .phase-section {
+        flex-shrink: 1;
+        width: 100%;
+        min-width: auto;
+        padding: 0.8em;
+        border-bottom: 1px solid #e0e0e0;
+        border-right: none;
+    }
+    
+    .chapters-list {
+        display: flex;
+        flex-direction: column;
+        gap: 0.2em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.85em;
+        padding: 0.3em 0.4em;
+    }
+    
+    .phases-grid {
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        gap: 1em;
+    }
+    
+    .article-content {
+        padding: 1em;
+        margin-top: 0;
+    }
+    
+    .nav-container {
+        flex-direction: column;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.8em;
+    }
+    
+    .article-body ul,
+    .article-body ol {
+        margin-left: 1.5em;
+    }
+    
+    .main-header h1 {
+        font-size: 1.3em;
+        margin: 0;
+    }
+    
+    h1 { font-size: 1.5em; }
+    h2 { font-size: 1.3em; }
+    h3 { font-size: 1.15em; }
+}
+
+/* Responsive Design - Mobile */
+@media (max-width: 480px) {
+    html {
+        font-size: 14px;
+    }
+    
+    .main-header {
+        padding: 0.6rem 1rem;
+    }
+    
+    .mobile-menu-toggle {
+        display: flex;
+        padding: 0.3rem;
+    }
+    
+    .mobile-menu-toggle span {
+        width: 1.3rem;
+        height: 0.15rem;
+    }
+    
+    .main-header h1 {
+        font-size: 1.2em;
+        margin: 0;
+    }
+    
+    .sidebar {
+        top: 50px;
+        height: calc(100vh - 50px);
+    }
+    
+    .article-content {
+        padding: 0.8em;
+    }
+    
+    .nav-header {
+        padding: 0.6em;
+        font-size: 0.9em;
+    }
+    
+    .phase-section {
+        padding: 0.6em;
+        width: 100%;
+        min-width: auto;
+    }
+    
+    .phase-title {
+        font-size: 0.85em;
+    }
+    
+    .chapter-item a {
+        font-size: 0.75em;
+        padding: 0.25em 0.3em;
+    }
+    
+    .breadcrumb ol {
+        font-size: 0.7em;
+    }
+    
+    .breadcrumb li:not(:last-child)::after {
+        margin: 0 0.1em;
+    }
+    
+    .article-body {
+        font-size: 0.95em;
+    }
+    
+    .article-body code {
+        font-size: 0.8em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+    }
+    
+    .article-body ul, 
+    .article-body ol {
+        margin-left: 1.3em;
+    }
+    
+    .article-body li {
+        margin-bottom: 0.15em;
+    }
+    
+    .article-body table {
+        font-size: 0.85em;
+    }
+    
+    .article-body table th,
+    .article-body table td {
+        padding: 0.3em;
+    }
+    
+    .article-body pre {
+        padding: 0.6em;
+        font-size: 0.75em;
+        line-height: 1.3;
+    }
+    
+    .phases-grid {
+        grid-template-columns: 1fr;
+        gap: 0.8em;
+    }
+    
+    .phase-card {
+        padding: 0.8em;
+    }
+    
+    .chapter-navigation {
+        margin-top: 1.2em;
+        padding-top: 1em;
+    }
+    
+    .nav-prev,
+    .nav-next {
+        min-width: 100%;
+        padding: 0.7em;
+    }
+    
+    .nav-label {
+        font-size: 0.75em;
+    }
+    
+    .nav-title {
+        font-size: 0.9em;
+    }
+    
+    h1 { font-size: 1.3em; }
+    h2 { font-size: 1.1em; }
+    h3 { font-size: 0.95em; }
+    h4 { font-size: 0.9em; }
+    
+    p {
+        margin-bottom: 0.6em;
+    }
+    
+    .main-footer {
+        padding: 0.8em;
+        font-size: 0.8em;
+    }
+    
+    /* Touch-friendly targets */
+    a, button {
+        min-height: 44px;
+        display: inline-block;
+        padding: 0.5em;
+    }
+}
+
+/* Extra small mobile */
+@media (max-width: 360px) {
+    html {
+        font-size: 13px;
+    }
+    
+    .main-header h1 {
+        font-size: 1.1em;
+    }
+    
+    .article-content {
+        padding: 0.6em;
+    }
+    
+    .phase-section {
+        min-width: 130px;
+    }
+}
+
+/* Print Styles */
+@media print {
+    body {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        display: none;
+    }
+    
+    .main-header {
+        background-color: #f0f0f0;
+        color: #000;
+    }
+    
+    .breadcrumb {
+        display: none;
+    }
+    
+    .chapter-navigation {
+        display: none;
+    }
+    
+    a {
+        color: #000;
+        text-decoration: underline;
+    }
+    
+    .article-content {
+        padding: 0;
+    }
+}
+
+/* High DPI/Retina Support */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    border {
+        border-width: 0.5px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    body {
+        background-color: #1a1a1a;
+        color: #e0e0e0;
+    }
+    
+    .container {
+        background-color: #0d0d0d;
+    }
+    
+    .mobile-menu-toggle span {
+        background-color: #fff;
+    }
+    
+    .sidebar {
+        background-color: #1a1a1a;
+        border-right-color: #333;
+    }
+    
+    .nav-header {
+        background-color: #222;
+        border-bottom-color: #333;
+    }
+    
+    .phase-section {
+        border-bottom-color: #333;
+    }
+    
+    .phase-section.active {
+        background-color: #1a3a52;
+    }
+    
+    .article-content {
+        background-color: #0d0d0d;
+    }
+    
+    .article-body code {
+        background-color: #222;
+    }
+    
+    .article-body pre {
+        background-color: #222;
+        border-color: #333;
+    }
+    
+    .phase-card {
+        background-color: #1a1a1a;
+        border-color: #333;
+    }
+    
+    .main-footer {
+        background-color: #1a1a1a;
+        border-top-color: #333;
+        color: #999;
+    }
+}
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header class="main-header">
+            <button class="mobile-menu-toggle" aria-label="Toggle navigation menu" onclick="document.querySelector('.sidebar').classList.toggle('active'); document.querySelector('.mobile-menu-toggle').classList.toggle('active');">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <h1><a href="/Business-Learning/">Business Learning Path</a></h1>
+        </header>
+        
+        <main class="main-content">
+            <div class="content-wrapper">
+                <div class="sidebar" onclick="if(window.innerWidth < 768) { document.querySelector('.sidebar').classList.remove('active'); document.querySelector('.mobile-menu-toggle').classList.remove('active'); }">
+                    <nav class="sidebar-nav">
+                    <div class="nav-header"><h3>Contents</h3></div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Prerequisites</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/01-Entrepreneurial-Mindset.html">Entrepreneurial Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/02-Business-Fundamentals.html">Business Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/03-Tech-Industry-Overview.html">Tech Industry Overview</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/04-Self-Assessment.html">Self Assessment</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-0-Prerequisites/05-Goal-Setting.html">Goal Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Startup Foundations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/01-Idea-Validation-Customer-Discovery.html">Idea Validation Customer Discovery</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/02-CoFounder-Equity-Split.html">CoFounder Equity Split</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/03-Building-Your-MVP.html">Building Your MVP</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/04-Initial-Market-Strategy.html">Initial Market Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-1-Startup-Foundations/05-Branding-And-Positioning.html">Branding And Positioning</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Business Planning</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/01-Business-Plan-Fundamentals.html">Business Plan Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/02-Executive-Summary-Company-Description.html">Executive Summary Company Description</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/03-Market-Analysis-Research.html">Market Analysis Research</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/04-Competitive-Analysis-Strategy.html">Competitive Analysis Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-2-Business-Planning/05-Products-Services.html">Products Services</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Legal And Structure</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/01-Choosing-Business-Structure.html">Choosing Business Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/02-Incorporation-Process.html">Incorporation Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/03-Founders-Agreement.html">Founders Agreement</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/04-Intellectual-Property.html">Intellectual Property</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/05-Contracts-And-Agreements.html">Contracts And Agreements</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/06-Compliance-And-Regulations.html">Compliance And Regulations</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-3-Legal-And-Structure/07-Domain-And-Trademark.html">Domain And Trademark</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Financial Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/01-Accounting-Basics.html">Accounting Basics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/02-Pricing-Strategy.html">Pricing Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/03-Financial-Projections.html">Financial Projections</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/04-Cash-Flow-Management.html">Cash Flow Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/05-Fundraising.html">Fundraising</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/06-Unit-Economics.html">Unit Economics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/07-Financial-Metrics.html">Financial Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-4-Financial-Management/08-Budget-Management.html">Budget Management</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Product Market Fit</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/01-Understanding-Product-Market-Fit.html">Understanding Product Market Fit</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/02-Customer-Development.html">Customer Development</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/03-Feature-Prioritization.html">Feature Prioritization</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/04-Pricing-Validation.html">Pricing Validation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/05-Customer-Feedback-Loops.html">Customer Feedback Loops</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/06-Iteration-Process.html">Iteration Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/07-Retention-Metrics.html">Retention Metrics</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-5-Product-Market-Fit/08-Expansion-Revenue.html">Expansion Revenue</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section active">
+                    <h4 class="phase-title">Scaling Operations</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/01-Scaling-Fundamentals.html">Scaling Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/02-Process-Documentation.html">Process Documentation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html">Customer Onboarding</a>
+                    </li>
+                    <li class="chapter-item active">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/04-Customer-Support.html">Customer Support</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html">Technology Infrastructure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/06-Team-Building.html">Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/07-Sales-Process.html">Sales Process</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/08-Marketing-Automation.html">Marketing Automation</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-6-Scaling-Operations/09-Metrics-Analytics.html">Metrics Analytics</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Leadership Management</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/01-Leadership-Fundamentals.html">Leadership Fundamentals</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/02-Team-Management.html">Team Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/03-Decision-Making.html">Decision Making</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/04-Communication-Skills.html">Communication Skills</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/05-Company-Culture.html">Company Culture</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/06-Conflict-Resolution.html">Conflict Resolution</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/07-Time-Management.html">Time Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/08-Board-Management.html">Board Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-7-Leadership-Management/09-Vision-Setting.html">Vision Setting</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Growth Expansion</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/01-Growth-Strategy-Frameworks.html">Growth Strategy Frameworks</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/02-New-Market-Expansion.html">New Market Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/03-Product-Expansion.html">Product Expansion</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/04-Strategic-Partnerships.html">Strategic Partnerships</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/05-Marketing-Channels.html">Marketing Channels</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/06-Sales-Team-Building.html">Sales Team Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/07-Customer-Success.html">Customer Success</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/08-Fundraising-for-Growth.html">Fundraising for Growth</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-8-Growth-Expansion/09-M&A-Strategy.html">M&A Strategy</a>
+                    </li>
+                    </ul>
+                    </div>
+                    <div class="phase-section ">
+                    <h4 class="phase-title">Empire Building</h4>
+                    <ul class="chapters-list">
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/01-Empire-Mindset.html">Empire Mindset</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/02-Holding-Company-Structure.html">Holding Company Structure</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/03-Multiple-Revenue-Streams.html">Multiple Revenue Streams</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/04-From-CoodLoom-POS-to-CoodLoom-Ecosystem.html">From CoodLoom POS to CoodLoom Ecosystem</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/05-Industry-Leadership.html">Industry Leadership</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/06-Brand-Building.html">Brand Building</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/07-Exit-Strategy.html">Exit Strategy</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/08-Wealth-Management.html">Wealth Management</a>
+                    </li>
+                    <li class="chapter-item ">
+                    <a href="/Business-Learning/Phase-9-Empire-Building/09-Legacy-Building.html">Legacy Building</a>
+                    </li>
+                    </ul>
+                    </div>
+                    </nav>
+                </div>
+                
+                <article class="article-content">
+                    <nav class="breadcrumb" aria-label="Breadcrumb">
+                    <ol>
+                    <li><a href="/Business-Learning/">Home</a></li>
+                    <li>Scaling Operations</li>
+                    <li aria-current="page">Customer Support</li>
+                    </ol>
+                    </nav>
+                    
+                    <div class="article-body">
+                        <h1>Customer Support</h1>
+                        <h2>Introduction</h2>
+                        <p>Great support doesn&#x27;t cost money - it makes money. This chapter teaches you how to build a scalable customer support operation that delights customers and reduces churn.</p>
+                        <h2>The Support Philosophy</h2>
+                        <h3>Support as a Competitive Advantage</h3>
+                        <p><strong>Reality</strong>: Your product isn&#x27;t perfect, and that&#x27;s okay <strong>Opportunity</strong>: Amazing support makes customers forgive imperfections <strong>Statistics</strong>:</p>
+                        <ul>
+                        <li>93% of customers are likely to make repeat purchases from companies with excellent service (HubSpot)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>It costs 5-25x more to acquire a new customer than to retain one</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>A 5% increase in retention increases profits by 25-95%</li>
+                        </li>
+                        </ul>
+                        <p><strong>For CoodLoom</strong>: Support quality directly impacts churn and expansion revenue</p>
+                        <h3>Support vs. Customer Success</h3>
+                        <p>| Support | Customer Success | |---------|------------------| | Reactive (customer asks) | Proactive (you reach out) | | Solve problems | Prevent problems | | Transactional | Relational | | Ticket-based | Account-based | | Anyone can get help | Assigned accounts | <strong>Both are critical</strong> for scaling</p>
+                        <h2>Support Fundamentals</h2>
+                        <h3>Response Time Standards (SLAs)</h3>
+                        <p><strong>Industry Benchmarks</strong>:</p>
+                        <ul>
+                        <li><strong>Critical Issues</strong>: &lt; 1 hour</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>High Priority</strong>: &lt; 4 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Medium Priority</strong>: &lt; 24 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Low Priority</strong>: &lt; 48 hours</li>
+                        </li>
+                        </ul>
+                        <p><strong>CoodLoom Starting SLAs</strong>:</p>
+                        <ul>
+                        <li><strong>Urgent (system down)</strong>: 30 minutes</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>High (can&#x27;t work)</strong>: 2 hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Medium (issue but workaround)</strong>: 8 hours (business hours)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Low (question/feature request)</strong>: 24 hours</li>
+                        </li>
+                        </ul>
+                        <p><strong>Track Resolution Time Too</strong>:</p>
+                        <ul>
+                        <li>First response is great</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>But resolution matters more</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Measure and optimize both</li>
+                        </li>
+                        </ul>
+                        <h3>Support Channels</h3>
+                        <h4>Email (Essential)</h4>
+                        <p><strong>Pros</strong>: Async, documented, scalable <strong>Cons</strong>: Slower, less personal <strong>Best For</strong>: Non-urgent issues, detailed questions <strong>Tool</strong>: Help Scout, Zendesk, Intercom</p>
+                        <h4>Live Chat (Recommended)</h4>
+                        <p><strong>Pros</strong>: Fast, convenient, high satisfaction <strong>Cons</strong>: Requires availability, can be disruptive <strong>Best For</strong>: Quick questions, urgent issues <strong>Tool</strong>: Intercom, Drift, Crisp</p>
+                        <h4>Phone (Optional Early On)</h4>
+                        <p><strong>Pros</strong>: Personal, good for complex issues <strong>Cons</strong>: Not scalable, no written record <strong>Best For</strong>: Urgent issues, high-value customers <strong>Tool</strong>: RingCentral, Aircall, CloudTalk</p>
+                        <h4>Self-Service (Critical for Scale)</h4>
+                        <p><strong>Pros</strong>: 24/7, scales infinitely, empowers customers <strong>Cons</strong>: Requires upfront investment <strong>Best For</strong>: Common questions, how-tos <strong>Tool</strong>: Intercom Articles, Zendesk Guide, Help Scout Docs</p>
+                        <h4>Community Forum (Later)</h4>
+                        <p><strong>Pros</strong>: Peer-to-peer help, builds community <strong>Cons</strong>: Needs moderation, critical mass <strong>Best For</strong>: User discussions, feature requests <strong>Tool</strong>: Discourse, Circle, Discord</p>
+                        <h3>Support Channel Strategy by Stage</h3>
+                        <p><strong>Stage 1: Just You (0-10 customers)</strong></p>
+                        <ul>
+                        <li>Email only</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Personal attention</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn common issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build knowledge base</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2: Growing (10-50 customers)</strong></p>
+                        <ul>
+                        <li>Email + live chat</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Start knowledge base</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Document common issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Consider first support hire</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3: Scaling (50+ customers)</strong></p>
+                        <ul>
+                        <li>All channels operational</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Self-service emphasis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Advanced analytics</li>
+                        </li>
+                        </ul>
+                        <h2>Building Your Knowledge Base</h2>
+                        <h3>Why Self-Service Matters</h3>
+                        <ul>
+                        <li>69% of customers try to resolve issues independently first</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Good KB reduces ticket volume by 30-50%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Empowers customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Scales without adding headcount</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Available 24/7</li>
+                        </li>
+                        </ul>
+                        <h3>Knowledge Base Structure</h3>
+                        <pre><code>📚 CoodLoom Help Center
+                        <p>├── 🚀 Getting Started │   ├── Quick Start Guide │   ├── Creating Your Account │   ├── First Steps │   └── Video Tutorials ├── ⚙️ Features & How-To │   ├── [Feature 1] │   ├── [Feature 2] │   └── [Feature 3] ├── 🔌 Integrations │   ├── [Integration 1] Setup │   ├── [Integration 2] Setup │   └── Troubleshooting Integrations ├── ❓ FAQ │   ├── Account & Billing │   ├── Technical Questions │   └── Product Questions ├── 🛠️ Troubleshooting │   ├── Common Issues │   ├── Error Messages │   └── Performance Problems ├── 💳 Billing & Account │   ├── Pricing & Plans │   ├── Upgrading/Downgrading │   ├── Billing FAQ │   └── Cancellation └── 🔒 Security & Privacy ├── Security Overview ├── Data Privacy └── Compliance</code></pre></p>
+                        <h3>Writing Great Help Articles</h3>
+                        <p><strong>Article Template</strong>:</p>
+                        <pre><code>markdown
+                        <h1>[Clear, Specific Title]</h1>
+                        <h2>What This Does</h2>
+                        <p>Brief 1-2 sentence overview</p>
+                        <h2>When to Use This</h2>
+                        <p>Specific use cases</p>
+                        <h2>Step-by-Step Instructions</h2>
+                        <p>1. First step (with screenshot) 2. Second step (with screenshot) 3. Third step (with screenshot)</p>
+                        <h2>Tips & Best Practices</h2>
+                        <ul>
+                        <li>Tip 1</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tip 2</li>
+                        </li>
+                        </ul>
+                        <h2>Common Issues</h2>
+                        <p><strong>Problem</strong>: [Issue description] <strong>Solution</strong>: [How to fix]</p>
+                        <h2>Related Articles</h2>
+                        <ul>
+                        <li>[Related Article 1]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[Related Article 2]</li>
+                        </li>
+                        </ul>
+                        <h2>Still Need Help?</h2>
+                        <p>[Contact Support Button]</code></pre> <strong>Writing Tips</strong>:</p>
+                        <ul>
+                        <li>Write like you talk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Use screenshots liberally</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Keep it simple</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Test instructions yourself</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update regularly</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Include search keywords</li>
+                        </li>
+                        </ul>
+                        <h3>Knowledge Base Metrics</h3>
+                        <ul>
+                        <li><strong>Article views</strong>: Which are most helpful?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Search queries</strong>: What are customers looking for?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Search success rate</strong>: % who find answer</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Article ratings</strong>: Is it helpful?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Deflection rate</strong>: % who don&#x27;t need ticket after reading</li>
+                        </li>
+                        </ul>
+                        <h2>Support Ticket Management</h2>
+                        <h3>Ticket Classification</h3>
+                        <p><strong>Priority Levels</strong>: <strong>P0 - Critical</strong></p>
+                        <ul>
+                        <li>System completely down</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Data loss</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Security breach</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SLA: 30 min response, 4 hr resolution</li>
+                        </li>
+                        </ul>
+                        <p><strong>P1 - High</strong></p>
+                        <ul>
+                        <li>Major feature broken</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Can&#x27;t complete work</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Affects multiple users</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SLA: 2 hr response, 24 hr resolution</li>
+                        </li>
+                        </ul>
+                        <p><strong>P2 - Medium</strong></p>
+                        <ul>
+                        <li>Minor feature issue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Workaround available</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Single user affected</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SLA: 8 hr response, 3 day resolution</li>
+                        </li>
+                        </ul>
+                        <p><strong>P3 - Low</strong></p>
+                        <ul>
+                        <li>Questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Feature requests</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Nice-to-haves</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SLA: 24 hr response, as needed</li>
+                        </li>
+                        </ul>
+                        <h3>Ticket Workflow</h3>
+                        <pre><code>New Ticket
+                        <p>↓ Classify Priority ↓ Assign to Team Member ↓ Investigate & Respond ↓ [If Complex] → Escalate to Engineering ↓ Resolve with Solution ↓ Follow Up (24 hrs later) ↓ Close Ticket</code></pre></p>
+                        <h3>Ticket Templates</h3>
+                        <p><strong>Initial Response Template</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>Thanks for reaching out! I understand you&#x27;re experiencing [issue]. I&#x27;m looking into this now and will get back to you within [timeframe] with a solution. In the meantime, [temporary workaround if applicable]. Best, [Your Name]</code></pre> <strong>Resolution Template</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>Great news! I&#x27;ve [resolved/identified] the issue. [Explanation of problem] [Solution/fix] Can you try [action] and let me know if that works? Best, [Your Name]</code></pre> <strong>Follow-Up Template</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>Just following up on your issue from [date]. Is everything working well now? Do you have any other questions? Best, [Your Name]</code></pre> <strong>Escalation Template</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>I&#x27;ve escalated your issue to our engineering team for a deeper investigation. They&#x27;re working on it now and I&#x27;ll update you by [date/time] with progress. Thanks for your patience! Best, [Your Name]</code></pre></p>
+                        <h2>Support Automation</h2>
+                        <h3>What to Automate</h3>
+                        <h4>1. Routing</h4>
+                        <ul>
+                        <li>Route by issue type</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Route by customer tier</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Round-robin assignment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Load balancing</li>
+                        </li>
+                        </ul>
+                        <h4>2. Responses</h4>
+                        <ul>
+                        <li>Acknowledgment emails</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Common issue replies</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Status updates</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Satisfaction surveys</li>
+                        </li>
+                        </ul>
+                        <h4>3. Escalation</h4>
+                        <ul>
+                        <li>Auto-escalate by time</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Auto-escalate by keywords</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Alert on VIP customer issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Alert on critical issues</li>
+                        </li>
+                        </ul>
+                        <h4>4. Follow-Up</h4>
+                        <ul>
+                        <li>Automated check-ins</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Close inactive tickets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Request additional info</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Satisfaction surveys</li>
+                        </li>
+                        </ul>
+                        <h3>What NOT to Automate</h3>
+                        <ul>
+                        <li>Complex problem-solving</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Sensitive issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Angry customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Strategic accounts</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Escalated situations</li>
+                        </li>
+                        </ul>
+                        <h3>Support Automation Tools</h3>
+                        <p><strong>Chatbots</strong>:</p>
+                        <ul>
+                        <li>Answer common questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Collect information</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Route to right person</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Provide KB articles</li>
+                        </li>
+                        </ul>
+                        <p><strong>Canned Responses</strong>:</p>
+                        <ul>
+                        <li>Common questions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Standard procedures</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Acknowledgments</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Status updates</li>
+                        </li>
+                        </ul>
+                        <p><strong>Macros</strong>:</p>
+                        <ul>
+                        <li>Multi-step actions</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tag and assign</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Send and close</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Update and escalate</li>
+                        </li>
+                        </ul>
+                        <h2>Measuring Support Success</h2>
+                        <h3>Key Metrics</h3>
+                        <h4>Volume Metrics</h4>
+                        <ul>
+                        <li><strong>Total Tickets</strong>: Trending up or down?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Tickets per Customer</strong>: Benchmark: &lt;1/month</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Tickets by Type</strong>: What issues are common?</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Tickets by Source</strong>: Which channels?</li>
+                        </li>
+                        </ul>
+                        <h4>Response Metrics</h4>
+                        <ul>
+                        <li><strong>First Response Time</strong>: Goal: Meet SLAs</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Resolution Time</strong>: Goal: &lt;24 hours average</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Response Rate</strong>: Goal: 100% in SLA</li>
+                        </li>
+                        </ul>
+                        <h4>Quality Metrics</h4>
+                        <ul>
+                        <li><strong>CSAT (Customer Satisfaction)</strong>: Goal: &gt;90%</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>NPS</strong>: Goal: &gt;50</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Resolution Rate</strong>: Goal: &gt;95% first contact</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Reopened Tickets</strong>: Goal: &lt;5%</li>
+                        </li>
+                        </ul>
+                        <h4>Efficiency Metrics</h4>
+                        <ul>
+                        <li><strong>Tickets per Agent per Day</strong>: Benchmark: 20-30</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Handle Time</strong>: Track and optimize</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Self-Service Rate</strong>: Goal: 30-50% deflection</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Cost per Ticket</strong>: Track and reduce</li>
+                        </li>
+                        </ul>
+                        <h3>Creating a Support Dashboard</h3>
+                        <p><strong>Daily View</strong>:</p>
+                        <ul>
+                        <li>Open tickets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>SLA breaches</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Unassigned tickets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Urgent issues</li>
+                        </li>
+                        </ul>
+                        <p><strong>Weekly View</strong>:</p>
+                        <ul>
+                        <li>Ticket volume trend</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Response time average</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CSAT score</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Top issues</li>
+                        </li>
+                        </ul>
+                        <p><strong>Monthly View</strong>:</p>
+                        <ul>
+                        <li>All metrics trended</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Agent performance</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Cost analysis</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Improvement areas</li>
+                        </li>
+                        </ul>
+                        <h2>Building Support Processes</h2>
+                        <h3>New Ticket Process</h3>
+                        <p><strong>1. Receive Ticket</strong></p>
+                        <ul>
+                        <li>Comes in via email/chat/phone</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Automatically logged in system</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer receives confirmation</li>
+                        </li>
+                        </ul>
+                        <p><strong>2. Initial Triage (2 min)</strong></p>
+                        <ul>
+                        <li>[ ] Read entire ticket</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Classify priority</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Assign category</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Check customer account</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review history</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Identify urgency</li>
+                        </li>
+                        </ul>
+                        <p><strong>3. Research (5-10 min)</strong></p>
+                        <ul>
+                        <li>[ ] Search knowledge base</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Check previous similar tickets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Review customer&#x27;s setup</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Test to reproduce issue</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Identify solution</li>
+                        </li>
+                        </ul>
+                        <p><strong>4. Respond (10 min)</strong></p>
+                        <ul>
+                        <li>[ ] Use appropriate template</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Personalize response</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Provide clear solution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Set expectations</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Offer additional help</li>
+                        </li>
+                        </ul>
+                        <p><strong>5. Follow Through</strong></p>
+                        <ul>
+                        <li>[ ] Monitor for customer reply</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Follow up if no response (24 hrs)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Ensure resolution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Request satisfaction rating</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>[ ] Close ticket</li>
+                        </li>
+                        </ul>
+                        <h3>Escalation Process</h3>
+                        <p><strong>When to Escalate</strong>:</p>
+                        <ul>
+                        <li>Can&#x27;t resolve within your knowledge</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Requires engineering/product team</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Exceeds your authority</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Customer requests manager</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Complex customization needed</li>
+                        </li>
+                        </ul>
+                        <p><strong>How to Escalate</strong>: 1. Document everything clearly 2. Explain what you&#x27;ve tried 3. Tag appropriate person/team 4. Set customer expectations 5. Track until resolved 6. Update customer regularly</p>
+                        <h3>Bug Reporting Process</h3>
+                        <p><strong>Support&#x27;s Role</strong>: 1. Confirm it&#x27;s a bug (not user error) 2. Reproduce the issue 3. Document steps to reproduce 4. Note affected customers 5. Assess severity 6. Create detailed bug report 7. Track to resolution <strong>Bug Report Template</strong>:</p>
+                        <pre><code>Title: [Clear, specific description]
+                        <p>Environment:</p>
+                        <ul>
+                        <li>Customer: [Name/ID]</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Browser/Device: </li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Account Type:</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Date/Time:</li>
+                        </li>
+                        </ul>
+                        <p>Steps to Reproduce: 1. 2. 3. Expected Behavior: [What should happen] Actual Behavior: [What actually happens] Impact:</p>
+                        <ul>
+                        <li>Customers affected: </li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Workaround available: Yes/No</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Severity: Critical/High/Medium/Low</li>
+                        </li>
+                        </ul>
+                        <p>Screenshots/Videos: [Attach] Additional Notes: [Any other relevant info]</code></pre></p>
+                        <h2>Support Team Structure</h2>
+                        <h3>Solo Founder (0-20 customers)</h3>
+                        <p><strong>You do it all</strong>:</p>
+                        <ul>
+                        <li>Answer all tickets</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build knowledge base</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Learn common issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track metrics</li>
+                        </li>
+                        </ul>
+                        <p><strong>Time Management</strong>:</p>
+                        <ul>
+                        <li>Set support hours</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Batch ticket responses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Track common issues</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Build KB articles for each</li>
+                        </li>
+                        </ul>
+                        <h3>First Support Hire (20-50 customers)</h3>
+                        <p><strong>When</strong>: Can&#x27;t keep up with volume <strong>Hire</strong>: Customer success person who can do support <strong>Transition</strong>: Gradually hand off tickets, stay involved</p>
+                        <h3>Scaled Team (50+ customers)</h3>
+                        <p><strong>Structure</strong>:</p>
+                        <ul>
+                        <li>Support Lead/Manager</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support Specialists (2-3)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>CS team (separate)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Engineering on-call rotation</li>
+                        </li>
+                        </ul>
+                        <h2>Handling Difficult Situations</h2>
+                        <h3>Angry Customers</h3>
+                        <p><strong>Do</strong>:</p>
+                        <ul>
+                        <li>Listen without interrupting</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Empathize sincerely</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Take ownership</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Offer specific solution</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Follow through</li>
+                        </li>
+                        </ul>
+                        <p><strong>Don&#x27;t</strong>:</p>
+                        <ul>
+                        <li>Get defensive</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Make excuses</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Blame others</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Over-promise</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Argue</li>
+                        </li>
+                        </ul>
+                        <p><strong>Template</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>I sincerely apologize for [issue]. I understand how frustrating this must be, especially [their specific concern]. Here&#x27;s what happened: [brief explanation] Here&#x27;s what I&#x27;m doing to fix it: 1. [Action 1] 2. [Action 2] 3. [Action 3] I&#x27;ll personally ensure this is resolved by [time] and will update you every [frequency]. Again, I&#x27;m sorry for the inconvenience. We value your business and will make this right. Best, [Your Name] [Direct Phone/Email]</code></pre></p>
+                        <h3>Requests You Can&#x27;t Fulfill</h3>
+                        <p><strong>Feature Requests</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>Thanks for the suggestion! I love the idea of [feature]. While we don&#x27;t currently have this, I&#x27;ve added your vote to our feature request list. If/when we build this, I&#x27;ll let you know. In the meantime, [workaround or alternative approach]. Thanks for helping us improve! Best, [Your Name]</code></pre> <strong>Refund Requests</strong>:</p>
+                        <pre><code>Hi [Name],
+                        <p>I&#x27;m sorry CoodLoom didn&#x27;t meet your needs. I&#x27;d love to understand what went wrong to see if there&#x27;s anything we can do. [If yes to refund]: I&#x27;ve processed your refund of [amount]. You should see it in 5-7 business days. Thank you for trying CoodLoom. Best of luck! Best, [Your Name]</code></pre></p>
+                        <h3>Churn Prevention</h3>
+                        <p><strong>Signs of Churn Risk</strong>:</p>
+                        <ul>
+                        <li>Decreased usage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Support tickets increase</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Negative sentiment</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Asks about cancellation</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Renewal approaching</li>
+                        </li>
+                        </ul>
+                        <p><strong>Save Process</strong>: 1. Reach out proactively 2. Understand the issue 3. Offer solutions 4. Discount if needed (carefully) 5. Make it right 6. Follow up regularly</p>
+                        <h2>Support Tools &amp; Tech Stack</h2>
+                        <h3>Essential Tools</h3>
+                        <p><strong>Helpdesk</strong> (Pick One):</p>
+                        <ul>
+                        <li><strong>Help Scout</strong>: Simple, affordable</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Intercom</strong>: Chat + support</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Zendesk</strong>: Enterprise-grade</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li><strong>Freshdesk</strong>: Good middle ground</li>
+                        </li>
+                        </ul>
+                        <p><strong>Knowledge Base</strong>:</p>
+                        <ul>
+                        <li>Usually built into helpdesk</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Or: Notion, GitBook, Help Scout Docs</li>
+                        </li>
+                        </ul>
+                        <p><strong>Chat</strong>:</p>
+                        <ul>
+                        <li>Intercom</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Drift</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Crisp</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Tawk.to (free)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Screen Recording</strong>:</p>
+                        <ul>
+                        <li>Loom (for sending videos)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>FullStory (session replay)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>LogRocket (for bugs)</li>
+                        </li>
+                        </ul>
+                        <p><strong>Communication</strong>:</p>
+                        <ul>
+                        <li>Slack (internal)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Email (customer)</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Zoom (calls if needed)</li>
+                        </li>
+                        </ul>
+                        <h3>Tool Budget Progression</h3>
+                        <p><strong>Stage 1 (Solo)</strong>:</p>
+                        <ul>
+                        <li>Email only: $0</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Basic help desk: $20-50/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Total: $50/mo</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 2 (First hire)</strong>:</p>
+                        <ul>
+                        <li>Help desk: $50-100/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Live chat: $50-150/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Knowledge base: Included</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Total: $200/mo</li>
+                        </li>
+                        </ul>
+                        <p><strong>Stage 3 (Team)</strong>:</p>
+                        <ul>
+                        <li>Help desk: $200-500/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Chat: $150-300/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Session replay: $100-200/mo</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Total: $500-1000/mo</li>
+                        </li>
+                        </ul>
+                        <h2>Exercises</h2>
+                        <h3>Exercise 1: Create SLAs</h3>
+                        <p>Define your support SLAs:</p>
+                        <ul>
+                        <li>Critical: Response _____, Resolution _____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>High: Response _____, Resolution _____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Medium: Response _____, Resolution _____</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>Low: Response _____, Resolution _____</li>
+                        </li>
+                        </ul>
+                        <h3>Exercise 2: Build Knowledge Base</h3>
+                        <p>Create 5 most-needed articles: 1. _____________________ 2. _____________________ 3. _____________________ 4. _____________________ 5. _____________________</p>
+                        <h3>Exercise 3: Support Metrics Dashboard</h3>
+                        <p>What metrics will you track?</p>
+                        <ul>
+                        <li>_____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>_____________________</li>
+                        </li>
+                        </ul>
+                        <h2>Common Support Mistakes</h2>
+                        <h3>❌ Mistake 1: Reactive Only</h3>
+                        <p><strong>Problem</strong>: Only respond, never prevent <strong>Fix</strong>: Proactive outreach, analyze trends</p>
+                        <h3>❌ Mistake 2: No Knowledge Base</h3>
+                        <p><strong>Problem</strong>: Answering same questions repeatedly <strong>Fix</strong>: Document common issues</p>
+                        <h3>❌ Mistake 3: Slow Response</h3>
+                        <p><strong>Problem</strong>: Customers wait too long <strong>Fix</strong>: Set and meet SLAs</p>
+                        <h3>❌ Mistake 4: Support Isn&#x27;t Empowered</h3>
+                        <p><strong>Problem</strong>: Need approval for everything <strong>Fix</strong>: Give refund/discount authority</p>
+                        <h3>❌ Mistake 5: Not Tracking Metrics</h3>
+                        <p><strong>Problem</strong>: Can&#x27;t improve what you don&#x27;t measure <strong>Fix</strong>: Track key metrics religiously</p>
+                        <h2>Key Takeaways</h2>
+                        <ul>
+                        <li>✓ Great support is a competitive advantage</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Self-service reduces ticket volume</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Fast response time matters</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Measure everything</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Automate tasks, not empathy</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Build knowledge base from day one</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Hire support help at 20-30 customers</li>
+                        </li>
+                        </ul>
+                        <ul>
+                        <li>✓ Turn support into product feedback</li>
+                        </li>
+                        </ul>
+                        <h2>Next Steps</h2>
+                        <p>Move to Chapter 5: <strong>Technology Infrastructure</strong> to learn how to scale your technical platform.</p>
+                        <hr />
+                        <p><strong>Remember</strong>: &quot;Every support ticket is a chance to turn a problem into a fan!&quot;</p>
+                    </div>
+                    
+                    <nav class="chapter-navigation">
+                        <div class="nav-container">
+                            <a href="/Business-Learning/Phase-6-Scaling-Operations/03-Customer-Onboarding.html" class="nav-prev">
+                                            <span class="nav-label">← Previous</span>
+                                            <span class="nav-title">Customer Onboarding</span>
+                                        </a>
+                            <a href="/Business-Learning/Phase-6-Scaling-Operations/05-Technology-Infrastructure.html" class="nav-next">
+                                            <span class="nav-label">Next →</span>
+                                            <span class="nav-title">Technology Infrastructure</span>
+                                        </a>
+                        </div>
+                    </nav>
+                </article>
+            </div>
+        </main>
+        
+        <footer class="main-footer">
+            <p>&copy; 2025 Business Learning Path. All rights reserved.</p>
+        </footer>
+    </div>
+</body>
+</html>
